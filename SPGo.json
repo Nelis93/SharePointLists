@@ -1,0 +1,12 @@
+{
+    "sourceDirectory": "src",
+    "sharePointSiteUrl": "https://bpolb.sharepoint.com/sites/testbeeldsuba",
+    "workspaceRoot": "c:\\Users\\449322588\\Documents\\Code_Files\\SharePoint_Sandbox",
+    "publishWorkspaceOptions": {
+        "destinationFolder": "/",
+        "globPattern": "c:\\Users\\449322588\\Documents\\Code_Files\\SharePoint_Sandbox\\src\\**\\*.*",
+        "localRoot": "c:\\Users\\449322588\\Documents\\Code_Files\\SharePoint_Sandbox\\src"
+    },
+    "publishingScope": "SaveOnly",
+    "authenticationType": "Digest"
+}

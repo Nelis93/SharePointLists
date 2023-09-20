@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overzichtstabel Inhoud Teamskanaal</title>
+</head>
+<style>
+    table,
+th,
+td {
+  border: 1px solid;
+}
+
+table {
+  margin: 0 auto;
+  display: block;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 5px 10px;
+  border-top-width: 0;
+  border-left-width: 0;
+  word-break: break-all;
+  overflow-wrap: break-word;
+
+}
+#modified, #author, #email {
+    word-break:unset;
+  overflow-wrap:unset;
+}
+th {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  vertical-align: bottom;
+}
+
+tr:last-child td {
+  border-bottom-width: 0;
+}
+h1 {
+    margin-left: 2em;
+}
+</style>
+<body>
+    <h1>Overzichtstabel Inhoud Teamskanaal</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Email</th>
+                <th>Location</th>
+                <th>Last Modified</th>
+            </tr>
+        </thead>
+        <tbody id="overviewTable">
+        </tbody>
+    </table>
+    <script src="./tempTotalSP.js"></script>
+</body>
+</html>
