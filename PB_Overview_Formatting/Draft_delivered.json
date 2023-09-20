@@ -1,0 +1,34 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "div",
+    "style": {
+      "display": "flex",
+      "flex-direction": "row",
+      "justify-content": "center"
+    },
+    "children": [
+      {
+        "elmType": "div",
+        "attributes": {
+          "iconName": "=if(@currentField,'CheckboxComposite','Checkbox')",
+          "class": "=if(@currentField,'ms-fontColor-neutralPrimary','ms-fontColor-neutralTertiary')+' ms-font-l'"
+        },
+        "style": {
+          "cursor": "pointer"
+        },
+        "customRowAction": {
+          "action": "setValue",
+          "actionInput": {
+            "Draftdelivered": "=if(@currentField , '0' , '1' )"
+          }
+        }
+      },
+      {
+        "elmType": "div",
+        "txtContent": "=if(@currentField, getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),'')",
+        "style":{
+          "padding-left": "10px"
+        }
+      }
+    ]
+  }

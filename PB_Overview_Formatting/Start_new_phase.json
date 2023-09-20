@@ -1,0 +1,132 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "button",
+    "attributes": {
+      "class": "ms-bgColor-gray100--hover"
+    },
+    "customCardProps": {
+      "formatter": {
+        "elmType": "div",
+        "style": {
+          "display": "=if(toLocaleDateString([$Draftdue]) == '', '', if(toLocaleDateString([$Reviewdue]) == '', '', if(toLocaleDateString([$Updatedue]) == '' && [$PublishedAll] != '', '', 'none')))",
+          "background-color": "white"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "style": {
+              "width": "200px",
+              "height": "100px",
+              "border": "rounded",
+              "border-radius": "10px",
+              "font-size": "12pt",
+              "padding": "10px",
+              "display": "flex",
+              "flex-direction": "column",
+              "justify-content": "space-between",
+              "align-items": "center"
+            },
+            "children": [
+              {
+                "elmType": "span",
+                "txtContent": "What is the due date?",
+                "style": {
+                  "padding": "3px",
+                  "width": "auto",
+                  "height": "20px"
+                }
+              },
+              {
+                "elmType": "div",
+                "txtContent": "[$Draftdue]",
+                "inlineEditField": "[$Draftdue]",
+                "style": {
+                  "width": "50px",
+                  "height": "50px",
+                  "background-color": "white",
+                  "font-size": "50px",
+                  "cursor": "pointer",
+                  "display": "=if(toLocaleDateString([$Draftdue]) == '', '', 'none')"
+                },
+                "attributes": {
+                  "iconName": "Calendar"
+                }
+              },
+              {
+                "elmType": "div",
+                "txtContent": "[$Reviewdue]",
+                "inlineEditField": "[$Reviewdue]",
+                "style": {
+                  "width": "50px",
+                  "height": "50px",
+                  "background-color": "white",
+                  "font-size": "50px",
+                  "cursor": "pointer",
+                  "display": "=if(toLocaleDateString([$Reviewdue]) == '' && toLocaleDateString([$Draftdue]) != '', '', 'none')"
+                },
+                "attributes": {
+                  "iconName": "Calendar"
+                }
+              },
+              {
+                "elmType": "div",
+                "txtContent": "[$Updatedue]",
+                "inlineEditField": "[$Updatedue]",
+                "style": {
+                  "width": "50px",
+                  "height": "50px",
+                  "background-color": "white",
+                  "font-size": "50px",
+                  "cursor": "pointer",
+                  "display": "=if(toLocaleDateString([$Updatedue]) == '' && toLocaleDateString([$Draftdue]) != '' && toLocaleDateString([$Reviewdue]) != '', '', 'none')"
+                },
+                "attributes": {
+                  "iconName": "Calendar"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "openOnEvent": "click",
+      "directionalHint": "bottomCenter",
+      "isBeakVisible": true
+    },
+    "customRowAction": {
+      "action": "setValue",
+      "actionInput": {
+        "Status": "=if([$Status] == 'empty site','in draft',if([$Status] == 'in draft','in review',if([$Status] == 'in review','published (ltd)',if([$Status] == 'published (ltd)','published (All)',if([$Status] == 'published (All)','in update',if([$Status] == 'in update','update published',if([$Status] == 'update published','in update','')))))))",
+        "Startedon": "=getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now)",
+        "Previousphaseendedby": "=substring(@me, 0, indexOf(@me, '.')) + ' ' + substring(@me, indexOf(@me, '.')+1, indexOf(@me, '@'))",
+        "Draftstart": "=if([$Status] == 'empty site', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),'[$Draftstart]')",
+        "Reviewstart": "=if([$Status] == 'in draft', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),'[$Reviewstart]')",
+        "Publishedltd": "=if([$Status] == 'in review', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),'[$Publishedltd]')",
+        "PublishedAll": "=if([$Status] == 'published (ltd)', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),'[$PublishedAll]')",
+        "Updatestart": "=if([$Status] == 'published (All)', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),'[$Updatestart]')",
+        "Updatepublished": "=if([$Status] == 'in update', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),'[$Updatepublished]')"
+      }
+    },
+    "style": {
+      "border": "rounded",
+      "color": "#00368a",
+      "padding": "10px 30px",
+      "margin": "5px auto",
+      "border-radius": "10px",
+      "border-color": "#00368a",
+      "background-color": "none",
+      "cursor": "pointer"
+    },
+    "children": [
+      {
+        "elmType": "span",
+        "attributes": {
+          "iconName": "PlayResume"
+        },
+        "style": {
+          "height": "100%",
+          "width": "100%",
+          "font-size": "30px"
+        }
+      }
+    ]
+  }
