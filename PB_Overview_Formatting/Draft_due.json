@@ -1,0 +1,126 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "div",
+    "style": {
+      "box-sizing": "border-box",
+      "padding": "0 2px",
+      "overflow": "hidden",
+      "text-overflow": "ellipsis"
+    },
+    "attributes": {
+      "class": {
+        "operator": ":",
+        "operands": [
+          {
+            "operator": "==",
+            "operands": [
+              "@currentField",
+              ""
+            ]
+          },
+          "",
+          {
+            "operator": ":",
+            "operands": [
+              {
+                "operator": "==",
+                "operands": [
+                  {
+                    "operator": "Date()",
+                    "operands": [
+                      {
+                        "operator": "toDateString()",
+                        "operands": [
+                          "@currentField"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "operator": "Date()",
+                    "operands": [
+                      {
+                        "operator": "toDateString()",
+                        "operands": [
+                          "@now"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "sp-css-backgroundColor-BgGold sp-css-borderColor-GoldFont sp-field-fontSizeSmall sp-css-color-GoldFont",
+              {
+                "operator": ":",
+                "operands": [
+                  {
+                    "operator": ">",
+                    "operands": [
+                      {
+                        "operator": "Date()",
+                        "operands": [
+                          {
+                            "operator": "toDateString()",
+                            "operands": [
+                              "@currentField"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "operator": "Date()",
+                        "operands": [
+                          {
+                            "operator": "toDateString()",
+                            "operands": [
+                              "@now"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "sp-css-backgroundColor-BgMintGreen sp-css-borderColor-MintGreenFont sp-field-fontSizeSmall sp-css-color-MintGreenFont",
+                  {
+                    "operator": ":",
+                    "operands": [
+                      {
+                        "operator": "<",
+                        "operands": [
+                          {
+                            "operator": "Date()",
+                            "operands": [
+                              {
+                                "operator": "toDateString()",
+                                "operands": [
+                                  "@currentField"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "operator": "Date()",
+                            "operands": [
+                              {
+                                "operator": "toDateString()",
+                                "operands": [
+                                  "@now"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "sp-css-backgroundColor-BgCoral sp-css-borderColor-CoralFont sp-field-fontSizeSmall sp-css-color-CoralFont",
+                      ""
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "txtContent": "=if(@currentField.displayValue, getDate(toLocaleDateString(@currentField.displayValue)) + '/' + (getMonth(toLocaleDateString(@currentField.displayValue)) + 1) + '/' + getYear(toLocaleDateString(@currentField.displayValue)), '')"
+  }

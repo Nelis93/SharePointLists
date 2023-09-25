@@ -1,0 +1,27 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "div",
+    "style": {
+      "font-size": "15px",
+      "font-weight": "bold",
+      "min-width": "250px"
+    },
+    "txtContent": "@currentField",
+    "customCardProps": {
+      "openOnEvent": "hover",
+      "directionalHint": "leftCenter",
+      "isBeakVisible": true,
+      "formatter": {
+        "elmType": "div",
+        "style": {
+          "font-size": "14px",
+          "border": "rounded",
+          "border-radius": "5px",
+          "padding": "=if([$Toelichting] == '', '0', '10px')",
+          "width": "400px",
+          "background-color": "lightBlue"
+        },
+        "txtContent": "[$Toelichting]"
+      }
+    }
+  }

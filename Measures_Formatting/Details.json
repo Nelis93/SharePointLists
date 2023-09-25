@@ -1,0 +1,43 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "button",
+    "customRowAction": {
+      "action": "defaultClick"
+    },
+    "attributes": {
+      "title": "Edit Item",
+      "class": "ms-bgColor-white ms-bgColor-themeDark--hover "
+    },
+    "style": {
+      "border": "1px rounded #00368a",
+      "position": "relative",
+      "display": "flex",
+      "flex-direction": "column",
+      "justify-content": "center",
+      "align-items": "center",
+      "border-radius": "100%",
+      "margin": "5px 0",
+      "width": "50px",
+      "height": "50px",
+      "cursor": "pointer",
+      "box-sizing": "border-box",
+      "overflow": "hidden",
+      "text-overflow": "ellipsis"
+    },
+    "children": [
+      {
+        "elmType": "span",
+        "style": {
+          "position": "relative",
+          "width": "50px",
+          "height": "50px",
+          "border-radius": "100%",
+          "padding-top": "8px"
+        },
+        "attributes": {
+          "iconName": "Info",
+          "class": "ms-font-xxl ms-fontColor-themePrimary ms-fontColor-white--hover"
+        }
+      }
+    ]
+  }

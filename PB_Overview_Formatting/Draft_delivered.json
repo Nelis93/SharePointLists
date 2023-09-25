@@ -25,8 +25,8 @@
       },
       {
         "elmType": "div",
-        "txtContent": "=if(@currentField, getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),'')",
-        "style":{
+        "txtContent": "=if(@currentField == '1', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),'[$Draftdelivered]')",
+        "style": {
           "padding-left": "10px"
         }
       }

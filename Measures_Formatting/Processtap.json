@@ -1,0 +1,336 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "div",
+    "style": {
+      "font-size": "12px"
+    },
+    "txtContent": "@currentField",
+    "customCardProps": {
+      "formatter": {
+        "elmType": "div",
+        "children": [
+          {
+            "elmType": "div",
+            "children": [
+              {
+                "elmType": "div",
+                "style": {
+                  "padding": "15px 45px 15px 15px"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "children": [
+                      {
+                        "elmType": "div",
+                        "style": {
+                          "font-size": "18px",
+                          "font-weight": "550",
+                          "text-align": "center",
+                          "margin-bottom": "10px"
+                        },
+                        "txtContent": "Procesmodel"
+                      }
+                    ]
+                  },
+                  {
+                    "elmType": "div",
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "font-size": "16px",
+                          "font-weight": "600",
+                          "padding-left": "15px"
+                        },
+                        "txtContent": " ",
+                        "attributes": {
+                          "iconName": "=if(indexOf(@currentField, 'Rekrutering') >= 0, 'StatusCircleCheckmark', '')",
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'Rekrutering') >= 0, 'green','neutralSecondaryAlt')"
+                        }
+                      },
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "font-size": "16px",
+                          "font-weight": "600"
+                        },
+                        "txtContent": " ",
+                        "attributes": {
+                          "iconName": "CircleRing",
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'Rekrutering') >= 0, 'green','neutralSecondaryAlt')"
+                        }
+                      },
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "font-size": "=if(indexOf(@currentField, 'Rekrutering') >= 0, '16px', ''",
+                          "font-weight": "=if(indexOf(@currentField, 'Rekrutering') >= 0, '600', ''",
+                          "padding-left": "9px"
+                        },
+                        "txtContent": "Rekrutering",
+                        "attributes": {
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'Rekrutering') >= 0, 'green','neutralSecondaryAlt')"
+                        }
+                      },
+                      {
+                        "elmType": "div",
+                        "style": {
+                          "font-size": "10px",
+                          "font-weight": "600",
+                          "text-align": "center"
+                        },
+                        "attributes": {
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'Reis') >= 0, 'black', 'black')"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "elmType": "div",
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "border-left-style": "solid",
+                          "border-left-color": "='ms-borderColor-' + if(indexOf(@currentField, 'Reis') >= 0, 'green','neutralSecondaryAlt')",
+                          "text-align": "center",
+                          "margin-left": "21px"
+                        },
+                        "attributes": {
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'Reis') >= 0, 'green','neutralSecondaryAlt')"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "elmType": "div",
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "font-size": "16px",
+                          "font-weight": "600",
+                          "padding-left": "15px"
+                        },
+                        "txtContent": " ",
+                        "attributes": {
+                          "iconName": "=if(indexOf(@currentField, 'Reis') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'Reis') >= 0, 'green','neutralSecondaryAlt')"
+                        }
+                      },
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "font-size": "16px",
+                          "font-weight": "600",
+                          "margin-left": "-16px"
+                        },
+                        "txtContent": " ",
+                        "attributes": {
+                          "iconName": "CircleRing",
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'Reis') >= 0, 'green','neutralSecondaryAlt')"
+                        }
+                      },
+                      {
+                        "elmType": "span",
+                        "txtContent": "Reis",
+                        "style": {
+                          "font-size": "=if(indexOf(@currentField, 'Reis') >= 0, '16px', ''",
+                          "font-weight": "=if(indexOf(@currentField, 'Reis') >= 0, '600', ''",
+                          "padding-left": "9px"
+                        },
+                        "attributes": {
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'Reis') >= 0, 'green','neutralSecondaryAlt')"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "elmType": "div",
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "border-left-style": "solid",
+                          "border-left-color": "='ms-borderColor-' + if(indexOf(@currentField, 'België binnen') >= 0,'green','neutralSecondaryAlt')",
+                          "margin-left": "21px"
+                        },
+                        "attributes": {
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'België binnen') >= 0,'green','neutralSecondaryAlt')"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "elmType": "div",
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "font-size": "16px",
+                          "font-weight": "600",
+                          "padding-left": "15px"
+                        },
+                        "txtContent": " ",
+                        "attributes": {
+                          "iconName": "=if(indexOf(@currentField, 'België binnen') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'België binnen') >= 0,'green','neutralSecondaryAlt')"
+                        }
+                      },
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "font-size": "16px",
+                          "font-weight": "600",
+                          "margin-left": "-16px"
+                        },
+                        "txtContent": " ",
+                        "attributes": {
+                          "iconName": "CircleRing",
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'België binnen') >= 0,'green','neutralSecondaryAlt')"
+                        }
+                      },
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "font-size": "=if(indexOf(@currentField, 'België binnen') >= 0, '16px', ''",
+                          "font-weight": "=if(indexOf(@currentField, 'België binnen') >= 0, '600', ''",
+                          "padding-left": "9px"
+                        },
+                        "txtContent": "België binnen",
+                        "attributes": {
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'België binnen') >= 0, 'green','neutralSecondaryAlt')"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "elmType": "div",
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "border-left-style": "solid",
+                          "border-left-color": "='ms-borderColor-' + if(indexOf(@currentField, 'Verblijf in België') >= 0,'green','neutralSecondaryAlt')",
+                          "margin-left": "21px"
+                        },
+                        "attributes": {
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'Verblijf in België') >= 0,'green','neutralSecondaryAlt')"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "elmType": "div",
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "font-size": "16px",
+                          "font-weight": "600",
+                          "padding-left": "15px"
+                        },
+                        "txtContent": " ",
+                        "attributes": {
+                          "iconName": "=if(indexOf(@currentField, 'Verblijf in België') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'Verblijf in België') >= 0,'green','neutralSecondaryAlt')"
+                        }
+                      },
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "font-size": "16px",
+                          "font-weight": "600",
+                          "margin-left": "-16px"
+                        },
+                        "txtContent": " ",
+                        "attributes": {
+                          "iconName": "CircleRing",
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'Verblijf in België') >= 0,'green','neutralSecondaryAlt')"
+                        }
+                      },
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "font-size": "=if(indexOf(@currentField, 'Verblijf in België') >= 0, '16px', ''",
+                          "font-weight": "=if(indexOf(@currentField, 'Verblijf in België') >= 0, '600', ''",
+                          "padding-left": "9px"
+                        },
+                        "txtContent": "Verblijf in België",
+                        "attributes": {
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'Verblijf in België') >= 0, 'green','neutralSecondaryAlt')"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "elmType": "div",
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "border-left-style": "solid",
+                          "border-left-color": "='ms-borderColor-' + if(indexOf(@currentField, 'België buiten') >= 0,'green','neutralSecondaryAlt')",
+                          "margin-left": "21px"
+                        },
+                        "attributes": {
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'België buiten') >= 0,'green','neutralSecondaryAlt')"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "elmType": "div",
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "font-size": "16px",
+                          "font-weight": "600",
+                          "padding-left": "15px"
+                        },
+                        "txtContent": " ",
+                        "attributes": {
+                          "iconName": "=if(indexOf(@currentField, 'België buiten') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'België buiten') >= 0,'green','neutralSecondaryAlt')"
+                        }
+                      },
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "font-size": "16px",
+                          "font-weight": "600",
+                          "margin-left": "-16px"
+                        },
+                        "txtContent": " ",
+                        "attributes": {
+                          "iconName": "CircleRing",
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'België buiten') >= 0,'green','neutralSecondaryAlt')"
+                        }
+                      },
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "font-size": "=if(indexOf(@currentField, 'België buiten') >= 0, '16px', ''",
+                          "font-weight": "=if(indexOf(@currentField, 'België buiten') >= 0, '600', ''",
+                          "padding-left": "9px"
+                        },
+                        "txtContent": "België buiten",
+                        "attributes": {
+                          "class": "='ms-fontColor-' + if(indexOf(@currentField, 'België buiten') >= 0, 'green','neutralSecondaryAlt')"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "openOnEvent": "hover",
+      "directionalHint": "bottomCenter",
+      "isBeakVisible": true
+    }
+  }
