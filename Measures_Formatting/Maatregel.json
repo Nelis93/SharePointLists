@@ -19,7 +19,8 @@
           "border-radius": "5px",
           "padding": "=if([$Toelichting] == '', '0', '10px')",
           "width": "400px",
-          "background-color": "lightBlue"
+          "background-color": "lightBlue",
+          "display": "=if([$Toelichting] == '', 'none', '')"
         },
         "txtContent": "[$Toelichting]"
       }
