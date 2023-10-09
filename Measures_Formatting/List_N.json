@@ -1,0 +1,212 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+  "hideColumnHeader": true,
+  "hideSelection": true,
+  "rowFormatter": {
+    "elmType": "div",
+    "style": {
+      "display": "flex",
+      "flex-direction": "column",
+      "align-items": "flex-start"
+    },
+    "children": [
+      {
+        "elmType": "div",
+        "attributes": {
+          "class": "ms-bgColor-themePrimary ms-fontColor-white"
+        },
+        "style": {
+          "display": "=if(@rowIndex == 0, 'flex', 'none')",
+          "font-weight": "bold",
+          "font-size": "18px",
+          "width": "100%",
+          "padding": "4px"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "txtContent": "Maatregel",
+            "style": {
+              "flex-grow": "1",
+              "min-width": "150px"
+            }
+          },
+          {
+            "elmType": "div",
+            "txtContent": "Status",
+            "style": {
+              "width": "150px"
+            }
+          },
+          {
+            "elmType": "div",
+            "txtContent": "Soort",
+            "style": {
+              "width": "150px"
+            }
+          },
+          {
+            "elmType": "div",
+            "txtContent": "Wie?",
+            "style": {
+              "width": "150px"
+            }
+          },
+          {
+            "elmType": "div",
+            "txtContent": "Processtap",
+            "style": {
+              "width": "150px"
+            }
+          },
+          {
+            "elmType": "div",
+            "txtContent": "",
+            "style": {
+              "width": "52px"
+              
+            }
+          }
+          
+        ]
+      },
+      {
+        "elmType": "div",
+        "attributes": {
+          "class": "ms-borderColor-neutralQuaternary"
+        },
+        "style": {
+          "display": "flex",
+          "font-size": "16px",
+          "width": "100%",
+          "padding": "0 4px",
+          "border-bottom-width": "1px",
+          "border-bottom-style": "solid"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "txtContent": "[$field_7]",
+            "style": {
+              "flex-grow": "1",
+              "min-width": "150px",
+              "display": "flex",
+              "flex-direction": "column",
+              "justify-content": "center",
+              "padding-left": "5px",
+              "font-size": "15px",
+      "font-weight": "bold"
+    },
+    "customCardProps": {
+      "openOnEvent": "hover",
+      "directionalHint": "leftCenter",
+      "isBeakVisible": true,
+      "formatter": {
+        "elmType": "div",
+        "style": {
+          "font-size": "14px",
+          "border": "rounded",
+          "border-radius": "5px",
+          "padding": "=if([$Toelichting] == '', '0', '10px')",
+          "width": "400px",
+          "background-color": "lightBlue",
+          "display": "=if([$Toelichting] == '', 'none', '')"
+        },
+        "txtContent": "[$Toelichting]"
+      }
+    }
+            
+          },
+          {
+            "elmType": "div",
+            "txtContent": "[$field_10]",
+            "style": {
+              "width": "150px",
+              "display": "flex",
+              "flex-direction": "column",
+              "justify-content": "center",
+              "padding-left": "5px",
+              "border": "1px solid black"
+            }
+          },
+          {
+            "elmType": "div",
+            "txtContent": "[$field_4]",
+            "style": {
+              "width": "150px",
+              "display": "flex",
+              "flex-direction": "column",
+              "justify-content": "center",
+              "padding-left": "5px"
+            }
+          },
+          {
+            "elmType": "div",
+            "txtContent": "[$field_6]",
+            "style": {
+              "width": "150px",
+              "display": "flex",
+              "flex-direction": "column",
+              "justify-content": "center",
+              "padding-left": "5px"
+            }
+          },
+          {
+            "elmType": "div",
+            "txtContent": "[$field_8]",
+            "style": {
+              "width": "150px",
+              "display": "flex",
+              "flex-direction": "column",
+              "justify-content": "center",
+              "padding-left": "5px"
+            }
+          },
+          {
+"elmType": "button",
+    "customRowAction": {
+      "action": "defaultClick"
+    },
+    "attributes": {
+      "title": "Details",
+      "class": "ms-bgColor-white ms-bgColor-themeDark--hover "
+    },
+    "style": {
+      "border": "1px rounded #00368a",
+      "position": "relative",
+      "display": "flex",
+      "flex-direction": "column",
+      "justify-content": "center",
+      "align-items": "center",
+      "border-radius": "100%",
+      "margin": "5px 0",
+      "width": "50px",
+      "height": "50px",
+      "cursor": "pointer",
+      "box-sizing": "border-box",
+      "overflow": "hidden",
+      "text-overflow": "ellipsis"
+    },
+    "children": [
+      {
+        "elmType": "span",
+        "style": {
+          "position": "relative",
+          "width": "50px",
+          "height": "50px",
+          "border-radius": "100%",
+          "padding-top": "8px"
+        },
+        "attributes": {
+          "iconName": "Info",
+          "class": "ms-font-xxl ms-fontColor-themePrimary ms-fontColor-white--hover"
+        }
+      }
+    ]
+          }
+          
+        ]
+      }
+    ]
+  }
+}

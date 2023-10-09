@@ -3,8 +3,7 @@
     "elmType": "div",
     "style": {
       "font-size": "15px",
-      "font-weight": "bold",
-      "min-width": "250px"
+      "font-weight": "bold"
     },
     "txtContent": "@currentField",
     "customCardProps": {

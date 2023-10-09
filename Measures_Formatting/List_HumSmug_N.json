@@ -1,0 +1,620 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+    "hideColumnHeader": false,
+    "hideSelection": true,
+    "rowFormatter": {
+      "elmType": "div",
+      "style": {
+        "display": "flex",
+        "flex-direction": "column",
+        "align-items": "flex-start"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "attributes": {
+            "class": "ms-bgColor-themePrimary ms-fontColor-white"
+          },
+          "style": {
+            "position": "sticky",
+            "display": "=if(@rowIndex == 0, 'flex', 'none')",
+            "font-weight": "bold",
+            "font-size": "18px",
+            "width": "100%",
+            "padding": "20px 4px"
+          },
+          "children": [
+            {
+              "elmType": "div",
+              "txtContent": "Maatregel",
+              "style": {
+                "flex-grow": "1",
+                "min-width": "155px",
+                "padding-left": "15px"
+              }
+            },
+            {
+              "elmType": "div",
+              "txtContent": "Status",
+              "style": {
+                "width": "155px"
+              }
+            },
+            {
+              "elmType": "div",
+              "txtContent": "Soort",
+              "style": {
+                "width": "155px"
+              }
+            },
+            {
+              "elmType": "div",
+              "txtContent": "Wie?",
+              "style": {
+                "width": "155px"
+              }
+            },
+            {
+              "elmType": "div",
+              "txtContent": "Processtap",
+              "style": {
+                "width": "155px"
+              }
+            },
+            {
+              "elmType": "div",
+              "txtContent": "",
+              "style": {
+                "width": "100px"
+              }
+            }
+          ]
+        },
+        {
+          "elmType": "div",
+          "attributes": {
+            "class": "ms-borderColor-neutralQuaternary ms-bgColor-themeLighter--hover"
+          },
+          "style": {
+            "display": "flex",
+            "font-size": "16px",
+            "width": "100%",
+            "padding": "0 4px",
+            "border-bottom-width": "1px",
+            "border-bottom-style": "solid"
+          },
+          "children": [
+            {
+              "elmType": "div",
+              "txtContent": "[$Title]",
+              "style": {
+                "flex-grow": "1",
+                "min-width": "150px",
+                "display": "flex",
+                "flex-direction": "column",
+                "justify-content": "center",
+                "padding-left": "5px",
+                "font-size": "15px",
+                "font-weight": "bold"
+              },
+              "customCardProps": {
+                "openOnEvent": "hover",
+                "directionalHint": "leftCenter",
+                "isBeakVisible": true,
+                "formatter": {
+                  "elmType": "div",
+                  "style": {
+                    "font-size": "18px",
+                    "border": "rounded",
+                    "border-radius": "5px",
+                    "padding": "=if([$Toelichting] == '', '0', '20px')",
+                    "width": "400px",
+                    "background-color": "#F7C73D",
+                    "color": "white",
+                    "display": "=if([$Toelichting] == '', 'none', '')"
+                  },
+                  "txtContent": "[$Toelichting]"
+                }
+              }
+            },
+            {
+              "elmType": "div",
+              "txtContent": "[$field_10]",
+              "style": {
+                "width": "150px",
+                "display": "flex",
+                "flex-direction": "column",
+                "justify-content": "center",
+                "padding-left": "5px"
+              }
+            },
+            {
+              "elmType": "div",
+              "txtContent": "[$field_4]",
+              "style": {
+                "width": "150px",
+                "display": "flex",
+                "flex-direction": "column",
+                "justify-content": "center",
+                "padding-left": "5px"
+              }
+            },
+            {
+              "elmType": "div",
+              "txtContent": "[$field_6]",
+              "style": {
+                "width": "150px",
+                "display": "flex",
+                "flex-direction": "column",
+                "justify-content": "center",
+                "padding-left": "5px"
+              }
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "width": "150px",
+                "display": "flex",
+                "flex-direction": "row",
+                "justify-content": "flex-start",
+                "flex-wrap": "wrap",
+                "align-items": "center",
+                "padding-left": "5px"
+              },
+              "children": [
+                {
+                  "elmType": "div",
+                  "txtContent": "=if(indexOf([$field_8], 'Rekrutering') >= 0, '1','')",
+                  "style": {
+                    "background-color": "#cc6600",
+                    "color": "#fff",
+                    "padding": "5px",
+                    "border-radius": "100%",
+                    "width": "30px",
+                    "height": "30px",
+                    "font-size": "20px",
+                    "text-align": "center",
+                    "display": "=if(indexOf([$field_8], 'Rekrutering') >= 0, '','none')"
+                  }
+                },
+                {
+                  "elmType": "div",
+                  "txtContent": "=if(indexOf([$field_8], 'Reis') >= 0, '2','')",
+                  "style": {
+                    "background-color": "#cc6600",
+                    "color": "#fff",
+                    "padding": "5px",
+                    "margin": "3px 3px 3px 0",
+                    "border-radius": "100%",
+                    "width": "30px",
+                    "height": "30px",
+                    "font-size": "20px",
+                    "text-align": "center",
+                    "display": "=if(indexOf([$field_8], 'Reis') >= 0, '','none')"
+                  }
+                },
+                {
+                  "elmType": "div",
+                  "txtContent": "=if(indexOf([$field_8], 'België binnen') >= 0, '3','')",
+                  "style": {
+                    "background-color": "#cc6600",
+                    "color": "#fff",
+                    "padding": "5px",
+                    "margin": "3px 3px 3px 0",
+                    "border-radius": "100%",
+                    "width": "30px",
+                    "height": "30px",
+                    "font-size": "20px",
+                    "text-align": "center",
+                    "display": "=if(indexOf([$field_8], 'België binnen') >= 0, '','none')"
+                  }
+                },
+                {
+                  "elmType": "div",
+                  "txtContent": "=if(indexOf([$field_8], 'Verblijf in België') >= 0, '4','')",
+                  "style": {
+                    "background-color": "#cc6600",
+                    "color": "#fff",
+                    "padding": "5px",
+                    "margin": "3px 3px 3px 0",
+                    "border-radius": "100%",
+                    "width": "30px",
+                    "height": "30px",
+                    "font-size": "20px",
+                    "text-align": "center",
+                    "display": "=if(indexOf([$field_8], 'Verblijf in België') >= 0, '','none')"
+                  }
+                },
+                {
+                  "elmType": "div",
+                  "txtContent": "=if(indexOf([$field_8], 'België buiten') >= 0, '5','')",
+                  "style": {
+                    "background-color": "#cc6600",
+                    "color": "#fff",
+                    "padding": "5px",
+                    "margin": "3px 3px 3px 0",
+                    "border-radius": "100%",
+                    "width": "30px",
+                    "height": "30px",
+                    "font-size": "20px",
+                    "text-align": "center",
+                    "display": "=if(indexOf([$field_8], 'België buiten') >= 0, '','none')"
+                  }
+                }
+              ],
+              "customCardProps": {
+                "formatter": {
+                  "elmType": "div",
+                  "children": [
+                    {
+                      "elmType": "div",
+                      "children": [
+                        {
+                          "elmType": "div",
+                          "style": {
+                            "padding": "15px 45px 15px 15px"
+                          },
+                          "children": [
+                            {
+                              "elmType": "div",
+                              "children": [
+                                {
+                                  "elmType": "div",
+                                  "style": {
+                                    "font-size": "18px",
+                                    "font-weight": "550",
+                                    "text-align": "center",
+                                    "margin-bottom": "10px"
+                                  },
+                                  "txtContent": "Procesmodel"
+                                }
+                              ]
+                            },
+                            {
+                              "elmType": "div",
+                              "children": [
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "font-size": "16px",
+                                    "font-weight": "600",
+                                    "padding-left": "15px"
+                                  },
+                                  "txtContent": " ",
+                                  "attributes": {
+                                    "iconName": "=if(indexOf([$field_8], 'Rekrutering') >= 0, 'StatusCircleCheckmark', '')",
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'Rekrutering') >= 0, 'green','neutralSecondaryAlt')"
+                                  }
+                                },
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "font-size": "16px",
+                                    "font-weight": "600"
+                                  },
+                                  "txtContent": " ",
+                                  "attributes": {
+                                    "iconName": "CircleRing",
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'Rekrutering') >= 0, 'green','neutralSecondaryAlt')"
+                                  }
+                                },
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "font-size": "=if(indexOf([$field_8], 'Rekrutering') >= 0, '16px', ''",
+                                    "font-weight": "=if(indexOf([$field_8], 'Rekrutering') >= 0, '600', ''",
+                                    "padding-left": "9px"
+                                  },
+                                  "txtContent": "Rekrutering",
+                                  "attributes": {
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'Rekrutering') >= 0, 'green','neutralSecondaryAlt')"
+                                  }
+                                },
+                                {
+                                  "elmType": "div",
+                                  "style": {
+                                    "font-size": "10px",
+                                    "font-weight": "600",
+                                    "text-align": "center"
+                                  },
+                                  "attributes": {
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'Reis') >= 0, 'black', 'black')"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "elmType": "div",
+                              "children": [
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "border-left-style": "solid",
+                                    "border-left-color": "='ms-borderColor-' + if(indexOf([$field_8], 'Reis') >= 0, 'green','neutralSecondaryAlt')",
+                                    "text-align": "center",
+                                    "margin-left": "21px"
+                                  },
+                                  "attributes": {
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'Reis') >= 0, 'green','neutralSecondaryAlt')"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "elmType": "div",
+                              "children": [
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "font-size": "16px",
+                                    "font-weight": "600",
+                                    "padding-left": "15px"
+                                  },
+                                  "txtContent": " ",
+                                  "attributes": {
+                                    "iconName": "=if(indexOf([$field_8], 'Reis') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'Reis') >= 0, 'green','neutralSecondaryAlt')"
+                                  }
+                                },
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "font-size": "16px",
+                                    "font-weight": "600",
+                                    "margin-left": "-16px"
+                                  },
+                                  "txtContent": " ",
+                                  "attributes": {
+                                    "iconName": "CircleRing",
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'Reis') >= 0, 'green','neutralSecondaryAlt')"
+                                  }
+                                },
+                                {
+                                  "elmType": "span",
+                                  "txtContent": "Reis",
+                                  "style": {
+                                    "font-size": "=if(indexOf([$field_8], 'Reis') >= 0, '16px', ''",
+                                    "font-weight": "=if(indexOf([$field_8], 'Reis') >= 0, '600', ''",
+                                    "padding-left": "9px"
+                                  },
+                                  "attributes": {
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'Reis') >= 0, 'green','neutralSecondaryAlt')"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "elmType": "div",
+                              "children": [
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "border-left-style": "solid",
+                                    "border-left-color": "='ms-borderColor-' + if(indexOf([$field_8], 'België binnen') >= 0,'green','neutralSecondaryAlt')",
+                                    "margin-left": "21px"
+                                  },
+                                  "attributes": {
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'België binnen') >= 0,'green','neutralSecondaryAlt')"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "elmType": "div",
+                              "children": [
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "font-size": "16px",
+                                    "font-weight": "600",
+                                    "padding-left": "15px"
+                                  },
+                                  "txtContent": " ",
+                                  "attributes": {
+                                    "iconName": "=if(indexOf([$field_8], 'België binnen') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'België binnen') >= 0,'green','neutralSecondaryAlt')"
+                                  }
+                                },
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "font-size": "16px",
+                                    "font-weight": "600",
+                                    "margin-left": "-16px"
+                                  },
+                                  "txtContent": " ",
+                                  "attributes": {
+                                    "iconName": "CircleRing",
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'België binnen') >= 0,'green','neutralSecondaryAlt')"
+                                  }
+                                },
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "font-size": "=if(indexOf([$field_8], 'België binnen') >= 0, '16px', ''",
+                                    "font-weight": "=if(indexOf([$field_8], 'België binnen') >= 0, '600', ''",
+                                    "padding-left": "9px"
+                                  },
+                                  "txtContent": "België binnen",
+                                  "attributes": {
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'België binnen') >= 0, 'green','neutralSecondaryAlt')"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "elmType": "div",
+                              "children": [
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "border-left-style": "solid",
+                                    "border-left-color": "='ms-borderColor-' + if(indexOf([$field_8], 'Verblijf in België') >= 0,'green','neutralSecondaryAlt')",
+                                    "margin-left": "21px"
+                                  },
+                                  "attributes": {
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'Verblijf in België') >= 0,'green','neutralSecondaryAlt')"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "elmType": "div",
+                              "children": [
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "font-size": "16px",
+                                    "font-weight": "600",
+                                    "padding-left": "15px"
+                                  },
+                                  "txtContent": " ",
+                                  "attributes": {
+                                    "iconName": "=if(indexOf([$field_8], 'Verblijf in België') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'Verblijf in België') >= 0,'green','neutralSecondaryAlt')"
+                                  }
+                                },
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "font-size": "16px",
+                                    "font-weight": "600",
+                                    "margin-left": "-16px"
+                                  },
+                                  "txtContent": " ",
+                                  "attributes": {
+                                    "iconName": "CircleRing",
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'Verblijf in België') >= 0,'green','neutralSecondaryAlt')"
+                                  }
+                                },
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "font-size": "=if(indexOf([$field_8], 'Verblijf in België') >= 0, '16px', ''",
+                                    "font-weight": "=if(indexOf([$field_8], 'Verblijf in België') >= 0, '600', ''",
+                                    "padding-left": "9px"
+                                  },
+                                  "txtContent": "Verblijf in België",
+                                  "attributes": {
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'Verblijf in België') >= 0, 'green','neutralSecondaryAlt')"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "elmType": "div",
+                              "children": [
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "border-left-style": "solid",
+                                    "border-left-color": "='ms-borderColor-' + if(indexOf([$field_8], 'België buiten') >= 0,'green','neutralSecondaryAlt')",
+                                    "margin-left": "21px"
+                                  },
+                                  "attributes": {
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'België buiten') >= 0,'green','neutralSecondaryAlt')"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "elmType": "div",
+                              "children": [
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "font-size": "16px",
+                                    "font-weight": "600",
+                                    "padding-left": "15px"
+                                  },
+                                  "txtContent": " ",
+                                  "attributes": {
+                                    "iconName": "=if(indexOf([$field_8], 'België buiten') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'België buiten') >= 0,'green','neutralSecondaryAlt')"
+                                  }
+                                },
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "font-size": "16px",
+                                    "font-weight": "600",
+                                    "margin-left": "-16px"
+                                  },
+                                  "txtContent": " ",
+                                  "attributes": {
+                                    "iconName": "CircleRing",
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'België buiten') >= 0,'green','neutralSecondaryAlt')"
+                                  }
+                                },
+                                {
+                                  "elmType": "span",
+                                  "style": {
+                                    "font-size": "=if(indexOf([$field_8], 'België buiten') >= 0, '16px', ''",
+                                    "font-weight": "=if(indexOf([$field_8], 'België buiten') >= 0, '600', ''",
+                                    "padding-left": "9px"
+                                  },
+                                  "txtContent": "België buiten",
+                                  "attributes": {
+                                    "class": "='ms-fontColor-' + if(indexOf([$field_8], 'België buiten') >= 0, 'green','neutralSecondaryAlt')"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "openOnEvent": "hover",
+                "directionalHint": "bottomCenter",
+                "isBeakVisible": true
+              }
+            },
+            {
+              "elmType": "button",
+              "customRowAction": {
+                "action": "defaultClick"
+              },
+              "attributes": {
+                "title": "Details",
+                "class": "ms-bgColor-white ms-bgColor-themeDark--hover "
+              },
+              "style": {
+                "border": "1px rounded #00368a",
+                "position": "relative",
+                "display": "flex",
+                "flex-direction": "column",
+                "justify-content": "center",
+                "align-items": "center",
+                "border-radius": "100%",
+                "margin": "5px 24px",
+                "width": "50px",
+                "height": "50px",
+                "cursor": "pointer",
+                "box-sizing": "border-box",
+                "overflow": "hidden",
+                "text-overflow": "ellipsis"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "style": {
+                    "position": "relative",
+                    "width": "50px",
+                    "height": "50px",
+                    "border-radius": "100%",
+                    "padding-top": "8px"
+                  },
+                  "attributes": {
+                    "iconName": "Info",
+                    "class": "ms-font-xxl ms-fontColor-themePrimary ms-fontColor-white--hover"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
