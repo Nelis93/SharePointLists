@@ -9,7 +9,7 @@
       {
         "elmType": "div",
         "style": {
-          "display": "=if([$Filter] == 'yes', 'none','')"
+          "display": "=if(@rowIndex == 0 && [$Filter] == 'yes', 'none','')"
         },
         "hideColumnHeader": false,
         "hideSelection": true,
@@ -642,7 +642,7 @@
       {
         "elmType": "div",
         "style": {
-          "display": "=if([$Filter] == 'yes', '','none')"
+          "display": "=if(@rowIndex == 0 && [$Filter] == 'yes', '','none')"
         },
         "hideColumnHeader": true,
         "hideSelection": true,
