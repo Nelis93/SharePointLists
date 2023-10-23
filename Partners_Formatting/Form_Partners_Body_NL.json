@@ -1,0 +1,38 @@
+{
+    "sections": [
+        {
+            "displayname": "NL",
+            "fields": [
+                "Titel_NL",
+                "Betrokkenheid_Lang_NL",
+                "Website_NL",
+                "Locatie_NL",
+                "Tel",
+                "Email_NL",
+                "Bijlagen"
+            ]
+        },
+        {
+            "displayname": "FR",
+            "fields": [
+                "Titre_FR",
+                "Implication_Longue_FR",
+                "Website_FR",
+                "Location_FR",
+                "Tel",
+                "Email_FR",
+                "Bijlagen"
+            ]
+        },
+        {
+            "displayname": "Filters",
+            "fields": [
+                "Relatiet_x002e_o_x002e_v_x002e_B",
+                "RelationaveclaBelgique",
+                "Relatiet_x002e_o_x002e_v_x002e_G",
+                "RelationavecGPI",
+                "Phenomenon"
+            ]
+        }
+    ]
+}

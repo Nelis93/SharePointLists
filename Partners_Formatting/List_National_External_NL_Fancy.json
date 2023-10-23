@@ -254,17 +254,16 @@
                     "attributes": {
                       "title": "[$Website_NL]",
                       "class": " sp-card-content ms-fontColor-white--hover ms-borderColor-themePrimary ms-borderColor-white--hover",
-                      "iconName": "Website"
+                      "iconName": "Globe"
                     },
                     "style": {
-                      "font-weight": "bold",
+                      "font-weight": "semi-bold",
                       "position": "absolute",
                       "display": "=if ([$Website_NL] == '', 'none', 'flex')",
                       "flex-direction": "column",
                       "justify-content": "center",
                       "font-size": "25px",
                       "border-radius": "100%",
-                      "border": "3px solid",
                       "width": "100%",
                       "height": "100%",
                       "text-align": "center"
@@ -324,14 +323,13 @@
                       "iconName": "Phone"
                     },
                     "style": {
-                      "font-weight": "bold",
+                      "font-weight": "semi-bold",
                       "position": "absolute",
                       "display": "=if ([$Tel] == '', 'none', 'flex')",
                       "flex-direction": "column",
                       "justify-content": "center",
                       "font-size": "25px",
                       "border-radius": "100%",
-                      "border": "3px solid",
                       "width": "100%",
                       "height": "100%",
                       "text-align": "center"
@@ -385,14 +383,13 @@
                       "iconName": "Mail"
                     },
                     "style": {
-                      "font-weight": "bold",
+                      "font-weight": "semi-bold",
                       "position": "absolute",
                       "display": "=if ([$Email_NL] == '', 'none', 'flex')",
                       "flex-direction": "column",
                       "justify-content": "center",
                       "font-size": "25px",
                       "border-radius": "100%",
-                      "border": "3px solid",
                       "width": "100%",
                       "height": "100%",
                       "text-align": "center"
