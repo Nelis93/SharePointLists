@@ -26,7 +26,6 @@
         "children": [
           {
             "elmType": "div",
-            "txtContent": "",
             "style": {
               "width": "100px"
             }
@@ -36,8 +35,7 @@
             "txtContent": "Maatregel",
             "style": {
               "flex-grow": "1",
-              "min-width": "155px",
-              "padding-left": "15px"
+              "min-width": "155px"
             }
           },
           {
@@ -159,7 +157,7 @@
               "openOnEvent": "hover",
               "directionalHint": "topRightEdge",
               "isBeakVisible": true,
-              "beakStyle":{
+              "beakStyle": {
                 "background-color": "#D6E2E0"
               },
               "formatter": {

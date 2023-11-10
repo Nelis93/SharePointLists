@@ -1,0 +1,1 @@
+slice(first(first(outputs('Send_an_HTTP_request_to_SharePoint'))?['body/value'])?['Logo'], add(indexOf(first(first(outputs('Send_an_HTTP_request_to_SharePoint'))?['body/value'])?['Logo'], 'serverRelativeUrl'), 20), sub(indexOf(first(first(outputs('Send_an_HTTP_request_to_SharePoint'))?['body/value'])?['Logo'], 'id'), 3))

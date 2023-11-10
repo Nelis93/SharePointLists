@@ -61,6 +61,7 @@
                     "style": {
                       "background-color": "white",
                       "display": "flex",
+                      "height": "150px",
                       "justify-content": "center",
                       "align-items": "center"
                     },
@@ -69,8 +70,8 @@
                         "elmType": "img",
                         "style": {
                           "display": "=if([$Logo] == '', 'none', '')",
-                          "max-width": "50%",
-                          "max-height": "50%"
+                          "max-width": "75%",
+                          "max-height": "75%"
                         },
                         "attributes": {
                           "src": "=getThumbnailImage([$Logo], 400, 400)",
@@ -182,10 +183,10 @@
               {
                 "elmType": "div",
                 "attributes": {
-                  "title": "[$Locatie_NL.DisplayName]",
+                  "title": "[$Location.DisplayName]",
                   "class": "ms-fontColor-neutralPrimary sp-card-content "
                 },
-                "txtContent": "=if ([$Locatie_NL] == '', '', [$Locatie_NL.DisplayName])",
+                "txtContent": "=if ([$Location] == '', 'test', [$Location])",
                 "style": {
                   "text-align": "center",
                   "font-style": "italic"
@@ -199,24 +200,24 @@
               "class": "sp-card-displayColumnContainer"
             },
             "style": {
-              "flex-grow":"1",
+              "flex-grow": "1",
               "padding-bottom": "10px"
             },
             "children": [
               {
                 "elmType": "div",
                 "attributes": {
-                  "title": "[$Betrokkenheid_NL]",
+                  "title": "[$Implication_FR]",
                   "class": "ms-fontColor-neutralPrimary sp-card-content  sp-card-multiline"
                 },
-                "txtContent": "=if ([$Betrokkenheid_NL] == '', '', [$Betrokkenheid_NL])",
+                "txtContent": "=if ([$Implication_FR] == '', '', [$Implication_FR])",
                 "style": {
                   "overflow-y": "hidden",
                   "flex-grow": "1",
                   "min-height": "100px",
                   "max-height": "140px",
                   "padding-right": "8px",
-                  "-webkit-line-clamp": "8",
+                  "-webkit-line-clamp": "6",
                   "word-break": "break-word",
                   "text-align": "justify"
                 }
@@ -230,7 +231,6 @@
               "z-index": "10",
               "display": "flex",
               "flex-direction": "column",
-              
               "justify-content": "flex-end"
             },
             "children": [
@@ -241,7 +241,7 @@
                 },
                 "style": {
                   "postion": "relative",
-                  "display": "=if([$Website_NL] == '', 'none', 'flex')",
+                  "display": "=if([$Website_FR] == '', 'none', 'flex')",
                   "flex-direction": "row",
                   "z-index": "10",
                   "align-items": "center",
@@ -265,21 +265,21 @@
                   {
                     "elmType": "a",
                     "attributes": {
-                      "title": "[$Website_NL]",
+                      "title": "[$Website_FR]",
                       "class": "ms-fontColor-themeDark ms-fontColor-black--hover",
-                      "href": "[$Website_NL]",
-                      "target": "=if ([$Website_NL] == '', '', '_blank')"
+                      "href": "[$Website_FR]",
+                      "target": "=if ([$Website_FR] == '', '', '_blank')"
                     },
                     "style": {
                       "position": "relative",
                       "flex-grow": "1",
                       "padding": "3px 0",
                       "z-index": "10",
-                      "pointer-events": "=if ([$Website_NL] == '', 'none', 'auto')",
-                      "text-decoration": "=if ([$Website_NL] == '', 'none', 'auto')",
-                      "display": "=if ([$Website_NL] == '', 'none', 'block')"
+                      "pointer-events": "=if ([$Website_FR] == '', 'none', 'auto')",
+                      "text-decoration": "=if ([$Website_FR] == '', 'none', 'auto')",
+                      "display": "=if ([$Website_FR] == '', 'none', 'block')"
                     },
-                    "txtContent": "=if ([$Website_NL.desc] == '', '', [$Website_NL.desc])"
+                    "txtContent": "=if ([$Website_FR.desc] == '', '', [$Website_FR.desc])"
                   }
                 ]
               },
@@ -328,7 +328,7 @@
                   "class": "ms-bgColor-themeLighter--hover ms-fontColor-themeDarker ms-fontColor-black--hover"
                 },
                 "style": {
-                  "display": "=if ([$Email_NL] == '', 'none', 'flex')",
+                  "display": "=if ([$Email_FR] == '', 'none', 'flex')",
                   "flex-direction": "row",
                   "align-items": "center",
                   "border-radius": "5px",
@@ -349,19 +349,19 @@
                   {
                     "elmType": "a",
                     "style": {
-                      "pointer-events": "=if ([$Website_NL] == '', 'none', 'auto')",
-                      "text-decoration": "=if ([$Website_NL] == '', 'none', 'auto')",
+                      "pointer-events": "=if ([$Website_FR] == '', 'none', 'auto')",
+                      "text-decoration": "=if ([$Website_FR] == '', 'none', 'auto')",
                       "flex-grow": "1",
                       "font-weight": "14px",
                       "padding": "3px 0",
-                      "display": "=if ([$Email_NL] == '', 'none', 'block')"
+                      "display": "=if ([$Email_FR] == '', 'none', 'block')"
                     },
                     "attributes": {
-                      "title": "[$Email_NL]",
+                      "title": "[$Email_FR]",
                       "class": "ms-fontColor-themeDark ms-fontColor-black--hover",
-                      "href": "=if ([$Email_NL] == '', '', 'mailto:'+[$Email_NL])"
+                      "href": "=if ([$Email_FR] == '', '', 'mailto:'+[$Email_FR])"
                     },
-                    "txtContent": "=if ([$Email_NL] == '', '', [$Email_NL])"
+                    "txtContent": "=if ([$Email_FR] == '', '', [$Email_FR])"
                   }
                 ]
               },
@@ -385,6 +385,7 @@
                       "flex-direction": "row",
                       "flex-grow": "1",
                       "border-radius": "5px",
+                      "margin-bottom": "5px",
                       "min-width": "50%",
                       "align-items": "center"
                     },
