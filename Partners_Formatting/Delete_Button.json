@@ -22,7 +22,7 @@
           "border": "none",
           "display": "flex",
           "justify-content": "center",
-          "align-items": "center",
+          "align-items": "flex-end",
           "background-color": "transparent",
           "height": "0px",
           "width": "0px",
@@ -35,7 +35,7 @@
               "iconName": "Delete"
             },
             "style": {
-              "font-size": "40px"
+              "font-size": "20px"
             }
           }
         ]

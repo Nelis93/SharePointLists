@@ -33,7 +33,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "Maatregel",
+            "txtContent": "Mesure",
             "style": {
               "flex-grow": "1",
               "min-width": "155px",
@@ -42,7 +42,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "Status",
+            "txtContent": "Statut",
             "style": {
               "width": "155px",
               "display": "=if(@window.innerWidth < 1500, 'none', '')"
@@ -50,7 +50,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "Soort",
+            "txtContent": "Sorte",
             "style": {
               "width": "155px",
               "display": "=if(@window.innerWidth < 1500, 'none', '')"
@@ -58,7 +58,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "Wie?",
+            "txtContent": "Qui?",
             "style": {
               "width": "155px",
               "display": "=if(@window.innerWidth < 1500, 'none', '')"
@@ -66,7 +66,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "Processtap",
+            "txtContent": "Etape",
             "style": {
               "width": "155px",
               "display": "=if(@window.innerWidth < 1500, 'none', '')"
@@ -93,7 +93,7 @@
             "elmType": "div",
             "style": {
               "width": "100px",
-              "height": "[$field_8].height",
+              "height": "[$field_9].height",
               "display": "flex",
               "flex-direction": "column",
               "justify-content": "center"
@@ -145,7 +145,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "[$Title]",
+            "txtContent": "[$field_1]",
             "style": {
               "flex-grow": "1",
               "min-width": "150px",
@@ -166,19 +166,19 @@
                   "font-size": "18px",
                   "border": "rounded",
                   "border-radius": "5px",
-                  "padding": "=if([$Toelichting] == '', '0', '20px')",
+                  "padding": "=if([$Explication] == '', '0', '20px')",
                   "width": "400px",
                   "background-color": "#D6E2E0 ",
                   "color": "black",
-                  "display": "=if([$Toelichting] == '', 'none', '')"
+                  "display": "=if([$Explication] == '', 'none', '')"
                 },
-                "txtContent": "[$Toelichting]"
+                "txtContent": "[$Explication]"
               }
             }
           },
           {
             "elmType": "div",
-            "txtContent": "[$field_10]",
+            "txtContent": "[$field_11]",
             "style": {
               "width": "150px",
               "display": "=if(@window.innerWidth < 1500, 'none', 'flex')",
@@ -189,7 +189,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "[$field_4]",
+            "txtContent": "[$field_5]",
             "style": {
               "width": "150px",
               "display": "=if(@window.innerWidth < 1500, 'none', 'flex')",
@@ -200,7 +200,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "[$field_6]",
+            "txtContent": "[$field_7]",
             "style": {
               "width": "150px",
               "display": "=if(@window.innerWidth < 1500, 'none', 'flex')",
@@ -211,7 +211,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "[$field_8]",
+            "txtContent": "[$field_9]",
             "style": {
               "width": "150px",
               "display": "=if(@window.innerWidth < 1500, 'none', 'flex')",
