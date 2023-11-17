@@ -1,44 +1,44 @@
 {
-    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
-    "elmType": "div",
-    "style": {
-      "width": "100px",
-      "height": "75px",
-      "display": "flex",
-      "flex-direction": "column",
-      "justify-content": "center"
-    },
-    "children": [
-      {
-        "elmType": "button",
-        "customRowAction": {
-          "action": "executeFlow",
-          "actionParams": "{\"id\": \"d5f4d315-61c2-427d-a119-b8bd0d4cdce6\",\"headerText\":\"Verwijderen/Supprimez\",\"runFlowButtonText\":\"Delete\"}"
-        },
-        "attributes": {
-          "class": "ms-fontColor-themePrimary ms-fontColor-white--hover"
-        },
-        "style": {
-          "border": "none",
-          "display": "flex",
-          "justify-content": "center",
-          "align-items": "flex-end",
-          "background-color": "transparent",
-          "height": "0px",
-          "width": "0px",
-          "cursor": "pointer"
-        },
-        "children": [
-          {
-            "elmType": "span",
-            "attributes": {
-              "iconName": "Delete"
-            },
-            "style": {
-              "font-size": "20px"
-            }
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "width": "100px",
+    "height": "75px",
+    "display": "flex",
+    "flex-direction": "column",
+    "justify-content": "center"
+  },
+  "children": [
+    {
+      "elmType": "button",
+      "customRowAction": {
+        "action": "executeFlow",
+        "actionParams": "{\"id\": \"d5f4d315-61c2-427d-a119-b8bd0d4cdce6\",\"headerText\":\"Verwijderen/Supprimez\",\"runFlowButtonText\":\"Delete\"}"
+      },
+      "attributes": {
+        "class": "ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"
+      },
+      "style": {
+        "border": "none",
+        "display": "flex",
+        "justify-content": "center",
+        "align-items": "flex-end",
+        "background-color": "transparent",
+        "height": "0px",
+        "width": "0px",
+        "cursor": "pointer"
+      },
+      "children": [
+        {
+          "elmType": "span",
+          "attributes": {
+            "iconName": "Delete"
+          },
+          "style": {
+            "font-size": "20px"
           }
-        ]
-      }
-    ]
-  }
+        }
+      ]
+    }
+  ]
+}
