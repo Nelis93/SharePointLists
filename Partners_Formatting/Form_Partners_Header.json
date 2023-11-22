@@ -23,17 +23,6 @@
                     "attributes": {
                         "class": "ms-fontSize-28 ms-fontWeight-bold"
                     }
-                },
-                {
-                    "elmType": "div",
-                    "txtContent": "[$Description]",
-                    "style": {
-                        "text-align": "left",
-                        "display": "=if([$Description] == '' , 'none' , '')"
-                    },
-                    "attributes": {
-                        "class": "ms-fontSize-16"
-                    }
                 }
             ]
         }

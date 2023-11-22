@@ -169,7 +169,9 @@
                 "txtContent": "=if ([$Title] == '', '', [$Title])",
                 "style": {
                   "text-align": "center",
-                  "font-size": "1.2em"
+                  "font-size": "1.2em",
+                  "word-break":"break-word",
+                  "text-wrap": "wrap"
                 }
               }
             ]
@@ -186,8 +188,9 @@
                   "title": "[$Locatie_NL0.DisplayName]",
                   "class": "ms-fontColor-neutralPrimary sp-card-content "
                 },
-                "txtContent": "=if ([$Locatie_NL0] == '', 'test', [$Locatie_NL0])",
+                "txtContent": "[$Locatie_NL0]",
                 "style": {
+                  "display": "=if ([$Title.length] > 46 && [$LocatieNL] == '', 'none', '')",
                   "text-align": "center",
                   "font-style": "italic"
                 }
