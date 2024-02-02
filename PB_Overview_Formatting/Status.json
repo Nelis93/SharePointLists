@@ -1,158 +1,180 @@
 {
-    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
-    "elmType": "div",
-    "style": {
-      "display": "flex",
-      "flex-direction": "column",
-      "justify-content": "space-between",
-      "align-items": "center"
-    },
-    "children": [
-      {
-        "elmType": "div",
-        "style": {
-          "box-sizing": "border-box",
-          "padding": "7px",
-          "border": "2px solid #00368a",
-          "border-radius": "5px",
-          "margin": "10px auto",
-          "overflow": "hidden",
-          "text-overflow": "ellipsis"
-        },
-        "attributes": {
-          "class": {
-            "operator": ":",
-            "operands": [
-              {
-                "operator": "==",
-                "operands": [
-                  "[$Status]",
-                  "empty site"
-                ]
-              },
-              "sp-css-backgroundColor-themeLighter sp-field-fontSizeSmall sp-css-color-themeDark",
-              {
-                "operator": ":",
-                "operands": [
-                  {
-                    "operator": "==",
-                    "operands": [
-                      "[$Status]",
-                      "in draft"
-                    ]
-                  },
-                  "sp-css-backgroundColor-themeLight sp-field-fontSizeSmall sp-css-color-white",
-                  {
-                    "operator": ":",
-                    "operands": [
-                      {
-                        "operator": "==",
-                        "operands": [
-                          "[$Status]",
-                          "in review"
-                        ]
-                      },
-                      "sp-css-backgroundColor-themePrimary sp-field-fontSizeSmall sp-css-color-white",
-                      {
-                        "operator": ":",
-                        "operands": [
-                          {
-                            "operator": "==",
-                            "operands": [
-                              "[$Status]",
-                              "published (ltd)"
-                            ]
-                          },
-                          "sp-css-backgroundColor-themeDark sp-field-fontSizeSmall sp-css-color-white",
-                          {
-                            "operator": ":",
-                            "operands": [
-                              {
-                                "operator": "==",
-                                "operands": [
-                                  "[$Status]",
-                                  "published (All)"
-                                ]
-                              },
-                              "sp-css-backgroundColor-themeDarker sp-field-fontSizeSmall sp-css-color-white",
-                              {
-                                "operator": ":",
-                                "operands": [
-                                  {
-                                    "operator": "==",
-                                    "operands": [
-                                      "[$Status]",
-                                      "in update"
-                                    ]
-                                  },
-                                  "sp-css-backgroundColor-themeDark sp-field-fontSizeSmall sp-css-color-white",
-                                  {
-                                    "operator": ":",
-                                    "operands": [
-                                      {
-                                        "operator": "==",
-                                        "operands": [
-                                          "[$Status]",
-                                          "update published"
-                                        ]
-                                      },
-                                      "sp-css-backgroundColor-themeDarker sp-field-fontSizeSmall sp-css-color-white",
-                                      ""
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        "txtContent": "[$Status]"
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "display": "flex",
+    "flex-direction": "column",
+    "justify-content": "space-between",
+    "align-items": "center"
+  },
+  "children": [
+    {
+      "elmType": "div",
+      "style": {
+        "box-sizing": "border-box",
+        "padding": "7px",
+        "border": "2px solid #00368a",
+        "border-radius": "5px",
+        "margin": "10px auto",
+        "overflow": "hidden",
+        "text-overflow": "ellipsis"
       },
-      {
-        "elmType": "div",
-        "style": {
-          "position": "relative",
-          "width": "100%",
-          "margin-bottom": "5px"
-        },
-        "children": [
-          {
-            "elmType": "div",
-            "txtContent": "=if([$Status] == 'empty site', '', if([$Status] == 'in draft', '25%', if([$Status] == 'in review', '50%', if([$Status] == 'published (ltd)', '75%', if([$Status] == 'published (All)', '100%',if([$Status] == 'in update', '🕙',if([$Status] == 'update published', '100%','')))))))",
-            "style": {
-              "position": "absolute",
-              "white-space": "nowrap",
-              "padding": "4px",
-              "background-color": "transparant",
-              "color": "black",
-              "z-index": "10",
-              "margin": "auto 0",
-              "width": "100%",
-              "text-align": "center"
-            }
-          },
-          {
-            "elmType": "div",
-            "attributes": {
-              "class": "=if([$Status] == 'empty site', '', if([$Status] == 'in draft', 'sp-css-backgroundColor-BgOrange', if([$Status] == 'in review', 'sp-css-backgroundColor-yellow', if([$Status] == 'published (ltd)', 'sp-css-backgroundColor-yellowLight', if([$Status] == 'published (All)', 'sp-css-backgroundColor-successBackground50',if([$Status] == 'in update', 'sp-css-backgroundColor-blockingBackground50',if([$Status] == 'update published', 'sp-css-backgroundColor-successBackground50','')))))))"
+      "attributes": {
+        "class": {
+          "operator": ":",
+          "operands": [
+            {
+              "operator": "==",
+              "operands": [
+                "[$Status]",
+                "Empty Site"
+              ]
             },
-            "style": {
-              "width": "=if([$Status] == 'empty site', '0', if([$Status] == 'in draft', '25%', if([$Status] == 'in review', '50%', if([$Status] == 'published (ltd)', '75%', if([$Status] == 'published (All)', '100%',if([$Status] == 'in update', '100%',if([$Status] == 'update published', '100%','')))))))",
-              "min-height": "inherit",
-              "padding": "15px 0",
-              "box-sizing": "border-box",
-              "border": "1px solid white",
-              "border-radius": "5px"
+            "sp-css-backgroundColor-white sp-field-fontSizeMedium sp-css-color-themeDark",
+            {
+              "operator": ":",
+              "operands": [
+                {
+                  "operator": "==",
+                  "operands": [
+                    "[$Status]",
+                    "In Draft 📑"
+                  ]
+                },
+                "sp-css-backgroundColor-themeLighter sp-field-fontSizeMedium sp-css-color-themeDark",
+                {
+                  "operator": ":",
+                  "operands": [
+                    {
+                      "operator": "==",
+                      "operands": [
+                        "[$Status]",
+                        "In Review 🔍"
+                      ]
+                    },
+                    "sp-css-backgroundColor-themeLight sp-field-fontSizeMedium sp-css-color-themeDark",
+                    {
+                      "operator": ":",
+                      "operands": [
+                        {
+                          "operator": "==",
+                          "operands": [
+                            "[$Status]",
+                            "Processing Feedback 🔄"
+                          ]
+                        },
+                        "sp-css-backgroundColor-themePrimary sp-field-fontSizeMedium sp-css-color-white",
+                        {
+                          "operator": ":",
+                          "operands": [
+                            {
+                              "operator": "==",
+                              "operands": [
+                                "[$Status]",
+                                "In Translation 🔠"
+                              ]
+                            },
+                            "sp-css-backgroundColor-themeSecondary sp-field-fontSizeMedium sp-css-color-white",
+                            {
+                              "operator": ":",
+                              "operands": [
+                                {
+                                  "operator": "==",
+                                  "operands": [
+                                    "[$Status]",
+                                    "Published (ltd) 🔒"
+                                  ]
+                                },
+                                "sp-css-backgroundColor-themeDark sp-field-fontSizeMedium sp-css-color-white",
+                                {
+                                  "operator": ":",
+                                  "operands": [
+                                    {
+                                      "operator": "==",
+                                      "operands": [
+                                        "[$Status]",
+                                        "Published (All) 🔓"
+                                      ]
+                                    },
+                                    "sp-css-backgroundColor-themeDarker sp-field-fontSizeMedium sp-css-color-white",
+                                    {
+                                      "operator": ":",
+                                      "operands": [
+                                        {
+                                          "operator": "==",
+                                          "operands": [
+                                            "[$Status]",
+                                            "In Update ⏳"
+                                          ]
+                                        },
+                                        "sp-css-backgroundColor-themeDark sp-field-fontSizeMedium sp-css-color-white",
+                                        {
+                                          "operator": ":",
+                                          "operands": [
+                                            {
+                                              "operator": "==",
+                                              "operands": [
+                                                "[$Status]",
+                                                "Update Published 📣"
+                                              ]
+                                            },
+                                            "sp-css-backgroundColor-themeDarker sp-field-fontSizeMedium sp-css-color-white",
+                                            ""
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
+          ]
+        }
+      },
+      "txtContent": "[$Status]"
+    },
+    {
+      "elmType": "div",
+      "style": {
+        "position": "relative",
+        "width": "100%",
+        "margin-bottom": "5px"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "style": {
+            "position": "absolute",
+            "width": "100%",
+            "border": "2px solid lightgrey",
+            "border-radius": "5px",
+            "min-height": "inherit",
+            "padding": "15px 0"
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "elmType": "div",
+          "attributes": {
+            "class": "=if([$Status] == 'Empty Site', '', if([$Status] == 'In Draft 📑', 'sp-css-backgroundColor-BgDarkRed', if([$Status] == 'In Review 🔍', 'sp-css-backgroundColor-BgOrange', if([$Status] == 'Processing Feedback 🔄', 'sp-css-backgroundColor-yellow', if([$Status] == 'In Translation 🔠', 'sp-css-backgroundColor-warningBackground50', if([$Status] == 'Published (ltd) 🔒', 'sp-css-backgroundColor-yellowLight', if([$Status] == 'Published (All) 🔓', 'sp-css-backgroundColor-successBackground50',if([$Status] == 'In Update ⏳', 'sp-css-backgroundColor-blockingBackground50',if([$Status] == 'Update Published 📣', 'sp-css-backgroundColor-successBackground50',''))))))))) "
+          },
+          "style": {
+            "width": "=if([$Status] == 'Empty Site', '0', if([$Status] == 'In Draft 📑', '16.67%', if([$Status] == 'In Review 🔍', '33.33%', if([$Status] == 'Processing Feedback 🔄', '50%', if([$Status] == 'In Translation 🔠', '66.67%', if([$Status] == 'Published (ltd) 🔒', '83.33%', if([$Status] == 'Published (All) 🔓', '100%',if([$Status] == 'In Update ⏳', '83.33%',if([$Status] == 'Update Published 📣', '100%','')))))))))",
+            "min-height": "inherit",
+            "margin-top": "1px",
+            "padding": "16px 0",
+            "box-sizing": "border-box",
+            "border-radius": "5px"
+          }
+        }
+      ]
+    }
+  ]
+}
