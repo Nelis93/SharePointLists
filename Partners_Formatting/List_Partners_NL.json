@@ -152,6 +152,7 @@
               }
             ]
           },
+          
           {
             "elmType": "div",
             "attributes": {
@@ -162,15 +163,18 @@
                 "elmType": "div",
                 "attributes": {
                   "title": "[$Title]",
-                  "class": "ms-fontColor-neutralPrimary sp-card-content sp-card-highlightedContent",
-                  "role": "heading",
-                  "aria-level": "3"
+                  "class": "ms-fontColor-neutralPrimary"
                 },
                 "txtContent": "=if ([$Title] == '', '', [$Title])",
                 "style": {
+                  "display": "flex",
+                  "align-items": "center",
+                  "justify-content": "center",
+                  "height": "50px",
                   "text-align": "center",
                   "font-size": "1.2em",
-                  "word-break":"break-word",
+                  "font-weight": "600",
+                  "word-break": "break-word",
                   "text-wrap": "wrap"
                 }
               }
@@ -185,12 +189,12 @@
               {
                 "elmType": "div",
                 "attributes": {
-                  "title": "[$Locatie_NL0.DisplayName]",
+                  "title": "[$LocatieNL.DisplayName]",
                   "class": "ms-fontColor-neutralPrimary sp-card-content "
                 },
-                "txtContent": "[$Locatie_NL0]",
+                "txtContent": "[$LocatieNL]",
                 "style": {
-                  "display": "=if ([$Title.length] > 46 && [$LocatieNL] == '', 'none', '')",
+                  "display": "=if ([$LocatieNL] == '', 'none', '')",
                   "text-align": "center",
                   "font-style": "italic"
                 }

@@ -156,14 +156,17 @@
                 "elmType": "div",
                 "attributes": {
                   "title": "[$Title]",
-                  "class": "ms-fontColor-neutralPrimary sp-card-content sp-card-highlightedContent",
-                  "role": "heading",
-                  "aria-level": "3"
+                  "class": "ms-fontColor-neutralPrimary"
                 },
                 "txtContent": "=if ([$Title] == '', '', [$Title])",
                 "style": {
+                  "display": "flex",
+                  "align-items": "center",
+                  "justify-content": "center",
+                  "height": "50px",
                   "text-align": "center",
                   "font-size": "1.2em",
+                  "font-weight": "600",
                   "word-break": "break-word",
                   "text-wrap": "wrap"
                 }
@@ -184,7 +187,7 @@
                 },
                 "txtContent": "[$LocationFR]",
                 "style": {
-                  "display": "=if ([$Title.length] > 46 && [$LocationFR] == '', 'none', '')",
+                  "display": "=if ([$LocationFR] == '', 'none', '')",
                   "text-align": "center",
                   "font-style": "italic"
                 }
