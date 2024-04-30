@@ -6,27 +6,37 @@
       "elmType": "div",
       "style": {
         "box-shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-        "width": "610px",
+        "width": "550px",
         "margin-bottom": "20px"
       },
       "children": [
         {
           "elmType": "div",
+          "style": {
+            "width": "550px"
+          },
           "children": [
             {
               "elmType": "div",
               "style": {
                 "display": "flex",
-                "justify-content": "flex-end"
+              "flex-direction": "row",
+              "flex-wrap": "wrap",
+              "justify-content": "flex-start",
+              "width": "550px"
               },
               "children": [
                 {
                   "elmType": "div",
                   "style": {
-                    "padding": "10px 20px",
-                    "border": "=if([$Position] == 1, '','1px solid #eee')",
-                    "background-color": "=if([$Position] == 1, '','#f5f7fa')",
-                    "cursor": "pointer"
+                    "padding": "0px 10px",
+                    "border": "=if([$Position] == 1, '1px solid white','1px solid #eee')",
+                    "background-color": "=if([$Position] == 1, '#333399','#f5f7fa')",
+                    "cursor": "pointer",
+                    "justify-content": "center",
+                    "height": "60px",
+                    "display": "flex",
+                    "flex-grow": "1"
                   },
                   "customRowAction": {
                     "action": "setValue",
@@ -36,22 +46,14 @@
                   },
                   "children": [
                     {
-                      "elmType": "img",
-                      "style": {
-                        "flex-shrink": "0",
-                        "width": "80px"
-                      },
-                      "attributes": {
-                        "src": "[$Tab1Icon]"
-                      }
-                    },
-                    {
                       "elmType": "div",
                       "style": {
-                        "padding": "10px"
+                        "padding": "10px",
+                        "color": "=if([$Position] == 1, 'white','')",
+                        "align-self": "center"
                       },
                       "attributes": {
-                        "class": "ms-fontSize-18 ms-fontWeight-bold"
+                        "class": "ms-fontSize-14 ms-fontWeight-bold"
                       },
                       "txtContent": "[$TabHead1]"
                     }
@@ -60,10 +62,14 @@
                 {
                   "elmType": "div",
                   "style": {
-                    "padding": "10px 20px",
-                    "border": "=if([$Position] == 2, '','1px solid #eee')",
-                    "background-color": "=if([$Position] == 2, '','#f5f7fa')",
-                    "cursor": "pointer"
+                    "padding": "0px 10px",
+                    "border": "=if([$Position] == 2, '1px solid white','1px solid #eee')",
+                    "background-color": "=if([$Position] == 2, '#333399','#f5f7fa')",
+                    "cursor": "pointer",
+                    "justify-content": "center",
+                    "height": "60px",
+                    "display": "flex",
+                    "flex-grow": "1"
                   },
                   "customRowAction": {
                     "action": "setValue",
@@ -73,22 +79,14 @@
                   },
                   "children": [
                     {
-                      "elmType": "img",
-                      "style": {
-                        "flex-shrink": "0",
-                        "width": "80px"
-                      },
-                      "attributes": {
-                        "src": "[$Tab2Icon]"
-                      }
-                    },
-                    {
                       "elmType": "div",
                       "style": {
-                        "padding": "10px"
+                        "padding": "10px",
+                        "color": "=if([$Position] == 2, 'white','')",
+                        "align-self": "center"
                       },
                       "attributes": {
-                        "class": "ms-fontSize-18 ms-fontWeight-bold"
+                        "class": "ms-fontSize-14 ms-fontWeight-bold"
                       },
                       "txtContent": "[$TabHead2]"
                     }
@@ -99,24 +97,39 @@
             {
               "elmType": "div",
               "style": {
-                "padding": "20px"
+                "padding": "20px 10px 20px 20px",
+              "display":"flex"
               },
               "children": [
                 {
+                  "elmType":"div",
+                  "style":{
+                    "height":"140px",
+                    "width":"140px",
+                    "display":"flex",
+                    "justify-content":"center",
+                    "align-items":"center"
+                  },
+                  "children":[
+                     {
                   "elmType": "img",
                   "style": {
-                    "width": "140px"
+                    "max-width": "75%",
+                            "max-height": "75%"
                   },
                   "attributes": {
-                    "src": "=if([$Position] == 1, [$Tab1Icon], if([$Position] == 2, [$Tab2Icon], ''))"
+                    "src": "=getThumbnailImage(if([$Position] == 1, [$Tab1Icon], if([$Position] == 2, [$Tab2Icon],'')), 140, 140)",
+                    "class": "sp-card-imagePreview"
                   }
+                }
+                  ]
                 },
                 {
                   "elmType": "div",
                   "style": {
                     "display": "inline-block",
-                    "padding": "0px 30px",
-                    "max-width": "370px",
+                    "padding-left": "20px",
+                    "max-width": "300px",
                     "vertical-align": "top"
                   },
                   "children": [
@@ -136,7 +149,7 @@
                         "padding-bottom": "20px"
                       },
                       "attributes": {
-                        "class": "ms-fontSize-18"
+                        "class": "ms-fontSize-14"
                       },
                       "txtContent": "=if([$Position] == 1, [$Tab1Desc],[$Tab2Desc])"
                     },
@@ -144,25 +157,29 @@
                       "elmType": "div",
                       "style": {
                         "background-color": "gray",
-                        "border-radius": "30px",
                         "box-shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)",
                         "position": "relative",
+                        "border-radius": "30px",
                         "width": "90px",
-                        "height": "30px"
+                        "height": "30px",
+                        "display": "flex"
                       },
                       "children": [
                         {
                           "elmType": "a",
                           "style": {
-                            "margin": "5px 10px",
                             "text-decoration": "none",
-                            "position": "absolute",
-                            "color": "white"
+                          "text-align": "center",
+                          "padding-top":"5px",
+                          "color": "white",
+                          "border-radius": "30px",
+                          "width": "90px",
+                          "height": "25px"
                           },
                           "attributes": {
                             "target": "_blank",
                             "href": "=if([$Position] == 1, [$TabUrl1],[$TabUrl2])",
-                            "class": "ms-fontWeight-bold"
+                            "class": "ms-fontWeight-bold ms-bgColor-gray100 ms-bgColor-themePrimary--hover"
                           },
                           "txtContent": "MORE INFO"
                         }

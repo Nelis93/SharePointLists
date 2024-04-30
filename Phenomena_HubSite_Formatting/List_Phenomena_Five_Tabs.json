@@ -1,0 +1,295 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+    "hideColumnHeader": true,
+    "hideSelection": true,
+    "rowFormatter": {
+      "elmType": "div",
+      "style": {
+        "box-shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        "width": "550px",
+        "margin-bottom": "20px"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "style": {
+            "width": "550px"
+          },
+          "children": [
+            {
+              "elmType": "div",
+              "style": {
+                "display": "flex",
+              "flex-direction": "row",
+              "flex-wrap": "wrap",
+              "justify-content": "flex-start",
+              "width": "550px"
+              },
+              "children": [
+                {
+                  "elmType": "div",
+                  "style": {
+                    "padding": "0px 10px",
+                    "border": "=if([$Position] == 1, '1px solid white','1px solid #eee')",
+                    "background-color": "=if([$Position] == 1, '#333399','#f5f7fa')",
+                    "cursor": "pointer",
+                    "justify-content": "center",
+                    "height": "60px",
+                    "display": "flex",
+                    "flex-grow": "1"
+                  },
+                  "customRowAction": {
+                    "action": "setValue",
+                    "actionInput": {
+                      "Position": "1"
+                    }
+                  },
+                  "children": [
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "padding": "10px",
+                        "color": "=if([$Position] == 1, 'white','')",
+                        "align-self": "center"
+                      },
+                      "attributes": {
+                        "class": "ms-fontSize-14 ms-fontWeight-bold"
+                      },
+                      "txtContent": "[$TabHead1]"
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "padding": "0px 10px",
+                    "border": "=if([$Position] == 2, '1px solid white','1px solid #eee')",
+                    "background-color": "=if([$Position] == 2, '#333399','#f5f7fa')",
+                    "cursor": "pointer",
+                    "justify-content": "center",
+                    "height": "60px",
+                    "display": "flex",
+                    "flex-grow": "1"
+                  },
+                  "customRowAction": {
+                    "action": "setValue",
+                    "actionInput": {
+                      "Position": "2"
+                    }
+                  },
+                  "children": [
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "padding": "10px",
+                        "color": "=if([$Position] == 2, 'white','')",
+                        "align-self": "center"
+                      },
+                      "attributes": {
+                        "class": "ms-fontSize-14 ms-fontWeight-bold"
+                      },
+                      "txtContent": "[$TabHead2]"
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "padding": "0px 10px",
+                    "border": "=if([$Position] == 3, '1px solid white','1px solid #eee')",
+                    "background-color": "=if([$Position] == 3, '#333399','#f5f7fa')",
+                    "cursor": "pointer",
+                    "justify-content": "center",
+                    "height": "60px",
+                    "display": "flex",
+                    "flex-grow": "1"
+                  },
+                  "customRowAction": {
+                    "action": "setValue",
+                    "actionInput": {
+                      "Position": "3"
+                    }
+                  },
+                  "children": [
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "padding": "10px",
+                        "color": "=if([$Position] == 3, 'white','')",
+                        "align-self": "center"
+                      },
+                      "attributes": {
+                        "class": "ms-fontSize-14 ms-fontWeight-bold"
+                      },
+                      "txtContent": "[$TabHead3]"
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "padding": "0px 10px",
+                    "display": "flex",
+                    "border": "=if([$Position] == 4, '1px solid white','1px solid #eee')",
+                    "background-color": "=if([$Position] == 4, '#333399','#f5f7fa')",
+                    "cursor": "pointer",
+                    "justify-content": "center",
+                    "height": "60px",
+                    "flex-grow": "1"
+                  },
+                  "customRowAction": {
+                    "action": "setValue",
+                    "actionInput": {
+                      "Position": "4"
+                    }
+                  },
+                  "children": [
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "padding": "10px",
+                        "align-self": "center",
+                        "color": "=if([$Position] == 4, 'white','')"
+                      },
+                      "attributes": {
+                        "class": "ms-fontSize-14 ms-fontWeight-bold"
+                      },
+                      "txtContent": "[$TabHead4]"
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "padding": "0px 10px",
+                    "border": "=if([$Position] == 5, '1px solid white','1px solid #eee')",
+                    "background-color": "=if([$Position] == 5, '#333399','#f5f7fa')",
+                    "cursor": "pointer",
+                    "justify-content": "center",
+                    "height": "60px",
+                    "display": "flex",
+                    "flex-grow": "1"
+                  },
+                  "customRowAction": {
+                    "action": "setValue",
+                    "actionInput": {
+                      "Position": "5"
+                    }
+                  },
+                  "children": [
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "padding": "10px",
+                        "color": "=if([$Position] == 5, 'white','')",
+                        "align-self": "center"
+                      },
+                      "attributes": {
+                        "class": "ms-fontSize-14 ms-fontWeight-bold"
+                      },
+                      "txtContent": "[$TabHead5]"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "padding": "20px 10px 20px 20px",
+              "display":"flex"
+              },
+              "children": [
+                {
+                  "elmType":"div",
+                  "style":{
+                    "height":"140px",
+                    "width":"140px",
+                    "display":"flex",
+                    "justify-content":"center",
+                    "align-items":"center"
+                  },
+                  "children":[
+                     {
+                  "elmType": "img",
+                  "style": {
+                    "max-width": "75%",
+                            "max-height": "75%"
+                  },
+                  "attributes": {
+                    "src": "=getThumbnailImage(if([$Position] == 1, [$Tab1Icon], if([$Position] == 2, [$Tab2Icon], if([$Position] == 3, [$Tab3Icon],if([$Position] == 4, [$Tab4Icon],if([$Position] == 5, [$Tab5Icon],''))))), 140, 140)",
+                    "class": "sp-card-imagePreview"
+                  }
+                }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "display": "inline-block",
+                    "padding-left": "20px",
+                    "max-width": "300px",
+                    "vertical-align": "top"
+                  },
+                  "children": [
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "padding-bottom": "10px"
+                      },
+                      "attributes": {
+                        "class": "ms-fontSize-24 ms-fontWeight-bold"
+                      },
+                      "txtContent": "=if([$Position] == 1, [$TabHead1],if([$Position] == 2, [$TabHead2], if([$Position] == 3, [$TabHead3], if([$Position] == 4, [$TabHead4], [$TabHead5]))))"
+                    },
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "padding-bottom": "20px"
+                      },
+                      "attributes": {
+                        "class": "ms-fontSize-14"
+                      },
+                      "txtContent": "=if([$Position] == 1, [$Tab1Desc],if([$Position] == 2, [$Tab2Desc], if([$Position] == 3, [$Tab3Desc], if([$Position] == 4, [$Tab4Desc], [$Tab5Desc]))))"
+                    },
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "background-color": "gray",
+                        "box-shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+                        "position": "relative",
+                        "border-radius": "30px",
+                        "width": "90px",
+                        "height": "30px",
+                        "display": "flex"
+                      },
+                      "children": [
+                        {
+                          "elmType": "a",
+                          "style": {
+                            "text-decoration": "none",
+                          "text-align": "center",
+                          "padding-top":"5px",
+                          "color": "white",
+                          "border-radius": "30px",
+                          "width": "90px",
+                          "height": "25px"
+                          },
+                          "attributes": {
+                            "target": "_blank",
+                            "href": "=if([$Position] == 1, [$TabUrl1],if([$Position] == 2, [$TabUrl2], if([$Position] == 3, [$TabUrl3],if([$Position] == 4, [$TabUrl4], [$TabUrl5]))))",
+                            "class": "ms-fontWeight-bold ms-bgColor-gray100 ms-bgColor-themePrimary--hover"
+                          },
+                          "txtContent": "MORE INFO"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
