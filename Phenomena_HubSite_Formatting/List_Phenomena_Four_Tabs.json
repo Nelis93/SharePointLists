@@ -7,8 +7,9 @@
     "style": {
       "box-shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)",
       "width": "350px",
+      "overflow": "hidden",
       "margin-bottom": "20px",
-      "border-radius": "0px 0px 10px 10px"
+      "border-radius": "10px"
     },
     "children": [
       {
@@ -24,6 +25,7 @@
               "flex-direction": "row",
               "flex-wrap": "wrap",
               "justify-content": "flex-start",
+              "overflow": "hidden",
               "width": "350px"
             },
             "children": [
@@ -31,7 +33,7 @@
                 "elmType": "div",
                 "style": {
                   "padding": "0px 10px",
-                  "border": "=if([$Position] == 1, '1px solid white','1px solid #eee')",
+                  "outline": "=if([$Position] == 1, '1px inset white','1px solid #eee')",
                   "background-color": "=if([$Position] == 1, '#333399','#f5f7fa')",
                   "cursor": "pointer",
                   "justify-content": "center",
@@ -51,7 +53,7 @@
                     "style": {
                       "padding": "10px",
                       "color": "=if([$Position] == 1, 'white','')",
-                      "font-size":"=if([$Position] == 1, '18px','')",
+                      "font-size": "=if([$Position] == 1, '18px','')",
                       "align-self": "center"
                     },
                     "attributes": {
@@ -65,7 +67,7 @@
                 "elmType": "div",
                 "style": {
                   "padding": "0px 10px",
-                  "border": "=if([$Position] == 2, '1px solid white','1px solid #eee')",
+                  "outline": "=if([$Position] == 2, '1px solid white','1px solid #eee')",
                   "background-color": "=if([$Position] == 2, '#333399','#f5f7fa')",
                   "cursor": "pointer",
                   "justify-content": "center",
@@ -85,7 +87,7 @@
                     "style": {
                       "padding": "10px",
                       "color": "=if([$Position] == 2, 'white','')",
-                      "font-size":"=if([$Position] == 2, '18px','')",
+                      "font-size": "=if([$Position] == 2, '18px','')",
                       "align-self": "center"
                     },
                     "attributes": {
@@ -99,11 +101,12 @@
                 "elmType": "div",
                 "style": {
                   "padding": "0px 10px",
-                  "border": "=if([$Position] == 3, '1px solid white','1px solid #eee')",
+                  "outline": "=if([$Position] == 3, '1px solid white','1px solid #eee')",
                   "background-color": "=if([$Position] == 3, '#333399','#f5f7fa')",
                   "cursor": "pointer",
                   "justify-content": "center",
                   "height": "60px",
+                  "overflow": "hidden",
                   "display": "flex",
                   "flex-grow": "1"
                 },
@@ -119,7 +122,7 @@
                     "style": {
                       "padding": "10px",
                       "color": "=if([$Position] == 3, 'white','')",
-                      "font-size":"=if([$Position] == 3, '18px','')",
+                      "font-size": "=if([$Position] == 3, '18px','')",
                       "align-self": "center"
                     },
                     "attributes": {
@@ -134,7 +137,7 @@
                 "style": {
                   "padding": "0px 10px",
                   "display": "flex",
-                  "border": "=if([$Position] == 4, '1px solid white','1px solid #eee')",
+                  "outline": "=if([$Position] == 4, '1px solid white','1px solid #eee')",
                   "background-color": "=if([$Position] == 4, '#333399','#f5f7fa')",
                   "cursor": "pointer",
                   "justify-content": "center",
@@ -154,7 +157,7 @@
                       "padding": "10px",
                       "align-self": "center",
                       "color": "=if([$Position] == 4, 'white','')",
-                      "font-size":"=if([$Position] == 4, '18px','')"
+                      "font-size": "=if([$Position] == 4, '18px','')"
                     },
                     "attributes": {
                       "class": "ms-fontSize-14 ms-fontWeight-bold"
@@ -178,7 +181,7 @@
                   "height": "140px",
                   "width": "140px",
                   "display": "flex",
-                      "flex-shrink":"1",
+                  "flex-shrink": "1",
                   "justify-content": "center",
                   "align-items": "center"
                 },
@@ -200,9 +203,9 @@
                 "elmType": "div",
                 "style": {
                   "display": "flex",
-                  "flex-direction":"column",
+                  "flex-direction": "column",
                   "padding-left": "20px",
-                  "flex-grow":"1"
+                  "flex-grow": "1"
                 },
                 "children": [
                   {

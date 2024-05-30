@@ -7,31 +7,33 @@
       "style": {
         "box-shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)",
         "width": "350px",
-        "margin-bottom": "20px",
-        "border-radius": "0px 0px 10px 10px"
-      },
-      "children": [
-        {
-          "elmType": "div",
-          "style": {
-            "width": "350px"
-          },
-          "children": [
-            {
-              "elmType": "div",
-              "style": {
-                "display": "flex",
+        "overflow": "hidden",
+      "margin-bottom": "20px",
+      "border-radius": "10px"
+    },
+    "children": [
+      {
+        "elmType": "div",
+        "style": {
+          "width": "350px"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "style": {
+              "display": "flex",
               "flex-direction": "row",
               "flex-wrap": "wrap",
               "justify-content": "flex-start",
+              "overflow": "hidden",
               "width": "350px"
-              },
+            },
               "children": [
                 {
                   "elmType": "div",
                   "style": {
                     "padding": "0px 10px",
-                    "border": "=if([$Position] == 1, '1px solid white','1px solid #eee')",
+                    "outline": "=if([$Position] == 1, '1px solid white','1px solid #eee')",
                     "background-color": "=if([$Position] == 1, '#333399','#f5f7fa')",
                     "cursor": "pointer",
                     "justify-content": "center",
@@ -51,6 +53,7 @@
                       "style": {
                         "padding": "10px",
                         "color": "=if([$Position] == 1, 'white','')",
+                        "font-size":"=if([$Position] == 1, '18px','')",
                         "align-self": "center"
                       },
                       "attributes": {
@@ -64,7 +67,7 @@
                   "elmType": "div",
                   "style": {
                     "padding": "0px 10px",
-                    "border": "=if([$Position] == 2, '1px solid white','1px solid #eee')",
+                    "outline": "=if([$Position] == 2, '1px solid white','1px solid #eee')",
                     "background-color": "=if([$Position] == 2, '#333399','#f5f7fa')",
                     "cursor": "pointer",
                     "justify-content": "center",
@@ -84,6 +87,7 @@
                       "style": {
                         "padding": "10px",
                         "color": "=if([$Position] == 2, 'white','')",
+                        "font-size":"=if([$Position] == 2, '18px','')",
                         "align-self": "center"
                       },
                       "attributes": {
@@ -97,7 +101,7 @@
                   "elmType": "div",
                   "style": {
                     "padding": "0px 10px",
-                    "border": "=if([$Position] == 3, '1px solid white','1px solid #eee')",
+                    "outline": "=if([$Position] == 3, '1px solid white','1px solid #eee')",
                     "background-color": "=if([$Position] == 3, '#333399','#f5f7fa')",
                     "cursor": "pointer",
                     "justify-content": "center",
@@ -117,6 +121,7 @@
                       "style": {
                         "padding": "10px",
                         "color": "=if([$Position] == 3, 'white','')",
+                        "font-size":"=if([$Position] == 3, '18px','')",
                         "align-self": "center"
                       },
                       "attributes": {
@@ -136,13 +141,14 @@
               },
               "children": [
                 {
-                  "elmType":"div",
-                  "style":{
-                    "height":"140px",
-                    "width":"140px",
-                    "display":"flex",
-                    "justify-content":"center",
-                    "align-items":"center"
+                  "elmType": "div",
+                  "style": {
+                    "height": "140px",
+                    "width": "140px",
+                    "display": "flex",
+                        "flex-shrink":"1",
+                    "justify-content": "center",
+                    "align-items": "center"
                   },
                   "children":[
                      {
@@ -161,22 +167,12 @@
                 {
                   "elmType": "div",
                   "style": {
-                    "display": "inline-block",
+                    "display": "flex",
+                    "flex-direction":"column",
                     "padding-left": "20px",
-                    "max-width": "300px",
-                    "vertical-align": "top"
+                    "flex-grow":"1"
                   },
                   "children": [
-                    {
-                      "elmType": "div",
-                      "style": {
-                        "padding-bottom": "10px"
-                      },
-                      "attributes": {
-                        "class": "ms-fontSize-24 ms-fontWeight-bold"
-                      },
-                      "txtContent": "=if([$Position] == 1, [$TabHead1],if([$Position] == 2, [$TabHead2], [$TabHead3]))"
-                    },
                     {
                       "elmType": "div",
                       "style": {
