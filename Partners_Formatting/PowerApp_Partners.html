@@ -11,7 +11,7 @@ Left(SharePointIntegration.Selected.'Koppeling naar item', Find("_layouts", Shar
                 "<div style='max-width: 80%; min-width: 20%; padding: 15px; margin-left: 5px; min-height: 200px; background-color: white; border-radius: 5px;'>" & SharePointIntegration.Selected.Uitleg & "</div>" &
             "</div>" &
     "</article>" &
-    "<article style='display: flex; flex-flow: row wrap; justify-content: flex-start; align-items: flex-start; max-width: 80%; margin-top: 30px'>" &
+    "<article style='display: flex; flex-flow: row wrap; justify-content: flex-start; align-items: flex-start; max-width: 100%; margin-top: 30px'>" &
         "<div style='display:" & If(Len(SharePointIntegration.Selected.Locatie) > 0, "flex", "none") & "; width: 32%; flex-direction: column; justify-content: flex-start; align-items: flex-start'>" &
             "<h2 style='color: #333399'>Locatie</h2>" &
             "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 5px; background-color: white; border-radius: 5px'>" & SharePointIntegration.Selected.Locatie & "</p>" &
@@ -28,13 +28,13 @@ Left(SharePointIntegration.Selected.'Koppeling naar item', Find("_layouts", Shar
             "<h2 style='color: #333399'>Korte uitleg</h2>" &
             "<p style=' max-width: 80%; min-width: 50%; display: flex; padding: 5px; margin-left: 5px; background-color: white; border-radius: 5px'>" & SharePointIntegration.Selected.'Korte uitleg' & "</p>" &
         "</div>" &
-        "<div style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 1') > 0, "flex", "none") & "; flex-direction: column; justify-content: flex-start; align-items: flex-start;'>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 1') > 0, "flex", "none") & "; flex-direction: column; justify-content: flex-start; align-items: flex-start'>" &
             "<h2 style='color: #333399'>Suborganisaties</h2>" &
-            "<div style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: row; background-color: white; min-width: 50%; padding: 5px; margin-left: 20px; border-radius: 5px'>" &
-                "<div style='padding: 5px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 1') > 0, "flex", "none") & "; background-color: lightgrey; width: 25%'>" & SharePointIntegration.Selected.'Suborganisatie 1'  & "</div>" &
-                "<div style='padding: 5px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 2') > 0, "flex", "none") & "; background-color: lightgrey; width: 25%'>" & SharePointIntegration.Selected.'Suborganisatie 2' & "</div>" &
-                "<div style='padding: 5px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 3') > 0, "flex", "none") & "; background-color: lightgrey; width: 25%'>" & SharePointIntegration.Selected.'Suborganisatie 3' & "</div>" &
-                "<div style='padding: 5px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 4') > 0, "flex", "none") & "; background-color: lightgrey; width: 25%'>" & SharePointIntegration.Selected.'Suborganisatie 4' & "</div>" &
+            "<div style='display: flex; align-items: flex-start; justify-content: space-evenly; flex-direction: row; background-color: white; min-width: 50%; padding: 5px; margin-left: 20px; border-radius: 5px'>" &
+                "<div style='padding: 5px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 1') > 0, "flex", "none") & "; background-color: lightgrey; min-width: 25%; max-width: 40%; overflow-x: wrap; text-wrap: wrap; flex-grow: 1'>" & SharePointIntegration.Selected.'Suborganisatie 1'  & "</div>" &
+                "<div style='padding: 5px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 2') > 0, "flex", "none") & "; background-color: lightgrey; min-width: 25%; max-width: 40%; overflow-x: wrap; text-wrap: wrap; flex-grow: 1'>" & SharePointIntegration.Selected.'Suborganisatie 2' & "</div>" &
+                "<div style='padding: 5px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 3') > 0, "flex", "none") & "; background-color: lightgrey; min-width: 25%; max-width: 40%; overflow-x: wrap; text-wrap: wrap; flex-grow: 1'>" & SharePointIntegration.Selected.'Suborganisatie 3' & "</div>" &
+                "<div style='padding: 5px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 4') > 0, "flex", "none") & "; background-color: lightgrey; min-width: 25%; max-width: 40%; overflow-x: wrap; text-wrap: wrap; flex-grow: 1'>" & SharePointIntegration.Selected.'Suborganisatie 4' & "</div>" &
             "</div>" &
         "</div>" &
     "</article>" &
