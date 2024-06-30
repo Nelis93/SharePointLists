@@ -106,7 +106,7 @@
                   "cursor": "pointer",
                   "justify-content": "center",
                   "height": "60px",
-                  "display": "flex",
+                  "display": "=if([$TabHead3], 'flex','none')",
                   "flex-grow": "1"
                 },
                 "customRowAction": {
@@ -135,7 +135,7 @@
                 "elmType": "div",
                 "style": {
                   "padding": "0px 10px",
-                  "display": "flex",
+                  "display": "=if([$TabHead4], 'flex','none')",
                   "outline": "=if([$Position] == 4, '1px solid white','1px solid #eee')",
                   "background-color": "=if([$Position] == 4, '#333399','#f5f7fa')",
                   "cursor": "pointer",
@@ -174,7 +174,7 @@
                   "cursor": "pointer",
                   "justify-content": "center",
                   "height": "60px",
-                  "display": "flex",
+                  "display": "=if([$TabHead5], 'flex','none')",
                   "flex-grow": "1"
                 },
                 "customRowAction": {
@@ -208,7 +208,7 @@
                   "cursor": "pointer",
                   "justify-content": "center",
                   "height": "60px",
-                  "display": "flex",
+                  "display": "=if([$TabHead6], 'flex','none')",
                   "flex-grow": "1"
                 },
                 "customRowAction": {
@@ -242,7 +242,7 @@
                   "cursor": "pointer",
                   "justify-content": "center",
                   "height": "60px",
-                  "display": "flex",
+                  "display": "=if([$TabHead7], 'flex','none')",
                   "flex-grow": "1"
                 },
                 "customRowAction": {

@@ -1,0 +1,41 @@
+Left(SharePointIntegration.Selected.'Koppeling naar item', Find("_layouts", SharePointIntegration.Selected.'Koppeling naar item') - 1) & "SiteAssets/Lists/" & Mid(SharePointIntegration.Selected.Logo.Full, Find("lists%28%27", SharePointIntegration.Selected.Logo.Full) + Len("lists%28%27"), Find("%27%29%2Fitems", SharePointIntegration.Selected.Logo.Full) - (Find("lists%28%27", SharePointIntegration.Selected.Logo.Full) + Len("lists%28%27"))) & "/" & Mid(SharePointIntegration.Selected.Logo.Full, Find("attachments%28%27", SharePointIntegration.Selected.Logo.Full) + Len("attachments%28%27"), Find("%27%29%2Fthumbnails", SharePointIntegration.Selected.Logo.Full) - (Find("attachments%28%27", SharePointIntegration.Selected.Logo.Full) + Len("attachments%28%27")))
+
+"<section style='display: flex; flex-direction: column; font-size: 16px; width: 100%; max-height: 100%; overflow-y: clip; padding: 50px'>" &
+    "<article style='display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start max-width: 80%; padding-bottom: 50px; border-bottom: 1px dashed grey'>" &
+            "<div style='display: flex; max-height: 100px; flex-direction: row; align-items: center; width: 100%; background-color: #333399; padding: 15px'>" &
+                "<p style='flex-grow: 1; font-size: 50px; text-align: center; padding: 20px; margin-left: 5px; color: white'>" & SharePointIntegration.Selected.Title & "</p>" &
+                "<img src='" & Left(SharePointIntegration.Selected.'Koppeling naar item', Find("_layouts", SharePointIntegration.Selected.'Koppeling naar item') - 1) & "SiteAssets/Lists/8ea130ea-8a6c-4ba2-9626-7bd12d93322d/" & Mid(SharePointIntegration.Selected.Logo.Full, Find("attachments%28%27", SharePointIntegration.Selected.Logo.Full) + Len("attachments%28%27"), Find("%27%29%2Fthumbnails", SharePointIntegration.Selected.Logo.Full) - (Find("attachments%28%27", SharePointIntegration.Selected.Logo.Full) + Len("attachments%28%27"))) & "' style='max-width: 40%; max-height: 100%; margin-right: 50px; border-radius: 5px'/>" &
+            "</div>" &
+            "<div style='display:" & If(Len(SharePointIntegration.Selected.Uitleg) > 0, "flex", "none") & "; width: 100%; flex-direction: column; justify-content: flex-start; align-items: flex-start; margin-top: 30px'>" &
+                "<h2 style='color: #333399'>Toelichting</h2>" &
+                "<div style='max-width: 80%; min-width: 20%; padding: 15px; margin-left: 5px; min-height: 200px; background-color: white; border-radius: 5px;'>" & SharePointIntegration.Selected.Uitleg & "</div>" &
+            "</div>" &
+    "</article>" &
+    "<article style='display: flex; flex-flow: row wrap; justify-content: flex-start; align-items: flex-start; max-width: 80%; margin-top: 30px'>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.Locatie) > 0, "flex", "none") & "; width: 32%; flex-direction: column; justify-content: flex-start; align-items: flex-start'>" &
+            "<h2 style='color: #333399'>Locatie</h2>" &
+            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 5px; background-color: white; border-radius: 5px'>" & SharePointIntegration.Selected.Locatie & "</p>" &
+        "</div>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.Email) > 0, "flex", "none") & "; flex-direction: column; width: 32%; justify-content: flex-start; align-items: flex-start'>" &
+            "<h2 style='color: #333399'>E-mail</h2>" &
+            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 5px; background-color: white; border-radius: 5px'>" & SharePointIntegration.Selected.Email & "</p>" &
+        "</div>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.Tel) > 0, "flex", "none") & "; flex-direction: column; width: 32%; justify-content: flex-start; align-items: flex-start'>" &
+            "<h2 style='color: #333399'>Telefoon</h2>" &
+            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 5px; background-color: white; border-radius: 5px'>" & SharePointIntegration.Selected.Tel & "</p>" &
+        "</div>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.'Korte uitleg') > 0, "flex", "none") & "; flex-direction: column; width: 50%; justify-content: flex-start; align-items: flex-start'>" &
+            "<h2 style='color: #333399'>Korte uitleg</h2>" &
+            "<p style=' max-width: 80%; min-width: 50%; display: flex; padding: 5px; margin-left: 5px; background-color: white; border-radius: 5px'>" & SharePointIntegration.Selected.'Korte uitleg' & "</p>" &
+        "</div>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 1') > 0, "flex", "none") & "; flex-direction: column; justify-content: flex-start; align-items: flex-start;'>" &
+            "<h2 style='color: #333399'>Suborganisaties</h2>" &
+            "<div style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: row; background-color: white; min-width: 50%; padding: 5px; margin-left: 20px; border-radius: 5px'>" &
+                "<div style='padding: 5px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 1') > 0, "flex", "none") & "; background-color: lightgrey; width: 25%'>" & SharePointIntegration.Selected.'Suborganisatie 1'  & "</div>" &
+                "<div style='padding: 5px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 2') > 0, "flex", "none") & "; background-color: lightgrey; width: 25%'>" & SharePointIntegration.Selected.'Suborganisatie 2' & "</div>" &
+                "<div style='padding: 5px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 3') > 0, "flex", "none") & "; background-color: lightgrey; width: 25%'>" & SharePointIntegration.Selected.'Suborganisatie 3' & "</div>" &
+                "<div style='padding: 5px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisatie 4') > 0, "flex", "none") & "; background-color: lightgrey; width: 25%'>" & SharePointIntegration.Selected.'Suborganisatie 4' & "</div>" &
+            "</div>" &
+        "</div>" &
+    "</article>" &
+"</section>"
