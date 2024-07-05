@@ -1,0 +1,127 @@
+<!-- 
+Volledige koppeling naar logo:    
+Left(SharePointIntegration.Selected.'Koppeling naar item', 
+Find("_layouts", SharePointIntegration.Selected.'Koppeling naar item') - 1) & 
+"SiteAssets/Lists/" & 
+Mid(SharePointIntegration.Selected.Logo.Full, 
+Find("lists%28%27", SharePointIntegration.Selected.Logo.Full) + 
+Len("lists%28%27"), 
+Find("%27%29%2Fitems", SharePointIntegration.Selected.Logo.Full) - 
+(Find("lists%28%27", SharePointIntegration.Selected.Logo.Full) + 
+Len("lists%28%27"))) & "/" & 
+Mid(SharePointIntegration.Selected.Logo.Full, 
+Find("attachments%28%27", SharePointIntegration.Selected.Logo.Full) + 
+Len("attachments%28%27"), 
+Find("%27%29%2Fthumbnails", SharePointIntegration.Selected.Logo.Full) - 
+(Find("attachments%28%27", SharePointIntegration.Selected.Logo.Full) + Len("attachments%28%27")))
+-->
+
+<!--
+Automatische koppeling naar logo met API. 
+(Bijlagen zijn gedesactiveerd voor de uitgesplitste lijsten, 
+dus wordt het logo niet als attachment opgeslagen 
+waardoor de API het logo niet kan ophalen)
+
+'https://bpolb.sharepoint.com" & 
+            Substitute(
+                Substitute(
+                    Substitute(
+                        Substitute(
+                            Substitute(
+                                Right(SharePointIntegration.Selected.Logo.Full,Len(SharePointIntegration.Selected.Logo.Full)-Find("%2F_api%2Fv2.1%2F",SharePointIntegration.Selected.Logo.Full)+1)
+                                ,"%2F", "/"),
+                            "%25252f", "/"),
+                        "%25253a", ":"),
+                    "%21", "!"),
+                "%3F", "?") &
+-->
+"<section style='display: flex; flex-direction: column; font-size: 16px; width: 100%; max-height: 100%; margin-right: 50px; overflow-y: clip; padding: 50px'>" &
+    "<article style='display: flex; max-height: 100px; flex-direction: row; align-items: center; max-width: 90%; background-color: #333399; padding: 15px'>" &
+        "<p style='flex-grow: 1; font-size: 50px; text-align: center; padding: 20px; color: white'>" & 
+                SharePointIntegration.Selected.Title & 
+        "</p>" &
+        "<img src='" & Left(SharePointIntegration.Selected.'Koppeling naar item', Find("_layouts", SharePointIntegration.Selected.'Koppeling naar item') - 1) & "SiteAssets/Lists/ddc54979-da34-41fe-a456-adb4a36ea1b9/" & Mid(SharePointIntegration.Selected.Logo.Full, Find("attachments%28%27", SharePointIntegration.Selected.Logo.Full) + Len("attachments%28%27"), Find("%27%29%2Fthumbnails", SharePointIntegration.Selected.Logo.Full) - (Find("attachments%28%27", SharePointIntegration.Selected.Logo.Full) + Len("attachments%28%27"))) & "'
+         style='max-width: 40%; max-height: 150px; margin-right: 50px; border-radius: 5px'/>" &
+    "</article>" &
+    "<article style='display:" & If(Len(SharePointIntegration.Selected.Explication) > 0, "flex", "none") & "; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding-left: 30px; margin-top: 30px; max-width: 90%; padding-bottom: 50px; border-bottom: 1px dashed grey'>" &
+        "<h2 style='color: #333399'>Explication</h2>" &
+        "<div style='max-width: 80%; min-width: 20%; padding: 15px; margin-left: 5px; min-height: 200px'>" & 
+                    SharePointIntegration.Selected.Explication &
+        "</div>" &
+    "</article>" &
+    "<article style='display: flex; flex-flow: row wrap; justify-content: flex-start; align-items: flex-start; max-width: 90%; margin-top: 30px; padding-left: 30px; border-bottom: 1px dashed grey'>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.Lieu) > 0, "flex", "none") & "; width: 25%; flex-grow: 1; flex-direction: column; justify-content: flex-start; align-items: flex-start; margin-bottom: 60px'>" &
+            "<h2 style='color: #333399'>Lieu</h2>" &
+            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 5px'>" &
+                "📍 " &
+                SharePointIntegration.Selected.Lieu & 
+            "</p>" &
+        "</div>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.Email) > 0, "flex", "none") & "; flex-direction: column; flex-grow: 1; width: 25%; justify-content: flex-start; align-items: flex-start; margin-bottom: 60px'>" &
+            "<h2 style='color: #333399'>E-mail</h2>" &
+            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 5px; word-break: break word'>" &
+                "📧 " &
+                SharePointIntegration.Selected.Email & 
+            "</p>" &
+        "</div>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.Tel) > 0, "flex", "none") & "; flex-direction: column; flex-grow: 1; margin-bottom: 60px; width: 25%; justify-content: flex-start; align-items: flex-start'>" &
+            "<h2 style='color: #333399'>Numéro de téléphone</h2>" &
+            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 5px'>" &
+                "📞 " &
+                 SharePointIntegration.Selected.Tel & 
+            "</p>" &
+        "</div>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.Website) > 0, "flex", "none") & "; flex-direction: column; flex-grow: 1; width: 25%; justify-content: flex-start; align-items: flex-start; margin-bottom: 60px'>" &
+            "<h2 style='color: #333399'>Site web</h2>" &
+            "<a href='" & SharePointIntegration.Selected.Website & "' style='text-decoration: none; color: #333399; margin-top: 15px'>" &
+                "🌐 " &
+                SharePointIntegration.Selected.Website & 
+            "</a>" &
+        "</div>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.'Explication courte') > 0, "flex", "none") & "; flex-direction: column; width: 50%; margin-bottom: 60px; justify-content: flex-start; align-items: flex-start'>" &
+            "<h2 style='color: #333399'>Explication courte</h2>" &
+            "<p style=' max-width: 80%; min-width: 50%; display: flex; padding: 5px; margin-left: 5px'>" & SharePointIntegration.Selected.'Explication courte' & "</p>" &
+        "</div>" &
+    "</article>" &
+    "<article style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 1') > 0, "flex", "none") & "; flex-direction: column; max-width: 90%; justify-content: flex-start; align-items: flex-start; margin-top: 60px; padding-left: 30px'>" &
+        "<h2 style='color: #333399'>Suborganisations</h2>" &
+        "<div style='display: flex; flex-flow: row wrap; align-items: flex-start; justify-content: space-evenly; background-color: white; min-width: 50%; padding: 5px; border-radius: 5px'>" &
+            "<div style='padding: 40px 0px; border-bottom: 1px dashed grey; margin-left: 25px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 1') > 0, "flex", "none") & "; flex-direction: column; vertical-align: top; min-width: 25%; max-width: 40%; overflow-x: wrap; text-wrap: wrap; flex-grow: 1'>" &
+                "<div style='font-size: 16px'>" &
+                    SharePointIntegration.Selected.'Suborganisation 1'  &
+                "</div>" &
+                "<a href='" & SharePointIntegration.Selected.'Suborganisation 1 URL' & "' style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 1 URL') > 0, "flex", "none") & "; text-decoration: none; color: #333399; margin-top: 15px'>" &
+                    "🌐 " &
+                    SharePointIntegration.Selected.'Suborganisation 1 URL' &
+                "</a>" &
+            "</div>" &
+            "<div style='padding: 40px 0px; border-bottom: 1px dashed grey; margin-left: 25px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 2') > 0, "flex", "none") & "; flex-direction: column; vertical-align: top; min-width: 25%; max-width: 40%; overflow-x: wrap; text-wrap: wrap; flex-grow: 1'>" &
+                "<div style='font-size: 16px'>" &
+                    SharePointIntegration.Selected.'Suborganisation 2'  &
+                "</div>" &
+                "<a href='" & SharePointIntegration.Selected.'Suborganisation 2 URL' & "' style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 2 URL') > 0, "flex", "none") & "; text-decoration: none; color: #333399; margin-top: 15px'>" &
+                    "🌐 " &
+                    SharePointIntegration.Selected.'Suborganisation 2 URL' &
+                "</a>" &
+            "</div>" &
+            "<div style='padding: 40px 0px; border-bottom: 1px dashed grey; margin-left: 25px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 3') > 0, "flex", "none") & "; flex-direction: column; vertical-align: top; min-width: 25%; max-width: 40%; overflow-x: wrap; text-wrap: wrap; flex-grow: 1'>" &
+                "<div style='font-size: 16px'>" &
+                    SharePointIntegration.Selected.'Suborganisation 3'  &
+                "</div>" &
+                "<a href='" & SharePointIntegration.Selected.'Suborganisation 3 URL' & "' style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 3 URL') > 0, "flex", "none") & "; text-decoration: none; color: #333399; margin-top: 15px'>" &
+                    "🌐 " &
+                    SharePointIntegration.Selected.'Suborganisation 3 URL' &
+                "</a>" &
+            "</div>" &
+            "<div style='padding: 40px 0px; border-bottom: 1px dashed grey; margin-left: 25px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 4') > 0, "flex", "none") & "; flex-direction: column; vertical-align: top; min-width: 25%; max-width: 40%; overflow-x: wrap; text-wrap: wrap; flex-grow: 1'>" &
+                "<div style='font-size: 16px'>" &
+                    SharePointIntegration.Selected.'Suborganisation 4'  &
+                "</div>" &
+                "<a href='" & SharePointIntegration.Selected.'Suborganisation 4 URL' & "' style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 4 URL') > 0, "flex", "none") & "; text-decoration: none; color: #333399; margin-top: 15px'>" &
+                    "🌐 " &
+                    SharePointIntegration.Selected.'Suborganisation 4 URL' &
+                "</a>" &
+            "</div>" &
+        "</div>" &
+    "</article>" &
+"</section>"
