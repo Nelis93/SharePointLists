@@ -40,8 +40,8 @@ waardoor de API het logo niet kan ophalen)
         "<p style='flex-grow: 1; font-size: 50px; text-align: center; padding: 20px; color: white'>" & 
                 SharePointIntegration.Selected.Title & 
         "</p>" &
-        "<img src='" & Left(SharePointIntegration.Selected.'Koppeling naar item', Find("_layouts", SharePointIntegration.Selected.'Koppeling naar item') - 1) & "SiteAssets/Lists/ddc54979-da34-41fe-a456-adb4a36ea1b9/" & Mid(SharePointIntegration.Selected.Logo.Full, Find("attachments%28%27", SharePointIntegration.Selected.Logo.Full) + Len("attachments%28%27"), Find("%27%29%2Fthumbnails", SharePointIntegration.Selected.Logo.Full) - (Find("attachments%28%27", SharePointIntegration.Selected.Logo.Full) + Len("attachments%28%27"))) & "'
-         style='max-width: 40%; max-height: 150px; margin-right: 50px; border-radius: 5px'/>" &
+        "<img src='" & Left(SharePointIntegration.Selected.'Koppeling naar item', Find("_layouts", SharePointIntegration.Selected.'Koppeling naar item') - 1) & "SiteAssets/Lists/ddc54979-da34-41fe-a456-adb4a36ea1b9/" & Substitute(Mid(SharePointIntegration.Selected.Logo.Full, Find("attachments%28%27", SharePointIntegration.Selected.Logo.Full) + Len("attachments%28%27"), Find("%27%29%2Fthumbnails", SharePointIntegration.Selected.Logo.Full) - (Find("attachments%28%27", SharePointIntegration.Selected.Logo.Full) + Len("attachments%28%27"))),"%252520"," ") & "'
+         style='max-width: 40%; max-height: 150px; margin-right: 50px; border-radius: 5px; background-color: white; padding: 0px 5px;'/>" &
     "</article>" &
     "<article style='display:" & If(Len(SharePointIntegration.Selected.Explication) > 0, "flex", "none") & "; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding-left: 30px; margin-top: 30px; max-width: 90%; padding-bottom: 50px; border-bottom: 1px dashed grey'>" &
         "<h2 style='color: #333399'>Explication</h2>" &
@@ -73,7 +73,7 @@ waardoor de API het logo niet kan ophalen)
         "</div>" &
         "<div style='display:" & If(Len(SharePointIntegration.Selected.Website) > 0, "flex", "none") & "; flex-direction: column; flex-grow: 1; width: 25%; justify-content: flex-start; align-items: flex-start; margin-bottom: 60px'>" &
             "<h2 style='color: #333399'>Site web</h2>" &
-            "<a href='" & SharePointIntegration.Selected.Website & "' style='text-decoration: none; color: #333399; margin-top: 15px'>" &
+            "<a href='" & SharePointIntegration.Selected.Website & "' style='text-decoration: none; color: #333399; margin-top: 15px; text-overflow: wrap; overflow-x: wrap; word-break: break-word'>" &
                 "🌐 " &
                 SharePointIntegration.Selected.Website & 
             "</a>" &
