@@ -29,19 +29,13 @@
         "<div style='display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.Phenomenon, 1)).Value) > 0, "flex", "none") & "; flex-direction: column; width: 32%; justify-content: flex-start; align-items: flex-start;'>" &
             "<h2 style='color: #333399'>" & If(Language()="fr-FR","Phénomène","Fenomeen") & "</h2>" &
             "<ul style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; background-color: white; max-width: 80%; min-width: 50%; padding: 5px; margin-left: 20px; border-radius: 5px'>" &
-                "<li style='list-style-type: disc; padding: 5px 20px; display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.Phenomenon, 1)).Value) > 0, "flex", "none") & "'>" & Last(FirstN(SharePointIntegration.Selected.Phenomenon, 1)).Value & "</li>" &
-                "<li style='list-style-type: disc; padding: 5px 20px; display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.Phenomenon, 2)).Value) > 0, "flex", "none") & "'>" & Last(FirstN(SharePointIntegration.Selected.Phenomenon, 2)).Value & "</li>" &
-                "<li style='list-style-type: disc; padding: 5px 20px; display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.Phenomenon, 3)).Value) > 0, "flex", "none") & "'>" & Last(FirstN(SharePointIntegration.Selected.Phenomenon, 3)).Value & "</li>" &
-                "<li style='list-style-type: disc; padding: 5px 20px; display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.Phenomenon, 4)).Value) > 0, "flex", "none") & "'>" & Last(FirstN(SharePointIntegration.Selected.Phenomenon, 4)).Value & "</li>" &
+                Concat(SharePointIntegration.Selected.Phenomenon, "<li style='list-style-type: disc; padding: 5px 20px; display: flex'>" & Value & "</li>") &
             "</ul>" &
         "</div>" &
         "<div style='display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.Bijlagen, 1)).Value) > 0, "flex", "none") & "; flex-direction: column; justify-content: flex-start; align-items: flex-start'>" &
             "<h2>" & If(Language()="fr-FR","Pièces jointes","Bijlagen") & "</h2>" &
             "<ul style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; background-color: white; max-width: 80%; min-width: 20%; padding: 5px; margin-left: 20px; border-radius: 5px'>" &
-                "<li style='list-style-type: disc; padding: 5px 20px; display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.Bijlagen, 1)).AbsoluteUri) > 0, "flex", "none") & "'>" & Last(FirstN(SharePointIntegration.Selected.Bijlagen, 1)).Value & "</li>" &
-                "<li style='list-style-type: disc; padding: 5px 20px; display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.Bijlagen, 2)).AbsoluteUri) > 0, "flex", "none") & "'>" & Last(FirstN(SharePointIntegration.Selected.Bijlagen, 2)).Value & "</li>" &
-                "<li style='list-style-type: disc; padding: 5px 20px; display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.Bijlagen, 3)).AbsoluteUri) > 0, "flex", "none") & "'>" & Last(FirstN(SharePointIntegration.Selected.Bijlagen, 3)).Value & "</li>" &
-                "<li style='list-style-type: disc; padding: 5px 20px; display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.Bijlagen, 4)).AbsoluteUri) > 0, "flex", "none") & "'>" & Last(FirstN(SharePointIntegration.Selected.Bijlagen, 4)).Value & "</li>" &
+                Concat(SharePointIntegration.Selected.Bijlagen, "<li style='list-style-type: disc; padding: 5px 20px; display: flex'>" & AbsoluteUri & "</li>") &
             "</ul>" &
         "</div>" &
     "</article>" &

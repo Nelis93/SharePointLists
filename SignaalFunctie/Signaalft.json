@@ -1,0 +1,241 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/view-formatting.schema.json",
+  "hideSelection": true,
+  "rowFormatter": {
+    "elmType": "div",
+    "attributes": {
+      "class": "ms-bgColor-white ms-bgColor-communicationTint40--hover ms-borderColor-neutralLight ms-borderColor-neutralTertiary--hover"
+    },
+    "style": {
+      "border-width": "1px",
+      "border-radius": "5px",
+      "border-style": "solid",
+      "width": "1000px",
+      "display": "block",
+      "margin-bottom": "5px",
+      "margin-top": "=if(@rowIndex == 0, '20px','0')"
+    },
+    "children": [
+      {
+        "elmType": "div",
+        "style": {
+          "position":"relative",
+          "text-decoration": "none",
+          "outline": "none",
+          "cursor": "pointer"
+        },
+        "customRowAction": {
+          "action": "defaultClick"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "style": {
+              "position":"absolute",
+              "bottom":"10px",
+              "left":"130px",
+              "display": "flex",
+              "flex-flow": "row nowrap",
+              "margin-top": "20px"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "forEach": "topic in [$Topic]",
+                "style": {
+                  "display": "flex",
+                  "flex-flow": "row nowrap"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "style": {
+                      "display": "flex",
+                      "flex-direction": "row",
+                      "padding": "5px 10px",
+                      "border-radius": "20px",
+                      "margin-right": "15px",
+                      "align-items": "center"
+                    },
+                    "attributes": {
+                      "class": "=if(indexOf([$topic], 'Drugs') >= 0, 'ms-bgColor-neutralLight', if(indexOf([$topic], 'Organised Crime') >= 0, 'ms-bgColor-success', if(indexOf([$topic], 'Human Trafficking') >= 0, 'ms-bgColor-error',if(indexOf([$topic], 'Property Crime') >= 0, 'ms-bgColor-communicationTint40', 'ms-bgColor-warning'))))"
+                    },
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "attributes": {
+                          "class": "=if(indexOf([$topic], 'Drugs') >= 0, 'sp-css-color-neutralPrimary', if(indexOf([$topic], 'Organised Crime') >= 0, 'sp-css-color-neutralPrimary', if(indexOf([$topic], 'Human Trafficking') >= 0, 'sp-css-color-neutralPrimary', if(indexOf([$topic], 'Property Crime') >= 0, 'sp-css-color-neutralPrimary', 'sp-css-color-themeDarker'))))",
+                          "iconName": "WebAppBuilderFragment"
+                        },
+                        "style": {
+                          "padding-right": "5px"
+                        }
+                      },
+                      {
+                        "elmType": "span",
+                        "txtContent": "[$topic]"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "display": "flex",
+              "position": "absolute",
+              "top": "10px",
+              "right": "5px",
+              "flex-direction": "column",
+              "align-items": "flex-end"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "style": {
+                  "display": "flex",
+                  "flex-direction": "row",
+                  "padding": "5px 10px",
+                  "border-radius": "20px",
+                  "margin-bottom": "10px",
+                  "align-items": "center"
+                },
+                "attributes": {
+                  "class": "=if([$Priority] == 0, 'ms-bgColor-green sp-css-color-white', if([$Priority] == 1, 'ms-bgColor-greenLight', if([$Priority] == 2, 'ms-bgColor-yellow', if([$Priority] == 3, 'ms-bgColor-orange sp-css-color-white', if([$Priority] == 4, 'ms-bgColor-red sp-css-color-white', 'ms-bgColor-redDark sp-css-color-white')))))"
+                },
+                "children": [
+                  {
+                    "elmType": "span",
+                    "attributes": {
+                      "iconName": "Important"
+                    },
+                    "style": {
+                      "padding-right": "5px"
+                    }
+                  },
+                  {
+                    "elmType": "span",
+                    "txtContent": "=('Priority: '+[$Priority])"
+                  }
+                ]
+              },
+              {
+                "elmType": "div",
+                "style": {
+                  "display": "flex",
+                  "flex-direction": "row",
+                  "padding": "5px 10px",
+                  "border-radius": "20px",
+                  "margin-bottom": "10px",
+                  "align-items": "center"
+                },
+                "attributes": {
+                  "class": "ms-bgColor-themeLight"
+                },
+                "children": [
+                  {
+                    "elmType": "span",
+                    "attributes": {
+                      "class": "sp-css-color-white",
+                      "iconName": "InternetSharing"
+                    },
+                    "style": {
+                      "padding-right": "5px"
+                    }
+                  },
+                  {
+                    "elmType": "span",
+                    "txtContent": "[$Signal]"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "display": "flex",
+              "flex-direction": "row",
+              "justify-content": "flex-start",
+              "align-items": "flex-start",
+              "padding": "10px 0px 10px 16px"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "attributes": {
+                  "class": "ms-borderColor-neutralLight ms-fontColor-neutralPrimary"
+                },
+                "style": {
+                  "display": "flex",
+                  "flex-shrink": "0",
+                  "width": "80px",
+                  "height": "80px",
+                  "border-width": "1px",
+                  "border-style": "solid",
+                  "flex-direction": "column",
+                  "align-items": "center",
+                  "text-align": "center",
+                  "justify-content": "center",
+                  "margin-right": "20px"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "txtContent": "=if(getDate([$Modified]) > 0, if(getMonth([$Modified]) == 0, 'JAN', if(getMonth([$Modified]) == 1, 'FEB', if(getMonth([$Modified]) == 2, 'MAR', if(getMonth([$Modified]) == 3, 'APR',if(getMonth([$Modified]) == 4, 'MAY',if(getMonth([$Modified]) == 5, 'JUN',if(getMonth([$Modified]) == 6, 'JUL',if(getMonth([$Modified]) == 7, 'AUG',if(getMonth([$Modified]) == 8, 'SEP',if(getMonth([$Modified]) == 9, 'OCT',if(getMonth([$Modified]) == 10, 'NOV','DEC'))))))))))),if(getMonth([$Created]) == 0, 'JAN', if(getMonth([$Created]) == 1, 'FEB', if(getMonth([$Created]) == 2, 'MAR', if(getMonth([$Created]) == 3, 'APR',if(getMonth([$Created]) == 4, 'MAY',if(getMonth([$Created]) == 5, 'JUN',if(getMonth([$Created]) == 6, 'JUL',if(getMonth([$Created]) == 7, 'AUG',if(getMonth([$Created]) == 8, 'SEP',if(getMonth([$Created]) == 9, 'OCT',if(getMonth([$Created]) == 10, 'NOV','DEC'))))))))))))",
+                    "style": {
+                      "font-size": "15px",
+                      "font-weight": "400"
+                    }
+                  },
+                  {
+                    "elmType": "div",
+                    "txtContent": "=if(getDate([$Modified]) > 0, getDate([$Modified]),getDate([$Created]))",
+                    "style": {
+                      "font-size": "28px",
+                      "font-weight": "600"
+                    }
+                  }
+                ]
+              },
+              {
+                "elmType": "div",
+                "style": {
+                  "padding": "0 16px",
+                  "display": "flex",
+                  "flex-direction": "column",
+                  "justify-content": "flex-start",
+                  "align-items": "flex-start"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "style": {
+                      "display": "inline-block",
+                      "max-width": "700px",
+                      "max-height": "55px",
+                      "padding-bottom":"40px",
+                      "font-size": "20px",
+                      "font-weight": "500",
+                      "-webkit-line-clamp": "2",
+                      "overflow": "hidden",
+                      "text-overflow": "ellipsis"
+                    },
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "txtContent": "[$Title]"
+                      }
+                    ]
+                  }                  
+                ]
+              }
+            ]
+          }
+        ]
+      }            
+    ]
+  }
+}
