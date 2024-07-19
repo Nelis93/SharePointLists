@@ -1,0 +1,81 @@
+"<section style='display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; font-size: 16px; width: 100%; max-height: 100%; margin-right: 50px; padding: 50px'>" &
+    "<article style='display: flex; flex-direction: column; justify-content: center; align-items: center; width: 90%; max-height: 100px; background-color: #333399; padding: 10px'>" &
+        "<p style='display: block; font-size: 30px; padding: 0px 100px 0px 20px; text-align: center; color: white'>" & 
+            SharePointIntegration.Selected.Titel &
+        "</p>" &
+    "</article>" &
+    "<article style='display:" & If(Len(SharePointIntegration.Selected.Description) > 0, "flex", "none") & "; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding-left: 30px; margin-top: 30px; max-width: 90%; padding-bottom: 50px; border-bottom: 1px dashed grey'>" &
+        "<h2 style='color: #333399'>" &
+            If(Language()="fr-FR","Explication","Beschrijving") &
+        "</h2>" &
+        "<div style='max-width: 80%; min-width: 20%; padding: 15px; margin-left: 5px; min-height: 200px;'>" & 
+            SharePointIntegration.Selected.Description & 
+        "</div>" &
+    "</article>" &
+    "<article style='display: flex; flex-flow: row wrap; justify-content: flex-start; align-items: flex-start; max-width: 90%; margin-top: 30px; padding-left: 30px; border-bottom: 1px dashed grey'>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.Source) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
+            "<h2 style='color: #333399'>" &
+                If(Language()="fr-FR","Source: ","Bron: ") &
+            "</h2>" &
+            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 20px;'>" &
+               SharePointIntegration.Selected.Source & 
+            "</p>" &
+        "</div>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.Signal.Value) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
+            "<h2 style='color: #333399'>" &
+                If(Language()="fr-FR","Signale: ","Signaal: ") &
+            "</h2>" &
+            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 20px;'>" &
+               SharePointIntegration.Selected.Signal.Value & 
+            "</p>" &
+        "</div>" &
+        "<div style='display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.Topic, 1)).Value) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: flex-start; margin-bottom: 20px'>" &
+            "<h2 style='color: #333399'>" &
+                If(Language()="fr-FR","Sujet: ","Thema: ") &
+            "</h2>" &
+            "<ul style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; max-width: 80%; min-width: 50%; padding: 5px; margin-left: 20px;'>" &
+                Concat(SharePointIntegration.Selected.Topic, "<li style='list-style-type: disc; padding: 5px 20px; display: flex'>" & Value & "</li>") &     
+            "</ul>" &
+        "</div>" &
+         "<div style='display:" & If(Len(SharePointIntegration.Selected.Status.Value) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
+            "<h2 style='color: #333399'>" &
+                If(Language()="fr-FR","Statut: ","Status: ") &
+            "</h2>" &
+            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 20px;'>" &
+               SharePointIntegration.Selected.Status.Value & 
+            "</p>" &
+        "</div>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.Language.Value) > 0, "flex", "none") & "; width: 33%; flex-direction: row: ; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
+            "<h2 style='color: #333399'>" &
+                If(Language()="fr-FR","Langue: ","Taal: ") &
+            "</h2>" &
+            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 20px;'>" &
+               SharePointIntegration.Selected.Language.Value & 
+            "</p>" &
+        "</div>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.Priority) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
+            "<h2 style='color: #333399'>" &
+                If(Language()="fr-FR","Priorité: ","Prioriteit: ") &
+            "</h2>" &
+            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 20px;'>" &
+               SharePointIntegration.Selected.Priority & 
+            "</p>" &
+        "</div>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.'Confidentiality '.Value) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
+            "<h2 style='color: #333399'>" &
+                If(Language()="fr-FR","confidentialité: ","Vertrouwelijkheid: ") &
+            "</h2>" &
+            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 20px;'>" &
+               SharePointIntegration.Selected.'Confidentiality '.Value & 
+            "</p>" &
+        "</div>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.Domain.Value) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
+            "<h2 style='color: #333399'>" &
+                If(Language()="fr-FR","Domaine: ","Domein: ") &
+            "</h2>" &
+            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 20px'>" &
+               SharePointIntegration.Selected.Domain.Value & 
+            "</p>" &
+        "</div>" &
+    "</article>" &
+"</section>"
