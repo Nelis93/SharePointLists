@@ -37,7 +37,7 @@ waardoor de API het logo niet kan ophalen)
 -->
 "<section style='display: flex; flex-direction: column; font-size: 16px; width: 100%; max-height: 100%; margin-right: 50px; overflow-y: clip; padding: 50px'>" &
     "<article style='display: flex; max-height: 100px; flex-direction: row; align-items: center; max-width: 90%; background-color: #333399; padding: 15px'>" &
-        "<p style='flex-grow: 1; font-size: 50px; text-align: center; padding: 20px; color: white'>" & 
+        "<p style='flex-grow: 1; font-size: " & If(Len(SharePointIntegration.Selected.Title) > 60, "30px", "50px") & ";text-align: center; padding: 20px; color: white'>" & 
                 SharePointIntegration.Selected.Title & 
         "</p>" &
         "<img src='" & Left(SharePointIntegration.Selected.'Koppeling naar item', Find("_layouts", SharePointIntegration.Selected.'Koppeling naar item') - 1) & "SiteAssets/Lists/ddc54979-da34-41fe-a456-adb4a36ea1b9/" & Substitute(Mid(SharePointIntegration.Selected.Logo.Full, Find("attachments%28%27", SharePointIntegration.Selected.Logo.Full) + Len("attachments%28%27"), Find("%27%29%2Fthumbnails", SharePointIntegration.Selected.Logo.Full) - (Find("attachments%28%27", SharePointIntegration.Selected.Logo.Full) + Len("attachments%28%27"))),"%252520"," ") & "'
@@ -52,35 +52,51 @@ waardoor de API het logo niet kan ophalen)
     "<article style='display: flex; flex-flow: row wrap; justify-content: flex-start; align-items: flex-start; max-width: 90%; margin-top: 30px; padding-left: 30px; border-bottom: 1px dashed grey'>" &
         "<div style='display:" & If(Len(SharePointIntegration.Selected.Lieu) > 0, "flex", "none") & "; width: 25%; flex-grow: 1; flex-direction: column; justify-content: flex-start; align-items: flex-start; margin-bottom: 60px'>" &
             "<h2 style='color: #333399'>Lieu</h2>" &
-            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 5px'>" &
-                "📍 " &
-                SharePointIntegration.Selected.Lieu & 
-            "</p>" &
+            "<div style='display: flex; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%'>" &
+                "<span>" &
+                    "📍 " &
+                "</span>" &
+                "<p style='min-width: 50%; margin-left: 5px'>" &
+                    SharePointIntegration.Selected.Lieu & 
+                "</p>" &
+            "</div>" &
         "</div>" &
         "<div style='display:" & If(Len(SharePointIntegration.Selected.Email) > 0, "flex", "none") & "; flex-direction: column; flex-grow: 1; width: 25%; justify-content: flex-start; align-items: flex-start; margin-bottom: 60px'>" &
             "<h2 style='color: #333399'>E-mail</h2>" &
-            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 5px; word-break: break word'>" &
-                "📧 " &
-                SharePointIntegration.Selected.Email & 
-            "</p>" &
+            "<div style='display: flex; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%'>" &
+                "<span>" &
+                    "📧 " &
+                "</span>" &
+                "<p style='min-width: 50%; margin-left: 5px; word-break: break-word'>" &
+                    SharePointIntegration.Selected.Email & 
+                "</p>" &
+            "</div>" &
         "</div>" &
         "<div style='display:" & If(Len(SharePointIntegration.Selected.Tel) > 0, "flex", "none") & "; flex-direction: column; flex-grow: 1; margin-bottom: 60px; width: 25%; justify-content: flex-start; align-items: flex-start'>" &
             "<h2 style='color: #333399'>Numéro de téléphone</h2>" &
-            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 5px'>" &
-                "📞 " &
-                 SharePointIntegration.Selected.Tel & 
-            "</p>" &
+            "<div style='display: flex; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%'>" &
+                "<span>" &
+                    "📞 " &
+                "</span>" &
+                "<p style='min-width: 50%; margin-left: 5px'>" &
+                    SharePointIntegration.Selected.Tel & 
+                "</p>" &
+            "</div>" &
         "</div>" &
         "<div style='display:" & If(Len(SharePointIntegration.Selected.Website) > 0, "flex", "none") & "; flex-direction: column; flex-grow: 1; width: 25%; justify-content: flex-start; align-items: flex-start; margin-bottom: 60px'>" &
             "<h2 style='color: #333399'>Site web</h2>" &
-            "<a href='" & SharePointIntegration.Selected.Website & "' style='text-decoration: none; color: #333399; margin-top: 15px; text-overflow: wrap; overflow-x: wrap; word-break: break-word'>" &
-                "🌐 " &
-                SharePointIntegration.Selected.Website & 
-            "</a>" &
+            "<div style='display: flex; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%; margin-top: 15px'>" &
+                "<span>" &
+                    "🌐 " &
+                "</span>" &
+                "<a href='" & SharePointIntegration.Selected.Website & "' style='display: inline-block; text-decoration: none; color: #333399; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 5px'>" &
+                    Substitute(Substitute(SharePointIntegration.Selected.Website, "https://",""),"www.","") &
+                "</a>" &
+            "</div>" &
         "</div>" &
-        "<div style='display:" & If(Len(SharePointIntegration.Selected.'Explication courte') > 0, "flex", "none") & "; flex-direction: column; width: 50%; margin-bottom: 60px; justify-content: flex-start; align-items: flex-start'>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.'Explication courte') > 0, "flex", "none") & "; flex-direction: column; width: 50%; margin-bottom: 60px; padding: 5px; justify-content: flex-start; align-items: flex-start'>" &
             "<h2 style='color: #333399'>Explication courte</h2>" &
-            "<p style=' max-width: 80%; min-width: 50%; display: flex; padding: 5px; margin-left: 5px'>" & SharePointIntegration.Selected.'Explication courte' & "</p>" &
+            "<p style=' max-width: 80%; min-width: 50%; display: flex; margin-left: 5px'>" & SharePointIntegration.Selected.'Explication courte' & "</p>" &
         "</div>" &
     "</article>" &
     "<article style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 1') > 0, "flex", "none") & "; flex-direction: column; max-width: 90%; justify-content: flex-start; align-items: flex-start; margin-top: 60px; padding-left: 30px'>" &
@@ -90,37 +106,53 @@ waardoor de API het logo niet kan ophalen)
                 "<div style='font-size: 16px'>" &
                     SharePointIntegration.Selected.'Suborganisation 1'  &
                 "</div>" &
-                "<a href='" & SharePointIntegration.Selected.'Suborganisation 1 URL' & "' style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 1 URL') > 0, "flex", "none") & "; text-decoration: none; color: #333399; margin-top: 15px'>" &
-                    "🌐 " &
-                    SharePointIntegration.Selected.'Suborganisation 1 URL' &
-                "</a>" &
+                "<div style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 1 URL') > 0, "flex", "none") & "; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%'>" &
+                    "<span>" &
+                        "🌐 " &
+                    "</span>" &
+                    "<a href='" & SharePointIntegration.Selected.'Suborganisation 1 URL' & "' style='display: inline-block; text-decoration: none; color: #333399; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 5px'>" &
+                        Substitute(Substitute(SharePointIntegration.Selected.'Suborganisation 1 URL', "https://",""),"www.","") &
+                    "</a>" &
+                "</div>" &    
             "</div>" &
             "<div style='padding: 40px 0px; border-bottom: 1px dashed grey; margin-left: 25px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 2') > 0, "flex", "none") & "; flex-direction: column; vertical-align: top; min-width: 25%; max-width: 40%; overflow-x: wrap; text-wrap: wrap; flex-grow: 1'>" &
                 "<div style='font-size: 16px'>" &
                     SharePointIntegration.Selected.'Suborganisation 2'  &
                 "</div>" &
-                "<a href='" & SharePointIntegration.Selected.'Suborganisation 2 URL' & "' style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 2 URL') > 0, "flex", "none") & "; text-decoration: none; color: #333399; margin-top: 15px'>" &
-                    "🌐 " &
-                    SharePointIntegration.Selected.'Suborganisation 2 URL' &
-                "</a>" &
+                "<div style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 2 URL') > 0, "flex", "none") & "; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%'>" &
+                    "<span>" &
+                        "🌐 " &
+                    "</span>" &
+                    "<a href='" & SharePointIntegration.Selected.'Suborganisation 2 URL' & "' style='display: inline-block; text-decoration: none; color: #333399; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 5px'>" &
+                        Substitute(Substitute(SharePointIntegration.Selected.'Suborganisation 2 URL', "https://",""),"www.","") &
+                    "</a>" &
+                "</div>" &    
             "</div>" &
             "<div style='padding: 40px 0px; border-bottom: 1px dashed grey; margin-left: 25px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 3') > 0, "flex", "none") & "; flex-direction: column; vertical-align: top; min-width: 25%; max-width: 40%; overflow-x: wrap; text-wrap: wrap; flex-grow: 1'>" &
                 "<div style='font-size: 16px'>" &
                     SharePointIntegration.Selected.'Suborganisation 3'  &
                 "</div>" &
-                "<a href='" & SharePointIntegration.Selected.'Suborganisation 3 URL' & "' style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 3 URL') > 0, "flex", "none") & "; text-decoration: none; color: #333399; margin-top: 15px'>" &
-                    "🌐 " &
-                    SharePointIntegration.Selected.'Suborganisation 3 URL' &
-                "</a>" &
+                "<div style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 3 URL') > 0, "flex", "flex", "none") & "; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%'>" &
+                    "<span>" &
+                        "🌐 " &
+                    "</span>" &
+                    "<a href='" & SharePointIntegration.Selected.'Suborganisation 3 URL' & "' style='display: inline-block; text-decoration: none; color: #333399; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 5px'>" &
+                        Substitute(Substitute(SharePointIntegration.Selected.'Suborganisation 3 URL', "https://",""),"www.","") &
+                    "</a>" &
+                "</div>" &    
             "</div>" &
             "<div style='padding: 40px 0px; border-bottom: 1px dashed grey; margin-left: 25px; display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 4') > 0, "flex", "none") & "; flex-direction: column; vertical-align: top; min-width: 25%; max-width: 40%; overflow-x: wrap; text-wrap: wrap; flex-grow: 1'>" &
                 "<div style='font-size: 16px'>" &
                     SharePointIntegration.Selected.'Suborganisation 4'  &
                 "</div>" &
-                "<a href='" & SharePointIntegration.Selected.'Suborganisation 4 URL' & "' style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 4 URL') > 0, "flex", "none") & "; text-decoration: none; color: #333399; margin-top: 15px'>" &
-                    "🌐 " &
-                    SharePointIntegration.Selected.'Suborganisation 4 URL' &
-                "</a>" &
+                "<div style='display:" & If(Len(SharePointIntegration.Selected.'Suborganisation 4 URL') > 0, "flex", "none") & "; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%'>" &
+                    "<span>" &
+                        "🌐 " &
+                    "</span>" &
+                    "<a href='" & SharePointIntegration.Selected.'Suborganisation 4 URL' & "' style='display: inline-block; text-decoration: none; color: #333399; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 5px'>" &
+                        Substitute(Substitute(SharePointIntegration.Selected.'Suborganisation 4 URL', "https://",""),"www.","") &
+                    "</a>" &
+                "</div>" &    
             "</div>" &
         "</div>" &
     "</article>" &
