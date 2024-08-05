@@ -79,18 +79,18 @@
         "</div>" &
     
     "</article>" &
-    "<article style='display:" & If(Or(Len(SharePointIntegration.Selected.SubInst1_Sub_NL) > 0, Len(SharePointIntegration.Selected.SubInst1_Sum_FR) > 0), "flex", "none") & "; flex-direction: column; max-width: 90%; justify-content: flex-start; align-items: flex-start; margin-top: 60px; padding-left: 30px'>" &
+    "<article style='display:" & If(Or(Len(SharePointIntegration.Selected.SubInst1_Sum_NL) > 0, Len(SharePointIntegration.Selected.SubInst1_Sum_FR) > 0), "flex", "none") & "; flex-direction: column; max-width: 90%; justify-content: flex-start; align-items: flex-start; margin-top: 60px; padding-left: 30px'>" &
         "<h2 style='color: #333399'>" & If(Language()="fr-FR", "Suborganisations", "Suborganisaties") & "</h2>" &
-        "<div style='display: flex; flex-flow: row wrap; align-items: flex-start; justify-content: space-evenly; background-color: white; min-width: 50%; padding: 5px; border-radius: 5px'>" &
-            "<div style='padding: 40px 0px; border-bottom: 1px dashed grey; margin-left: 25px; display:" & If(Or(Len(SharePointIntegration.Selected.SubInst1_Sub_NL) > 0, Len(SharePointIntegration.Selected.SubInst1_Sum_FR) > 0), "flex", "none") & "; flex-direction: column; vertical-align: top; min-width: 25%; max-width: 40%; overflow-x: wrap; text-wrap: wrap; flex-grow: 1'>" &
+        "<div style='display: flex; flex-flow: row wrap; align-items: flex-start; justify-content: space-between; min-width: 50%; padding: 5px; border-radius: 5px'>" &
+            "<div style='padding: 40px 0px; border-bottom: 1px dashed grey; margin-left: 25px; display:" & If(Or(Len(SharePointIntegration.Selected.SubInst1_Sum_NL) > 0, Len(SharePointIntegration.Selected.SubInst1_Sum_FR) > 0), "flex", "none") & "; flex-direction: column; vertical-align: top; min-width: 25%; max-width: 40%; overflow-x: wrap; text-wrap: wrap; flex-grow: 1'>" &
                 "<div style='font-size: 16px'>" &
-                    If(Language()="fr-FR",SharePointIntegration.Selected.SubInst1_Sum_FR, SharePointIntegration.Selected.SubInst1_Sub_NL) &
+                    If(Language()="fr-FR",SharePointIntegration.Selected.SubInst1_Sum_FR, SharePointIntegration.Selected.SubInst1_Sum_NL) &
                 "</div>" &
-                "<div style='display:" & If(Len(SharePointIntegration.Selected.SubInst1_URL) > 0, "flex", "none") & "; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%'>" &
+                "<div style='display:" & If(Len(SharePointIntegration.Selected.SubInst1_URL) > 0, "flex", "none") & "; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%; margin-top: 30px'>" &
                     "<span>" &
                         "🌐 " &
                     "</span>" &
-                    "<a href='" & SharePointIntegration.Selected.SubInst1_URL & "' style='display:" & If(Len(SharePointIntegration.Selected.SubInst1_URL) > 0, "flex", "none") & ";text-decoration: none; color: #333399; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 5px'>" &
+                    "<a href='" & SharePointIntegration.Selected.SubInst1_URL & "' style='display: inline-block ;text-decoration: none; color: #333399; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 5px'>" &
                         Substitute(Substitute(SharePointIntegration.Selected.SubInst1_URL, "https://",""),"www.","") &
                     "</a>" &
                 "</div>" &    
@@ -99,11 +99,11 @@
                 "<div style='font-size: 16px'>" &
                     If(Language()="fr-FR",SharePointIntegration.Selected.SubInst2_Sum_FR, SharePointIntegration.Selected.SubInst2_Sum_NL) &
                 "</div>" &
-                "<div style='display:" & If(Len(SharePointIntegration.Selected.SubInst2_URL) > 0, "flex", "none") & "; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%'>" &
+                "<div style='display:" & If(Len(SharePointIntegration.Selected.SubInst2_URL) > 0, "flex", "none") & "; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%; margin-top: 30px'>" &
                     "<span>" &
                         "🌐 " &
                     "</span>" &
-                    "<a href='" & SharePointIntegration.Selected.SubInst2_URL & "' style='display:" & If(Len(SharePointIntegration.Selected.SubInst2_URL) > 0, "flex", "none") & ";text-decoration: none; color: #333399; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 5px'>" &
+                    "<a href='" & SharePointIntegration.Selected.SubInst2_URL & "' style='display: inline-block ;text-decoration: none; color: #333399; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 5px'>" &
                         Substitute(Substitute(SharePointIntegration.Selected.SubInst2_URL, "https://",""),"www.","") &
                     "</a>" &
                 "</div>" &    
@@ -112,11 +112,11 @@
                 "<div style='font-size: 16px'>" &
                     If(Language()="fr-FR",SharePointIntegration.Selected.SubInst3_Sum_FR, SharePointIntegration.Selected.SubInst3_Sum_NL) &
                 "</div>" &
-                "<div style='display:" & If(Len(SharePointIntegration.Selected.SubInst3_URL) > 0, "flex", "none") & "; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%'>" &
+                "<div style='display:" & If(Len(SharePointIntegration.Selected.SubInst3_URL) > 0, "flex", "none") & "; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%; margin-top: 30px'>" &
                     "<span>" &
                         "🌐 " &
                     "</span>" &
-                    "<a href='" & SharePointIntegration.Selected.SubInst3_URL & "' style='display:" & If(Len(SharePointIntegration.Selected.SubInst3_URL) > 0, "flex", "none") & ";text-decoration: none; color: #333399; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 5px'>" &
+                    "<a href='" & SharePointIntegration.Selected.SubInst3_URL & "' style='display: inline-block ;text-decoration: none; color: #333399; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 5px'>" &
                         Substitute(Substitute(SharePointIntegration.Selected.SubInst3_URL, "https://",""),"www.","") &
                     "</a>" &
                 "</div>" &    
@@ -125,11 +125,11 @@
                 "<div style='font-size: 16px'>" &
                     If(Language()="fr-FR",SharePointIntegration.Selected.SubInst4_Sum_FR, SharePointIntegration.Selected.SubInst4_Sum_NL) &
                 "</div>" &
-                "<div style='display:" & If(Len(SharePointIntegration.Selected.SubInst4_URL) > 0, "flex", "none") & "; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%'>" &
+                "<div style='display:" & If(Len(SharePointIntegration.Selected.SubInst4_URL) > 0, "flex", "none") & "; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%; margin-top: 30px'>" &
                     "<span>" &
                         "🌐 " &
                     "</span>" &
-                    "<a href='" & SharePointIntegration.Selected.SubInst4_URL & "' style='display:" & If(Len(SharePointIntegration.Selected.SubInst4_URL) > 0, "flex", "none") & ";text-decoration: none; color: #333399; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 5px'>" &
+                    "<a href='" & SharePointIntegration.Selected.SubInst4_URL & "' style='display: inline-block ;text-decoration: none; color: #333399; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 5px'>" &
                         Substitute(Substitute(SharePointIntegration.Selected.SubInst4_URL, "https://",""),"www.","") &
                     "</a>" &
                 "</div>" &    

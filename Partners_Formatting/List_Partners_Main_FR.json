@@ -253,59 +253,58 @@
           },
           {
             "elmType": "div",
-            "attributes": {
-              "class": "sp-card-displayColumnContainer"
-            },
             "children": [
               {
                 "elmType": "div",
                 "attributes": {
                   "title": "[$Titre_FR]",
-                  "class": "ms-fontColor-neutralPrimary sp-card-content sp-card-highlightedContent",
+                  "class": "ms-fontColor-neutralPrimary",
                   "role": "heading",
                   "aria-level": "3"
                 },
-                "txtContent": "=if ([$Titre_FR] == '', '', [$Titre_FR])",
+                "txtContent": "[$Titre_FR]",
                 "style": {
+                  "display": "flex",
+                  "flex-direction": "row",
+                  "align-items": "center",
+                  "justify-content": "center",
                   "text-align": "center",
                   "font-size": "1.2em",
+                  "font-weight": "600",
                   "word-break": "break-word",
-                  "text-wrap": "wrap"
+                  "text-wrap": "wrap",
+                  "height": "50px",
+                  "padding": "0px 20px"
                 }
               }
             ]
           },
           {
             "elmType": "div",
-            "attributes": {
-              "class": "sp-card-displayColumnContainer"
-            },
             "children": [
               {
                 "elmType": "div",
                 "attributes": {
                   "title": "[$Location_FR.DisplayName]",
-                  "class": "ms-fontColor-neutralPrimary sp-card-content "
+                  "class": "ms-fontColor-neutralPrimary "
                 },
                 "txtContent": "[$Location_FR]",
                 "style": {
-                  "display": "=if ([$Title.length] > 46 && [$Location_FR] == '', 'none', '')",
+                  "display": "block",
                   "text-align": "center",
-                  "font-style": "italic"
+                  "font-style": "italic",
+                  "height": "20px"
                 }
               }
             ]
           },
           {
             "elmType": "div",
-            "attributes": {
-              "class": "sp-card-displayColumnContainer"
-            },
             "style": {
               "display": "flex",
               "flex-grow": "1",
               "min-height": "90px",
-              "padding-bottom": "10px"
+              "padding": "5px 20px 10px 20px"
             },
             "children": [
               {
@@ -316,14 +315,13 @@
                 },
                 "txtContent": "=if ([$Implication_FR] == '', '', [$Implication_FR])",
                 "style": {
+                  "display": "block",
                   "overflow": "hidden",
                   "text-overflow": "ellipsis",
                   "white-space": "normal",
-                  "padding-right": "8px",
                   "word-break": "break-word",
                   "text-align": "justify",
-                  "max-height": "200px",
-                  "line-height": "1.6em"
+                  "line-height": "1.5em"
                 }
               }
             ]
