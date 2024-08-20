@@ -28,7 +28,7 @@
     "</article>" &
     "<article style='display: flex; flex-flow: row wrap; justify-content: flex-start; align-items: flex-start; max-width: 90%; margin-top: 30px; padding-left: 30px; border-bottom: 1px dashed grey'>" &
         "<div style='display:" & If(Or(Len(SharePointIntegration.Selected.'Location FR') > 0, Len(SharePointIntegration.Selected.'Locatie NL') > 0), "flex", "none") & "; width: 25%; flex-grow: 1; flex-direction: column; justify-content: flex-start; align-items: flex-start; margin-bottom: 60px'>" &
-            "<h2 style='color: #333399'>Lieu</h2>" &
+            "<h2 style='color: #333399'>" & If(Language()="fr-FR", "Lieu", "Locatie") & "</h2>" &
             "<div style='display: flex; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%'>" &
                 "<span>" &
                     "📍 " &
@@ -50,7 +50,7 @@
             "</div>" &
         "</div>" &
         "<div style='display:" & If(Len(SharePointIntegration.Selected.Tel) > 0, "flex", "none") & "; flex-direction: column; flex-grow: 1; margin-bottom: 60px; width: 25%; justify-content: flex-start; align-items: flex-start'>" &
-            "<h2 style='color: #333399'>Numéro de téléphone</h2>" &
+            "<h2 style='color: #333399'>" & If(Language()="fr-FR", "Numéro de téléphone", "Telefoon") & "</h2>" &
             "<div style='display: flex; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%'>" &
                 "<span>" &
                     "📞 " &
@@ -61,7 +61,7 @@
             "</div>" &
         "</div>" &
         "<div style='display:" & If(Or(Len(SharePointIntegration.Selected.Website_FR) > 0, Len(SharePointIntegration.Selected.Website_NL) > 0), "flex", "none") & "; flex-direction: column; flex-grow: 1; width: 25%; justify-content: flex-start; align-items: flex-start; margin-bottom: 60px'>" &
-            "<h2 style='color: #333399'>Site web</h2>" &
+            "<h2 style='color: #333399'>" & If(Language()="fr-FR", "Site web", "Website") & "</h2>" &
             "<div style='display: flex; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%; margin-top: 15px'>" &
                 "<span>" &
                     "🌐 " &
@@ -72,7 +72,7 @@
             "</div>" &
         "</div>" &
         "<div style='display:" & If(Or(Len(SharePointIntegration.Selected.Explication_Courte_FR) > 0, Len(SharePointIntegration.Selected.Uitleg_Kort_NL) > 0), "flex", "none") & "; flex-direction: column; width: 50%; margin-bottom: 60px; padding: 5px; justify-content: flex-start; align-items: flex-start'>" &
-            "<h2 style='color: #333399'>Explication courte</h2>" &
+            "<h2 style='color: #333399'>" & If(Language()="fr-FR", "Explication courte", "Korte uitleg") & "</h2>" &
             "<p style=' max-width: 80%; min-width: 50%; display: flex; margin-left: 5px'>" & 
                 If(Language()="fr-FR",SharePointIntegration.Selected.Explication_Courte_FR, SharePointIntegration.Selected.Uitleg_Kort_NL) & 
             "</p>" &
