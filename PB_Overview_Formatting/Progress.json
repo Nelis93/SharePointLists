@@ -11,6 +11,7 @@
       "action": "defaultClick"
     },
     "style": {
+      "position": "relative",
       "margin-left": "10px",
       "width": "1000px",
       "margin-top": "5px",
@@ -19,6 +20,54 @@
       "cursor": "pointer"
     },
     "children": [
+      {
+        "elmType": "button",
+        "attributes": {
+          "class": "ms-bgColor-gray100--hover"
+        },
+        "customRowAction": {
+          "action": "setValue",
+          "actionInput": {
+            "Status": "=if([$Status] == 'Empty Site','In Draft 📑',if([$Status] == 'In Draft 📑','Draft Delivered 📑✔',if([$Status] == 'Draft Delivered 📑✔','In Review 🔍',if([$Status] == 'In Review 🔍','Review Delivered 🔍✔',if([$Status] == 'Review Delivered 🔍✔', 'Processing Feedback 🔄',if([$Status] == 'Processing Feedback 🔄','In Translation 🔠',if([$Status] == 'In Translation 🔠','Translated 🔠✔', if([$Status] == 'Translated 🔠✔','Published (ltd) 🔒',if([$Status] == 'Published (ltd) 🔒','Published (All) 🔓',if([$Status] == 'Published (All) 🔓','In Update ⏳',if([$Status] == 'In Update ⏳','Update Published 📣',if([$Status] == 'Update Published 📣','In Update ⏳',''))))))))))))",
+            "Startedon": "=getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now)",
+            "Previousphaseendedby": "=substring(@me, 0, indexOf(@me, '.')) + ' ' + substring(@me, indexOf(@me, '.')+1, indexOf(@me, '@'))",
+            "Draftstart": "=if([$Status] == 'Empty Site', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Draftstart])",
+            "Draftdelivered": "=if([$Status] == 'In Draft 📑', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Draftdelivered])",
+            "Reviewstart": "=if([$Status] == 'Draft Delivered 📑✔', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Reviewstart])",
+            "Reviewdelivered": "=if([$Status] == 'In Review 🔍', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Reviewdelivered])",
+            "Translated": "=if([$Status] == 'In Translation 🔠', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Translated])",
+            "Publishedltd": "=if([$Status] == 'Translated 🔠✔', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Publishedltd])",
+            "PublishedAll": "=if([$Status] == 'Published (ltd) 🔒', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$PublishedAll])",
+            "Updatestart": "=if([$Status] == 'Published (All) 🔓', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Updatestart])",
+            "Updatepublished": "=if([$Status] == 'In Update ⏳', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Updatepublished])"
+          }
+        },
+        "style": {
+          "display": "=if(@me == 'Nelis.Eerdekens@police.belgium.eu', 'block', 'none')",
+          "position": "absolute",
+          "z-index": "10",
+          "right": "2px",
+          "top": "2px",
+          "border": "rounded",
+          "color": "#00368a",
+          "padding": "5px 7px",
+          "border-radius": "100%",
+          "border-color": "#00368a",
+          "background-color": "none",
+          "cursor": "pointer"
+        },
+        "children": [
+          {
+            "elmType": "span",
+            "attributes": {
+              "iconName": "Refresh"
+            },
+            "style": {
+              "font-size": "15px"
+            }
+          }
+        ]
+      },
       {
         "elmType": "div",
         "style": {
@@ -61,38 +110,42 @@
               "margin-left": "25px",
               "width": "400px"
             },
-            "txtContent": "=if([$Subfenomeen], [$Fenomeen] + ': ' + [$Subfenomeen],[$Fenomeen]) " 
+            "txtContent": "=if([$Subfenomeen], [$Fenomeen] + ': ' + [$Subfenomeen],[$Fenomeen]) "
           },
           {
             "elmType": "div",
             "style": {
-              "width": "150px",
-              "display": "flex"
+              "box-sizing": "border-box",
+              "padding": "7px",
+              "border": "2px solid #00368a",
+              "border-radius": "5px",
+              "margin": "10px auto",
+              "overflow": "hidden",
+              "text-overflow": "ellipsis"
             },
-            "children": [
-              {
-                "elmType": "div",
-                "style": {
-                  "box-sizing": "border-box",
-                  "padding": "7px",
-                  "border": "2px solid #00368a",
-                  "border-radius": "5px",
-                  "margin": "10px auto",
-                  "overflow": "hidden",
-                  "text-overflow": "ellipsis"
-                },
-                "attributes": {
-                  "class": {
+            "attributes": {
+              "class": {
+                "operator": ":",
+                "operands": [
+                  {
+                    "operator": "==",
+                    "operands": [
+                      "[$Status]",
+                      "Empty Site"
+                    ]
+                  },
+                  "sp-css-backgroundColor-white sp-field-fontSizeMedium sp-css-color-themeDark",
+                  {
                     "operator": ":",
                     "operands": [
                       {
                         "operator": "==",
                         "operands": [
                           "[$Status]",
-                          "Empty Site"
+                          "In Draft 📑"
                         ]
                       },
-                      "sp-css-backgroundColor-white sp-field-fontSizeMedium sp-css-color-themeDark",
+                      "sp-css-backgroundColor-themeLighter sp-field-fontSizeMedium sp-css-color-themeDark",
                       {
                         "operator": ":",
                         "operands": [
@@ -100,10 +153,10 @@
                             "operator": "==",
                             "operands": [
                               "[$Status]",
-                              "In Draft 📑"
+                              "Draft Delivered 📑✔"
                             ]
                           },
-                          "sp-css-backgroundColor-themeLighter sp-field-fontSizeMedium sp-css-color-themeDark",
+                          "sp-css-backgroundColor-themeLighter ms-fontColor-greenLight sp-field-fontSizeMedium",
                           {
                             "operator": ":",
                             "operands": [
@@ -122,10 +175,10 @@
                                     "operator": "==",
                                     "operands": [
                                       "[$Status]",
-                                      "Processing Feedback 🔄"
+                                      "Review Delivered 🔍✔"
                                     ]
                                   },
-                                  "sp-css-backgroundColor-themePrimary sp-field-fontSizeMedium sp-css-color-white",
+                                  "sp-css-backgroundColor-themeLight ms-fontColor-greenLight sp-field-fontSizeMedium",
                                   {
                                     "operator": ":",
                                     "operands": [
@@ -133,10 +186,10 @@
                                         "operator": "==",
                                         "operands": [
                                           "[$Status]",
-                                          "In Translation 🔠"
+                                          "Processing Feedback 🔄"
                                         ]
                                       },
-                                      "sp-css-backgroundColor-themeSecondary sp-field-fontSizeMedium sp-css-color-white",
+                                      "sp-css-backgroundColor-themePrimary sp-field-fontSizeMedium sp-css-color-white",
                                       {
                                         "operator": ":",
                                         "operands": [
@@ -144,10 +197,10 @@
                                             "operator": "==",
                                             "operands": [
                                               "[$Status]",
-                                              "Published (ltd) 🔒"
+                                              "In Translation 🔠"
                                             ]
                                           },
-                                          "sp-css-backgroundColor-themeDark sp-field-fontSizeMedium sp-css-color-white",
+                                          "sp-css-backgroundColor-themeSecondary sp-field-fontSizeMedium sp-css-color-white",
                                           {
                                             "operator": ":",
                                             "operands": [
@@ -155,10 +208,10 @@
                                                 "operator": "==",
                                                 "operands": [
                                                   "[$Status]",
-                                                  "Published (All) 🔓"
+                                                  "Translated 🔠✔"
                                                 ]
                                               },
-                                              "sp-css-backgroundColor-themeDarker sp-field-fontSizeMedium sp-css-color-white",
+                                              "sp-css-backgroundColor-themeSecondary sp-field-fontSizeMedium ms-fontColor-greenLight",
                                               {
                                                 "operator": ":",
                                                 "operands": [
@@ -166,7 +219,7 @@
                                                     "operator": "==",
                                                     "operands": [
                                                       "[$Status]",
-                                                      "In Update ⏳"
+                                                      "Published (ltd) 🔒"
                                                     ]
                                                   },
                                                   "sp-css-backgroundColor-themeDark sp-field-fontSizeMedium sp-css-color-white",
@@ -177,11 +230,37 @@
                                                         "operator": "==",
                                                         "operands": [
                                                           "[$Status]",
-                                                          "Update Published 📣"
+                                                          "Published (All) 🔓"
                                                         ]
                                                       },
                                                       "sp-css-backgroundColor-themeDarker sp-field-fontSizeMedium sp-css-color-white",
-                                                      ""
+                                                      {
+                                                        "operator": ":",
+                                                        "operands": [
+                                                          {
+                                                            "operator": "==",
+                                                            "operands": [
+                                                              "[$Status]",
+                                                              "In Update ⏳"
+                                                            ]
+                                                          },
+                                                          "sp-css-backgroundColor-themeDark sp-field-fontSizeMedium sp-css-color-white",
+                                                          {
+                                                            "operator": ":",
+                                                            "operands": [
+                                                              {
+                                                                "operator": "==",
+                                                                "operands": [
+                                                                  "[$Status]",
+                                                                  "Update Published 📣"
+                                                                ]
+                                                              },
+                                                              "sp-css-backgroundColor-themeDarker sp-field-fontSizeMedium sp-css-color-white",
+                                                              ""
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
                                                     ]
                                                   }
                                                 ]
@@ -200,10 +279,10 @@
                       }
                     ]
                   }
-                },
-                "txtContent": "[$Status]"
+                ]
               }
-            ]
+            },
+            "txtContent": "[$Status]"
           },
           {
             "elmType": "div",
@@ -252,16 +331,14 @@
               },
               {
                 "elmType": "div",
-                "attributes": {
-                  "class": "=if([$Status] == 'Empty Site', '', if([$Status] == 'In Draft 📑', 'sp-css-backgroundColor-BgDarkRed', if([$Status] == 'In Review 🔍', 'sp-css-backgroundColor-BgOrange', if([$Status] == 'Processing Feedback 🔄', 'sp-css-backgroundColor-yellow', if([$Status] == 'In Translation 🔠', 'sp-css-backgroundColor-warningBackground50', if([$Status] == 'Published (ltd) 🔒', 'sp-css-backgroundColor-yellowLight', if([$Status] == 'Published (All) 🔓', 'sp-css-backgroundColor-successBackground50',if([$Status] == 'In Update ⏳', 'sp-css-backgroundColor-blockingBackground50',if([$Status] == 'Update Published 📣', 'sp-css-backgroundColor-successBackground50',''))))))))) "
-                },
                 "style": {
-                  "width": "=if([$Status] == 'Empty Site', '0', if([$Status] == 'In Draft 📑', '16.67%', if([$Status] == 'In Review 🔍', '33.33%', if([$Status] == 'Processing Feedback 🔄', '50%', if([$Status] == 'In Translation 🔠', '66.67%', if([$Status] == 'Published (ltd) 🔒', '83.33%', if([$Status] == 'Published (All) 🔓', '100%',if([$Status] == 'In Update ⏳', '83.33%',if([$Status] == 'Update Published 📣', '100%','')))))))))",
+                  "width": "=if([$Status] == 'Empty Site', '0', if([$Status] == 'In Draft 📑', '10%', if([$Status] == 'Draft Delivered 📑✔', '20%', if([$Status] == 'In Review 🔍', '30%', if([$Status] == 'Review Delivered 🔍✔', '40%', if([$Status] == 'Processing Feedback 🔄', '50%', if([$Status] == 'In Translation 🔠', '60%', if([$Status] == 'Translated 🔠✔', '70%', if([$Status] == 'Published (ltd) 🔒', '80%', if([$Status] == 'Published (All) 🔓', '100%',if([$Status] == 'In Update ⏳', '83.33%',if([$Status] == 'Update Published 📣', '100%',''))))))))))))",
                   "min-height": "inherit",
                   "margin-top": "1px",
                   "padding": "16px 0",
                   "box-sizing": "border-box",
-                  "border-radius": "5px"
+                  "border-radius": "5px",
+                  "background-color": "=if([$Status] == 'Empty Site', '', if([$Status] == 'In Draft 📑', '#7F0000', if([$Status] == 'Draft Delivered 📑✔', '#9B1A00', if([$Status] == 'In Review 🔍', '#B73500', if([$Status] == 'Review Delivered 🔍✔', '#D34F00', if([$Status] == 'Processing Feedback 🔄', '#EF6A00', if([$Status] == 'In Translation 🔠', '#FFA64D', if([$Status] == 'Translated 🔠✔', '#FFDD99', if([$Status] == 'Published (ltd) 🔒', '#D4E59D', if([$Status] == 'Published (All) 🔓', '#A8D48E',if([$Status] == 'In Update ⏳', '#D4E59D',if([$Status] == 'Update Published 📣', '#A8D48E',''))))))))))))"
                 }
               },
               {
