@@ -4,7 +4,7 @@
   "rowFormatter": {
     "elmType": "div",
     "attributes": {
-      "class": "ms-bgColor-white ms-bgColor-communicationTint40--hover ms-borderColor-neutralLight ms-borderColor-neutralTertiary--hover"
+      "class": "ms-borderColor-neutralLight"
     },
     "style": {
       "border-width": "1px",
@@ -13,16 +13,21 @@
       "width": "1000px",
       "display": "block",
       "margin-bottom": "5px",
-      "margin-top": "=if(@rowIndex == 0, '20px','0')"
+      "margin-top": "=if(@rowIndex == 0, '15px','0')"
     },
     "children": [
       {
         "elmType": "div",
         "style": {
-          "position":"relative",
+          "position": "relative",
+          "z-index": "5",
+          "border-radius": "5px",
           "text-decoration": "none",
           "outline": "none",
           "cursor": "pointer"
+        },
+        "attributes": {
+          "class": "ms-bgColor-white ms-bgColor-communicationTint40--hover ms-borderColor-neutralLight ms-borderColor-neutralTertiary--hover"
         },
         "customRowAction": {
           "action": "defaultClick"
@@ -31,9 +36,9 @@
           {
             "elmType": "div",
             "style": {
-              "position":"absolute",
-              "bottom":"10px",
-              "left":"130px",
+              "position": "absolute",
+              "bottom": "10px",
+              "left": "130px",
               "display": "flex",
               "flex-flow": "row nowrap",
               "margin-top": "20px"
@@ -73,7 +78,7 @@
                       },
                       {
                         "elmType": "span",
-                        "txtContent": "[$topic]"
+                        "txtContent": "=if(startsWith([$topic],'_'),substring([$topic],1,length(split([$topic],''))),[$topic])"
                       }
                     ]
                   }
@@ -103,7 +108,7 @@
                   "align-items": "center"
                 },
                 "attributes": {
-                  "class": "=if([$Priority] == 0, 'ms-bgColor-green sp-css-color-white', if([$Priority] == 1, 'ms-bgColor-greenLight', if([$Priority] == 2, 'ms-bgColor-yellow', if([$Priority] == 3, 'ms-bgColor-orange sp-css-color-white', if([$Priority] == 4, 'ms-bgColor-red sp-css-color-white', 'ms-bgColor-redDark sp-css-color-white')))))"
+                  "class": "=if(substring([$Priority],0,1) == '1', 'ms-bgColor-greenLight', if(substring([$Priority],0,1) == '2', 'ms-bgColor-yellow', if(substring([$Priority],0,1) == '3', 'ms-bgColor-orange sp-css-color-white', if(substring([$Priority],0,1) == '4', 'ms-bgColor-red sp-css-color-white', 'ms-bgColor-redDark sp-css-color-white'))))"
                 },
                 "children": [
                   {
@@ -117,7 +122,7 @@
                   },
                   {
                     "elmType": "span",
-                    "txtContent": "=('Priority: '+[$Priority])"
+                    "txtContent": "=('Priority: ' + substring([$Priority],0,1))"
                   }
                 ]
               },
@@ -156,6 +161,7 @@
           {
             "elmType": "div",
             "style": {
+              "position": "relative",
               "display": "flex",
               "flex-direction": "row",
               "justify-content": "flex-start",
@@ -169,6 +175,7 @@
                   "class": "ms-borderColor-neutralLight ms-fontColor-neutralPrimary"
                 },
                 "style": {
+                  "position": "relative",
                   "display": "flex",
                   "flex-shrink": "0",
                   "width": "80px",
@@ -216,7 +223,7 @@
                       "display": "inline-block",
                       "max-width": "700px",
                       "max-height": "55px",
-                      "padding-bottom":"40px",
+                      "padding-bottom": "40px",
                       "font-size": "20px",
                       "font-weight": "500",
                       "-webkit-line-clamp": "2",
@@ -229,13 +236,13 @@
                         "txtContent": "[$Title]"
                       }
                     ]
-                  }                  
+                  }
                 ]
               }
             ]
           }
         ]
-      }            
+      }
     ]
   }
 }

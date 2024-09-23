@@ -115,37 +115,34 @@
           {
             "elmType": "div",
             "style": {
-              "box-sizing": "border-box",
-              "padding": "7px",
-              "border": "2px solid #00368a",
-              "border-radius": "5px",
+              "display":"flex",
+              "justify-content":"center",
               "margin": "10px auto",
-              "overflow": "hidden",
-              "text-overflow": "ellipsis"
+              "width":"170px"
             },
-            "attributes": {
-              "class": {
-                "operator": ":",
-                "operands": [
-                  {
-                    "operator": "==",
-                    "operands": [
-                      "[$Status]",
-                      "Empty Site"
-                    ]
-                  },
-                  "sp-css-backgroundColor-white sp-field-fontSizeMedium sp-css-color-themeDark",
-                  {
+            "children":[
+              {
+                "elmType": "div",
+                "style": {
+                  "display":"flex",
+                  "padding": "7px",
+                  "border": "2px solid #00368a",
+                  "border-radius": "5px",
+                  "overflow": "hidden",
+                  "text-overflow": "ellipsis"
+                },
+                "attributes": {
+                  "class": {
                     "operator": ":",
                     "operands": [
                       {
                         "operator": "==",
                         "operands": [
                           "[$Status]",
-                          "In Draft 📑"
+                          "Empty Site"
                         ]
                       },
-                      "sp-css-backgroundColor-themeLighter sp-field-fontSizeMedium sp-css-color-themeDark",
+                      "sp-css-backgroundColor-white sp-field-fontSizeMedium sp-css-color-themeDark",
                       {
                         "operator": ":",
                         "operands": [
@@ -153,10 +150,10 @@
                             "operator": "==",
                             "operands": [
                               "[$Status]",
-                              "Draft Delivered 📑✔"
+                              "In Draft 📑"
                             ]
                           },
-                          "sp-css-backgroundColor-themeLighter ms-fontColor-greenLight sp-field-fontSizeMedium",
+                          "sp-css-backgroundColor-themeLighter sp-field-fontSizeMedium sp-css-color-themeDark",
                           {
                             "operator": ":",
                             "operands": [
@@ -164,10 +161,10 @@
                                 "operator": "==",
                                 "operands": [
                                   "[$Status]",
-                                  "In Review 🔍"
+                                  "Draft Delivered 📑✔"
                                 ]
                               },
-                              "sp-css-backgroundColor-themeLight sp-field-fontSizeMedium sp-css-color-themeDark",
+                              "sp-css-backgroundColor-themeLighter ms-fontColor-greenLight sp-field-fontSizeMedium",
                               {
                                 "operator": ":",
                                 "operands": [
@@ -175,10 +172,10 @@
                                     "operator": "==",
                                     "operands": [
                                       "[$Status]",
-                                      "Review Delivered 🔍✔"
+                                      "In Review 🔍"
                                     ]
                                   },
-                                  "sp-css-backgroundColor-themeLight ms-fontColor-greenLight sp-field-fontSizeMedium",
+                                  "sp-css-backgroundColor-themeLight sp-field-fontSizeMedium sp-css-color-themeDark",
                                   {
                                     "operator": ":",
                                     "operands": [
@@ -186,10 +183,10 @@
                                         "operator": "==",
                                         "operands": [
                                           "[$Status]",
-                                          "Processing Feedback 🔄"
+                                          "Review Delivered 🔍✔"
                                         ]
                                       },
-                                      "sp-css-backgroundColor-themePrimary sp-field-fontSizeMedium sp-css-color-white",
+                                      "sp-css-backgroundColor-themeLight ms-fontColor-greenLight sp-field-fontSizeMedium",
                                       {
                                         "operator": ":",
                                         "operands": [
@@ -197,10 +194,10 @@
                                             "operator": "==",
                                             "operands": [
                                               "[$Status]",
-                                              "In Translation 🔠"
+                                              "Processing Feedback 🔄"
                                             ]
                                           },
-                                          "sp-css-backgroundColor-themeSecondary sp-field-fontSizeMedium sp-css-color-white",
+                                          "sp-css-backgroundColor-themePrimary sp-field-fontSizeMedium sp-css-color-white",
                                           {
                                             "operator": ":",
                                             "operands": [
@@ -208,10 +205,10 @@
                                                 "operator": "==",
                                                 "operands": [
                                                   "[$Status]",
-                                                  "Translated 🔠✔"
+                                                  "In Translation 🔠"
                                                 ]
                                               },
-                                              "sp-css-backgroundColor-themeSecondary sp-field-fontSizeMedium ms-fontColor-greenLight",
+                                              "sp-css-backgroundColor-themeSecondary sp-field-fontSizeMedium sp-css-color-white",
                                               {
                                                 "operator": ":",
                                                 "operands": [
@@ -219,10 +216,10 @@
                                                     "operator": "==",
                                                     "operands": [
                                                       "[$Status]",
-                                                      "Published (ltd) 🔒"
+                                                      "Translated 🔠✔"
                                                     ]
                                                   },
-                                                  "sp-css-backgroundColor-themeDark sp-field-fontSizeMedium sp-css-color-white",
+                                                  "sp-css-backgroundColor-themeSecondary sp-field-fontSizeMedium ms-fontColor-greenLight",
                                                   {
                                                     "operator": ":",
                                                     "operands": [
@@ -230,10 +227,10 @@
                                                         "operator": "==",
                                                         "operands": [
                                                           "[$Status]",
-                                                          "Published (All) 🔓"
+                                                          "Published (ltd) 🔒"
                                                         ]
                                                       },
-                                                      "sp-css-backgroundColor-themeDarker sp-field-fontSizeMedium sp-css-color-white",
+                                                      "sp-css-backgroundColor-themeDark sp-field-fontSizeMedium sp-css-color-white",
                                                       {
                                                         "operator": ":",
                                                         "operands": [
@@ -241,10 +238,10 @@
                                                             "operator": "==",
                                                             "operands": [
                                                               "[$Status]",
-                                                              "In Update ⏳"
+                                                              "Published (All) 🔓"
                                                             ]
                                                           },
-                                                          "sp-css-backgroundColor-themeDark sp-field-fontSizeMedium sp-css-color-white",
+                                                          "sp-css-backgroundColor-themeDarker sp-field-fontSizeMedium sp-css-color-white",
                                                           {
                                                             "operator": ":",
                                                             "operands": [
@@ -252,11 +249,24 @@
                                                                 "operator": "==",
                                                                 "operands": [
                                                                   "[$Status]",
-                                                                  "Update Published 📣"
+                                                                  "In Update ⏳"
                                                                 ]
                                                               },
-                                                              "sp-css-backgroundColor-themeDarker sp-field-fontSizeMedium sp-css-color-white",
-                                                              ""
+                                                              "sp-css-backgroundColor-themeDark sp-field-fontSizeMedium sp-css-color-white",
+                                                              {
+                                                                "operator": ":",
+                                                                "operands": [
+                                                                  {
+                                                                    "operator": "==",
+                                                                    "operands": [
+                                                                      "[$Status]",
+                                                                      "Update Published 📣"
+                                                                    ]
+                                                                  },
+                                                                  "sp-css-backgroundColor-themeDarker sp-field-fontSizeMedium sp-css-color-white",
+                                                                  ""
+                                                                ]
+                                                              }
                                                             ]
                                                           }
                                                         ]
@@ -279,11 +289,12 @@
                       }
                     ]
                   }
-                ]
+                },
+                "txtContent": "[$Status]"
               }
-            },
-            "txtContent": "[$Status]"
+            ]
           },
+          
           {
             "elmType": "div",
             "style": {
