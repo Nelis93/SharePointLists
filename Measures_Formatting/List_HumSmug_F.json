@@ -33,7 +33,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "Maatregel",
+            "txtContent": "Mesure",
             "style": {
               "flex-grow": "1",
               "min-width": "155px",
@@ -42,7 +42,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "Status",
+            "txtContent": "Statut",
             "style": {
               "width": "155px",
               "display": "=if(@window.innerWidth < 1500, 'none', '')"
@@ -50,7 +50,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "Soort",
+            "txtContent": "Sorte",
             "style": {
               "width": "155px",
               "display": "=if(@window.innerWidth < 1500, 'none', '')"
@@ -58,7 +58,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "Wie?",
+            "txtContent": "Qui?",
             "style": {
               "width": "155px",
               "display": "=if(@window.innerWidth < 1500, 'none', '')"
@@ -66,7 +66,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "Processtap",
+            "txtContent": "Etape",
             "style": {
               "width": "155px",
               "display": "=if(@window.innerWidth < 1500, 'none', '')"
@@ -92,7 +92,7 @@
             "elmType": "div",
             "style": {
               "width": "100px",
-              "height": "[$field_8].height",
+              "height": "[$field_9].height",
               "display": "flex",
               "flex-direction": "column",
               "justify-content": "center"
@@ -157,7 +157,7 @@
             "children": [
               {
                 "elmType": "p",
-                "txtContent": "[$Title]",
+                "txtContent": "[$field_1]",
                 "style": {
                   "max-width":"400px"
                   
@@ -174,19 +174,19 @@
                   "font-size": "18px",
                   "border": "rounded",
                   "border-radius": "5px",
-                  "padding": "=if([$Toelichting] == '', '0', '20px')",
+                  "padding": "=if([$Explication] == '', '0', '20px')",
                   "width": "400px",
                   "background-color": "#D6E2E0 ",
                   "color": "black",
-                  "display": "=if([$Toelichting] == '', 'none', '')"
+                  "display": "=if([$Explication] == '', 'none', '')"
                 },
-                "txtContent": "[$Toelichting]"
+                "txtContent": "[$Explication]"
               }
             }
           },
           {
             "elmType": "div",
-            "txtContent": "[$field_10]",
+            "txtContent": "[$field_11]",
             "style": {
               "width": "150px",
               "display": "=if(@window.innerWidth < 1500, 'none', 'flex')",
@@ -197,7 +197,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "[$field_4]",
+            "txtContent": "[$field_5]",
             "style": {
               "width": "150px",
               "display": "=if(@window.innerWidth < 1500, 'none', 'flex')",
@@ -208,7 +208,7 @@
           },
           {
             "elmType": "div",
-            "txtContent": "[$field_6]",
+            "txtContent": "[$field_7]",
             "style": {
               "width": "150px",
               "display": "=if(@window.innerWidth < 1500, 'none', 'flex')",
@@ -231,7 +231,7 @@
             "children": [
               {
                 "elmType": "div",
-                "txtContent": "=if(indexOf([$Processtap], 'Rekrutering') >= 0, '1','')",
+                "txtContent": "=if(indexOf([$field_9], 'Recrutement') >= 0, '1','')",
                 "style": {
                   "background-color": "#cc6600",
                   "color": "#fff",
@@ -242,12 +242,12 @@
                   "height": "30px",
                   "font-size": "20px",
                   "text-align": "center",
-                  "display": "=if(indexOf([$Processtap], 'Rekrutering') >= 0, '','none')"
+                  "display": "=if(indexOf([$field_9], 'Recrutement') >= 0, '','none')"
                 }
               },
               {
                 "elmType": "div",
-                "txtContent": "=if(indexOf([$Processtap], 'Reis') >= 0, '2','')",
+                "txtContent": "=if(indexOf([$field_9], 'Voyage') >= 0, '2','')",
                 "style": {
                   "background-color": "#cc6600",
                   "color": "#fff",
@@ -258,12 +258,12 @@
                   "height": "30px",
                   "font-size": "20px",
                   "text-align": "center",
-                  "display": "=if(indexOf([$Processtap], 'Reis') >= 0, '','none')"
+                  "display": "=if(indexOf([$field_9], 'Voyage') >= 0, '','none')"
                 }
               },
               {
                 "elmType": "div",
-                "txtContent": "=if(indexOf([$Processtap], 'België binnen') >= 0, '3','')",
+                "txtContent": "=if(indexOf([$field_9], 'Entrée en BE') >= 0, '3','')",
                 "style": {
                   "background-color": "#cc6600",
                   "color": "#fff",
@@ -274,12 +274,12 @@
                   "height": "30px",
                   "font-size": "20px",
                   "text-align": "center",
-                  "display": "=if(indexOf([$Processtap], 'België binnen') >= 0, '','none')"
+                  "display": "=if(indexOf([$field_9], 'Entrée en BE') >= 0, '','none')"
                 }
               },
               {
                 "elmType": "div",
-                "txtContent": "=if(indexOf([$Processtap], 'Verblijf in België') >= 0, '4','')",
+                "txtContent": "=if(indexOf([$field_9], 'En BE') >= 0, '4','')",
                 "style": {
                   "background-color": "#cc6600",
                   "color": "#fff",
@@ -290,12 +290,12 @@
                   "height": "30px",
                   "font-size": "20px",
                   "text-align": "center",
-                  "display": "=if(indexOf([$Processtap], 'Verblijf in België') >= 0, '','none')"
+                  "display": "=if(indexOf([$field_9], 'En BE') >= 0, '','none')"
                 }
               },
               {
                 "elmType": "div",
-                "txtContent": "=if(indexOf([$Processtap], 'België buiten') >= 0, '5','')",
+                "txtContent": "=if(indexOf([$field_9], 'En dehors de la BE') >= 0, '5','')",
                 "style": {
                   "background-color": "#cc6600",
                   "color": "#fff",
@@ -306,7 +306,7 @@
                   "height": "30px",
                   "font-size": "20px",
                   "text-align": "center",
-                  "display": "=if(indexOf([$Processtap], 'België buiten') >= 0, '','none')"
+                  "display": "=if(indexOf([$field_9], 'En dehors de la BE') >= 0, '','none')"
                 }
               }
             ],
@@ -334,7 +334,7 @@
                                   "text-align": "center",
                                   "margin-bottom": "10px"
                                 },
-                                "txtContent": "Procesmodel"
+                                "txtContent": "Modèle de processus"
                               }
                             ]
                           },
@@ -350,8 +350,8 @@
                                 },
                                 "txtContent": " ",
                                 "attributes": {
-                                  "iconName": "=if(indexOf([$Processtap], 'Rekrutering') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'Rekrutering') >= 0, 'green','neutralSecondaryAlt')"
+                                  "iconName": "=if(indexOf([$field_9], 'Recrutement') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'Recrutement') >= 0, 'green','neutralSecondaryAlt')"
                                 }
                               },
                               {
@@ -364,19 +364,19 @@
                                 "txtContent": " ",
                                 "attributes": {
                                   "iconName": "CircleRing",
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'Rekrutering') >= 0, 'green','neutralSecondaryAlt')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'Recrutement') >= 0, 'green','neutralSecondaryAlt')"
                                 }
                               },
                               {
                                 "elmType": "span",
                                 "style": {
-                                  "font-size": "=if(indexOf([$Processtap], 'Rekrutering') >= 0, '16px', ''",
-                                  "font-weight": "=if(indexOf([$Processtap], 'Rekrutering') >= 0, '600', ''",
+                                  "font-size": "=if(indexOf([$field_9], 'Recrutement') >= 0, '16px', '')",
+                                  "font-weight": "=if(indexOf([$field_9], 'Recrutement') >= 0, '600', '')",
                                   "padding-left": "9px"
                                 },
-                                "txtContent": "Rekrutering",
+                                "txtContent": "Recrutement",
                                 "attributes": {
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'Rekrutering') >= 0, 'green','neutralSecondaryAlt')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'Recrutement') >= 0, 'green','neutralSecondaryAlt')"
                                 }
                               },
                               {
@@ -387,7 +387,7 @@
                                   "text-align": "center"
                                 },
                                 "attributes": {
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'Reis') >= 0, 'black', 'black')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'Voyage') >= 0, 'black', 'black')"
                                 }
                               }
                             ]
@@ -399,12 +399,12 @@
                                 "elmType": "span",
                                 "style": {
                                   "border-left-style": "solid",
-                                  "border-left-color": "='ms-borderColor-' + if(indexOf([$Processtap], 'Reis') >= 0, 'green','neutralSecondaryAlt')",
+                                  "border-left-color": "='ms-borderColor-' + if(indexOf([$field_9], 'Voyage') >= 0, 'green','neutralSecondaryAlt')",
                                   "text-align": "center",
                                   "margin-left": "21px"
                                 },
                                 "attributes": {
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'Reis') >= 0, 'green','neutralSecondaryAlt')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'Voyage') >= 0, 'green','neutralSecondaryAlt')"
                                 }
                               }
                             ]
@@ -421,8 +421,8 @@
                                 },
                                 "txtContent": " ",
                                 "attributes": {
-                                  "iconName": "=if(indexOf([$Processtap], 'Reis') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'Reis') >= 0, 'green','neutralSecondaryAlt')"
+                                  "iconName": "=if(indexOf([$field_9], 'Voyage') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'Voyage') >= 0, 'green','neutralSecondaryAlt')"
                                 }
                               },
                               {
@@ -435,19 +435,19 @@
                                 "txtContent": " ",
                                 "attributes": {
                                   "iconName": "CircleRing",
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'Reis') >= 0, 'green','neutralSecondaryAlt')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'Voyage') >= 0, 'green','neutralSecondaryAlt')"
                                 }
                               },
                               {
                                 "elmType": "span",
-                                "txtContent": "Reis",
+                                "txtContent": "Voyage",
                                 "style": {
-                                  "font-size": "=if(indexOf([$Processtap], 'Reis') >= 0, '16px', ''",
-                                  "font-weight": "=if(indexOf([$Processtap], 'Reis') >= 0, '600', ''",
+                                  "font-size": "=if(indexOf([$field_9], 'Voyage') >= 0, '16px', '')",
+                                  "font-weight": "=if(indexOf([$field_9], 'Voyage') >= 0, '600', '')",
                                   "padding-left": "9px"
                                 },
                                 "attributes": {
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'Reis') >= 0, 'green','neutralSecondaryAlt')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'Voyage') >= 0, 'green','neutralSecondaryAlt')"
                                 }
                               }
                             ]
@@ -459,11 +459,11 @@
                                 "elmType": "span",
                                 "style": {
                                   "border-left-style": "solid",
-                                  "border-left-color": "='ms-borderColor-' + if(indexOf([$Processtap], 'België binnen') >= 0,'green','neutralSecondaryAlt')",
+                                  "border-left-color": "='ms-borderColor-' + if(indexOf([$field_9], 'Entrée en BE') >= 0,'green','neutralSecondaryAlt')",
                                   "margin-left": "21px"
                                 },
                                 "attributes": {
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'België binnen') >= 0,'green','neutralSecondaryAlt')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'Entrée en BE') >= 0,'green','neutralSecondaryAlt')"
                                 }
                               }
                             ]
@@ -480,8 +480,8 @@
                                 },
                                 "txtContent": " ",
                                 "attributes": {
-                                  "iconName": "=if(indexOf([$Processtap], 'België binnen') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'België binnen') >= 0,'green','neutralSecondaryAlt')"
+                                  "iconName": "=if(indexOf([$field_9], 'Entrée en BE') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'Entrée en BE') >= 0,'green','neutralSecondaryAlt')"
                                 }
                               },
                               {
@@ -494,19 +494,19 @@
                                 "txtContent": " ",
                                 "attributes": {
                                   "iconName": "CircleRing",
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'België binnen') >= 0,'green','neutralSecondaryAlt')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'Entrée en BE') >= 0,'green','neutralSecondaryAlt')"
                                 }
                               },
                               {
                                 "elmType": "span",
                                 "style": {
-                                  "font-size": "=if(indexOf([$Processtap], 'België binnen') >= 0, '16px', ''",
-                                  "font-weight": "=if(indexOf([$Processtap], 'België binnen') >= 0, '600', ''",
+                                  "font-size": "=if(indexOf([$field_9], 'Entrée en BE') >= 0, '16px', '')",
+                                  "font-weight": "=if(indexOf([$field_9], 'Entrée en BE') >= 0, '600', '')",
                                   "padding-left": "9px"
                                 },
-                                "txtContent": "België binnen",
+                                "txtContent": "Entrée en BE",
                                 "attributes": {
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'België binnen') >= 0, 'green','neutralSecondaryAlt')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'Entrée en BE') >= 0, 'green','neutralSecondaryAlt')"
                                 }
                               }
                             ]
@@ -518,11 +518,11 @@
                                 "elmType": "span",
                                 "style": {
                                   "border-left-style": "solid",
-                                  "border-left-color": "='ms-borderColor-' + if(indexOf([$Processtap], 'Verblijf in België') >= 0,'green','neutralSecondaryAlt')",
+                                  "border-left-color": "='ms-borderColor-' + if(indexOf([$field_9], 'En BE') >= 0,'green','neutralSecondaryAlt')",
                                   "margin-left": "21px"
                                 },
                                 "attributes": {
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'Verblijf in België') >= 0,'green','neutralSecondaryAlt')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'En BE') >= 0,'green','neutralSecondaryAlt')"
                                 }
                               }
                             ]
@@ -539,8 +539,8 @@
                                 },
                                 "txtContent": " ",
                                 "attributes": {
-                                  "iconName": "=if(indexOf([$Processtap], 'Verblijf in België') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'Verblijf in België') >= 0,'green','neutralSecondaryAlt')"
+                                  "iconName": "=if(indexOf([$field_9], 'En BE') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'En BE') >= 0,'green','neutralSecondaryAlt')"
                                 }
                               },
                               {
@@ -553,19 +553,19 @@
                                 "txtContent": " ",
                                 "attributes": {
                                   "iconName": "CircleRing",
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'Verblijf in België') >= 0,'green','neutralSecondaryAlt')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'En BE') >= 0,'green','neutralSecondaryAlt')"
                                 }
                               },
                               {
                                 "elmType": "span",
                                 "style": {
-                                  "font-size": "=if(indexOf([$Processtap], 'Verblijf in België') >= 0, '16px', ''",
-                                  "font-weight": "=if(indexOf([$Processtap], 'Verblijf in België') >= 0, '600', ''",
+                                  "font-size": "=if(indexOf([$field_9], 'En BE') >= 0, '16px', '')",
+                                  "font-weight": "=if(indexOf([$field_9], 'En BE') >= 0, '600', '')",
                                   "padding-left": "9px"
                                 },
-                                "txtContent": "Verblijf in België",
+                                "txtContent": "En BE",
                                 "attributes": {
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'Verblijf in België') >= 0, 'green','neutralSecondaryAlt')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'En BE') >= 0, 'green','neutralSecondaryAlt')"
                                 }
                               }
                             ]
@@ -577,11 +577,11 @@
                                 "elmType": "span",
                                 "style": {
                                   "border-left-style": "solid",
-                                  "border-left-color": "='ms-borderColor-' + if(indexOf([$Processtap], 'België buiten') >= 0,'green','neutralSecondaryAlt')",
+                                  "border-left-color": "='ms-borderColor-' + if(indexOf([$field_9], 'En dehors de la BE') >= 0,'green','neutralSecondaryAlt')",
                                   "margin-left": "21px"
                                 },
                                 "attributes": {
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'België buiten') >= 0,'green','neutralSecondaryAlt')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'En dehors de la BE') >= 0,'green','neutralSecondaryAlt')"
                                 }
                               }
                             ]
@@ -598,8 +598,8 @@
                                 },
                                 "txtContent": " ",
                                 "attributes": {
-                                  "iconName": "=if(indexOf([$Processtap], 'België buiten') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'België buiten') >= 0,'green','neutralSecondaryAlt')"
+                                  "iconName": "=if(indexOf([$field_9], 'En dehors de la BE') >= 0, 'StatusCircleCheckmark', 'CircleRing')",
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'En dehors de la BE') >= 0,'green','neutralSecondaryAlt')"
                                 }
                               },
                               {
@@ -612,19 +612,19 @@
                                 "txtContent": " ",
                                 "attributes": {
                                   "iconName": "CircleRing",
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'België buiten') >= 0,'green','neutralSecondaryAlt')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'En dehors de la BE') >= 0,'green','neutralSecondaryAlt')"
                                 }
                               },
                               {
                                 "elmType": "span",
                                 "style": {
-                                  "font-size": "=if(indexOf([$Processtap], 'België buiten') >= 0, '16px', ''",
-                                  "font-weight": "=if(indexOf([$Processtap], 'België buiten') >= 0, '600', ''",
+                                  "font-size": "=if(indexOf([$field_9], 'En dehors de la BE') >= 0, '16px', '')",
+                                  "font-weight": "=if(indexOf([$field_9], 'En dehors de la BE') >= 0, '600', '')",
                                   "padding-left": "9px"
                                 },
-                                "txtContent": "België buiten",
+                                "txtContent": "En dehors de la BE",
                                 "attributes": {
-                                  "class": "='ms-fontColor-' + if(indexOf([$Processtap], 'België buiten') >= 0, 'green','neutralSecondaryAlt')"
+                                  "class": "='ms-fontColor-' + if(indexOf([$field_9], 'En dehors de la BE') >= 0, 'green','neutralSecondaryAlt')"
                                 }
                               }
                             ]
