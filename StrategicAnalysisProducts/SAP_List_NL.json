@@ -1,368 +1,374 @@
 {
-    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
-    "hideSelection": true,
-    "rowFormatter": {
-      "elmType": "div",
-      "style": {
-        "position": "relative",
-        "border": "solid 1px black",
-        "border-radius": "10px",
-        "display": "flex",
-        "flex-direction": "row",
-        "justify-content": "flex-start",
-        "align-items": "flex-start",
-        "overflow-x": "hidden",
-        "overflow-y": "clip",
-        "width": "800px",
-        "height": "200px",
-        "margin-top": "5px"
-      },
-      "children": [
-        {
-          "elmType": "div",
-          "customRowAction": {
-            "action": "defaultClick"
-          },
-          "style": {
-            "height": "100%",
-            "width": "100%",
-            "cursor": "pointer",
-            "position": "absolute",
-            "z-index": "1"
-          }
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+  "hideSelection": true,
+  "rowFormatter": {
+    "elmType": "div",
+    "style": {
+      "position": "relative",
+      "display": "flex",
+      "flex-direction": "row",
+      "justify-content": "flex-start",
+      "align-items": "flex-start",
+      "overflow-x": "hidden",
+      "overflow-y": "clip",
+      "width": "1100px",
+      "height": "180px",
+      "margin-top": "5px",
+      "border": "1px solid",
+      "border-radius": "10px"
+    },
+    "attributes": {
+      "class": "ms-bgColor-white ms-bgColor-communicationTint40--hover ms-borderColor-neutralLight ms-borderColor-themeDarker--hover"
+    },
+    "children": [
+      {
+        "elmType": "div",
+        "style": {
+          "position": "relative",
+          "display": "flex",
+          "flex-direction": "column",
+          "justify-content": "flex-end",
+          "height": "100%",
+          "width": "100%",
+          "cursor": "pointer"
         },
-        {
-          "elmType": "div",
-          "style": {
-            "display": "flex",
-            "flex-direction": "column",
-            "justify-content": "flex-end",
-            "height": "100%",
-            "width": "100%"
+        "customRowAction": {
+          "action": "defaultClick"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "style": {
+              "position": "absolute",
+              "display": "=if([$Attachments] > 0, 'flex','none')",
+              "top": "10px",
+              "right": "10px"
+            },
+            "children": [
+              {
+                "elmType": "span",
+                "attributes": {
+                  "iconName": "Attach"
+                },
+                "style": {
+                  "font-size": "30px",
+                  "width": "100%",
+                  "max-width": "100%"
+                }
+              }
+            ]
           },
-          "children": [
-            {
-              "elmType": "div",
-              "style": {
-                "position": "absolute",
-                "display": "=if([$FileLeafRef], 'flex','none')",
-                "top": "10px",
-                "right": "10px"
-              },
-              "children": [
-                {
-                  "elmType": "span",
-                  "attributes": {
-                    "iconName": "Attach"
+          {
+            "elmType": "div",
+            "style": {
+              "position": "absolute",
+              "display": "flex",
+              "font-weight": "bold",
+              "height": "100%",
+              "flex-direction": "column",
+              "left": "10px",
+              "top": "10px",
+              "align-items": "flex-start",
+              "justify-content": "center"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "style": {
+                  "display": "=if(loopIndex('personIterator') >= 2, 'none', 'flex')",
+                  "flex-direction": "row",
+                  "justify-content": "center",
+                  "align-items": "center",
+                  "overflow": "hidden",
+                  "text-overflow": "ellipsis",
+                  "margin": "2px 0"
+                },
+                "forEach": "personIterator in [$Author0]",
+                "children": [
+                  {
+                    "elmType": "img",
+                    "attributes": {
+                      "src": "=getUserImage([$personIterator.email],'S')",
+                      "title": "[$personIterator.title]",
+                      "class": "sp-card-userThumbnail"
+                    },
+                    "style": {
+                      "border-radius": "50px",
+                      "height": "30px",
+                      "width": "30px",
+                      "margin-right": "10px"
+                    }
                   },
-                  "style": {
-                    "font-size": "30px",
-                    "width": "100%",
-                    "max-width": "100%"
+                  {
+                    "elmType": "div",
+                    "txtContent": "[$personIterator.title]",
+                    "style": {
+                      "text-wrap": "nowrap",
+                      "font-size": "14px"
+                    }
                   }
-                }
-              ]
+                ]
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "position": "absolute",
+              "top": "0",
+              "padding": "10px 0px 10px 20px",
+              "max-width": "1000px",
+              "text-wrap": "nowrap",
+              "text-overflow": "ellipsis",
+              "overflow": "hidden",
+              "font-weight": "bold",
+              "font-size": "32px",
+              "-webkit-line-clamp": "1"
             },
-            {
-              "elmType": "div",
-              "style": {
-                "padding": "10px",
-                "max-width": "700px",
-                "text-wrap":"nowrap",
-                "text-overflow": "ellipsis",
-                "overflow":"hidden",
-                "font-weight": "bold",
-                "font-size": "30px",
-                "-webkit-line-clamp": "1"              
-              },
-              "children":[
-                {
-                  "elmType": "span",
-                  "txtContent": "[$TitleNL]"
-                }
-              ]
+            "children": [
+              {
+                "elmType": "span",
+                "style": {
+                  "font-family": "serif"
+                },
+                "txtContent": "[$Title]"
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "position": "relative",
+              "display": "flex",
+              "flex-direction": "row",
+              "justify-content": "flex-end",
+              "align-items": "flex-start",
+              "padding": "10px 0",
+              "min-height": "50px",
+              "max-height": "85px",
+              "width": "100%"
             },
-            {
-              "elmType": "div",
-              "style": {
-                "position": "relative",
-                "display": "flex",
-                "flex-direction": "row",
-                "justify-content": "flex-end",
-                "align-items": "flex-start",
-                "padding": "10px 0",
-                "height": "120px",
-                "width": "100%"
-              },
-              "children": [
-                {
-                  "elmType": "div",
-                  "style": {
-                    "position": "relative",
-                    "padding": "0px 10px",
-                    "width": "100%",
-                    "height": "100%"
-                  },
-                  "children": [
-                    {
-                      "elmType": "div",
-                      "style": {
-                        "position": "absolute",
-                        "display": "flex",
-                        "font-weight": "bold",
-                        "flex-direction": "column",
-                        "flex-grow": "1",
-                        "left": "20px",
-                        "align-items": "flex-start",
-                        "height": "100%"
-                      },
-                      "children": [
-                        {
-                          "elmType": "div",
-                          "style": {
-                            "display": "=if(loopIndex('personIterator') >= 2, 'none', 'flex')",
-                            "flex-direction": "row",
-                            "justify-content": "center",
-                            "align-items": "center",
-                            "overflow": "hidden",
-                            "text-overflow": "ellipsis",
-                            "margin": "2px 0"
-                          },
-                          "forEach": "personIterator in [$Author0]",
-                          "children": [
-                            {
-                              "elmType": "img",
-                              "attributes": {
-                                "src": "=getUserImage([$personIterator.email],'S')",
-                                "title": "[$personIterator.title]",
-                                "class": "sp-card-userThumbnail"
-                              },
-                              "style": {
-                                "border-radius": "50px",
-                                "height": "30px",
-                                "width": "30px",
-                                "margin-right": "10px"
-                              }
-                            },
-                            {
-                              "elmType": "div",
-                              "txtContent": "[$personIterator.title]",
-                              "style": {
-                                "text-wrap": "nowrap"
-                              }
-                            }
-                          ]
+            "children": [
+              {
+                "elmType": "div",
+                "style": {
+                  "position": "relative",
+                  "padding": "0px 10px",
+                  "width": "100%",
+                  "height": "100%"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "style": {
+                      "position": "absolute",
+                      "bottom": "0",
+                      "display": "=if([$Year],'flex','none')",
+                      "flex-direction": "row",
+                      "justify-content": "flex-start",
+                      "align-items": "center",
+                      "font-weight": "bold",
+                      "font-size": "20px",
+                      "padding-top": "10px"
+                    },
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "attributes": {
+                          "iconName": "Calendar"
                         },
-                        {
-                          "elmType": "div",
-                          "style": {
-                            "position": "absolute",
-                            "bottom": "0px",
-                            "background-color": "white",
-                            "display": "flex",
-                            "flex-direction": "row",
-                            "justify-content": "flex-start",
-                            "align-items": "center",
-                            "font-weight": "bold",
-                            "font-size": "20px"
-                          },
-                          "children": [
-                            {
-                              "elmType": "span",
-                              "attributes": {
-                                "iconName": "Calendar"
-                              },
-                              "style": {
-                                "font-size": "25px",
-                                "padding-right": "10px"
-                              }
+                        "style": {
+                          "font-size": "25px",
+                          "padding-right": "10px"
+                        }
+                      },
+                      {
+                        "elmType": "div",
+                        "attributes": {
+                          "title": "[$Year]"
+                        },
+                        "txtContent": "[$Year]"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "elmType": "div",
+                "style": {
+                  "position": "relative",
+                  "display": "=if([$Typeofanalysis],'flex','none')",
+                  "flex-direction": "row",
+                  "justify-content": "flex-start",
+                  "align-items": "flex-start",
+                  "min-width": "300px",
+                  "max-height": "90px",
+                  "overflow-y": "hidden",
+                  "margin": "0px 20px"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "txtContent": "Type: ",
+                    "style": {
+                      "display": "flex",
+                      "padding-bottom": "10px",
+                      "padding": "0px 10px",
+                      "border-radius": "20px",
+                      "font-weight": "bold",
+                      "font-size": "16px"
+                    }
+                  },
+                  {
+                    "elmType": "div",
+                    "style": {
+                      "display": "flex",
+                      "flex-flow": "row wrap"
+                    },
+                    "children": [
+                      {
+                        "elmType": "div",
+                        "forEach": "type in [$Typeofanalysis]",
+                        "style": {
+                          "display": "=if(loopIndex('type') >= 5, 'none', '')"
+                        },
+                        "children": [
+                          {
+                            "elmType": "div",
+                            "style": {
+                              "display": "inline-flex",
+                              "flex-direction": "row",
+                              "padding": "5px 10px",
+                              "border-radius": "20px",
+                              "max-width": "200px",
+                              "margin-bottom": "5px",
+                              "margin-right": "5px",
+                              "justify-content": "flex-start",
+                              "align-items": "center",
+                              "background-color": "#eab676",
+                              "color": "#042f66",
+                              "text-wrap": "nowrap"
                             },
-                            {
-                              "elmType": "div",
-                              "attributes": {
-                                "title": "[$Year]",
-                                "class": "ms-fontColor-neutralPrimary sp-card-content "
-                              },
-                              "txtContent": "=if ([$Year] == '', '–', getYear([$Year]))"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "elmType": "div",
-                  "style": {
-                    "position": "relative",
-                    "display": "flex",
-                    "flex-direction": "column",
-                    "justify-content": "flex-start",
-                    "align-items": "flex-start",
-                    "min-width": "250px",
-                    "margin": "0px 20px"
-                  },
-                  "children": [
-                    {
-                      "elmType": "div",
-                      "txtContent": "Type: ",
-                      "style": {
-                        "display": "flex",
-                        "padding-bottom": "10px",
-                        "padding-left": "10px",
-                        "border-radius": "20px",
-                        "font-weight": "bold",
-                        "font-size": "16px"
-                      }
-                    },
-                    {
-                      "elmType": "div",
-                      "style": {
-                        "display": "flex",
-                        "flex-flow": "row wrap"
-                      },
-                      "children": [
-                        {
-                          "elmType": "div",
-                          "forEach": "type in [$Typeofanalysis]",
-                          "style": {
-                            "display": "=if(loopIndex('type') >= 5, 'none', '')"
-                          },
-                          "children": [
-                            {
-                              "elmType": "div",
-                              "style": {
-                                "display": "inline-flex",
-                                "flex-direction": "row",
-                                "padding": "5px 10px",
-                                "border-radius": "20px",
-                                "max-width":"200px",
-                                "margin-bottom": "5px",
-                                "margin-right": "5px",
-                                "justify-content": "flex-start",
-                                "background-color": "#eab676",
-                                "color": "#042f66",
-                                "text-wrap": "nowrap"
-                              },
-                              "children": [
-                                {
-                                  "elmType": "span",
-                                  "attributes": {
-                                    "class": "sp-css-color-themeDark",
-                                    "iconName": "WebAppBuilderFragment"
-                                  },
-                                  "style": {
-                                    "padding-right": "5px"
-                                  }
+                            "children": [
+                              {
+                                "elmType": "span",
+                                "attributes": {
+                                  "class": "sp-css-color-themeDark",
+                                  "iconName": "WebAppBuilderFragment"
                                 },
-                                {
-                                  "elmType": "span",
-                                  "style": {
-                                    "overflow": "hidden",
-                                    "text-overflow": "ellipsis",
-                                    "-webkit-line-clamp": "1",
-                                    "font-weight": "600"
-                                  },
-                                  "txtContent": "=if(startsWith([$type],'_'),substring([$type],1,length(split([$type],''))),[$type])"
+                                "style": {
+                                  "padding-right": "5px"
                                 }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "elmType": "div",
-                  "style": {
-                    "display": "flex",
-                    "position": "relative",
-                    "flex-direction": "column",
-                    "align-items": "flex-start",
-                    "justify-content": "flex-start",
-                    "height": "100%",
-                    "min-width": "250px"
-                  },
-                  "children": [
-                    {
-                      "elmType": "div",
-                      "txtContent": "Topic: ",
-                      "style": {
-                        "display": "flex",
-                        "padding-left": "10px",
-                        "padding-bottom": "10px",
-                        "font-weight": "bold",
-                        "font-size": "16px"
-                      }
-                    },
-                    {
-                      "elmType": "div",
-                      "style": {
-                        "display": "flex",
-                        "flex-flow": "row wrap",
-                        "justify-content": "flex-start"
-                      },
-                      "children": [
-                        {
-                          "elmType": "div",
-                          "forEach": "topic in [$Topic]",
-                          "style": {
-                            "display": "=if(loopIndex('topic') >= 5, 'none', 'flex')"
-                          },
-                          "children": [
-                            {
-                              "elmType": "div",
-                              "style": {
-                                "display": "inline-flex",
-                                "flex-direction": "row",
-                                "flex-shrink": "1",
-                                "padding": "5px 10px",
-                                "border-radius": "20px",
-                                "width": "auto",
-                                "max-width":"200px",
-                                "margin-bottom": "5px",
-                                "margin-right": "5px",
-                                "justify-content": "flex-start",
-                                "align-items": "center",
-                                "overflow": "hidden",
-                                "background-color": "#76b5c5",
-                                "color": "#80391e",
-                                "text-wrap": "nowrap"
                               },
-                              "children": [
-                                {
-                                  "elmType": "span",
-                                  "attributes": {
-                                    "class": "sp-css-color-themeDarker",
-                                    "iconName": "WebAppBuilderFragment"
-                                  },
-                                  "style": {
-                                    "padding-right": "5px"
-                                  }
+                              {
+                                "elmType": "span",
+                                "style": {
+                                  "overflow": "hidden",
+                                  "text-overflow": "ellipsis",
+                                  "-webkit-line-clamp": "1",
+                                  "font-weight": "600"
                                 },
-                                {
-                                  "elmType": "span",
-                                  "style": {
-                                    "overflow": "hidden",
-                                    "text-overflow": "ellipsis",
-                                    "-webkit-line-clamp": "1",
-                                    "font-weight": "600"
-                                  },
-                                  "txtContent": "=if(startsWith([$topic],'_'),substring([$topic],1,length(split([$topic],''))),[$topic])"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
+                                "txtContent": "=if(startsWith([$type],'_'),substring([$type],1,length(split([$type],''))),[$type])"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "elmType": "div",
+                "style": {
+                  "display": "=if([$Topic],'flex','none')",
+                  "position": "relative",
+                  "flex-direction": "row",
+                  "align-items": "flex-start",
+                  "justify-content": "flex-start",
+                  "max-height": "90px",
+                  "overflow-y": "hidden",
+                  "min-width": "300px"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "txtContent": "Topic: ",
+                    "style": {
+                      "display": "flex",
+                      "padding": "0px 10px",
+                      "padding-bottom": "10px",
+                      "font-weight": "bold",
+                      "font-size": "16px"
                     }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
+                  },
+                  {
+                    "elmType": "div",
+                    "style": {
+                      "display": "flex",
+                      "flex-flow": "row wrap",
+                      "justify-content": "flex-start"
+                    },
+                    "children": [
+                      {
+                        "elmType": "div",
+                        "forEach": "topic in [$Topic]",
+                        "style": {
+                          "display": "=if(loopIndex('topic') >= 5, 'none', 'flex')"
+                        },
+                        "children": [
+                          {
+                            "elmType": "div",
+                            "style": {
+                              "display": "inline-flex",
+                              "flex-direction": "row",
+                              "flex-shrink": "1",
+                              "padding": "5px 10px",
+                              "border-radius": "20px",
+                              "width": "auto",
+                              "max-width": "200px",
+                              "margin-bottom": "5px",
+                              "margin-right": "5px",
+                              "justify-content": "flex-start",
+                              "align-items": "center",
+                              "overflow": "hidden",
+                              "background-color": "=if(indexOf([$topic], 'Drugs') >= 0, '#9DBBE3', if(indexOf([$topic], 'Human trafficking') >= 0, '#BFE3DF', if(indexOf([$topic], 'ROAD') >= 0, '#FFF5CC',if(indexOf([$topic], 'Property') >= 0, '#FFD9BD', if(indexOf([$topic], 'TERRO') >= 0, '#EE9D94', if(indexOf([$topic], 'MIGRATION') >= 0, '#a3c3b0', if(indexOf([$topic],'Counterfeiting') >= 0 || indexOf([$topic],'Money laundering') >= 0 || indexOf([$topic],'_Fraud') >= 0 || indexOf([$topic],'Fiscal fraud') >= 0, '#9d97bc', if(indexOf([$topic], 'Environmental') >= 0, '#dea7a1', if(indexOf([$topic], 'CN_') >= 0 || indexOf([$topic],'OFFENDER') >= 0, '#ead2b8',if(indexOf([$topic], 'Firearms') >= 0, '#B2EDAE', '#76b5c5'))))))))))",
+                              "color": "#80391e",
+                              "text-wrap": "nowrap"
+                            },
+                            "children": [
+                              {
+                                "elmType": "span",
+                                "attributes": {
+                                  "class": "sp-css-color-themeDarker",
+                                  "iconName": "WebAppBuilderFragment"
+                                },
+                                "style": {
+                                  "padding-right": "5px"
+                                }
+                              },
+                              {
+                                "elmType": "span",
+                                "style": {
+                                  "overflow": "hidden",
+                                  "text-overflow": "ellipsis",
+                                  "-webkit-line-clamp": "1",
+                                  "font-weight": "600"
+                                },
+                                "txtContent": "=if(indexOf([$topic],'_') > 0,substring([$topic],indexOf([$topic],'_') +1,length(split([$topic],''))),[$topic])"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
+}
