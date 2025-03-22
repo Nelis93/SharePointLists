@@ -1,0 +1,30 @@
+<h1 class="editor-heading-h1">
+    <b>
+        <strong class="editor-text-bold" style="font-size: 18px;">Wijziging signaal:</strong>
+    </b>
+    <br>
+</h1>
+<p class="editor-paragraph">
+    <a href="@{triggerBody()?['{Link}']}" class="editor-link">@{if(not(empty(triggerBody()?['Title'])), triggerBody()?['Title'], triggerBody()?['Title_x0028_FR_x0029_'])}</a>
+</p>
+<p class="editor-paragraph">
+    <span style="font-size: 12px;">door: </span>
+    @{triggerBody()?['Editor/DisplayName']}
+    <br>
+</p>
+<br>
+<h1 class="editor-heading-h1">
+    <b>
+        <strong class="editor-text-bold" style="font-size: 18px;">Changement du singal:</strong>
+    </b>
+    <br>
+</h1>
+<p class="editor-paragraph">
+    <a href="@{triggerBody()?['{Link}']}" class="editor-link">@{if(not(empty(triggerBody()?['Title_x0028_FR_x0029_'])), triggerBody()?['Title_x0028_FR_x0029_'], triggerBody()?['Title'])}</a>
+</p>
+<p class="editor-paragraph">
+    <span style="font-size: 12px;">par: </span>
+    @{triggerBody()?['Editor/DisplayName']}
+    <br>
+</p>
+<br>

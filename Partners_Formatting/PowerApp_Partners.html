@@ -1,28 +1,76 @@
 "<section style='display: flex; flex-direction: column; justify-content: flex-start; font-size: 16px; width: 100%; max-height: 100%; margin-right: 50px; overflow-y: clip; padding: 50px'>" &
     "<article style='display: flex; max-height: 100px; flex-direction: row; align-items: center; max-width: 95%; background-color: #333399; padding: 15px; margin-left: -50px; border-bottom-left-radius: 50px 50px; border-left: 4px solid #D85509;
  padding: 15px'>" &
-            "<p style='flex-grow: 1; font-size: 50px; text-align: center; padding: 20px; color: white'>" & 
-                If(Language()="fr-FR",SharePointIntegration.Selected.Titre_FR, SharePointIntegration.Selected.Titel_NL) & 
-            "</p>" &
-            "<div style='
-            display:" & If(Len(SharePointIntegration.Selected.Logo.Full) > 0, "flex", "none") & 
-            "; flex-shrink: 0; height: 150px; width: 150px; flex-shrink: 0; border-radius: 50%; margin-right: 50px; 
-            background: center / 80% no-repeat url(https://bpolb.sharepoint.com" & 
+        "<p style='flex-grow: 1; font-size: 50px; text-align: center; padding: 20px; color: white'>" & 
+            If(Language()="fr-FR",SharePointIntegration.Selected.Titre_FR, SharePointIntegration.Selected.Titel_NL) & 
+        "</p>" &
+        "<div style='
+        display:" & If(Find("Reserved",SharePointIntegration.Selected.Logo.Full) > 0, "none", "flex") & 
+        "; flex-shrink: 0; height: 150px; width: 150px; flex-shrink: 0; border-radius: 50%; margin-right: 50px; 
+        background: center / 80% no-repeat url(https://bpolb.sharepoint.com" & 
+            Substitute(
                 Substitute(
                     Substitute(
                         Substitute(
                             Substitute(
+                                Right(SharePointIntegration.Selected.Logo.Full,Len(SharePointIntegration.Selected.Logo.Full)-Find("%2F_api%2Fv2.1%2F",SharePointIntegration.Selected.Logo.Full)+1)
+                                ,"%2F", "/"),
+                            "%25252f", "/"),
+                        "%25253a", ":"),
+                    "%21", "!"),
+                "%3F", "?") & "), white'>" &
+        "</div>" &
+         "<div style='
+            display:" & If(Find("Reserved",SharePointIntegration.Selected.Logo.Full) > 0, "flex", "none") & 
+            "; flex-shrink: 0; height: 150px; width: 150px; flex-shrink: 0; border-radius: 50%; margin-right: 50px; 
+            background: center / 80% no-repeat url(" & 
+                Substitute(
+                Substitute( 
+                    Substitute(
+                        Substitute(
+                            Substitute(
                                 Substitute(
-                                    Right(SharePointIntegration.Selected.Logo.Full,Len(SharePointIntegration.Selected.Logo.Full)-Find("%2F_api%2Fv2.1%2F",SharePointIntegration.Selected.Logo.Full)+1)
-                                    ,"%2F", "/"),
+                                    Substitute(
+                                        Substitute(
+                                            Mid(
+                                                SharePointIntegration.Selected.Logo.Full,
+                                                Find("https%25253a%25252f%25252fbpolb.sharepoint",
+                                                SharePointIntegration.Selected.Logo.Full),
+                                                Abs(
+                                                    Find("https%25253a%25252f%25252fbpolb.sharepoint",
+                                                        SharePointIntegration.Selected.Logo.Full)-
+                                                    Find("%27%29%2Fthumbnails",
+                                                        SharePointIntegration.Selected.Logo.Full)
+                                                )
+                                            ),
+                                            Mid(
+                                                SharePointIntegration.Selected.Logo.Full,
+                                                Find("codeless",
+                                                SharePointIntegration.Selected.Logo.Full),
+                                                Abs(
+                                                    Find("codeless",
+                                                        SharePointIntegration.Selected.Logo.Full)-
+                                                    Find("Reserved",
+                                                        SharePointIntegration.Selected.Logo.Full)
+                                                )
+                                        ),
+                                        Concatenate("Lists/Partners/Attachments/",SharePointIntegration.Selected.'Id (ID)',"/")
+                                    ),"%2F", "/"),
                                 "%25252f", "/"),
                             "%25253a", ":"),
                         "%21", "!"),
-                    "%3F", "?") & "), white'>" &
+                    "%3F", "?"),
+                "%25255b", "["),
+            "%25255d","]") & "), white'>" &
         "</div>" &
     "</article>" &
-    "<article style='display:" & If(Or(Len(SharePointIntegration.Selected.Explication_Longue_FR) > 0, Len(SharePointIntegration.Selected.Uitleg_Lang_NL) > 0), "flex", "none") & "; flex-direction: column; justify-content: flex-start; align-items: start; padding-left: 30px; margin-top: 30px; max-width: 90%; padding-bottom: 50px; border-bottom: 1px dashed grey'>" &
+    "<article style='display:flex; flex-direction: column; justify-content: flex-start; align-items: start; padding-left: 30px; margin-top: 30px; max-width: 90%; padding-bottom: 50px; border-bottom: 1px dashed grey'>" &
         "<h2 style='color: #333399'>" & If(Language()="fr-FR", "Explication", "Toelichting") & "</h2>" &
+        "<div style='display:" & If(Or(Len(SharePointIntegration.Selected.Explication_Courte_FR) > 0, Len(SharePointIntegration.Selected.Uitleg_Kort_NL) > 0), "flex", "none") & "; flex-direction: column; width: auto; margin-bottom: 30px; padding: 5px; justify-content: flex-start; align-items: flex-start'>" &
+            "<p style='font-style: italic; max-width: 80%; min-width: 50%; display: flex; margin-left: 5px'>" & 
+                If(Language()="fr-FR",SharePointIntegration.Selected.Explication_Courte_FR, SharePointIntegration.Selected.Uitleg_Kort_NL) & 
+            "</p>" &
+        "</div>" &
         "<div style='max-width: 80%; min-width: 20%; padding: 15px; margin-left: 5px; min-height: 200px; background-color: white; border-radius: 5px;'>" & 
             If(Language()="fr-FR",SharePointIntegration.Selected.Explication_Longue_FR, SharePointIntegration.Selected.Uitleg_Lang_NL) & 
         "</div>" &
@@ -35,7 +83,7 @@
                     "📍 " &
                 "</span>" &
                 "<p style='min-width: 50%; margin-left: 5px'>" &
-                    If(Language()="fr-FR",SharePointIntegration.Selected.'Location FR', SharePointIntegration.Selected.'Locatie NL') &  
+                    If(Language()="fr-FR",SharePointIntegration.Selected.'Location FR' , SharePointIntegration.Selected.'Locatie NL') &  
                 "</p>" &
             "</div>" &
         "</div>" &
@@ -72,19 +120,13 @@
                 "</a>" &
             "</div>" &
         "</div>" &
-        "<div style='display:" & If(Or(Len(SharePointIntegration.Selected.Explication_Courte_FR) > 0, Len(SharePointIntegration.Selected.Uitleg_Kort_NL) > 0), "flex", "none") & "; flex-direction: column; width: 50%; margin-bottom: 60px; padding: 5px; justify-content: flex-start; align-items: flex-start'>" &
-            "<h2 style='color: #333399'>" & If(Language()="fr-FR", "Explication courte", "Korte uitleg") & "</h2>" &
-            "<p style=' max-width: 80%; min-width: 50%; display: flex; margin-left: 5px'>" & 
-                If(Language()="fr-FR",SharePointIntegration.Selected.Explication_Courte_FR, SharePointIntegration.Selected.Uitleg_Kort_NL) & 
-            "</p>" &
-        "</div>" &
     "</article>" &
-    "<article style='display:" & If(Or(Len(SharePointIntegration.Selected.SubInst1_Sum_NL) > 0, Len(SharePointIntegration.Selected.SubInst1_Sum_FR) > 0), "flex", "none") & "; flex-direction: column; max-width: 90%; justify-content: flex-start; align-items: flex-start; margin-top: 60px; padding-left: 30px'>" &
+    "<article style='display:" & If(Or(Len(SharePointIntegration.Selected.SubInst1_Sub_NL) > 0, Len(SharePointIntegration.Selected.SubInst1_Sum_FR) > 0), "flex", "none") & "; flex-direction: column; max-width: 90%; justify-content: flex-start; align-items: flex-start; margin-top: 60px; padding-left: 30px'>" &
         "<h2 style='color: #333399'>" & If(Language()="fr-FR", "Suborganisations", "Suborganisaties") & "</h2>" &
         "<div style='display: grid; grid-template-columns: 1fr 1fr; column-gap: 100px; row-gap: 40px; padding: 5px'>" &
-            "<div style='padding-bottom: 40px; border-bottom: 1px dashed grey; margin-left: 25px; display:" & If(Or(Len(SharePointIntegration.Selected.SubInst1_Sum_NL) > 0, Len(SharePointIntegration.Selected.SubInst1_Sum_FR) > 0), "flex", "none") & "; flex-direction: column; vertical-align: top; min-width: 25%; overflow-x: wrap; text-wrap: wrap'>" &
+            "<div style='padding-bottom: 40px; border-bottom: 1px dashed grey; margin-left: 25px; display:" & If(Or(Len(SharePointIntegration.Selected.SubInst1_Sub_NL) > 0, Len(SharePointIntegration.Selected.SubInst1_Sum_FR) > 0), "flex", "none") & "; flex-direction: column; vertical-align: top; min-width: 25%; overflow-x: wrap; text-wrap: wrap'>" &
                 "<div style='font-size: 16px'>" &
-                    If(Language()="fr-FR",SharePointIntegration.Selected.SubInst1_Sum_FR, SharePointIntegration.Selected.SubInst1_Sum_NL) &
+                    If(Language()="fr-FR",SharePointIntegration.Selected.SubInst1_Sum_FR, SharePointIntegration.Selected.SubInst1_Sub_NL) &
                 "</div>" &
                 "<div style='display:" & If(Len(SharePointIntegration.Selected.SubInst1_URL) > 0, "flex", "none") & "; flex-flow: row nowrap; align-items: center; justify-content: flex-start; max-width: 100%; margin-top: 30px'>" &
                     "<span>" &

@@ -7,24 +7,6 @@
       Height: =Max(App.Height, 2200)
       Width: =Max(App.Width, 1500)
     Children:
-    - Button2:
-        Control: Classic/Button
-        Properties:
-          OnSelect: =Clear(Types); Clear(otherTypes)
-          Text: ="Reset"
-          Visible: =false
-          X: =752
-          Y: =945
-    - Label1:
-        Control: Label
-        Properties:
-          Text: =Concat(Types, Value, ",")
-          Fill: =RGBA(255, 255, 255, 1)
-          Height: =198
-          Visible: =false
-          Width: =568
-          X: =680
-          Y: =945
     - Edit/View:
         Control: GroupContainer
         Variant: manualLayoutContainer
@@ -40,7 +22,7 @@
           RadiusBottomRight: =10
           RadiusTopLeft: =10
           RadiusTopRight: =10
-          Visible: =Not(SharePointForm1.Mode = FormMode.New)
+          Visible: =Not(Or(SharePointForm1.Mode = FormMode.New, SharePointForm1.Mode = FormMode.View))
           Width: =50
           X: =If(visitorForm, 20, 1360)
           Y: =70
@@ -61,41 +43,6 @@
               PaddingRight: =10
               PaddingTop: =10
               Width: =50
-    - AttentionMessage:
-        Control: GroupContainer
-        Variant: manualLayoutContainer
-        Properties:
-          ChildTabPriority: =false
-          Height: =100
-          Visible: =And(attentionToggle,Not(SharePointForm1.Mode = FormMode.Edit))
-          Width: =Parent.Width
-          Y: =40
-        Children:
-        - AttentionLabel:
-            Control: Label
-            Properties:
-              Text: =If(Language()="fr-FR","En avant, cliquez sur modifier tout, en haute de la page", "Klik bovenaan de pagina op alles bewerken om te beginnen")
-              DisplayMode: =DisplayMode.View
-              Height: =100
-              Size: =18
-              TabIndex: =5
-              Width: =Parent.Width - Self.X
-              X: =100
-        - AttentionIcon:
-            Control: Classic/Icon
-            Variant: Warning
-            Properties:
-              Color: =RGBA(212, 0, 0, 1)
-              DisplayMode: =DisplayMode.View
-              Height: =100
-              Icon: =Icon.Warning
-              PaddingBottom: =10
-              PaddingLeft: =10
-              PaddingRight: =10
-              PaddingTop: =10
-              TabIndex: =5
-              Visible: =attentionToggle
-              Width: =100
     - SharePointForm1:
         Control: Form
         Layout: vertical
@@ -115,8 +62,8 @@
             Properties:
               DataField: ="Title"
               Default: =ThisItem.Titel
-              DisplayName: =DataSourceInfo([@Analyses],DataSourceInfo.DisplayName,'Title')
-              MaxLength: =DataSourceInfo([@Analyses], DataSourceInfo.MaxLength, 'Title')
+              DisplayName: =If(Language()="fr-FR", "Titre néerlandais", "Titel")
+              MaxLength: =DataSourceInfo([@Analyses], DataSourceInfo.MaxLength, Titel)
               Update: =DataCardValue1.Text
               DisplayMode: =Parent.DisplayMode
               Height: =50
@@ -172,7 +119,7 @@
             - DataCardKey1:
                 Control: Label
                 Properties:
-                  Text: ="Title NL"
+                  Text: =Parent.DisplayName
                   AutoHeight: =true
                   Height: =34
                   PaddingLeft: =0
@@ -187,8 +134,8 @@
             Properties:
               DataField: ="TitleFR"
               Default: =ThisItem.'Title FR'
-              DisplayName: =DataSourceInfo([@Analyses],DataSourceInfo.DisplayName,'TitleFR')
-              MaxLength: =DataSourceInfo([@Analyses], DataSourceInfo.MaxLength, 'TitleFR')
+              DisplayName: =If(Language()="fr-FR", "Titre français", "Franstalige titel")
+              MaxLength: =DataSourceInfo([@Analyses], DataSourceInfo.MaxLength, 'Title FR')
               Required: =true
               Update: =DataCardValue2.Text
               DisplayMode: =Parent.DisplayMode
@@ -249,7 +196,7 @@
             Properties:
               DataField: ="Description"
               Default: =ThisItem.Description
-              DisplayName: =DataSourceInfo([@Analyses],DataSourceInfo.DisplayName,'Description')
+              DisplayName: =If(Language()="fr-FR", "Description - Si un lien vers le produit est disponible, veuillez l'insérer dans le texte (en utilisant l'icône de lien).", "Beschrijving - Indien beschikbaar, voeg een link naar de analyse toe in de text (gebruik het icoon)")
               Update: =DataCardValue12.HtmlText
               DisplayMode: =Parent.DisplayMode
               Height: =40
@@ -297,77 +244,6 @@
             - DataCardKey12:
                 Control: Label
                 Properties:
-                  Text: ="Description - If a link to the product is available, please insert it in the text (using the link icon)"
-                  AutoHeight: =true
-                  Height: =34
-                  PaddingLeft: =0
-                  Size: =16
-                  Width: =Parent.Width - 60
-                  Wrap: =false
-                  X: =32
-                  Y: =10
-        - Year_DataCard1:
-            Control: TypedDataCard
-            Variant: numberEditCard
-            Properties:
-              DataField: ="Year"
-              Default: =ThisItem.Year
-              DisplayName: =DataSourceInfo([@Analyses],DataSourceInfo.DisplayName,'Year')
-              Update: =Value(DataCardValue3.Text)
-              DisplayMode: =Parent.DisplayMode
-              Height: =50
-              Width: =1245
-              Y: =3
-            Children:
-            - StarVisible3:
-                Control: Label
-                Properties:
-                  Text: ="*"
-                  Align: =Align.Center
-                  Height: =DataCardKey3.Height
-                  PaddingLeft: =0
-                  Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                  Width: =30
-                  Wrap: =false
-                  X: =2
-                  Y: =DataCardKey3.Y
-            - ErrorMessage3:
-                Control: Label
-                Properties:
-                  Live: =Live.Assertive
-                  Text: =Parent.Error
-                  AutoHeight: =true
-                  Height: =10
-                  PaddingBottom: =0
-                  PaddingLeft: =0
-                  PaddingRight: =0
-                  PaddingTop: =0
-                  Size: =10.5
-                  Visible: =Parent.DisplayMode=DisplayMode.Edit
-                  Width: =Parent.Width - 60
-                  X: =32
-                  Y: =DataCardValue3.Y + DataCardValue3.Height
-            - DataCardValue3:
-                Control: Classic/TextInput
-                Properties:
-                  Default: =Parent.Default
-                  DelayOutput: =true
-                  Tooltip: =Parent.DisplayName
-                  BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                  DisplayMode: =Parent.DisplayMode
-                  Format: =TextFormat.Number
-                  PaddingLeft: =5
-                  RadiusBottomLeft: =0
-                  RadiusBottomRight: =0
-                  RadiusTopLeft: =0
-                  RadiusTopRight: =0
-                  Size: =14
-                  Width: =200
-                  X: =32
-                  Y: =DataCardKey3.Y + DataCardKey3.Height + 5
-            - DataCardKey3:
-                Control: Label
-                Properties:
                   Text: =Parent.DisplayName
                   AutoHeight: =true
                   Height: =34
@@ -382,13 +258,13 @@
             Variant: comboBoxMultiSelectEditCard
             Properties:
               DataField: ="Author0"
-              Default: =ThisItem.Author0
-              DisplayName: =DataSourceInfo([@Analyses],DataSourceInfo.DisplayName,'Author0')
+              Default: =ThisItem.'Author (Author0)'
+              DisplayName: =If(Language()="fr-FR", "Auteur", "Auteur")
               Update: =DataCardValue13.SelectedItems
               DisplayMode: =Parent.DisplayMode
               Height: =50
               Width: =1245
-              Y: =4
+              Y: =3
             Children:
             - StarVisible13:
                 Control: Label
@@ -423,7 +299,7 @@
                 Properties:
                   DefaultSelectedItems: =Parent.Default
                   DisplayFields: =["DisplayName","Email","Picture"]
-                  Items: =Choices([@Analyses].Author0)
+                  Items: =Choices([@Analyses].'Author (Author0)')
                   SearchFields: =["DisplayName"]
                   Tooltip: =Parent.DisplayName
                   BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
@@ -450,13 +326,13 @@
             Variant: comboBoxEditCard
             Properties:
               DataField: ="Confidential"
-              Default: =ThisItem.Confidential
-              DisplayName: =DataSourceInfo([@Analyses],DataSourceInfo.DisplayName,'Confidential')
+              Default: =ThisItem.'Confidentiality level'
+              DisplayName: =If(Language()="fr-FR", "Confidentialité", "Vertrouwelijkheid")
               Update: =DataCardValue14.Selected
               DisplayMode: =Parent.DisplayMode
               Height: =50
               Width: =1245
-              Y: =5
+              Y: =4
             Children:
             - StarVisible14:
                 Control: Label
@@ -491,7 +367,7 @@
                 Properties:
                   DefaultSelectedItems: =Parent.Default
                   DisplayFields: =["Value"]
-                  Items: =Choices([@Analyses].Confidential)
+                  Items: =Choices([@Analyses].'Confidentiality level')
                   SearchFields: =["Value"]
                   SelectMultiple: =false
                   Tooltip: =Parent.DisplayName
@@ -520,12 +396,12 @@
             Properties:
               DataField: ="Geoscope"
               Default: =ThisItem.'Geo scope'
-              DisplayName: =DataSourceInfo([@Analyses],DataSourceInfo.DisplayName,'Geoscope')
+              DisplayName: =DataSourceInfo([@Analyses],DataSourceInfo.DisplayName,'Geo scope')
               Update: =DataCardValue15.Selected
               DisplayMode: =Parent.DisplayMode
               Height: =50
               Width: =1245
-              Y: =6
+              Y: =5
             Children:
             - StarVisible15:
                 Control: Label
@@ -560,7 +436,7 @@
                 Properties:
                   DefaultSelectedItems: =Parent.Default
                   DisplayFields: =["Value"]
-                  Items: =Choices([@Analyses].Geoscope)
+                  Items: =Choices([@Analyses].'Geo scope')
                   SearchFields: =["Value"]
                   SelectMultiple: =false
                   Tooltip: =Parent.DisplayName
@@ -589,12 +465,12 @@
             Properties:
               DataField: ="Typeofanalysis"
               Default: =ThisItem.'Type of analysis'
-              DisplayName: =DataSourceInfo([@Analyses],DataSourceInfo.DisplayName,'Typeofanalysis')
+              DisplayName: =If(Language()="fr-FR", "Type d'analyse", "Type analyse")
               Update: =Types
               DisplayMode: =Parent.DisplayMode
               Height: =151
               Width: =1245
-              Y: =7
+              Y: =6
             Children:
             - ContainerNewType:
                 Control: GroupContainer
@@ -609,7 +485,7 @@
                     Control: Classic/Button
                     Properties:
                       OnSelect: |-
-                        =Collect(otherTypes, {Value: NewType.Text});
+                        =If(Not(Len(NewType.Text) = 0),Collect(otherTypes, {Value: NewType.Text}));
                         Collect(Types, otherTypes);
                         Reset(NewType)
                       Text: ="+"
@@ -634,7 +510,7 @@
                 - TitleNewType:
                     Control: Label
                     Properties:
-                      Text: ="Add another type"
+                      Text: =If(Language()="fr-FR", "Ajouter un nouveau type", "Voeg een nieuw type toe")
                       FontWeight: =FontWeight.Semibold
                       Size: =14
                       X: =26
@@ -673,7 +549,7 @@
                   OnChange: =ClearCollect(Types, DataCardValue16.SelectedItems, otherTypes)
                   DefaultSelectedItems: =Parent.Default
                   DisplayFields: =["Value"]
-                  Items: =Choices([@Analyses].Typeofanalysis)
+                  Items: =Choices([@Analyses].'Type of analysis')
                   SearchFields: =["Value"]
                   Tooltip: =Parent.DisplayName
                   BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
@@ -702,12 +578,12 @@
             Properties:
               DataField: ="Topic"
               Default: =ThisItem.Topic
-              DisplayName: =DataSourceInfo([@Analyses],DataSourceInfo.DisplayName,'Topic')
+              DisplayName: =DataSourceInfo([@Analyses],DataSourceInfo.DisplayName,Topic)
               Update: =Topics
               DisplayMode: =Parent.DisplayMode
               Height: =50
               Width: =1245
-              Y: =10
+              Y: =7
             Children:
             - ContainerNewTopic:
                 Control: GroupContainer
@@ -721,7 +597,7 @@
                     Control: Classic/Button
                     Properties:
                       OnSelect: |-
-                        =Collect(otherTopics, {Value: NewTopic.Text});
+                        =If(Not(Len(NewTopic.Text) = 0), Collect(otherTopics, {Value: NewTopic.Text}));
                         Collect(Topics, otherTopics);
                         Reset(NewTopic)
                       Text: ="+"
@@ -746,7 +622,7 @@
                 - TitleNewTopic:
                     Control: Label
                     Properties:
-                      Text: ="Add another topic"
+                      Text: =If(Language()="fr-FR", "Ajouter un autre sujet", "Voeg een nieuwe topic toe")
                       FontWeight: =FontWeight.Semibold
                       Size: =14
                       X: =26
@@ -790,7 +666,7 @@
                   Tooltip: =Parent.DisplayName
                   BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                   DisplayMode: =Parent.DisplayMode
-                  Height: =42
+                  Height: =33
                   PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                   Size: =14
                   Width: =398
@@ -814,12 +690,12 @@
             Properties:
               DataField: ="{Attachments}"
               Default: =ThisItem.Bijlagen
-              DisplayName: =DataSourceInfo([@Analyses],DataSourceInfo.DisplayName,'{Attachments}')
+              DisplayName: =If(Language()="fr-FR", "Pièces jointes", "Bijlagen")
               Update: =DataCardValue4.Attachments
               DisplayMode: =Parent.DisplayMode
               Height: =50
               Width: =1245
-              Y: =1500
+              Y: =8
             Children:
             - StarVisible4:
                 Control: Label
@@ -852,7 +728,8 @@
             - DataCardValue4:
                 Control: Attachments
                 Properties:
-                  AddAttachmentText: ="Attach file (If a link was added in the Description, uploading an attachment is not necessary)"
+                  AddAttachmentText: |+
+                    =If(Language()="fr-FR", "Joindre un fichier (si un lien a été ajouté dans la description, il n'est pas nécessaire de télécharger une pièce jointe)", "Voeg bijlage toe (indien er een link naar deze bijlage in de beschrijving staat is het niet nodig deze hier te uploaden)")
                   Items: =Parent.Default
                   Tooltip: =Parent.DisplayName
                   BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
@@ -877,10 +754,79 @@
                   Wrap: =false
                   X: =32
                   Y: =10
+        - Year of the analysis_DataCard1:
+            Control: TypedDataCard
+            Variant: comboBoxEditCard
+            Properties:
+              DataField: ="Year"
+              Default: =ThisItem.'Year of the analysis'
+              DisplayName: =If(Language()="fr-FR", "l'Année de l'analyse", "Jaar van de analyse")
+              Update: =DataCardValue3.Selected
+              DisplayMode: =Parent.DisplayMode
+              Height: =50
+              Width: =1245
+              Y: =3
+            Children:
+            - StarVisible2:
+                Control: Label
+                Properties:
+                  Text: ="*"
+                  Align: =Align.Center
+                  Height: =DataCardKey3.Height
+                  PaddingLeft: =0
+                  Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                  Width: =30
+                  Wrap: =false
+                  X: =2
+                  Y: =DataCardKey3.Y
+            - ErrorMessage3:
+                Control: Label
+                Properties:
+                  Live: =Live.Assertive
+                  Text: =Parent.Error
+                  AutoHeight: =true
+                  Height: =10
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =10.5
+                  Visible: =Parent.DisplayMode=DisplayMode.Edit
+                  Width: =Parent.Width - 60
+                  X: =32
+                  Y: =DataCardValue3.Y + DataCardValue3.Height
+            - DataCardValue3:
+                Control: Classic/ComboBox
+                Properties:
+                  DefaultSelectedItems: =Parent.Default
+                  DisplayFields: =["Value"]
+                  Items: =Choices([@Analyses].'Year of the analysis')
+                  SearchFields: =["Value"]
+                  SelectMultiple: =false
+                  Tooltip: =Parent.DisplayName
+                  BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                  DisplayMode: =Parent.DisplayMode
+                  PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                  Size: =14
+                  Width: =200
+                  X: =32
+                  Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+            - DataCardKey3:
+                Control: Label
+                Properties:
+                  Text: =Parent.DisplayName
+                  AutoHeight: =true
+                  Height: =34
+                  PaddingLeft: =0
+                  Size: =16
+                  Width: =Parent.Width - 60
+                  Wrap: =false
+                  X: =32
+                  Y: =10
     - HtmlText1:
         Control: HtmlViewer
         Properties:
-          HtmlText: "=\"<section style='display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; font-size: 16px; width: 100%; max-height: 100%; margin-right: 50px; padding: 50px'>\" &\r\n    \"<article style='position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; width: 95%; height: 100px; background-color: #333399; padding: 10px; padding-left: 0px; margin-left: -50px; border-bottom-left-radius: 50px 50px; border-left: 4px solid #D85509'>\" &\r\n        \"<svg version='1.1' id='Calque_2' xmlns:x='&ns_extend;' xmlns:i='&ns_ai;' xmlns:graph='&ns_graphs;'\r\n        xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 595.3 425.2'\r\n        style='position: absolute; right: 0px; top: 0px; height: 100px' xml:space='preserve'>\" &\r\n            \"<switch>\" &\r\n                \"<g i:extraneous='self'>\" &\r\n                    \"<g>\" &\r\n                        \"<g>\" &\r\n                            \"<path fill='#2A2B80' d='M362.1,145.6c0,34.6-28,62.6-62.6,62.6s-62.6-28-62.6-62.6s28-62.6,62.6-62.6S362.1,111,362.1,145.6z'/>\" &\r\n                            \"<g>\" &\r\n                                \"<path fill='#FFFFFF' d='M362.1,145.6c0-34.6-28-62.6-62.6-62.6s-62.6,28-62.6,62.6c0,33,25.5,60,57.8,62.4\r\n                                    c-2.8-3.4-6.2-7.9-9.2-12.2c-5.1-7.2-11.2-18-11.4-28.7c-0.2-8,1.7-12.4,12.2-29c4.1-6.5,6.9-17.6,6.5-20s3.9,3.6,5.5,7.6\r\n                                    c2.1,5.3,1.8,9.4-2.1,20.4c-1.9,5.2-4.9,13.7-1.9,17.4c-0.4-0.5,10-11,12.3-21.9c1.8-8.3,1.1-19.4-2.5-27.7\r\n                                    c-3.1-7.2-6.9-13.1-6.2-22.6c0.3-4,1.4-7.9,1.5-8.1c2.3,5.8,3.4,7.9,4.2,9.6c4.2,8,13,19.8,17.2,27.9c4.1,8,7.4,21.3,2.5,34.8\r\n                                    c-4.7,13.3-9.3,17.8-14.1,28.5c-3.6,8-6.6,17.9-8.1,24C335,207.3,362.1,179.6,362.1,145.6z'/>\" &\r\n                                \"<path d='M294.7,208'/>\" &\r\n                                \"<path d='M301.1,208.2'/>\" &\r\n                            \"</g>\" &\r\n                        \"</g>\" &\r\n                    \"</g>\" &\r\n                    \"<g>\" &\r\n                        \"<path fill='#FFFFFF' d='M67.9,257.7v12.5h15.7v7.7H67.9v20.5h-9.4v-48.6h26v7.9H67.9z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M120.3,282H98.1c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C120.6,279.1,120.5,280.5,120.3,282z M105.2,268.6\r\n                            c-3.8,0-6.5,2.8-7,7.1h13.2C111.6,271.3,109.1,268.6,105.2,268.6z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M149.9,298.5c0-1.8,0.1-4.1,0.4-6h-0.1c-1.9,4-5.8,6.8-11.3,6.8c-8.7,0-13-6.6-13-16.8\r\n                            c0-12.1,7.1-20.4,18.9-20.4c1.5,0,3,0.1,4.5,0.3V253c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.5-0.6,10.2-0.8,15.4-0.6v45.6\r\n                            c1.7,0.3,4.2,0.6,6.3,0.7v5.8C160.2,298.4,154.6,298.6,149.9,298.5z M149.3,269.8c-1.7-0.4-3.2-0.6-4.8-0.6c-5.3,0-9,3.3-9,12.2\r\n                            c0,6.7,1.9,10.2,6.1,10.2c4.8,0,7.7-5.6,7.7-11.7V269.8z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M199.5,282h-22.2c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C199.8,279.1,199.7,280.5,199.5,282z M184.4,268.6\r\n                            c-3.8,0-6.5,2.8-7,7.1h13.2C190.8,271.3,188.3,268.6,184.4,268.6z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M217.8,269.8h0.1c1.7-4.5,5.2-8.5,11.4-8l-0.4,9.1c-6.6-1.4-9.9,3-9.9,12.9v14.6h-9.1v-28.7\r\n                            c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.5-0.6,10.1-0.8,14.9-0.6C218.5,264.4,218.3,267.3,217.8,269.8z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M253.2,298.5c0-2.1,0.1-4.2,0.4-6.1l-0.1-0.1c-1.7,4-6.1,6.8-11.4,6.8c-6.5,0-10.2-3.7-10.2-9.4\r\n                            c0-8.6,8.5-13.1,20.7-13.1v-1.9c0-3.7-1.8-5.7-7-5.7c-3.2,0-7.6,1.1-10.6,2.8l-0.8-7.7c3.6-1.3,8.2-2.2,12.8-2.2\r\n                            c11.5,0,14.8,4.6,14.8,12.5v17.1c1.7,0.3,4.2,0.6,6.3,0.7v5.8C263.4,298.4,257.9,298.6,253.2,298.5z M252.5,282.6\r\n                            c-9.7,0-11.9,2.8-11.9,5.7c0,2.3,1.6,3.8,4.2,3.8c4.5,0,7.6-4.3,7.6-8.6L252.5,282.6L252.5,282.6z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M283.2,298.4H274v-45.5c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.6-0.6,10.2-0.8,15.5-0.6V298.4z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M322.2,282H300c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C322.4,279.1,322.4,280.5,322.2,282z M307.1,268.6\r\n                            c-3.8,0-6.5,2.8-7,7.1h13.2C313.4,271.3,311,268.6,307.1,268.6z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M358.4,281.4c-0.9,0-2,0-3.2-0.1v17.1h-9.3v-48.6c4-0.2,8.3-0.3,13-0.3c12,0,18.5,5.5,18.5,15\r\n                            S370.2,281.4,358.4,281.4z M358.6,257.2c-1.2,0-2.2,0-3.3,0.1v16.2c0.9,0.1,1.9,0.2,2.7,0.2c5.8-0.1,9.7-3.2,9.7-8.5\r\n                            C367.7,260.3,364.9,257.2,358.6,257.2z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M397.4,299.1c-10.2,0-16.7-5.3-16.7-18c0-11.2,7.4-19.2,18.3-19.2c10.2,0,16.7,5.6,16.7,17.9\r\n                            C415.7,291.1,408.1,299.1,397.4,299.1z M398.3,269.7c-4.1,0-8.1,3.2-8.1,10.5s2.7,11.1,8,11.1c4.5,0,8-3.7,8-10.9\r\n                            C406.2,273.4,403.7,269.7,398.3,269.7z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M432.7,298.4h-9.2v-45.5c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.6-0.6,10.2-0.8,15.5-0.6V298.4z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M454.1,298.4H445v-28.7c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.5-0.6,10.1-0.8,15.4-0.6V298.4z M449.5,258\r\n                            c-3.1,0-5.7-2.5-5.7-5.6c0-3,2.6-5.5,5.7-5.5c3.2,0,5.8,2.4,5.8,5.5S452.7,258,449.5,258z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M476.1,299.1c-7.9,0-10.4-2.9-10.4-11.2v-18.1h-6.2v-7.2h6.1v-11l9.2-2.4v13.4h8.7v7.1h-8.6v15.7\r\n                            c0,4.6,1.1,5.9,4.2,5.9c1.5,0,3.2-0.2,4.5-0.6v7.4C481.3,298.8,478.6,299.1,476.1,299.1z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M502.6,298.4h-9.1v-28.7c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.5-0.6,10.1-0.8,15.4-0.6V298.4z M498,258\r\n                            c-3.1,0-5.7-2.5-5.7-5.6c0-3,2.6-5.5,5.7-5.5c3.2,0,5.8,2.4,5.8,5.5C503.7,255.5,501.1,258,498,258z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M541.5,282h-22.2c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C541.8,279.1,541.7,280.5,541.5,282z M526.5,268.6\r\n                            c-3.8,0-6.5,2.8-7,7.1h13.2C532.8,271.3,530.4,268.6,526.5,268.6z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M80.1,352.9c-0.9,0-2,0-3.2-0.1v17.1h-9.4v-48.6c4-0.2,8.3-0.3,13-0.3c12,0,18.5,5.5,18.5,15\r\n                            C99.1,345.5,91.9,352.9,80.1,352.9z M80.2,328.7c-1.2,0-2.2,0-3.3,0.1V345c0.9,0.1,1.9,0.2,2.7,0.2c5.8-0.1,9.7-3.2,9.7-8.5\r\n                            C89.4,331.8,86.6,328.7,80.2,328.7z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M119,370.6c-10.2,0-16.7-5.3-16.7-18c0-11.2,7.4-19.2,18.3-19.2c10.2,0,16.7,5.6,16.7,17.9\r\n                            C137.3,362.6,129.8,370.6,119,370.6z M120,341.2c-4.1,0-8.1,3.2-8.1,10.5s2.7,11.1,8,11.1c4.5,0,8-3.7,8-10.9\r\n                            C127.8,344.9,125.4,341.2,120,341.2z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M154.3,369.9h-9.2v-45.5c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.6-0.6,10.2-0.8,15.5-0.6V369.9z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M175.8,369.9h-9.1v-28.7c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.5-0.6,10.1-0.8,15.4-0.6V369.9L175.8,369.9z\r\n                            M171.2,329.5c-3.1,0-5.7-2.5-5.7-5.6c0-3,2.6-5.5,5.7-5.5c3.2,0,5.8,2.4,5.8,5.5C176.9,327,174.3,329.5,171.2,329.5z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M199.3,370.6c-9.9,0-16.1-5.2-16.1-17.4c0-11.2,5.8-19.7,18.5-19.7c2.4,0,5,0.4,7.3,1l-0.9,8\r\n                            c-1.9-0.7-4.2-1.3-6.5-1.3c-5.8,0-8.8,4.3-8.8,11.1c0,6.1,2.4,10.3,8.5,10.3c2.4,0,5.1-0.5,7.1-1.5l0.7,7.8\r\n                            C206.7,369.9,203.1,370.6,199.3,370.6z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M245.1,353.5h-22.2c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C245.4,350.6,245.3,352,245.1,353.5z M230,340.1\r\n                            c-3.8,0-6.5,2.8-7,7.1h13.2C236.4,342.8,233.9,340.1,230,340.1z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M278.2,329.2v12.5h15.7v7.7h-15.7v20.5h-9.4v-48.6h26v7.9L278.2,329.2L278.2,329.2z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M330.6,353.5h-22.2c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C330.9,350.6,330.8,352,330.6,353.5z M315.6,340.1\r\n                            c-3.8,0-6.5,2.8-7,7.1h13.2C321.9,342.8,319.5,340.1,315.6,340.1z M313,329.4l-3.2-5.3l12.6-7.9l3.8,6.3L313,329.4z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M360.2,370c0-1.8,0.1-4.1,0.4-6h-0.1c-1.9,4-5.8,6.8-11.3,6.8c-8.7,0-13-6.6-13-16.8\r\n                            c0-12.1,7.1-20.4,18.9-20.4c1.5,0,3,0.1,4.5,0.3v-9.4c-1.7-0.3-4.2-0.6-6.3-0.7V318c4.5-0.6,10.2-0.8,15.4-0.6V363\r\n                            c1.7,0.3,4.2,0.6,6.3,0.7v5.8C370.5,369.9,365,370.1,360.2,370z M359.6,341.3c-1.7-0.4-3.2-0.6-4.8-0.6c-5.3,0-9,3.3-9,12.2\r\n                            c0,6.7,1.9,10.2,6.1,10.2c4.8,0,7.7-5.6,7.7-11.7L359.6,341.3L359.6,341.3z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M409.8,353.5h-22.2c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C410.1,350.6,410,352,409.8,353.5z M394.8,340.1\r\n                            c-3.8,0-6.5,2.8-7,7.1H401C401.1,342.8,398.7,340.1,394.8,340.1z M392.2,329.4l-3.2-5.3l12.6-7.9l3.8,6.3L392.2,329.4z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M428.2,341.3h0.1c1.7-4.5,5.2-8.5,11.4-8l-0.4,9.1c-6.6-1.4-9.9,3-9.9,12.9v14.6h-9.1v-28.7\r\n                            c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.5-0.6,10.1-0.8,14.9-0.6C428.8,335.9,428.6,338.8,428.2,341.3z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M463.5,370c0-2.1,0.1-4.2,0.4-6.1l-0.1-0.1c-1.7,4-6.1,6.8-11.4,6.8c-6.5,0-10.2-3.7-10.2-9.4\r\n                            c0-8.6,8.5-13.1,20.7-13.1v-1.9c0-3.7-1.8-5.7-7-5.7c-3.2,0-7.6,1.1-10.6,2.8l-0.8-7.7c3.6-1.3,8.2-2.2,12.8-2.2\r\n                            c11.5,0,14.8,4.6,14.8,12.5V363c1.7,0.3,4.2,0.6,6.3,0.7v5.8C473.8,369.9,468.2,370.1,463.5,370z M462.8,354.1\r\n                            c-9.7,0-11.9,2.8-11.9,5.7c0,2.3,1.6,3.8,4.2,3.8c4.5,0,7.6-4.3,7.6-8.6L462.8,354.1L462.8,354.1z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M493.5,369.9h-9.2v-45.5c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.6-0.6,10.2-0.8,15.5-0.6V369.9z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M532.5,353.5h-22.2c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C532.8,350.6,532.7,352,532.5,353.5z M517.4,340.1\r\n                            c-3.8,0-6.5,2.8-7,7.1h13.2C523.8,342.8,521.3,340.1,517.4,340.1z'/>\" &\r\n                    \"</g>\" &\r\n                    \"<rect x='209.5' y='400' fill='#D85509' width='180.4' height='3.5'/>\" &\r\n                \"</g>\" &\r\n            \"</switch>\" &\r\n        \"</svg>\" &\r\n        \"<p style='display: flex; flex-grow: 1; justify-content: center; max-width: full; font-size: 30px; padding: 0px 150px 0px 100px; text-align: center; color: white'>\" & \r\n            If(And(Language()=\"fr-FR\", Len(SharePointIntegration.Selected.'Title FR') > 0),SharePointIntegration.Selected.'Title FR', SharePointIntegration.Selected.Titel) & \r\n        \"</p>\" &\r\n    \"</article>\" &\r\n    \"<article style='display:flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding-left: 50px; margin-top: 30px; max-width: 85%; padding-bottom: 50px; border-bottom: 1px dashed grey'>\" &\r\n        \"<div style='max-width: 85%; min-width: 20%; padding: 15px; margin-left: 5px'>\" & \r\n            SharePointIntegration.Selected.Description & \r\n        \"</div>\" &\r\n        \"<div style='display:\" & If(Len(Last(FirstN(SharePointIntegration.Selected.Bijlagen, 1)).Value) > 0, \"flex\", \"none\") & \"; flex-direction: column; justify-content: flex-start; align-items: flex-start'>\" &\r\n            \r\n            \"<ul style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; background-color: white; min-width: 20%; padding: 5px; margin-left: 20px; border-radius: 5px'>\" &\r\n                Concat(SharePointIntegration.Selected.Bijlagen, \"<li style='list-style-type: disc; padding: 5px 20px; display: flex; align-items: center'><svg fill='#000000' width='50px' height='50px' viewBox='0 0 32 32' version='1.1' xmlns='http://www.w3.org/2000/svg'><path d='M4.040 26.96c-1.040 0-2.080-0.4-2.88-1.2-1.6-1.56-1.6-4.16 0-5.76l11.080-11.040c0.96-0.96 2.56-0.96 3.52 0 0.48 0.48 0.72 1.080 0.72 1.76s-0.24 1.28-0.72 1.76l-8.8 8.72c-0.32 0.32-0.84 0.32-1.2 0-0.32-0.32-0.32-0.84 0-1.2l8.76-8.76c0.16-0.16 0.24-0.36 0.24-0.56s-0.080-0.4-0.24-0.56c-0.32-0.32-0.84-0.32-1.12 0l-11.040 11.080c-0.92 0.92-0.92 2.48 0 3.4s2.48 0.92 3.4 0l11.040-11.080c0.76-0.76 1.16-1.76 1.16-2.84s-0.4-2.080-1.16-2.84c-1.56-1.56-4.080-1.56-5.64 0l-8.76 8.8c-0.32 0.32-0.84 0.32-1.2 0-0.32-0.32-0.32-0.84 0-1.2l8.8-8.76c2.2-2.2 5.8-2.2 8.040 0 1.080 1.080 1.68 2.48 1.68 4s-0.6 2.96-1.68 4l-11.080 11.080c-0.8 0.8-1.8 1.2-2.92 1.2z'></path></svg><a href=' \" & \r\n                AbsoluteUri & \r\n                \"'>\" & \r\n                DisplayName &\r\n                \"</a>\" &\r\n                \"</li>\") &\r\n            \"</ul>\" &\r\n        \"</div>\" &\r\n    \"</article>\" &\r\n    \"<article style='display: flex; flex-flow: row wrap; justify-content: flex-start; align-items: flex-start; max-width: 85%; margin-top: 30px; padding-left: 50px; border-bottom: 1px dashed grey'>\" &\r\n         \"<div style='display:\" & If(Len(Last(FirstN(SharePointIntegration.Selected.'Type of analysis', 1)).Value) > 0, \"flex\", \"none\") & \"; width: 50%; flex-direction: row; justify-content: flex-start; align-items: flex-start; margin-bottom: 20px'>\" &\r\n            \"<h2 style='color: #333399'>\" &\r\n                If(Language()=\"fr-FR\",\"Type d'analyse: \",\"Type analyse: \") &\r\n            \"</h2>\" &\r\n            \"<ul style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; max-width: 80%; padding: 5px; margin-left: 20px'>\" &\r\n                Concat(SharePointIntegration.Selected.'Type of analysis', \"<li style='display: flex; align-items: center; border-radius: 50px; background-color:#B5DDD1; padding: 5px 20px 5px 10px; margin-bottom: 3px'><span style='margin-right: 10px'>\U0001F4CB</span>\" & Value & \"</li>\") &\r\n            \"</ul>\" &\r\n        \"</div>\" &\r\n        \"<div style='display:\" & If(Len(Last(FirstN(SharePointIntegration.Selected.Topic, 1)).Value) > 0, \"flex\", \"none\") & \"; width: 50%; flex-direction: row; justify-content: flex-start; align-items: flex-start; margin-bottom: 20px'>\" &\r\n            \"<h2 style='color: #333399'>\" &\r\n                If(Language()=\"fr-FR\",\"Sujet: \",\"Thema: \") &\r\n            \"</h2>\" &\r\n            \"<ul style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; max-width: 80%; padding: 5px; margin-left: 20px'>\" &\r\n                Concat(SharePointIntegration.Selected.Topic, \"<li style='display: flex; align-items: center; border-radius: 50px; background-color:\" &\r\n                 If(IsMatch(Value,\"Drugs\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#9DBBE3\", IsMatch(Value,\"Human trafficking\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#BFE3DF\", IsMatch(Value,\"ROAD\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#FFF5CC\", IsMatch(Value,\"Property\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#FFD9BD\",IsMatch(Value,\"Terrorism\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#EE9D94\",IsMatch(Value,\"MIGRATION\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#a3c3b0\",Or(IsMatch(Value,\"Corruption\", MatchOptions.Contains & MatchOptions.IgnoreCase ),IsMatch(Value,\"Counterfeiting\", MatchOptions.Contains & MatchOptions.IgnoreCase )),\"#9d97bc\",IsMatch(Value,\"Environmental\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#dea7a1\",IsMatch(Value,\"CN_\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#ead2b8\",IsMatch(Value,\"Firearms\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#B2EDAE\",\"#76b5c5\") &\r\n                 \";padding: 5px 20px 5px 10px; margin-bottom: 3px'><span style='margin-right: 10px'>\U0001F4CC</span>\" & Mid(Value, If(Find(\"_\", Value)> 0,Find(\"_\", Value)+1,1)) & \"</li>\") &\r\n            \"</ul>\" &\r\n        \"</div>\" &\r\n         \"<div style='display:\" & If(Len(SharePointIntegration.Selected.'Geo scope'.Value) > 0, \"flex\", \"none\") & \"; width: 50%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>\" &\r\n            \"<h2 style='color: #333399'>\" &\r\n                If(Language()=\"fr-FR\",\"Geo scope: \",\"Geo scope: \") &\r\n            \"</h2>\" &\r\n            \"<p style='display: flex; align-items: center; max-width: 80%; margin-left: 20px; font-size: 18px; border-radius: 50px; background-color: #C4FAF8; padding: 5px 20px 5px 10px;'>\" &\r\n            \"<span style='margin-right: 10px'>\" &\r\n            \"\U0001F30D\" &\r\n            \"</span>\" &\r\n               SharePointIntegration.Selected.'Geo scope'.Value & \r\n            \"</p>\" &\r\n        \"</div>\" &\r\n        \"<div style='display:\" & If(Len(SharePointIntegration.Selected.Confidential.Value) > 0, \"flex\", \"none\") & \"; width: 50%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>\" &\r\n            \"<h2 style='color: #333399'>\" &\r\n                If(Language()=\"fr-FR\",\"confidentialité: \",\"Vertrouwelijkheid: \") &\r\n            \"</h2>\" &\r\n            \"<p style='display: flex; align-items: center; max-width: 80%; margin-left: 20px; font-size: 18px; border-radius: 50px; background-color: #C4FAF8; padding: 5px 20px 5px 10px;'>\" &\r\n            \"<span style='margin-right: 10px'>\" &\r\n            If(IsMatch(SharePointIntegration.Selected.Confidential.Value,\"public\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"\U0001F4E3\", IsMatch(SharePointIntegration.Selected.Confidential.Value,\"Internal Police\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"\U0001F46E\", IsMatch(SharePointIntegration.Selected.Confidential.Value,\"Confidential\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"\U0001F510\",\"⏱\") &\r\n            \"</span>\" &\r\n               SharePointIntegration.Selected.Confidential.Value & \r\n            \"</p>\" &\r\n        \"</div>\" &\r\n        \r\n    \"</article>\" &\r\n\"</section>\""
+          HtmlText: "=\"<section style='display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; font-size: 16px; width: 100%; max-height: 100%; margin-right: 50px; padding: 50px'>\" &\r\n    \"<article style='position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; width: 95%; height: 100px; background-color: #333399; padding: 10px; padding-left: 0px; margin-left: -50px; border-bottom-left-radius: 50px 50px; border-left: 4px solid #D85509'>\" &\r\n        \"<svg version='1.1' id='Calque_2' xmlns:x='&ns_extend;' xmlns:i='&ns_ai;' xmlns:graph='&ns_graphs;'\r\n        xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 595.3 425.2'\r\n        style='position: absolute; right: 0px; top: 0px; height: 100px' xml:space='preserve'>\" &\r\n            \"<switch>\" &\r\n                \"<g i:extraneous='self'>\" &\r\n                    \"<g>\" &\r\n                        \"<g>\" &\r\n                            \"<path fill='#2A2B80' d='M362.1,145.6c0,34.6-28,62.6-62.6,62.6s-62.6-28-62.6-62.6s28-62.6,62.6-62.6S362.1,111,362.1,145.6z'/>\" &\r\n                            \"<g>\" &\r\n                                \"<path fill='#FFFFFF' d='M362.1,145.6c0-34.6-28-62.6-62.6-62.6s-62.6,28-62.6,62.6c0,33,25.5,60,57.8,62.4\r\n                                    c-2.8-3.4-6.2-7.9-9.2-12.2c-5.1-7.2-11.2-18-11.4-28.7c-0.2-8,1.7-12.4,12.2-29c4.1-6.5,6.9-17.6,6.5-20s3.9,3.6,5.5,7.6\r\n                                    c2.1,5.3,1.8,9.4-2.1,20.4c-1.9,5.2-4.9,13.7-1.9,17.4c-0.4-0.5,10-11,12.3-21.9c1.8-8.3,1.1-19.4-2.5-27.7\r\n                                    c-3.1-7.2-6.9-13.1-6.2-22.6c0.3-4,1.4-7.9,1.5-8.1c2.3,5.8,3.4,7.9,4.2,9.6c4.2,8,13,19.8,17.2,27.9c4.1,8,7.4,21.3,2.5,34.8\r\n                                    c-4.7,13.3-9.3,17.8-14.1,28.5c-3.6,8-6.6,17.9-8.1,24C335,207.3,362.1,179.6,362.1,145.6z'/>\" &\r\n                                \"<path d='M294.7,208'/>\" &\r\n                                \"<path d='M301.1,208.2'/>\" &\r\n                            \"</g>\" &\r\n                        \"</g>\" &\r\n                    \"</g>\" &\r\n                    \"<g>\" &\r\n                        \"<path fill='#FFFFFF' d='M67.9,257.7v12.5h15.7v7.7H67.9v20.5h-9.4v-48.6h26v7.9H67.9z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M120.3,282H98.1c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C120.6,279.1,120.5,280.5,120.3,282z M105.2,268.6\r\n                            c-3.8,0-6.5,2.8-7,7.1h13.2C111.6,271.3,109.1,268.6,105.2,268.6z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M149.9,298.5c0-1.8,0.1-4.1,0.4-6h-0.1c-1.9,4-5.8,6.8-11.3,6.8c-8.7,0-13-6.6-13-16.8\r\n                            c0-12.1,7.1-20.4,18.9-20.4c1.5,0,3,0.1,4.5,0.3V253c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.5-0.6,10.2-0.8,15.4-0.6v45.6\r\n                            c1.7,0.3,4.2,0.6,6.3,0.7v5.8C160.2,298.4,154.6,298.6,149.9,298.5z M149.3,269.8c-1.7-0.4-3.2-0.6-4.8-0.6c-5.3,0-9,3.3-9,12.2\r\n                            c0,6.7,1.9,10.2,6.1,10.2c4.8,0,7.7-5.6,7.7-11.7V269.8z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M199.5,282h-22.2c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C199.8,279.1,199.7,280.5,199.5,282z M184.4,268.6\r\n                            c-3.8,0-6.5,2.8-7,7.1h13.2C190.8,271.3,188.3,268.6,184.4,268.6z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M217.8,269.8h0.1c1.7-4.5,5.2-8.5,11.4-8l-0.4,9.1c-6.6-1.4-9.9,3-9.9,12.9v14.6h-9.1v-28.7\r\n                            c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.5-0.6,10.1-0.8,14.9-0.6C218.5,264.4,218.3,267.3,217.8,269.8z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M253.2,298.5c0-2.1,0.1-4.2,0.4-6.1l-0.1-0.1c-1.7,4-6.1,6.8-11.4,6.8c-6.5,0-10.2-3.7-10.2-9.4\r\n                            c0-8.6,8.5-13.1,20.7-13.1v-1.9c0-3.7-1.8-5.7-7-5.7c-3.2,0-7.6,1.1-10.6,2.8l-0.8-7.7c3.6-1.3,8.2-2.2,12.8-2.2\r\n                            c11.5,0,14.8,4.6,14.8,12.5v17.1c1.7,0.3,4.2,0.6,6.3,0.7v5.8C263.4,298.4,257.9,298.6,253.2,298.5z M252.5,282.6\r\n                            c-9.7,0-11.9,2.8-11.9,5.7c0,2.3,1.6,3.8,4.2,3.8c4.5,0,7.6-4.3,7.6-8.6L252.5,282.6L252.5,282.6z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M283.2,298.4H274v-45.5c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.6-0.6,10.2-0.8,15.5-0.6V298.4z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M322.2,282H300c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C322.4,279.1,322.4,280.5,322.2,282z M307.1,268.6\r\n                            c-3.8,0-6.5,2.8-7,7.1h13.2C313.4,271.3,311,268.6,307.1,268.6z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M358.4,281.4c-0.9,0-2,0-3.2-0.1v17.1h-9.3v-48.6c4-0.2,8.3-0.3,13-0.3c12,0,18.5,5.5,18.5,15\r\n                            S370.2,281.4,358.4,281.4z M358.6,257.2c-1.2,0-2.2,0-3.3,0.1v16.2c0.9,0.1,1.9,0.2,2.7,0.2c5.8-0.1,9.7-3.2,9.7-8.5\r\n                            C367.7,260.3,364.9,257.2,358.6,257.2z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M397.4,299.1c-10.2,0-16.7-5.3-16.7-18c0-11.2,7.4-19.2,18.3-19.2c10.2,0,16.7,5.6,16.7,17.9\r\n                            C415.7,291.1,408.1,299.1,397.4,299.1z M398.3,269.7c-4.1,0-8.1,3.2-8.1,10.5s2.7,11.1,8,11.1c4.5,0,8-3.7,8-10.9\r\n                            C406.2,273.4,403.7,269.7,398.3,269.7z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M432.7,298.4h-9.2v-45.5c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.6-0.6,10.2-0.8,15.5-0.6V298.4z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M454.1,298.4H445v-28.7c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.5-0.6,10.1-0.8,15.4-0.6V298.4z M449.5,258\r\n                            c-3.1,0-5.7-2.5-5.7-5.6c0-3,2.6-5.5,5.7-5.5c3.2,0,5.8,2.4,5.8,5.5S452.7,258,449.5,258z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M476.1,299.1c-7.9,0-10.4-2.9-10.4-11.2v-18.1h-6.2v-7.2h6.1v-11l9.2-2.4v13.4h8.7v7.1h-8.6v15.7\r\n                            c0,4.6,1.1,5.9,4.2,5.9c1.5,0,3.2-0.2,4.5-0.6v7.4C481.3,298.8,478.6,299.1,476.1,299.1z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M502.6,298.4h-9.1v-28.7c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.5-0.6,10.1-0.8,15.4-0.6V298.4z M498,258\r\n                            c-3.1,0-5.7-2.5-5.7-5.6c0-3,2.6-5.5,5.7-5.5c3.2,0,5.8,2.4,5.8,5.5C503.7,255.5,501.1,258,498,258z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M541.5,282h-22.2c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C541.8,279.1,541.7,280.5,541.5,282z M526.5,268.6\r\n                            c-3.8,0-6.5,2.8-7,7.1h13.2C532.8,271.3,530.4,268.6,526.5,268.6z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M80.1,352.9c-0.9,0-2,0-3.2-0.1v17.1h-9.4v-48.6c4-0.2,8.3-0.3,13-0.3c12,0,18.5,5.5,18.5,15\r\n                            C99.1,345.5,91.9,352.9,80.1,352.9z M80.2,328.7c-1.2,0-2.2,0-3.3,0.1V345c0.9,0.1,1.9,0.2,2.7,0.2c5.8-0.1,9.7-3.2,9.7-8.5\r\n                            C89.4,331.8,86.6,328.7,80.2,328.7z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M119,370.6c-10.2,0-16.7-5.3-16.7-18c0-11.2,7.4-19.2,18.3-19.2c10.2,0,16.7,5.6,16.7,17.9\r\n                            C137.3,362.6,129.8,370.6,119,370.6z M120,341.2c-4.1,0-8.1,3.2-8.1,10.5s2.7,11.1,8,11.1c4.5,0,8-3.7,8-10.9\r\n                            C127.8,344.9,125.4,341.2,120,341.2z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M154.3,369.9h-9.2v-45.5c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.6-0.6,10.2-0.8,15.5-0.6V369.9z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M175.8,369.9h-9.1v-28.7c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.5-0.6,10.1-0.8,15.4-0.6V369.9L175.8,369.9z\r\n                            M171.2,329.5c-3.1,0-5.7-2.5-5.7-5.6c0-3,2.6-5.5,5.7-5.5c3.2,0,5.8,2.4,5.8,5.5C176.9,327,174.3,329.5,171.2,329.5z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M199.3,370.6c-9.9,0-16.1-5.2-16.1-17.4c0-11.2,5.8-19.7,18.5-19.7c2.4,0,5,0.4,7.3,1l-0.9,8\r\n                            c-1.9-0.7-4.2-1.3-6.5-1.3c-5.8,0-8.8,4.3-8.8,11.1c0,6.1,2.4,10.3,8.5,10.3c2.4,0,5.1-0.5,7.1-1.5l0.7,7.8\r\n                            C206.7,369.9,203.1,370.6,199.3,370.6z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M245.1,353.5h-22.2c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C245.4,350.6,245.3,352,245.1,353.5z M230,340.1\r\n                            c-3.8,0-6.5,2.8-7,7.1h13.2C236.4,342.8,233.9,340.1,230,340.1z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M278.2,329.2v12.5h15.7v7.7h-15.7v20.5h-9.4v-48.6h26v7.9L278.2,329.2L278.2,329.2z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M330.6,353.5h-22.2c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C330.9,350.6,330.8,352,330.6,353.5z M315.6,340.1\r\n                            c-3.8,0-6.5,2.8-7,7.1h13.2C321.9,342.8,319.5,340.1,315.6,340.1z M313,329.4l-3.2-5.3l12.6-7.9l3.8,6.3L313,329.4z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M360.2,370c0-1.8,0.1-4.1,0.4-6h-0.1c-1.9,4-5.8,6.8-11.3,6.8c-8.7,0-13-6.6-13-16.8\r\n                            c0-12.1,7.1-20.4,18.9-20.4c1.5,0,3,0.1,4.5,0.3v-9.4c-1.7-0.3-4.2-0.6-6.3-0.7V318c4.5-0.6,10.2-0.8,15.4-0.6V363\r\n                            c1.7,0.3,4.2,0.6,6.3,0.7v5.8C370.5,369.9,365,370.1,360.2,370z M359.6,341.3c-1.7-0.4-3.2-0.6-4.8-0.6c-5.3,0-9,3.3-9,12.2\r\n                            c0,6.7,1.9,10.2,6.1,10.2c4.8,0,7.7-5.6,7.7-11.7L359.6,341.3L359.6,341.3z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M409.8,353.5h-22.2c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C410.1,350.6,410,352,409.8,353.5z M394.8,340.1\r\n                            c-3.8,0-6.5,2.8-7,7.1H401C401.1,342.8,398.7,340.1,394.8,340.1z M392.2,329.4l-3.2-5.3l12.6-7.9l3.8,6.3L392.2,329.4z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M428.2,341.3h0.1c1.7-4.5,5.2-8.5,11.4-8l-0.4,9.1c-6.6-1.4-9.9,3-9.9,12.9v14.6h-9.1v-28.7\r\n                            c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.5-0.6,10.1-0.8,14.9-0.6C428.8,335.9,428.6,338.8,428.2,341.3z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M463.5,370c0-2.1,0.1-4.2,0.4-6.1l-0.1-0.1c-1.7,4-6.1,6.8-11.4,6.8c-6.5,0-10.2-3.7-10.2-9.4\r\n                            c0-8.6,8.5-13.1,20.7-13.1v-1.9c0-3.7-1.8-5.7-7-5.7c-3.2,0-7.6,1.1-10.6,2.8l-0.8-7.7c3.6-1.3,8.2-2.2,12.8-2.2\r\n                            c11.5,0,14.8,4.6,14.8,12.5V363c1.7,0.3,4.2,0.6,6.3,0.7v5.8C473.8,369.9,468.2,370.1,463.5,370z M462.8,354.1\r\n                            c-9.7,0-11.9,2.8-11.9,5.7c0,2.3,1.6,3.8,4.2,3.8c4.5,0,7.6-4.3,7.6-8.6L462.8,354.1L462.8,354.1z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M493.5,369.9h-9.2v-45.5c-1.7-0.3-4.2-0.6-6.3-0.7v-5.8c4.6-0.6,10.2-0.8,15.5-0.6V369.9z'/>\" &\r\n                        \"<path fill='#FFFFFF' d='M532.5,353.5h-22.2c-0.1,6.7,3.2,9.9,9.9,9.9c3.5,0,7.3-0.8,10.4-2.2l0.9,7.1c-3.8,1.5-8.4,2.3-12.8,2.3\r\n                            c-11.4,0-17.7-5.7-17.7-18.3c0-10.9,6-19,16.8-19c10.4,0,15,7.1,15,16C532.8,350.6,532.7,352,532.5,353.5z M517.4,340.1\r\n                            c-3.8,0-6.5,2.8-7,7.1h13.2C523.8,342.8,521.3,340.1,517.4,340.1z'/>\" &\r\n                    \"</g>\" &\r\n                    \"<rect x='209.5' y='400' fill='#D85509' width='180.4' height='3.5'/>\" &\r\n                \"</g>\" &\r\n            \"</switch>\" &\r\n        \"</svg>\" &\r\n        \"<p style='display: flex; flex-grow: 1; justify-content: center; max-width: full; font-size: 30px; padding: 0px 150px 0px 100px; text-align: center; color: white'>\" & \r\n            If(And(Language()=\"fr-FR\", Len(SharePointIntegration.Selected.'Title FR') > 0),SharePointIntegration.Selected.'Title FR', SharePointIntegration.Selected.Titel) & \r\n        \"</p>\" &\r\n    \"</article>\" &\r\n    \"<article style='positon: relative; display:flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding-left: 50px; margin-top: 30px; max-width: 85%; padding-bottom: 20px; border-bottom: 1px dashed grey'>\" &\r\n        \"<div style='position: absolute; display:\" & If(Len(SharePointIntegration.Selected.'Year of the analysis'.Value) > 0, \"flex\", \"none\") & \"; flex-direction: row; align-items: center; max-height: 30px; top: 200px; right: 100px; font-size: 25px; font-weight: bold'>\" &\r\n            \"<svg width='50px' height='50px' viewBox='0 0 1024 1024' class='icon'  version='1.1' xmlns='http://www.w3.org/2000/svg'>\"&\r\n                \"<path d='M897.9 369.2H205c-33.8 0-61.4-27.6-61.4-61.4s27.6-61.4 61.4-61.4h692.9c33.8 0 61.4 27.6 61.4 61.4s-27.6 61.4-61.4 61.4z' fill='#FFB89A' />\"&\r\n                \"<path d='M807 171H703.3c-16.6 0-30 13.4-30 30s13.4 30 30 30H807c31.6 0 57.4 24 57.4 53.4v42.3H125.2v-42.3c0-29.5 25.7-53.4 57.4-53.4H293c16.6 0 30-13.4 30-30s-13.4-30-30-30H182.5c-64.7 0-117.4 50.9-117.4 113.4v527.7c0 62.5 52.7 113.4 117.4 113.4H807c64.7 0 117.4-50.9 117.4-113.4V284.5c0-62.6-52.7-113.5-117.4-113.5z m0 694.6H182.5c-31.6 0-57.4-24-57.4-53.4V386.8h739.2v425.4c0.1 29.5-25.7 53.4-57.3 53.4z' fill='#45484C' />\"&\r\n                \"<path d='M447.6 217.1c-12.4-6.1-27-2.8-35.7 7.1-2.2-6.7-4-16.2-4-28.1 0-13 2.2-23 4.6-29.8 9.5 8.1 23.5 9.6 34.9 2.8 14.2-8.5 18.8-27 10.3-41.2-15.5-25.9-35.9-29.7-46.6-29.7-36.6 0-63.1 41.2-63.1 97.8s26.4 98 63 98c20.6 0 39-13.4 50.4-36.7 7.3-14.9 1.1-32.9-13.8-40.2zM635.9 218.5c-12.4-6.1-27-2.8-35.7 7.1-2.2-6.7-4-16.2-4-28.1 0-13 2.2-23 4.6-29.8 9.5 8.1 23.5 9.6 34.9 2.8 14.2-8.5 18.8-27 10.3-41.2-15.5-25.9-35.9-29.7-46.6-29.7-36.6 0-63.1 41.2-63.1 97.8s26.5 97.8 63.1 97.8c20.6 0 39-13.4 50.4-36.7 7.1-14.7 0.9-32.7-13.9-40z' fill='#45484C' />\"&\r\n                \"<path d='M700.2 514.5H200.5c-16.6 0-30 13.4-30 30s13.4 30 30 30h499.7c16.6 0 30-13.4 30-30s-13.5-30-30-30zM668.4 689.8h-74c-16.6 0-30 13.4-30 30s13.4 30 30 30h74c16.6 0 30-13.4 30-30s-13.4-30-30-30zM479.3 689.8H200.5c-16.6 0-30 13.4-30 30s13.4 30 30 30h278.8c16.6 0 30-13.4 30-30s-13.4-30-30-30z' fill='#33CC99' />\"&\r\n            \"</svg>\" &\r\n            \"<p style='margin-left: 10px'>\" & \r\n                SharePointIntegration.Selected.'Year of the analysis'.Value & \r\n            \"</p>\" &\r\n        \"</div>\" &\r\n        \"<div style='max-width: 85%; min-width: 20%; padding: 15px; margin-left: 5px'>\" & \r\n            SharePointIntegration.Selected.Description & \r\n        \"</div>\" &\r\n        \"<div style='display:flex; flex-flow:row nowrap; justify-content: space-evenly; width: 100%;'>\" &\r\n            \"<div style='display:\" & If(Len(Last(FirstN(SharePointIntegration.Selected.'Author (Author0)', 1)).Email) > 0, \"flex\", \"none\") & \"; min-width: 30%; max-width: 50%; flex-direction: row; justify-content: flex-start; align-items: flex-start; margin-bottom: 20px;'>\" &\r\n                \"<ul style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; max-width: 80%; padding: 5px; margin-left: 20px;'>\" &\r\n                    Concat(SharePointIntegration.Selected.'Author (Author0)', \"<li style='display: flex; align-items: center; border-radius: 50px; padding: 5px 20px 5px 10px; margin-bottom: 3px; height: 30px'><span style='display: flex; margin-right: 10px; max-width: 30px; max-height: 30px; border-radius:50px; overflow: hidden'><img src='\" & Picture & \"' style='object-fit: cover; width: 30px; height:30px' alt='\U0001F46E‍♂️'/></span>\" & DisplayName & \"</li>\") &\r\n                \"</ul>\" &\r\n            \"</div>\" &\r\n            \"<div style='display:\" & If(Len(Last(FirstN(SharePointIntegration.Selected.Bijlagen, 1)).Value) > 0, \"flex\", \"none\") & \"; max-width: 50%; flex-direction: column; justify-content: flex-start; align-items: flex-start;'>\" &\r\n                \"<ul style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; background-color: white; min-width: 20%; padding: 5px; margin-left: 20px; border-radius: 5px'>\" &\r\n                    Concat(SharePointIntegration.Selected.Bijlagen, \"<li style='list-style-type: disc; padding: 5px 20px; display: flex; align-items: center'><svg fill='#000000' width='50px' height='50px' viewBox='0 0 32 32' version='1.1' xmlns='http://www.w3.org/2000/svg'><path d='M4.040 26.96c-1.040 0-2.080-0.4-2.88-1.2-1.6-1.56-1.6-4.16 0-5.76l11.080-11.040c0.96-0.96 2.56-0.96 3.52 0 0.48 0.48 0.72 1.080 0.72 1.76s-0.24 1.28-0.72 1.76l-8.8 8.72c-0.32 0.32-0.84 0.32-1.2 0-0.32-0.32-0.32-0.84 0-1.2l8.76-8.76c0.16-0.16 0.24-0.36 0.24-0.56s-0.080-0.4-0.24-0.56c-0.32-0.32-0.84-0.32-1.12 0l-11.040 11.080c-0.92 0.92-0.92 2.48 0 3.4s2.48 0.92 3.4 0l11.040-11.080c0.76-0.76 1.16-1.76 1.16-2.84s-0.4-2.080-1.16-2.84c-1.56-1.56-4.080-1.56-5.64 0l-8.76 8.8c-0.32 0.32-0.84 0.32-1.2 0-0.32-0.32-0.32-0.84 0-1.2l8.8-8.76c2.2-2.2 5.8-2.2 8.040 0 1.080 1.080 1.68 2.48 1.68 4s-0.6 2.96-1.68 4l-11.080 11.080c-0.8 0.8-1.8 1.2-2.92 1.2z'></path></svg><a href=' \" & \r\n                    AbsoluteUri & \r\n                    \"'>\" & \r\n                    DisplayName &\r\n                    \"</a>\" &\r\n                    \"</li>\") &\r\n                \"</ul>\" &\r\n            \"</div>\" &\r\n        \"</div>\" &\r\n    \"</article>\" &\r\n    \"<article style='display: flex; flex-flow: row wrap; justify-content: flex-start; align-items: flex-start; max-width: 85%; margin-top: 30px; padding-left: 50px; border-bottom: 1px dashed grey'>\" &\r\n         \"<div style='display:\" & If(Len(Last(FirstN(SharePointIntegration.Selected.'Type of analysis', 1)).Value) > 0, \"flex\", \"none\") & \"; width: 50%; flex-direction: row; justify-content: flex-start; align-items: flex-start; margin-bottom: 20px'>\" &\r\n            \"<h2 style='color: #333399'>\" &\r\n                If(Language()=\"fr-FR\",\"Type d'analyse: \",\"Type analyse: \") &\r\n            \"</h2>\" &\r\n            \"<ul style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; max-width: 80%; padding: 5px; margin-left: 20px'>\" &\r\n                Concat(SharePointIntegration.Selected.'Type of analysis', \"<li style='display: flex; align-items: center; border-radius: 50px; background-color:#B5DDD1; padding: 5px 20px 5px 10px; margin-bottom: 3px'><span style='margin-right: 10px'>\U0001F4CB</span>\" & Value & \"</li>\") &\r\n            \"</ul>\" &\r\n        \"</div>\" &\r\n        \"<div style='display:\" & If(Len(Last(FirstN(SharePointIntegration.Selected.Topic, 1)).Value) > 0, \"flex\", \"none\") & \"; width: 50%; flex-direction: row; justify-content: flex-start; align-items: flex-start; margin-bottom: 20px'>\" &\r\n            \"<h2 style='color: #333399'>\" &\r\n                If(Language()=\"fr-FR\",\"Sujet: \",\"Thema: \") &\r\n            \"</h2>\" &\r\n            \"<ul style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; max-width: 80%; padding: 5px; margin-left: 20px'>\" &\r\n                Concat(SharePointIntegration.Selected.Topic, \"<li style='display: flex; align-items: center; border-radius: 50px; background-color:\" &\r\n                 If(IsMatch(Value,\"Drugs\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#9DBBE3\", IsMatch(Value,\"Human trafficking\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#BFE3DF\", IsMatch(Value,\"ROAD\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#FFF5CC\", IsMatch(Value,\"Property\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#FFD9BD\",IsMatch(Value,\"Terrorism\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#EE9D94\",IsMatch(Value,\"MIGRATION\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#a3c3b0\",Or(IsMatch(Value,\"Corruption\", MatchOptions.Contains & MatchOptions.IgnoreCase ),IsMatch(Value,\"Counterfeiting\", MatchOptions.Contains & MatchOptions.IgnoreCase )),\"#9d97bc\",IsMatch(Value,\"Environmental\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#dea7a1\",IsMatch(Value,\"CN_\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#ead2b8\",IsMatch(Value,\"Firearms\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"#B2EDAE\",\"#76b5c5\") &\r\n                 \";padding: 5px 20px 5px 10px; margin-bottom: 3px'><span style='margin-right: 10px'>\U0001F4CC</span>\" & Mid(Value, If(Find(\"_\", Value)> 0,Find(\"_\", Value)+1,1)) & \"</li>\") &\r\n            \"</ul>\" &\r\n        \"</div>\" &\r\n         \"<div style='display:\" & If(Len(SharePointIntegration.Selected.'Geo scope'.Value) > 0, \"flex\", \"none\") & \"; width: 50%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>\" &\r\n            \"<h2 style='color: #333399'>\" &\r\n                If(Language()=\"fr-FR\",\"Geo scope: \",\"Geo scope: \") &\r\n            \"</h2>\" &\r\n            \"<p style='display: flex; align-items: center; max-width: 80%; margin-left: 20px; font-size: 18px; border-radius: 50px; background-color: #C4FAF8; padding: 5px 20px 5px 10px;'>\" &\r\n            \"<span style='margin-right: 10px'>\" &\r\n            \"\U0001F30D\" &\r\n            \"</span>\" &\r\n               SharePointIntegration.Selected.'Geo scope'.Value & \r\n            \"</p>\" &\r\n        \"</div>\" &\r\n        \"<div style='display:\" & If(Len(SharePointIntegration.Selected.'Confidentiality level'.Value) > 0, \"flex\", \"none\") & \"; width: 50%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>\" &\r\n            \"<h2 style='color: #333399'>\" &\r\n                If(Language()=\"fr-FR\",\"confidentialité: \",\"Vertrouwelijkheid: \") &\r\n            \"</h2>\" &\r\n            \"<p style='display: flex; align-items: center; max-width: 80%; margin-left: 20px; font-size: 18px; border-radius: 50px; background-color: #C4FAF8; padding: 5px 20px 5px 10px;'>\" &\r\n                \"<span style='margin-right: 10px'>\" &\r\n                    If(IsMatch(SharePointIntegration.Selected.'Confidentiality level'.Value,\"public\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"\U0001F4E3\", IsMatch(SharePointIntegration.Selected.'Confidentiality level'.Value,\"Internal Police\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"\U0001F46E\", IsMatch(SharePointIntegration.Selected.'Confidentiality level'.Value,\"Confidential\", MatchOptions.Contains & MatchOptions.IgnoreCase ),\"\U0001F510\",\"⏱\") &\r\n                \"</span>\" &\r\n               SharePointIntegration.Selected.'Confidentiality level'.Value & \r\n            \"</p>\" &\r\n        \"</div>\" &\r\n        \r\n    \"</article>\" &\r\n\"</section>\""
           Height: =Parent.Height
           Size: =11
           Visible: =visitorForm
@@ -894,9 +840,10 @@
           Height: =144
           Layout: =Layout.Vertical
           LoadingSpinner: =LoadingSpinner.Data
+          TemplateFill: =RGBA(237, 237, 237, 1)
           TemplatePadding: =0
           TemplateSize: =35
-          Visible: =And(userForm, Not(attentionToggle))
+          Visible: =And(userForm, Or(SharePointForm1.Mode = FormMode.Edit, SharePointForm1.Mode = FormMode.New))
           Width: =458
           X: =972
           Y: =1325
@@ -934,6 +881,7 @@
               PaddingRight: =0
               PaddingTop: =0
               Width: =Parent.TemplateWidth - 86
+              Wrap: =false
               X: =16
               Y: =5
     - TopicGallery:
@@ -945,9 +893,10 @@
           Height: =144
           Layout: =Layout.Vertical
           LoadingSpinner: =LoadingSpinner.Data
+          TemplateFill: =RGBA(237, 237, 237, 1)
           TemplatePadding: =0
           TemplateSize: =35
-          Visible: =And(userForm, Not(attentionToggle))
+          Visible: =And(userForm, Or(SharePointForm1.Mode = FormMode.Edit, SharePointForm1.Mode = FormMode.New))
           Width: =458
           X: =972
           Y: =1485
@@ -986,5 +935,6 @@
               PaddingRight: =0
               PaddingTop: =0
               Width: =Parent.TemplateWidth - 86
+              Wrap: =false
               X: =16
               Y: =5

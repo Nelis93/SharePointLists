@@ -1,19 +1,89 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/view-formatting.schema.json",
   "hideSelection": true,
+  "commandBarProps": {
+    "commands": [
+      {
+        "key": "new",
+        "text": "Nieuw signaal toevoegen"
+      },
+      {
+        "key": "editInGridView",
+        "hide": true
+      },
+      {
+        "key": "export",
+        "hide": true
+      },
+      {
+        "key": "share",
+        "hide": true
+      },
+      {
+        "key": "copyLink",
+        "hide": true
+      },
+      {
+        "key": "edit",
+        "hide": true
+      },
+      {
+        "key": "delete",
+        "hide": true
+      },
+      {
+        "key": "requestApprovalCommand",
+        "hide": true
+      },
+      {
+        "key": "alertMe",
+        "hide": true
+      },
+      {
+        "key": "manageAlert",
+        "hide": true
+      },
+      {
+        "key": "integrate",
+        "hide": true
+      },
+      {
+        "key": "powerApps",
+        "hide": true
+      },
+      {
+        "key": "powerAutomate",
+        "hide": true
+      },
+      {
+        "key": "powerBI",
+        "hide": true
+      },
+      {
+        "key": "automate",
+        "hide": true
+      },
+      {
+        "key": "manageForms",
+        "hide": true
+      }
+    ]
+  },
   "rowFormatter": {
     "elmType": "div",
     "attributes": {
       "class": "ms-borderColor-neutralLight"
     },
     "style": {
+      "position": "relative",
       "border-width": "1px",
       "border-radius": "5px",
       "border-style": "solid",
       "width": "1000px",
       "display": "block",
       "margin-bottom": "5px",
-      "margin-top": "=if(@rowIndex == 0, '15px','0')"
+      "margin-top": "=if(@rowIndex == 0, '15px','0')",
+      "box-shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)"
     },
     "children": [
       {
@@ -91,10 +161,13 @@
             "style": {
               "display": "flex",
               "position": "absolute",
-              "top": "10px",
+              "z-index": "20",
               "right": "5px",
+              "bottom": "10px",
               "flex-direction": "column",
-              "align-items": "flex-end"
+              "align-items": "flex-end",
+              "justify-content": "flex-end",
+              "height": "100%"
             },
             "children": [
               {
@@ -104,36 +177,6 @@
                   "flex-direction": "row",
                   "padding": "5px 10px",
                   "border-radius": "20px",
-                  "margin-bottom": "10px",
-                  "align-items": "center"
-                },
-                "attributes": {
-                  "class": "=if(substring([$Priority],0,1) == '1', 'ms-bgColor-greenLight', if(substring([$Priority],0,1) == '2', 'ms-bgColor-yellow', if(substring([$Priority],0,1) == '3', 'ms-bgColor-orange sp-css-color-white', if(substring([$Priority],0,1) == '4', 'ms-bgColor-red sp-css-color-white', 'ms-bgColor-redDark sp-css-color-white'))))"
-                },
-                "children": [
-                  {
-                    "elmType": "span",
-                    "attributes": {
-                      "iconName": "Important"
-                    },
-                    "style": {
-                      "padding-right": "5px"
-                    }
-                  },
-                  {
-                    "elmType": "span",
-                    "txtContent": "=('Priority: ' + substring([$Priority],0,1))"
-                  }
-                ]
-              },
-              {
-                "elmType": "div",
-                "style": {
-                  "display": "flex",
-                  "flex-direction": "row",
-                  "padding": "5px 10px",
-                  "border-radius": "20px",
-                  "margin-bottom": "10px",
                   "align-items": "center"
                 },
                 "attributes": {
@@ -224,11 +267,12 @@
                       "max-width": "700px",
                       "max-height": "55px",
                       "padding-bottom": "40px",
-                      "font-size": "20px",
-                      "font-weight": "500",
+                      "font-size": "25px",
+                      "font-weight": "600",
                       "-webkit-line-clamp": "2",
                       "overflow": "hidden",
-                      "text-overflow": "ellipsis"
+                      "text-overflow": "ellipsis",
+                      "font-family": "serif"
                     },
                     "children": [
                       {
@@ -244,5 +288,53 @@
         ]
       }
     ]
+  },
+  "groupProps": {
+    "hideSelection": "true",
+    "hideFooter": true,
+    "headerFormatter": {
+      "elmType": "div",
+      "style": {
+        "display": "inline-flex",
+        "text-wrap": "nowrap",
+        "height": "25px",
+        "padding-left": "8px",
+        "padding-top": "5px",
+        "padding-bottom": "5px"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "txtContent": "@group.fieldData",
+          "style": {
+            "display": "flex",
+            "padding-right": "9px",
+            "padding-bottom": "3px"
+          },
+          "attributes": {
+            "class": "ms-fontWeight-bold"
+          }
+        },
+        {
+          "elmType": "div",
+          "style": {
+            "padding-right": "9px",
+            "padding-bottom": "3px"
+          },
+          "children": [
+            {
+              "elmType": "span",
+              "style": {
+                "padding-left": "5px"
+              },
+              "attributes": {
+                "class": "ms-fontWeight-bold"
+              },
+              "txtContent": "='(' + @group.count +')'"
+            }
+          ]
+        }
+      ]
+    }
   }
 }

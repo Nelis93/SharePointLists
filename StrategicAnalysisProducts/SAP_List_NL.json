@@ -1,6 +1,22 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
   "hideSelection": true,
+  "commandBarProps": {
+    "commands": [
+      {
+        "key": "new",
+        "text": "Nieuwe analyse toevoegen"
+      },
+      {
+        "key": "editInGridView",
+        "hide": true
+      },
+      {
+        "key": "exportExcel",
+        "hide": true
+      }
+    ]
+  },
   "rowFormatter": {
     "elmType": "div",
     "style": {
@@ -12,15 +28,81 @@
       "overflow-x": "hidden",
       "overflow-y": "clip",
       "width": "1100px",
-      "height": "180px",
+      "height": "160px",
       "margin-top": "5px",
-      "border": "1px solid",
-      "border-radius": "10px"
+      "border-width": "1px",
+      "border-style": "solid",
+      "border-radius": "10px",
+      "box-shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)"
     },
     "attributes": {
-      "class": "ms-bgColor-white ms-bgColor-communicationTint40--hover ms-borderColor-neutralLight ms-borderColor-themeDarker--hover"
+      "class": "ms-bgColor-white ms-bgColor-communicationTint40--hover ms-borderColor-neutralLight"
     },
     "children": [
+      {
+        "elmType": "div",
+        "style": {
+          "position": "absolute",
+          "display": "flex",
+          "justify-content": "flex-end",
+          "align-items": "center",
+          "top": "10px",
+          "right": "10px"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "style": {
+              "position": "relative",
+              "display": "=if([$Attachments] > 0, 'flex','none')"
+            },
+            "children": [
+              {
+                "elmType": "span",
+                "attributes": {
+                  "iconName": "Attach"
+                },
+                "style": {
+                  "font-size": "30px",
+                  "width": "100%",
+                  "max-width": "100%"
+                }
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "position": "relative",
+              "display": "flex",
+              "z-index": "20",
+              "border-radius": "10px",
+              "border-width": "1px",
+              "border-style": "solid",
+              "cursor": "pointer"
+            },
+            "customRowAction": {
+              "action": "share"
+            },
+            "attributes": {
+              "class": "ms-bgColor-white--hover sp-css-borderColor-white sp-css-borderColor-white"
+            },
+            "children": [
+              {
+                "elmType": "span",
+                "attributes": {
+                  "iconName": "Share"
+                },
+                "style": {
+                  "font-size": "25px",
+                  "width": "100%",
+                  "padding": "3px"
+                }
+              }
+            ]
+          }
+        ]
+      },
       {
         "elmType": "div",
         "style": {
@@ -40,89 +122,14 @@
             "elmType": "div",
             "style": {
               "position": "absolute",
-              "display": "=if([$Attachments] > 0, 'flex','none')",
-              "top": "10px",
-              "right": "10px"
-            },
-            "children": [
-              {
-                "elmType": "span",
-                "attributes": {
-                  "iconName": "Attach"
-                },
-                "style": {
-                  "font-size": "30px",
-                  "width": "100%",
-                  "max-width": "100%"
-                }
-              }
-            ]
-          },
-          {
-            "elmType": "div",
-            "style": {
-              "position": "absolute",
-              "display": "flex",
-              "font-weight": "bold",
-              "height": "100%",
-              "flex-direction": "column",
-              "left": "10px",
-              "top": "10px",
-              "align-items": "flex-start",
-              "justify-content": "center"
-            },
-            "children": [
-              {
-                "elmType": "div",
-                "style": {
-                  "display": "=if(loopIndex('personIterator') >= 2, 'none', 'flex')",
-                  "flex-direction": "row",
-                  "justify-content": "center",
-                  "align-items": "center",
-                  "overflow": "hidden",
-                  "text-overflow": "ellipsis",
-                  "margin": "2px 0"
-                },
-                "forEach": "personIterator in [$Author0]",
-                "children": [
-                  {
-                    "elmType": "img",
-                    "attributes": {
-                      "src": "=getUserImage([$personIterator.email],'S')",
-                      "title": "[$personIterator.title]",
-                      "class": "sp-card-userThumbnail"
-                    },
-                    "style": {
-                      "border-radius": "50px",
-                      "height": "30px",
-                      "width": "30px",
-                      "margin-right": "10px"
-                    }
-                  },
-                  {
-                    "elmType": "div",
-                    "txtContent": "[$personIterator.title]",
-                    "style": {
-                      "text-wrap": "nowrap",
-                      "font-size": "14px"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "elmType": "div",
-            "style": {
-              "position": "absolute",
               "top": "0",
-              "padding": "10px 0px 10px 20px",
+              "padding": "15px 0px 10px 20px",
               "max-width": "1000px",
               "text-wrap": "nowrap",
               "text-overflow": "ellipsis",
               "overflow": "hidden",
               "font-weight": "bold",
-              "font-size": "32px",
+              "font-size": "25px",
               "-webkit-line-clamp": "1"
             },
             "children": [
@@ -144,7 +151,7 @@
               "justify-content": "flex-end",
               "align-items": "flex-start",
               "padding": "10px 0",
-              "min-height": "50px",
+              "min-height": "60px",
               "max-height": "85px",
               "width": "100%"
             },
@@ -188,6 +195,61 @@
                           "title": "[$Year]"
                         },
                         "txtContent": "[$Year]"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "elmType": "div",
+                "style": {
+                  "position": "absolute",
+                  "display": "flex",
+                  "left": "120px",
+                  "font-weight": "bold",
+                  "height": "100%",
+                  "flex-direction": "column",
+                  "align-items": "flex-start",
+                  "min-width": "300px",
+                  "max-height": "90px",
+                  "overflow-y": "hidden",
+                  "margin": "0px 20px"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "style": {
+                      "display": "=if(loopIndex('personIterator') >= 2, 'none', 'flex')",
+                      "flex-direction": "row",
+                      "justify-content": "center",
+                      "align-items": "center",
+                      "overflow": "hidden",
+                      "text-overflow": "ellipsis",
+                      "margin": "2px 0"
+                    },
+                    "forEach": "personIterator in [$Author0]",
+                    "children": [
+                      {
+                        "elmType": "img",
+                        "attributes": {
+                          "src": "=getUserImage([$personIterator.email],'S')",
+                          "title": "[$personIterator.title]",
+                          "class": "sp-card-userThumbnail"
+                        },
+                        "style": {
+                          "border-radius": "50px",
+                          "height": "30px",
+                          "width": "30px",
+                          "margin-right": "10px"
+                        }
+                      },
+                      {
+                        "elmType": "div",
+                        "txtContent": "[$personIterator.title]",
+                        "style": {
+                          "text-wrap": "nowrap",
+                          "font-size": "14px"
+                        }
                       }
                     ]
                   }
@@ -332,7 +394,8 @@
                               "justify-content": "flex-start",
                               "align-items": "center",
                               "overflow": "hidden",
-                              "background-color": "=if(indexOf([$topic], 'Drugs') >= 0, '#9DBBE3', if(indexOf([$topic], 'Human trafficking') >= 0, '#BFE3DF', if(indexOf([$topic], 'ROAD') >= 0, '#FFF5CC',if(indexOf([$topic], 'Property') >= 0, '#FFD9BD', if(indexOf([$topic], 'TERRO') >= 0, '#EE9D94', if(indexOf([$topic], 'MIGRATION') >= 0, '#a3c3b0', if(indexOf([$topic],'Counterfeiting') >= 0 || indexOf([$topic],'Money laundering') >= 0 || indexOf([$topic],'_Fraud') >= 0 || indexOf([$topic],'Fiscal fraud') >= 0, '#9d97bc', if(indexOf([$topic], 'Environmental') >= 0, '#dea7a1', if(indexOf([$topic], 'CN_') >= 0 || indexOf([$topic],'OFFENDER') >= 0, '#ead2b8',if(indexOf([$topic], 'Firearms') >= 0, '#B2EDAE', '#76b5c5'))))))))))",
+                              "border": "=if(indexOf([$topic], 'Drugs') >= 0, '', if(indexOf([$topic], 'Human trafficking') >= 0, '', if(indexOf([$topic], 'ROAD') >= 0, '',if(indexOf([$topic], 'Property') >= 0, '', if(indexOf([$topic], 'TERRO') >= 0, '', if(indexOf([$topic], 'MIGRATION') >= 0, '', if(indexOf([$topic],'Counterfeiting') >= 0 || indexOf([$topic],'Money laundering') >= 0 || indexOf([$topic],'_Fraud') >= 0 || indexOf([$topic],'Fiscal fraud') >= 0, '', if(indexOf([$topic], 'Environmental') >= 0, '', if(indexOf([$topic], 'CN_') >= 0 || indexOf([$topic],'OFFENDER') >= 0, '',if(indexOf([$topic], 'Firearms') >= 0, '', '1px solid #333399'))))))))))",
+                              "background-color": "=if(indexOf([$topic], 'Drugs') >= 0, '#9DBBE3', if(indexOf([$topic], 'Human trafficking') >= 0, '#BFE3DF', if(indexOf([$topic], 'ROAD') >= 0, '#FFF5CC',if(indexOf([$topic], 'Property') >= 0, '#FFD9BD', if(indexOf([$topic], 'TERRO') >= 0, '#EE9D94', if(indexOf([$topic], 'MIGRATION') >= 0, '#a3c3b0', if(indexOf([$topic],'Counterfeiting') >= 0 || indexOf([$topic],'Money laundering') >= 0 || indexOf([$topic],'_Fraud') >= 0 || indexOf([$topic],'Fiscal fraud') >= 0, '#9d97bc', if(indexOf([$topic], 'Environmental') >= 0, '#dea7a1', if(indexOf([$topic], 'CN_') >= 0 || indexOf([$topic],'OFFENDER') >= 0, '#ead2b8',if(indexOf([$topic], 'Firearms') >= 0, '#B2EDAE', '#FFFFFF'))))))))))",
                               "color": "#80391e",
                               "text-wrap": "nowrap"
                             },

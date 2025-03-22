@@ -1,6 +1,6 @@
-"<section style='display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; font-size: 16px; width: 100%; max-height: 100%; margin-right: 50px; padding: 50px'>" &
-    "<article style='position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; width: 95%; height: 100px; background-color: #333399; padding: 10px; padding-left: 0px; margin-left: -50px'>" &
-        "<svg version='1.1' id='Calque_2' xmlns:x='&ns_extend;' xmlns:i='&ns_ai;' xmlns:graph='&ns_graphs;'
+"<section style='display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; font-size: 16px; width: 100%; max-height: 100%; margin-right: 40px; padding: 50px'>" &
+    "<article style='position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; width: 90%; height: 100px; background-color: #333399; padding: 10px 0px; margin-left: -20px; border-bottom-left-radius: 50px 50px; border-left: 4px solid #D85509'>" &
+        <!-- "<svg version='1.1' id='Calque_2' xmlns:x='&ns_extend;' xmlns:i='&ns_ai;' xmlns:graph='&ns_graphs;'
         xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 595.3 425.2'
         style='position: absolute; right: 0px; top: 0px; height: 100px' xml:space='preserve'>" &
             "<switch>" &
@@ -97,17 +97,58 @@
                     "<rect x='209.5' y='400' fill='#D85509' width='180.4' height='3.5'/>" &
                 "</g>" &
             "</switch>" &
-        "</svg>" &
+        "</svg>" & -->
+        "<img src='https://bpolb.sharepoint.com/sites/Signals/Gedeelde%20documenten/Afbeeldingen/PowerApp_Logos/FedPol.svg' style='position: absolute; right: 0px; top: 0px; height:100px'/>" &
         "<p style='display: flex; flex-grow: 1; max-width: full; font-size: 30px; padding: 0px 150px 0px 100px; text-align: center; color: white'>" & 
-            If(And(Language()="fr-FR", Len(SharePointIntegration.Selected.Title_F) > 0),SharePointIntegration.Selected.Title_F, SharePointIntegration.Selected.Titel) & 
+            If(And(Language()="fr-FR", Len(SharePointIntegration.Selected.'Title (FR)') > 0),SharePointIntegration.Selected.'Title (FR)', SharePointIntegration.Selected.Titel) & 
         "</p>" &
     "</article>" &
-    "<article style='display:" & If(Or(Len(SharePointIntegration.Selected.Body_F) > 0, Len(SharePointIntegration.Selected.Body_N) > 0), "flex", "none") & "; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding-left: 50px; margin-top: 30px; max-width: 85%; padding-bottom: 50px; border-bottom: 1px dashed grey'>" &
-        "<div style='max-width: 85%; min-width: 20%; padding: 15px; margin-left: 5px; min-height: 200px;'>" & 
-            If(And(Language()="fr-FR" ,Len(SharePointIntegration.Selected.Body_F) > 0),SharePointIntegration.Selected.Body_F, If(Len(SharePointIntegration.Selected.Body_N) > 0, SharePointIntegration.Selected.Body_N, SharePointIntegration.Selected.Body_F)) & 
+    "<article style='display:flex; flex-direction: column; justify-content: flex-start; align-items: flex-end; padding-left: 50px; margin-top: 10px; width: 85%'>" &
+        "<div style='display:flex; flex-direction: row; justify-content: flex-end; align-items: center; font-size: 20px; font-weight: bold; height:50px'>" &
+            "<img src='https://bpolb.sharepoint.com/sites/Signals/Gedeelde%20documenten/Afbeeldingen/PowerApp_Logos/Calendar.svg' style='width: 40px; height:40px'/>" &
+            "<p style='margin-left: 10px'>" & 
+                If(Len(SharePointIntegration.Selected.Gewijzigd) > 0, 
+                Concatenate(Day(SharePointIntegration.Selected.Gewijzigd),"/",Month(SharePointIntegration.Selected.Gewijzigd),"/",Year(SharePointIntegration.Selected.Gewijzigd)), Concatenate(Day(SharePointIntegration.Selected.Gemaakt),"/",Month(SharePointIntegration.Selected.Gemaakt),"/",Year(SharePointIntegration.Selected.Gemaakt))) & 
+            "</p>" &
+        "</div>" &
+        "<div style='display:" & If(Or(SharePointIntegration.Selected.'Gemaakt door'.Email = User().Email, CountRows(Filter(SharePointIntegration.Selected.Editors, Email = User().Email))>0), "flex", "none") & "; flex-direction: row; justify-content: flex-end; align-items: center; font-size: 20px; font-weight: bold; height:50px'>" &
+            "<span style='display: flex; justify-content: center; align-items: center; border-radius: 50px; width: 30px; height:30px;"&
+                Switch(SharePointIntegration.Selected.'Goedkeuringsstatus van inhoud', "Approved", "border: 2px solid green;color: green'>✔","Pending","'>🕙","Denied","border: 2px solid red; color: red'>❌","")&
+            "</span>"&
+            "<p style='margin-left: 10px'>" & 
+                SharePointIntegration.Selected.'Goedkeuringsstatus van inhoud' & 
+            "</p>" &
         "</div>" &
     "</article>" &
-    "<article style='display: flex; flex-flow: row wrap; justify-content: flex-start; align-items: flex-start; max-width: 85%; margin-top: 30px; padding-left: 50px; border-bottom: 1px dashed grey'>" &
+    "<article style='display:" & If(Or(Len(SharePointIntegration.Selected.'Body (FR)') > 0, Len(SharePointIntegration.Selected.'Body (NL)') > 0), "flex", "none") & "; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding-left: 50px; margin-top: 5px; width: 85%; padding-bottom: 20px; border-bottom: 1px dashed grey'>" &
+        
+        "<div style='display:" & If(And(SharePointIntegration.Selected.'Goedkeuringsstatus van inhoud'="Denied", Or(SharePointIntegration.Selected.'Gemaakt door'.Email = User().Email, CountRows(Filter(SharePointIntegration.Selected.Editors, Email = User().Email))>0)), "flex", "none") & ";width: 85%; padding: 15px; margin-left: 5px'>" &
+            "<h3>" &
+                SharePointIntegration.Selected.'Goedkeuring auteur'.DisplayName &
+            "</h3>" &
+            "<em>" &
+                SharePointIntegration.Selected.'Opmerkingen bij de goedkeuring van de inhoud van dit lijstitem' & 
+            "</em>" &
+        "</div>" &
+        "<div style='position: relative; width: 85%; padding: 15px; margin-left: 5px; min-height: 200px'>" &
+            If(And(Language()="fr-FR" ,Len(SharePointIntegration.Selected.'Body (FR)') > 0),SharePointIntegration.Selected.'Body (FR)', If(Len(SharePointIntegration.Selected.'Body (NL)') > 0, SharePointIntegration.Selected.'Body (NL)', SharePointIntegration.Selected.'Body (FR)')) & 
+        "</div>" &
+        "<div style='display:flex; flex-flow:row nowrap; justify-content: space-evenly; width: 100%;'>" &
+            "<div style='display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.Bijlagen, 1)).Value) > 0, "flex", "none") & "; max-width: 50%; flex-direction: column; justify-content: flex-start; align-items: flex-start;'>" &
+                "<ul style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; background-color: white; min-width: 20%; padding: 5px; margin-left: 20px; border-radius: 5px'>" &
+                    Concat(SharePointIntegration.Selected.Bijlagen, "<li style='list-style-type: disc; padding: 5px 20px; display: flex; align-items: center'>"&
+                        "<img src='https://bpolb.sharepoint.com/sites/Signals/Gedeelde%20documenten/Afbeeldingen/PowerApp_Logos/paperclip.svg' style='width: 50px; height:50px'/>" &
+                        "<a href=' " & 
+                    AbsoluteUri & 
+                    "'>" &
+                    DisplayName &
+                    "</a>" &
+                    "</li>") &
+                "</ul>" &
+            "</div>" &
+        "</div>" &
+    "</article>" &
+    "<article style='display: flex; flex-flow: row wrap; justify-content: flex-start; align-items: flex-start; max-width: 90%; margin-top: 30px; padding-left: 50px; border-bottom: 1px dashed grey'>" &
         "<div style='display:" & If(Len(SharePointIntegration.Selected.Signal.Value) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
             "<h2 style='color: #333399'>" &
                 If(Language()="fr-FR","Signale: ","Signaal: ") &
@@ -126,29 +167,35 @@
                  ";padding: 5px 20px 5px 10px; margin-bottom: 3px'><span style='margin-right: 10px'>📌</span>" & Substitute(Value,"_","") & "</li>") &
             "</ul>" &
         "</div>" &
-         "<div style='display:" & If(Len(SharePointIntegration.Selected.Status.Value) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
+         "<div style='display:" & If(Len(SharePointIntegration.Selected.'Initial Location'.Value) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
             "<h2 style='color: #333399'>" &
-                If(Language()="fr-FR","Statut: ","Status: ") &
+                If(Language()="fr-FR","Origine: ","Oorsprong: ") &
             "</h2>" &
             "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 20px;'>" &
-               SharePointIntegration.Selected.Status.Value & 
+               SharePointIntegration.Selected.'Initial Location'.Value & 
             "</p>" &
         "</div>" &
-        "<div style='display:" & If(Len(SharePointIntegration.Selected.Priority.Value) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.'Status (Local)'.Value) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
             "<h2 style='color: #333399'>" &
-                If(Language()="fr-FR","Priorité: ","Prioriteit: ") &
+                If(Language()="fr-FR","Statut locale: ","Lokale status:") &
             "</h2>" &
-            "<p style='width: 25px; font-weight: bold; text-align: center; align-self:center; background-color: " & If(IsMatch(SharePointIntegration.Selected.Priority.Value,"1", MatchOptions.Contains), "#00FF00", If(IsMatch(SharePointIntegration.Selected.Priority.Value,"2", MatchOptions.Contains), "#FFFF00",If(IsMatch(SharePointIntegration.Selected.Priority.Value,"3", MatchOptions.Contains), "#FF4500",If(IsMatch(SharePointIntegration.Selected.Priority.Value,"4", MatchOptions.Contains), "#FF0000; color: white","white")))) & "; padding: 5px; border-radius: 50px; margin-left: 20px;'>" &
-            If(IsMatch(SharePointIntegration.Selected.Priority.Value,"1", MatchOptions.Contains), "1", If(IsMatch(SharePointIntegration.Selected.Priority.Value,"2", MatchOptions.Contains), "2",If(IsMatch(SharePointIntegration.Selected.Priority.Value,"3", MatchOptions.Contains), "3",If(IsMatch(SharePointIntegration.Selected.Priority.Value,"4", MatchOptions.Contains), "4",""))))
-                & 
+            
+            "<p style='display: flex; align-items: center; max-width: 80%; padding: 5px 10px; font-size: 18px; margin-left: 20px; border-radius: 50px; background-color: " & If(IsMatch(SharePointIntegration.Selected.'Status (Local)'.Value,"Closed", MatchOptions.Contains & MatchOptions.IgnoreCase), "#00FF00", If(IsMatch(SharePointIntegration.Selected.'Status (Local)'.Value,"passive", MatchOptions.Contains & MatchOptions.IgnoreCase), "#FFFF00",If(IsMatch(SharePointIntegration.Selected.'Status (Local)'.Value,"active", MatchOptions.Contains & MatchOptions.IgnoreCase), "#FF4500",If(IsMatch(SharePointIntegration.Selected.'Status (Local)'.Value,"Ongoing analysis", MatchOptions.Contains & MatchOptions.IgnoreCase), "#FF0000; color: white",If(IsMatch(SharePointIntegration.Selected.'Status (Local)'.Value,"Developing approach", MatchOptions.Contains & MatchOptions.IgnoreCase), "#FF4500",If(IsMatch(SharePointIntegration.Selected.'Status (Local)'.Value,"For DirCom", MatchOptions.Contains & MatchOptions.IgnoreCase), "#FF4500",If(IsMatch(SharePointIntegration.Selected.'Status (Local)'.Value,"Confirmed by DirCom", MatchOptions.Contains & MatchOptions.IgnoreCase), "#FF4500","white"))))))) & "'>" &
+             "<span style='margin-right: 10px'>" &
+                    If(IsMatch(SharePointIntegration.Selected.'Status (Local)'.Value,"Closed", MatchOptions.Contains & MatchOptions.IgnoreCase), "✖", If(IsMatch(SharePointIntegration.Selected.'Status (Local)'.Value,"passive", MatchOptions.Contains & MatchOptions.IgnoreCase), "💬",If(IsMatch(SharePointIntegration.Selected.'Status (Local)'.Value,"active", MatchOptions.Contains & MatchOptions.IgnoreCase),"🚩",If(IsMatch(SharePointIntegration.Selected.'Status (Local)'.Value,"Ongoing analysis", MatchOptions.Contains & MatchOptions.IgnoreCase), "🔄",If(IsMatch(SharePointIntegration.Selected.'Status (Local)'.Value,"Developing approach", MatchOptions.Contains & MatchOptions.IgnoreCase), "⚙",If(IsMatch(SharePointIntegration.Selected.'Status (Local)'.Value,"For DirCom", MatchOptions.Contains & MatchOptions.IgnoreCase), "🔝",If(IsMatch(SharePointIntegration.Selected.'Status (Local)'.Value,"Confirmed by DirCom", MatchOptions.Contains & MatchOptions.IgnoreCase), "✅",""))))))) &
+                "</span>" &
+                SharePointIntegration.Selected.'Status (Local)'.Value &
             "</p>" &
         "</div>" &
-        "<div style='display:" & If(Len(SharePointIntegration.Selected.'Confidentiality '.Value) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.'Confidentiality level'.Value) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
             "<h2 style='color: #333399'>" &
-                If(Language()="fr-FR","confidentialité: ","Vertrouwelijkheid: ") &
+                If(Language()="fr-FR","Confidentialité: ","Vertrouwelijkheid: ") &
             "</h2>" &
-            "<p style='max-width: 80%; min-width: 50%; padding: 5px; margin-left: 20px;'>" &
-               SharePointIntegration.Selected.'Confidentiality '.Value & 
+            "<p style='display: flex; align-items: center; max-width: 80%; margin-left: 20px; font-size: 18px; border-radius: 50px; background-color: #C4FAF8; padding: 5px 20px 5px 10px;'>" &
+                "<span style='margin-right: 10px'>" &
+                    If(IsMatch(SharePointIntegration.Selected.'Confidentiality level'.Value,"Public", MatchOptions.Contains & MatchOptions.IgnoreCase ),"📣", IsMatch(SharePointIntegration.Selected.'Confidentiality level'.Value,"Internal Police", MatchOptions.Contains & MatchOptions.IgnoreCase ),"👮", IsMatch(SharePointIntegration.Selected.'Confidentiality level'.Value,"Restricted", MatchOptions.Contains & MatchOptions.IgnoreCase ),"🔐","⏱") &
+                "</span>" &
+               SharePointIntegration.Selected.'Confidentiality level'.Value & 
             "</p>" &
         "</div>" &
         "<div style='display:" & If(Len(SharePointIntegration.Selected.Domain.Value) > 0, "flex", "none") & "; width: 33%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &

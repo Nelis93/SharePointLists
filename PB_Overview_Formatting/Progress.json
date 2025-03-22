@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
   "hideColumnHeader": true,
-  "hideSelection": "true",
+  "hideSelection": true,
   "rowFormatter": {
     "elmType": "div",
     "attributes": {
-      "class": "=if([$Cluster] == 'Road Safety','ms-bgColor-purpleLight ms-bgColor-purple--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Offender groups', 'ms-bgColor-communicationTint20 ms-bgColor-communicationTint10--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Drugs', 'ms-bgColor-error ms-bgColor-orange--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Human Trafficking and Migrant Smuggling', 'ms-bgColor-sharedCyan10 ms-bgColor-sharedCyan20--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Foot', 'ms-bgColor-orangeLighter ms-bgColor-orangeLight--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Fire Arms', 'ms-bgColor-sharedCyan10 ms-bgColor-sharedCyan20--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Property Crime', 'ms-bgColor-blueLight ms-bgColor-blue--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster]=='EcoFin','ms-bgColor-tealLight ms-bgColor-teal--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster]=='FUPHEC','ms-bgColor-success ms-bgColor-sharedCyan10--hover ms-fontColor-black',if([$Cluster]=='Migration','ms-bgColor-severeWarning ms-bgColor-sharedOrangeYellow10--hover ms-fontColor-black',if([$Cluster]=='Terrorism, extremism & radicalism','ms-bgColor-warning ms-bgColor-yellow--hover ms-fontColor-black','ms-bgColor-white--hover ms-fontColor-black ms-fontColor-white--hover')))))))))))"
+      "class": "=if([$Cluster] == 'Road Safety','ms-bgColor-purpleLight ms-bgColor-purple--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Offender groups', 'ms-bgColor-communicationTint20 ms-bgColor-communicationTint10--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Drugs', 'ms-bgColor-error ms-bgColor-orange--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Human Trafficking and Migrant Smuggling', 'ms-bgColor-sharedCyan10 ms-bgColor-sharedCyan20--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Foot', 'ms-bgColor-orangeLighter ms-bgColor-orangeLight--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Fire Arms', 'ms-bgColor-sharedCyan10 ms-bgColor-sharedCyan20--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Property Crime', 'ms-bgColor-blueLight ms-bgColor-blue--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster]=='EcoFin','ms-bgColor-tealLight ms-bgColor-teal--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster]=='FUPHEC','ms-bgColor-success ms-bgColor-sharedCyan10--hover ms-fontColor-black',if([$Cluster]=='Migration','ms-bgColor-severeWarning ms-bgColor-sharedOrangeYellow10--hover ms-fontColor-black',if([$Cluster]=='Terrorism, extremism & radicalism','ms-bgColor-warning ms-bgColor-yellow--hover ms-fontColor-black',if([$Cluster]=='Cyber Crime','ms-bgColor-neutralQuaternary ms-bgColor-neutralSecondary--hover ms-fontColor-black ms-fontColor-white--hover','ms-bgColor-white--hover ms-fontColor-black ms-fontColor-white--hover')))))))))))"
     },
     "customRowAction": {
       "action": "defaultClick"
@@ -115,16 +115,16 @@
           {
             "elmType": "div",
             "style": {
-              "display":"flex",
-              "justify-content":"center",
+              "display": "flex",
+              "justify-content": "center",
               "margin": "10px auto",
-              "width":"170px"
+              "width": "170px"
             },
-            "children":[
+            "children": [
               {
                 "elmType": "div",
                 "style": {
-                  "display":"flex",
+                  "display": "flex",
                   "padding": "7px",
                   "border": "2px solid #00368a",
                   "border-radius": "5px",
@@ -294,7 +294,6 @@
               }
             ]
           },
-          
           {
             "elmType": "div",
             "style": {
@@ -395,7 +394,7 @@
         "border-radius": "10px"
       },
       "attributes": {
-        "class": "=if(@group.fieldData == 'Road Safety','ms-bgColor-purpleLight',if(@group.fieldData == 'Offender groups', 'ms-bgColor-communicationTint20',if(@group.fieldData == 'Drugs', 'ms-bgColor-error',if(@group.fieldData == 'Human Trafficking and Migrant Smuggling', 'ms-bgColor-sharedCyan10',if(@group.fieldData == 'Foot', 'ms-bgColor-orangeLighter',if(@group.fieldData == 'Fire Arms', 'ms-bgColor-sharedCyan10',if(@group.fieldData == 'Property Crime', 'ms-bgColor-blueLight',if(@group.fieldData=='EcoFin','ms-bgColor-tealLight',if(@group.fieldData=='FUPHEC','ms-bgColor-success',if(@group.fieldData=='Migration','ms-bgColor-severeWarning',if(@group.fieldData=='Terrorism', 'extremism & radicalism','ms-bgColor-warning')))))))))))"
+        "class": "=if(@group.fieldData == 'Road Safety','ms-bgColor-purpleLight',if(@group.fieldData == 'Offender groups', 'ms-bgColor-communicationTint20',if(@group.fieldData == 'Drugs', 'ms-bgColor-error',if(@group.fieldData == 'Human Trafficking and Migrant Smuggling', 'ms-bgColor-sharedCyan10',if(@group.fieldData == 'Foot', 'ms-bgColor-orangeLighter',if(@group.fieldData == 'Fire Arms', 'ms-bgColor-sharedCyan10',if(@group.fieldData == 'Property Crime', 'ms-bgColor-blueLight',if(@group.fieldData=='EcoFin','ms-bgColor-tealLight',if(@group.fieldData=='FUPHEC','ms-bgColor-success',if(@group.fieldData=='Migration','ms-bgColor-severeWarning',if(@group.fieldData=='Terrorism', 'extremism & radicalism',if(@group.fieldData=='Cyber Crime','ms-bgColor-neutralQuaternary','ms-bgColor-warning')))))))))))"
       },
       "children": [
         {
