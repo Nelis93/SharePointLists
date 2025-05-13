@@ -5,7 +5,7 @@
       "commands": [
         {
           "key": "new",
-          "hide": true
+          "text": "Nieuw signaal toevoegen"
         },
         {
           "key": "editInGridView",
@@ -36,23 +36,7 @@
           "hide": true
         },
         {
-          "key": "versionHistory",
-          "hide": true
-        },
-        {
-          "key": "managePermissionsCommand",
-          "hide": true
-        },
-        {
-          "key": "openinfopaneCommand",
-          "hide": true
-        },
-        {
           "key": "approveReject",
-          "hide": true
-        },
-        {
-          "key": "requestApprovalCommand",
           "hide": true
         },
         {
@@ -106,72 +90,14 @@
         "width": "1000px",
         "display": "block",
         "margin-bottom": "5px",
-        "margin-top": "=if(@rowIndex == 0, '50px','0')",
+        "margin-top": "=if(@rowIndex == 0, '15px','0')",
         "box-shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)"
       },
       "children": [
         {
           "elmType": "div",
           "style": {
-            "display": "=if(@rowIndex == 0, 'flex','none')",
-            "position": "absolute",
-            "align-items": "center",
-            "right": "0px",
-            "top": "-55px",
-            "z-index": "60"
-          },
-          "children": [
-            {
-              "elmType": "p",
-              "style": {
-                "font-size": "16px",
-                "color": "white",
-                "background-color": "#333399",
-                "border-radius": "20px",
-                "padding": "5px 10px"
-              },
-              "txtContent": "Select Signals by clicking on the date and bundle them with → "
-            },
-            {
-              "elmType": "button",
-              "style": {
-                "display": "flex",
-                "flex-direction": "column",
-                "justify-content": "center",
-                "align-items": "center",
-                "border": "1px solid black",
-                "border-radius": "5px",
-                "padding": "5px",
-                "cursor": "pointer",
-                "margin-left": "5px"
-              },
-              "attributes": {
-                "class": "ms-bgColor-white ms-bgColor-communicationTint40--hover"
-              },
-              "customRowAction": {
-                "action": "executeFlow",
-                "actionParams": "{\"id\":\"v1/Default-f7e06a08-57c2-479e-bfa5-e63a6dd83518/6b746247-ce35-49e0-beab-bbeb9c114e3d\", \"headerText\":\"Bundler\",\"runFlowButtonText\":\"Bundle Signals\"}"
-              },
-              "children": [
-                {
-                  "elmType": "span",
-                  "style": {
-                    "font-size": "20px",
-                    "height": "100%",
-                    "width": "100%"
-                  },
-                  "attributes": {
-                    "iconName": "Print"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "elmType": "div",
-          "style": {
-            "display": "flex",
+            "display": "=if(indexOf([$Status_x0028_National_x0029_], 'For DirCom') > -1 &&indexOf('nelis.eerdekens@police.belgium.eu, Simon.Douchy@police.belgium.eu,dominique.joucken@police.belgium.eu,michel.bruneau@police.belgium.eu', @me) == -1, 'none', 'flex')",
             "position": "absolute",
             "z-index": "30",
             "top": "10px",
@@ -187,23 +113,114 @@
           "attributes": {
             "class": "ms-bgColor-themeDarker ms-bgColor-white--hover sp-css-color-themePrimary sp-css-color-white--hover"
           },
-          "customRowAction": {
-            "action": "defaultClick"
-          },
           "children": [
             {
-              "elmType": "span",
-              "attributes": {
-                "iconName": "View"
-              },
+              "elmType": "div",
               "style": {
-                "font-weight": "bold",
-                "padding-right": "5px"
+                "position": "absolute",
+                "width": "100%",
+                "height": "100%",
+                "border-radius": "20px",
+                "margin-left": "-10px",
+                "opacity": "0",
+                "z-index": "31"
+              },
+              "customCardProps": {
+                "formatter": {
+                  "elmType": "div",
+                  "style": {
+                    "background-color": "white"
+                  },
+                  "children": [
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "width": "250px",
+                        "height": "100px",
+                        "border": "rounded",
+                        "border-radius": "10px",
+                        "font-size": "12pt",
+                        "padding": "10px",
+                        "display": "flex",
+                        "flex-direction": "column",
+                        "justify-content": "space-evenly",
+                        "align-items": "center"
+                      },
+                      "children": [
+                        {
+                          "elmType": "span",
+                          "txtContent": "=if([$_ModerationStatus] == 'Goedgekeurd', 'DirCom verwittigen?', 'Keur eerst het signaal goed a.u.b.')",
+                          "style": {
+                            "padding": "3px",
+                            "width": "auto",
+                            "font-family": "serif",
+                            "font-weight": "600",
+                            "font-size": "25px",
+                            "text-align": "center"
+                          }
+                        },
+                        {
+                          "elmType": "div",
+                          "style": {
+                            "display": "=if([$_ModerationStatus] == 'Goedgekeurd', 'flex','none')",
+                            "justify-content": "center",
+                            "width": "100%",
+                            "background-color": "white"
+                          },
+                          "children": [
+                            {
+                              "elmType": "div",
+                              "txtContent": "Status (2): 'For DirCom'",
+                              "style": {
+                                "display": "flex",
+                                "text-wrap": "wrap",
+                                "text-align": "center",
+                                "padding": "5px 10px",
+                                "border-radius": "20px",
+                                "outline": "2px solid #333399",
+                                "font-size": "16px",
+                                "cursor": "pointer"
+                              },
+                              "customRowAction": {
+                                "action": "setValue",
+                                "actionInput": {
+                                  "Status_x0028_National_x0029_": "=appendTo([$Status_x0028_National_x0029_],'For DirCom')",
+                                  "StopRun": "Some Text"
+                                }
+                              },
+                              "attributes": {
+                                "class": "ms-bgColor-themeDarker ms-bgColor-white--hover sp-css-color-themePrimary sp-css-color-white--hover"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "openOnEvent": "click",
+                "directionalHint": "bottomCenter",
+                "isBeakVisible": true
               }
             },
             {
               "elmType": "span",
-              "txtContent": "Bekijken"
+              "attributes": {
+                "iconName": "ReceiptCheck"
+              },
+              "style": {
+                "position": "relative",
+                "font-weight": "bold",
+                "padding-right": "5px",
+                "font-size": "16px"
+              }
+            },
+            {
+              "elmType": "span",
+              "txtContent": "DirCom",
+              "style": {
+                "position": "relative"
+              }
             }
           ]
         },
@@ -211,15 +228,17 @@
           "elmType": "div",
           "style": {
             "position": "relative",
-            "border-radius": "5px",
             "z-index": "5",
-            "outline": "none",
+            "border-radius": "5px",
             "text-decoration": "none",
-            "height": "100%",
-            "background-color": "=if(@isSelected, '#eff6fc','')"
+            "outline": "none",
+            "cursor": "pointer"
           },
           "attributes": {
             "class": "ms-bgColor-white ms-bgColor-communicationTint40--hover ms-borderColor-neutralLight ms-borderColor-neutralTertiary--hover"
+          },
+          "customRowAction": {
+            "action": "defaultClick"
           },
           "children": [
             {
@@ -334,7 +353,7 @@
                 {
                   "elmType": "div",
                   "attributes": {
-                    "class": "ms-borderColor-neutralLight ms-fontColor-neutralPrimary ms-bgColor-noFill ms-bgColor-white--hover"
+                    "class": "ms-borderColor-neutralLight ms-fontColor-neutralPrimary"
                   },
                   "style": {
                     "position": "relative",
@@ -351,44 +370,6 @@
                     "margin-right": "20px"
                   },
                   "children": [
-                    {
-                      "elmType": "button",
-                      "style": {
-                        "position": "absolute",
-                        "display": "flex",
-                        "top": "0px",
-                        "left": "0px",
-                        "flex-direction": "column",
-                        "justify-content": "center",
-                        "align-items": "center",
-                        "cursor": "pointer",
-                        "opacity": "=if([$SelectedBoolean] == False, 0, 0.8)",
-                        "width": "100%",
-                        "height": "100%",
-                        "z-index": "10"
-                      },
-                      "customRowAction": {
-                        "action": "setValue",
-                        "actionInput": {
-                          "SelectedBoolean": "=if([$SelectedBoolean] == True, False,True)",
-                          "ARB_x0028_System_x0029_": "=if([$SelectedBoolean] == True, True,True)"
-                        }
-                      },
-                      "children": [
-                        {
-                          "elmType": "span",
-                          "style": {
-                            "postion": "relative",
-                            "display": "block",
-                            "color": "black",
-                            "font-size": "40px"
-                          },
-                          "attributes": {
-                            "iconName": "=if([$SelectedBoolean] == True, 'CheckMark','')"
-                          }
-                        }
-                      ]
-                    },
                     {
                       "elmType": "div",
                       "txtContent": "=if(getDate([$Modified]) > 0, if(getMonth([$Modified]) == 0, 'JAN', if(getMonth([$Modified]) == 1, 'FEB', if(getMonth([$Modified]) == 2, 'MAR', if(getMonth([$Modified]) == 3, 'APR',if(getMonth([$Modified]) == 4, 'MAY',if(getMonth([$Modified]) == 5, 'JUN',if(getMonth([$Modified]) == 6, 'JUL',if(getMonth([$Modified]) == 7, 'AUG',if(getMonth([$Modified]) == 8, 'SEP',if(getMonth([$Modified]) == 9, 'OCT',if(getMonth([$Modified]) == 10, 'NOV','DEC'))))))))))),if(getMonth([$Created]) == 0, 'JAN', if(getMonth([$Created]) == 1, 'FEB', if(getMonth([$Created]) == 2, 'MAR', if(getMonth([$Created]) == 3, 'APR',if(getMonth([$Created]) == 4, 'MAY',if(getMonth([$Created]) == 5, 'JUN',if(getMonth([$Created]) == 6, 'JUL',if(getMonth([$Created]) == 7, 'AUG',if(getMonth([$Created]) == 8, 'SEP',if(getMonth([$Created]) == 9, 'OCT',if(getMonth([$Created]) == 10, 'NOV','DEC'))))))))))))",

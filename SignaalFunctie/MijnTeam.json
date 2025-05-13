@@ -1,6 +1,6 @@
 {
     "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/view-formatting.schema.json",
-    "hideSelection": false,
+    "hideSelection": true,
     "commandBarProps": {
       "commands": [
         {
@@ -12,7 +12,7 @@
           "hide": true
         },
         {
-          "key": "exportExcel",
+          "key": "export",
           "hide": true
         },
         {
@@ -20,31 +20,63 @@
           "hide": true
         },
         {
-            "key": "copyLink",
-            "hide": true
+          "key": "copyLink",
+          "hide": true
         },
         {
-            "key": "edit",
-            "hide": true
+          "key": "edit",
+          "hide": true
         },
         {
-            "key": "delete",
-            "hide": true
+          "key": "delete",
+          "hide": true
         },
         {
-            "key": "requestApprovalCommand",
-            "hide": false,
-            "primary": true,
-            "sectionType": "Primary",
-            "position": "1",
-            "iconName": "DecisionSolid"
+          "key": "undo",
+          "hide": true
         },
         {
           "key": "approveReject",
           "hide": true
         },
         {
+          "key": "requestApprovalCommand",
+          "hide": true
+        },
+        {
           "key": "more",
+          "hide": true
+        },
+        {
+          "key": "alertMe",
+          "hide": true
+        },
+        {
+          "key": "manageAlert",
+          "hide": true
+        },
+        {
+          "key": "integrate",
+          "hide": true
+        },
+        {
+          "key": "powerApps",
+          "hide": true
+        },
+        {
+          "key": "powerAutomate",
+          "hide": true
+        },
+        {
+          "key": "powerBI",
+          "hide": true
+        },
+        {
+          "key": "automate",
+          "hide": true
+        },
+        {
+          "key": "manageForms",
           "hide": true
         }
       ]
@@ -55,11 +87,10 @@
         "class": "ms-borderColor-neutralLight"
       },
       "style": {
-        "position": "relative",
-        "margin-left": "-70px",
+        "border-width": "1px",
         "border-radius": "5px",
+        "border-style": "solid",
         "width": "1000px",
-        "height": "95%",
         "display": "block",
         "margin-bottom": "5px",
         "margin-top": "=if(@rowIndex == 0, '15px','0')",
@@ -67,58 +98,20 @@
       },
       "children": [
         {
-            "elmType": "div",
-            "style": {
-              "display": "flex",
-              "position": "absolute",
-              "z-index": "30",
-              "top": "10px",
-              "right": "5px",
-              "flex-direction": "row",
-              "padding": "5px 10px",
-              "border-radius": "20px",
-              "outline": "1px solid #333399",
-              "margin-bottom": "5px",
-              "align-items": "center",
-              "cursor": "pointer"
-            },
-            "attributes": {
-              "class": "ms-bgColor-themeDarker ms-bgColor-white--hover sp-css-color-themePrimary sp-css-color-white--hover"
-            },
-            "customRowAction": {
-              "action": "defaultClick"
-            },
-            "children": [
-              {
-                "elmType": "span",
-                "attributes": {
-                  "iconName": "View"
-                },
-                "style": {
-                  "font-weight": "bold",
-                  "padding-right": "5px"
-                }
-              },
-              {
-                "elmType": "span",
-                "txtContent": "Bekijken"
-              }
-            ]
-          },
-        {
           "elmType": "div",
           "style": {
             "position": "relative",
-            "border-radius": "5px",
             "z-index": "5",
-            "outline": "none",
+            "border-radius": "5px",
             "text-decoration": "none",
-            "height": "100%",
-            "cursor": "pointer",
-            "background-color": "=if(@isSelected, '#eff6fc','')"
+            "outline": "none",
+            "cursor": "pointer"
           },
           "attributes": {
             "class": "ms-bgColor-white ms-bgColor-communicationTint40--hover ms-borderColor-neutralLight ms-borderColor-neutralTertiary--hover"
+          },
+          "customRowAction": {
+            "action": "defaultClick"
           },
           "children": [
             {
@@ -151,13 +144,13 @@
                         "align-items": "center"
                       },
                       "attributes": {
-                        "class": "=if(indexOf([$topic], 'Drugs') >= 0, 'ms-bgColor-neutralLight', if(indexOf([$topic], 'Organised Crime') >= 0, 'ms-bgColor-success', if(indexOf([$topic], 'Human Trafficking') >= 0, 'ms-bgColor-error',if(indexOf([$topic], 'Property Crime') >= 0, 'ms-bgColor-communicationTint40', 'ms-bgColor-warning'))))"
+                        "class": "=if(indexOf([$topic], 'Cybercrime') >= 0, 'ms-bgColor-themeLighterAlt',if(indexOf([$topic], 'Drugs') >= 0, 'ms-bgColor-themeLighter',if(indexOf([$topic], 'Organised Crime') >= 0, 'ms-bgColor-communicationPrimary',if(indexOf([$topic], 'EcoFin') >= 0, 'ms-bgColor-success',if(indexOf([$topic], 'Fuphec') >= 0, 'ms-bgColor-warning',if(indexOf([$topic], 'Property Crime') >= 0, 'ms-bgColor-communicationTint40',if(indexOf([$topic], 'HumTraf') >= 0, 'ms-bgColor-sharedOrangeYellow10',if(indexOf([$topic], 'HumSmug') >= 0, 'ms-bgColor-sharedYellow10',if(indexOf([$topic], 'Terro') >= 0, 'ms-bgColor-error',if(indexOf([$topic], 'Fire Arms') >= 0, 'ms-bgColor-orangeLighter',if(indexOf([$topic], 'Road Safety') >= 0, 'ms-bgColor-purpleLight',if(indexOf([$topic], 'Foot') >= 0, 'ms-bgColor-sharedGreenCyan10',if(indexOf([$topic], 'Irregular migration') >= 0, 'ms-bgColor-severeWarning',if(indexOf([$topic], 'Hybrid threats') >= 0, 'ms-bgColor-tealLight','ms-bgColor-neutralLight'))))))))))))))"
                       },
                       "children": [
                         {
                           "elmType": "span",
                           "attributes": {
-                            "class": "=if(indexOf([$topic], 'Drugs') >= 0, 'sp-css-color-neutralPrimary', if(indexOf([$topic], 'Organised Crime') >= 0, 'sp-css-color-neutralPrimary', if(indexOf([$topic], 'Human Trafficking') >= 0, 'sp-css-color-neutralPrimary', if(indexOf([$topic], 'Property Crime') >= 0, 'sp-css-color-neutralPrimary', 'sp-css-color-themeDarker'))))",
+                            "class": "=if(indexOf([$topic], 'Cybercrime') >= 0, 'sp-css-color-themePrimary',if(indexOf([$topic], 'Drugs') >= 0, 'sp-css-color-themeDarkAlt',if(indexOf([$topic], 'Organised Crime') >= 0, 'sp-css-color-themeDarkAlt',if(indexOf([$topic], 'EcoFin') >= 0, 'sp-css-color-warning',if(indexOf([$topic], 'Fuphec') >= 0, 'sp-css-color-info',if(indexOf([$topic], 'Property Crime') >= 0, 'sp-css-color-communicationPrimary',if(indexOf([$topic], 'HumTraf') >= 0, 'sp-css-color-white',if(indexOf([$topic], 'HumSmug') >= 0, 'sp-css-color-blocking',if(indexOf([$topic], 'Terro') >= 0, 'sp-css-color-severeWarning',if(indexOf([$topic], 'Fire Arms') >= 0, 'sp-css-color-white',if(indexOf([$topic], 'Road Safety') >= 0, 'sp-css-color-white',if(indexOf([$topic], 'Foot') >= 0, 'sp-css-color-white',if(indexOf([$topic], 'Irregular migration') >= 0, 'sp-css-color-redDark',if(indexOf([$topic], 'Hybrid threats') >= 0, 'sp-css-color-white','sp-css-color-neutralPrimary'))))))))))))))",
                             "iconName": "WebAppBuilderFragment"
                           },
                           "style": {
@@ -284,7 +277,7 @@
                         "display": "inline-block",
                         "max-width": "700px",
                         "max-height": "55px",
-                        "padding-bottom": "40px",
+                        "margin-bottom": "40px",
                         "font-size": "25px",
                         "font-weight": "600",
                         "-webkit-line-clamp": "2",
@@ -295,7 +288,7 @@
                       "children": [
                         {
                           "elmType": "span",
-                          "txtContent": "[$Title]"
+                          "txtContent": "=if(length(split([$Title],''))>0,[$Title],[$Title_x0028_FR_x0029_])"
                         }
                       ]
                     }

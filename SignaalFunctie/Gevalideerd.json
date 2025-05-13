@@ -1,6 +1,7 @@
 {
     "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/view-formatting.schema.json",
     "hideSelection": true,
+    "hideFooter": true,
     "commandBarProps": {
       "commands": [
         {
@@ -32,27 +33,7 @@
           "hide": true
         },
         {
-          "key": "undo",
-          "hide": true
-        },
-        {
-          "key": "versionHistory",
-          "hide": true
-        },
-        {
-          "key": "managePermissionsCommand",
-          "hide": true
-        },
-        {
-          "key": "openinfopaneCommand",
-          "hide": true
-        },
-        {
           "key": "approveReject",
-          "hide": true
-        },
-        {
-          "key": "requestApprovalCommand",
           "hide": true
         },
         {
@@ -90,6 +71,10 @@
         {
           "key": "manageForms",
           "hide": true
+        },
+        {
+          "key": "managePermissionsCommand",
+          "hide": true
         }
       ]
     },
@@ -106,63 +91,62 @@
         "width": "1000px",
         "display": "block",
         "margin-bottom": "5px",
-        "margin-top": "=if(@rowIndex == 0, '50px','0')",
+        "margin-top": "=if(@rowIndex == 0, '15px','0')",
         "box-shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)"
       },
       "children": [
         {
           "elmType": "div",
           "style": {
-            "display": "=if(@rowIndex == 0, 'flex','none')",
+            "display": "flex",
+            "flex-direction": "column",
+            "align-items": "flex-end",
             "position": "absolute",
-            "align-items": "center",
-            "right": "0px",
-            "top": "-55px",
-            "z-index": "60"
+            "z-index": "30",
+            "top": "0px",
+            "right": "5px"
           },
           "children": [
             {
-              "elmType": "p",
+              "elmType": "div",
+              "txtContent": "=('No. ' + [$ID])",
               "style": {
-                "font-size": "16px",
-                "color": "white",
-                "background-color": "#333399",
-                "border-radius": "20px",
-                "padding": "5px 10px"
-              },
-              "txtContent": "Select Signals by clicking on the date and bundle them with → "
+                "padding": "5px",
+                "font-size": "20px",
+                "color": "gray"
+              }
             },
             {
-              "elmType": "button",
+              "elmType": "div",
               "style": {
                 "display": "flex",
-                "flex-direction": "column",
-                "justify-content": "center",
+                "flex-direction": "row",
+                "padding": "5px 10px",
+                "border-radius": "20px",
+                "outline": "1px solid #333399",
                 "align-items": "center",
-                "border": "1px solid black",
-                "border-radius": "5px",
-                "padding": "5px",
-                "cursor": "pointer",
-                "margin-left": "5px"
+                "cursor": "pointer"
               },
               "attributes": {
-                "class": "ms-bgColor-white ms-bgColor-communicationTint40--hover"
+                "class": "ms-bgColor-themeDarker ms-bgColor-white--hover sp-css-color-themePrimary sp-css-color-white--hover"
               },
               "customRowAction": {
-                "action": "executeFlow",
-                "actionParams": "{\"id\":\"v1/Default-f7e06a08-57c2-479e-bfa5-e63a6dd83518/6b746247-ce35-49e0-beab-bbeb9c114e3d\", \"headerText\":\"Bundler\",\"runFlowButtonText\":\"Bundle Signals\"}"
+                "action": "share"
               },
               "children": [
                 {
                   "elmType": "span",
-                  "style": {
-                    "font-size": "20px",
-                    "height": "100%",
-                    "width": "100%"
-                  },
                   "attributes": {
-                    "iconName": "Print"
+                    "iconName": "Share"
+                  },
+                  "style": {
+                    "font-weight": "bold",
+                    "padding-right": "5px"
                   }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "Delen"
                 }
               ]
             }
@@ -171,55 +155,39 @@
         {
           "elmType": "div",
           "style": {
-            "display": "flex",
             "position": "absolute",
-            "z-index": "30",
-            "top": "10px",
-            "right": "5px",
-            "flex-direction": "row",
-            "padding": "5px 10px",
-            "border-radius": "20px",
-            "outline": "1px solid #333399",
-            "margin-bottom": "5px",
+            "display": "=if([$Confidentialitylevel] == 'Sensitive','flex','none')",
+            "justify-content": "center",
             "align-items": "center",
-            "cursor": "pointer"
+            "height": "100%",
+            "width": "100%",
+            "z-index": "50",
+            "cursor": "not-allowed",
+            "border-radius": "5px",
+            "color": "white",
+            "font-size": "30px"
           },
+          "txtContent": "Sensitive content",
           "attributes": {
-            "class": "ms-bgColor-themeDarker ms-bgColor-white--hover sp-css-color-themePrimary sp-css-color-white--hover"
-          },
-          "customRowAction": {
-            "action": "defaultClick"
-          },
-          "children": [
-            {
-              "elmType": "span",
-              "attributes": {
-                "iconName": "View"
-              },
-              "style": {
-                "font-weight": "bold",
-                "padding-right": "5px"
-              }
-            },
-            {
-              "elmType": "span",
-              "txtContent": "Bekijken"
-            }
-          ]
+            "class": "sp-card-showOnHover ms-bgColor-sharedOrange20"
+          }
         },
         {
           "elmType": "div",
           "style": {
             "position": "relative",
-            "border-radius": "5px",
             "z-index": "5",
-            "outline": "none",
+            "min-height": "110px",
+            "border-radius": "5px",
             "text-decoration": "none",
-            "height": "100%",
-            "background-color": "=if(@isSelected, '#eff6fc','')"
+            "outline": "none",
+            "cursor": "pointer"
           },
           "attributes": {
             "class": "ms-bgColor-white ms-bgColor-communicationTint40--hover ms-borderColor-neutralLight ms-borderColor-neutralTertiary--hover"
+          },
+          "customRowAction": {
+            "action": "defaultClick"
           },
           "children": [
             {
@@ -334,7 +302,7 @@
                 {
                   "elmType": "div",
                   "attributes": {
-                    "class": "ms-borderColor-neutralLight ms-fontColor-neutralPrimary ms-bgColor-noFill ms-bgColor-white--hover"
+                    "class": "ms-borderColor-neutralLight ms-fontColor-neutralPrimary"
                   },
                   "style": {
                     "position": "relative",
@@ -351,44 +319,6 @@
                     "margin-right": "20px"
                   },
                   "children": [
-                    {
-                      "elmType": "button",
-                      "style": {
-                        "position": "absolute",
-                        "display": "flex",
-                        "top": "0px",
-                        "left": "0px",
-                        "flex-direction": "column",
-                        "justify-content": "center",
-                        "align-items": "center",
-                        "cursor": "pointer",
-                        "opacity": "=if([$SelectedBoolean] == False, 0, 0.8)",
-                        "width": "100%",
-                        "height": "100%",
-                        "z-index": "10"
-                      },
-                      "customRowAction": {
-                        "action": "setValue",
-                        "actionInput": {
-                          "SelectedBoolean": "=if([$SelectedBoolean] == True, False,True)",
-                          "ARB_x0028_System_x0029_": "=if([$SelectedBoolean] == True, True,True)"
-                        }
-                      },
-                      "children": [
-                        {
-                          "elmType": "span",
-                          "style": {
-                            "postion": "relative",
-                            "display": "block",
-                            "color": "black",
-                            "font-size": "40px"
-                          },
-                          "attributes": {
-                            "iconName": "=if([$SelectedBoolean] == True, 'CheckMark','')"
-                          }
-                        }
-                      ]
-                    },
                     {
                       "elmType": "div",
                       "txtContent": "=if(getDate([$Modified]) > 0, if(getMonth([$Modified]) == 0, 'JAN', if(getMonth([$Modified]) == 1, 'FEB', if(getMonth([$Modified]) == 2, 'MAR', if(getMonth([$Modified]) == 3, 'APR',if(getMonth([$Modified]) == 4, 'MAY',if(getMonth([$Modified]) == 5, 'JUN',if(getMonth([$Modified]) == 6, 'JUL',if(getMonth([$Modified]) == 7, 'AUG',if(getMonth([$Modified]) == 8, 'SEP',if(getMonth([$Modified]) == 9, 'OCT',if(getMonth([$Modified]) == 10, 'NOV','DEC'))))))))))),if(getMonth([$Created]) == 0, 'JAN', if(getMonth([$Created]) == 1, 'FEB', if(getMonth([$Created]) == 2, 'MAR', if(getMonth([$Created]) == 3, 'APR',if(getMonth([$Created]) == 4, 'MAY',if(getMonth([$Created]) == 5, 'JUN',if(getMonth([$Created]) == 6, 'JUL',if(getMonth([$Created]) == 7, 'AUG',if(getMonth([$Created]) == 8, 'SEP',if(getMonth([$Created]) == 9, 'OCT',if(getMonth([$Created]) == 10, 'NOV','DEC'))))))))))))",

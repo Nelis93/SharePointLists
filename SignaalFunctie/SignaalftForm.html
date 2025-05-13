@@ -100,7 +100,7 @@
         "</svg>" & -->
         "<img src='https://bpolb.sharepoint.com/sites/Signals/Gedeelde%20documenten/Afbeeldingen/PowerApp_Logos/FedPol.svg' style='position: absolute; right: 0px; top: 0px; height:100px'/>" &
         "<p style='display: flex; flex-grow: 1; max-width: full; font-size: 30px; padding: 0px 150px 0px 100px; text-align: center; color: white'>" & 
-            If(And(Language()="fr-FR", Len(SharePointIntegration.Selected.'Title (FR)') > 0),SharePointIntegration.Selected.'Title (FR)', SharePointIntegration.Selected.Titel) & 
+            If(Language() = "fr-FR",If(Len(SharePointIntegration.Selected.'Title (FR)') > 0,SharePointIntegration.Selected.'Title (FR)',SharePointIntegration.Selected.Titel),If(Len(SharePointIntegration.Selected.Titel) > 0,SharePointIntegration.Selected.Titel,SharePointIntegration.Selected.'Title (FR)')) & 
         "</p>" &
     "</article>" &
     "<article style='display:flex; flex-direction: column; justify-content: flex-start; align-items: flex-end; padding-left: 50px; margin-top: 10px; width: 85%'>" &
@@ -131,7 +131,7 @@
             "</em>" &
         "</div>" &
         "<div style='position: relative; width: 85%; padding: 15px; margin-left: 5px; min-height: 200px'>" &
-            If(And(Language()="fr-FR" ,Len(SharePointIntegration.Selected.'Body (FR)') > 0),SharePointIntegration.Selected.'Body (FR)', If(Len(SharePointIntegration.Selected.'Body (NL)') > 0, SharePointIntegration.Selected.'Body (NL)', SharePointIntegration.Selected.'Body (FR)')) & 
+            If(Language() = "fr-FR",If(Len(SharePointIntegration.Selected.'Body (FR)') > 100,SharePointIntegration.Selected.'Body (FR)',SharePointIntegration.Selected.'Body (NL)'),If(Len(SharePointIntegration.Selected.'Body (NL)') > 100,SharePointIntegration.Selected.'Body (NL)',SharePointIntegration.Selected.'Body (FR)'))& 
         "</div>" &
         "<div style='display:flex; flex-flow:row nowrap; justify-content: space-evenly; width: 100%;'>" &
             "<div style='display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.Bijlagen, 1)).Value) > 0, "flex", "none") & "; max-width: 50%; flex-direction: column; justify-content: flex-start; align-items: flex-start;'>" &
