@@ -87,3 +87,20 @@
         
     "</article>" &
 "</section>"
+
+concat('<div>',if(not(equals(triggerBody()?['Title'], null)), 
+    concat('<div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <b style="font-size: 18px;">Wijziging van signaal:</b><br />
+        <p><a href="', triggerBody()?['{Link}'], '">' ,triggerBody()?['Title'], '</a></p>
+        <p><span style="font-size: 12px;">Aangemaakt door: </span>', triggerBody()?['Editor/DisplayName'], '</p>
+    </div><br/><br/>'), 
+    ''
+),if(not(equals(triggerBody()?['Title_x0028_FR_x0029_'], null)),
+    concat('<div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <b style="font-size: 18px;">Changement de signal:</b><br />
+        <p><a href="', triggerBody()?['{Link}'], '">' ,triggerBody()?['Title_x0028_FR_x0029_'], '</a></p>
+        <p><span style="font-size: 12px;">Réalisée par: </span>', triggerBody()?['Editor/DisplayName'], '</p>
+    </div><br/><br/>'), 
+    ''
+)
+,'</div>')

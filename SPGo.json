@@ -10,3 +10,11 @@
     "publishingScope": "SaveOnly",
     "authenticationType": "Digest"
 }
+
+@equals(triggerBody()?['ARB_x0028_System_x0029_'],false)
+
+@equals(triggerBody()?['SelectedBoolean'],false)
+
+@equals(length(triggerBody()?['ARR_x0028_System_x0029_']), 0)
+
+@equals(triggerBody()?['ARD_x0028_System_x0029_'],null)

@@ -1,0 +1,448 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/view-formatting.schema.json",
+  "hideSelection": true,
+  "commandBarProps": {
+    "commands": [
+      {
+        "key": "new",
+        "hide": true
+      },
+      {
+        "key": "editInGridView",
+        "hide": true
+      },
+      {
+        "key": "export",
+        "hide": true
+      },
+      {
+        "key": "share",
+        "hide": true
+      },
+      {
+        "key": "copyLink",
+        "hide": true
+      },
+      {
+        "key": "edit",
+        "hide": true
+      },
+      {
+        "key": "delete",
+        "hide": true
+      },
+      {
+        "key": "undo",
+        "hide": true
+      },
+      {
+        "key": "versionHistory",
+        "hide": true
+      },
+      {
+        "key": "managePermissionsCommand",
+        "hide": true
+      },
+      {
+        "key": "openinfopaneCommand",
+        "hide": true
+      },
+      {
+        "key": "approveReject",
+        "hide": true
+      },
+      {
+        "key": "requestApprovalCommand",
+        "hide": true
+      },
+      {
+        "key": "more",
+        "hide": true
+      },
+      {
+        "key": "alertMe",
+        "hide": true
+      },
+      {
+        "key": "manageAlert",
+        "hide": true
+      },
+      {
+        "key": "integrate",
+        "hide": true
+      },
+      {
+        "key": "powerApps",
+        "hide": true
+      },
+      {
+        "key": "powerAutomate",
+        "hide": true
+      },
+      {
+        "key": "powerBI",
+        "hide": true
+      },
+      {
+        "key": "automate",
+        "hide": true
+      },
+      {
+        "key": "manageForms",
+        "hide": true
+      }
+    ]
+  },
+  "rowFormatter": {
+    "elmType": "div",
+    "attributes": {
+      "class": "ms-borderColor-neutralLight"
+    },
+    "style": {
+      "position": "relative",
+      "border-width": "1px",
+      "border-radius": "5px",
+      "border-style": "solid",
+      "width": "1000px",
+      "display": "block",
+      "margin-bottom": "5px",
+      "margin-top": "=if(@rowIndex == 0, '50px','0')",
+      "box-shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+    },
+    "children": [
+      {
+        "elmType": "div",
+        "style": {
+          "display": "=if(@rowIndex == 0, 'flex','none')",
+          "position": "absolute",
+          "align-items": "center",
+          "right": "0px",
+          "top": "-55px",
+          "z-index": "60"
+        },
+        "children": [
+          {
+            "elmType": "p",
+            "style": {
+              "font-size": "16px",
+              "color": "white",
+              "background-color": "#333399",
+              "border-radius": "20px",
+              "padding": "5px 10px"
+            },
+            "txtContent": "Select Signals by clicking on the date and bundle them with → "
+          },
+          {
+            "elmType": "button",
+            "style": {
+              "display": "flex",
+              "flex-direction": "column",
+              "justify-content": "center",
+              "align-items": "center",
+              "border": "1px solid black",
+              "border-radius": "5px",
+              "padding": "5px",
+              "cursor": "pointer",
+              "margin-left": "5px"
+            },
+            "attributes": {
+              "class": "ms-bgColor-white ms-bgColor-communicationTint40--hover"
+            },
+            "customRowAction": {
+              "action": "executeFlow",
+              "actionParams": "{\"id\":\"v1/Default-f7e06a08-57c2-479e-bfa5-e63a6dd83518/6b746247-ce35-49e0-beab-bbeb9c114e3d\", \"headerText\":\"Bundler\",\"runFlowButtonText\":\"Bundle Signals\"}"
+            },
+            "children": [
+              {
+                "elmType": "span",
+                "style": {
+                  "font-size": "20px",
+                  "height": "100%",
+                  "width": "100%"
+                },
+                "attributes": {
+                  "iconName": "Print"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "elmType": "div",
+        "style": {
+          "display": "flex",
+          "position": "absolute",
+          "z-index": "30",
+          "top": "10px",
+          "right": "5px",
+          "flex-direction": "row",
+          "padding": "5px 10px",
+          "border-radius": "20px",
+          "outline": "1px solid #333399",
+          "margin-bottom": "5px",
+          "align-items": "center",
+          "cursor": "pointer"
+        },
+        "attributes": {
+          "class": "ms-bgColor-sharedOrange10 ms-bgColor-white--hover sp-css-color-themePrimary sp-css-color-white--hover"
+        },
+        "customRowAction": {
+          "action": "defaultClick"
+        },
+        "children": [
+          {
+            "elmType": "span",
+            "attributes": {
+              "iconName": "View"
+            },
+            "style": {
+              "font-weight": "bold",
+              "padding-right": "5px"
+            }
+          },
+          {
+            "elmType": "span",
+            "txtContent": "Bekijken"
+          }
+        ]
+      },
+      {
+        "elmType": "div",
+        "style": {
+          "position": "relative",
+          "border-radius": "5px",
+          "z-index": "5",
+          "outline": "none",
+          "text-decoration": "none",
+          "height": "100%",
+          "background-color": "=if(@isSelected, '#eff6fc','')"
+        },
+        "attributes": {
+          "class": "ms-bgColor-white ms-bgColor-communicationTint40--hover ms-borderColor-neutralLight ms-borderColor-neutralTertiary--hover"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "style": {
+              "position": "absolute",
+              "bottom": "10px",
+              "left": "130px",
+              "display": "flex",
+              "flex-flow": "row nowrap",
+              "margin-top": "20px"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "forEach": "topic in [$Topic]",
+                "style": {
+                  "display": "flex",
+                  "flex-flow": "row nowrap"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "style": {
+                      "display": "flex",
+                      "flex-direction": "row",
+                      "padding": "5px 10px",
+                      "border-radius": "20px",
+                      "margin-right": "15px",
+                      "align-items": "center",
+                      "background-color": "=if(indexOf([$topic], 'Cybercrime') >= 0,'#FADADD',if(indexOf([$topic], 'Drugs') >= 0, '#B5EAD7',if(indexOf([$topic], 'Organised Crime') >= 0, '#C7CEEA',if(indexOf([$topic], 'EcoFin') >= 0, '#FFDAC1',if(indexOf([$topic], 'Fuphec') >= 0, '#E2F0CB',if(indexOf([$topic], 'Property Crime') >= 0, '#FFB7B2',if(indexOf([$topic], 'HumTraf') >= 0 || indexOf([$topic], 'HumSmug') >= 0, '#D5AAFF',if(indexOf([$topic], 'Terro') >= 0, '#C9F0FF',if(indexOf([$topic], 'Fire Arms') >= 0, '#FFF5BA',if(indexOf([$topic], 'Road Safety') >= 0, '#AEC6CF',if(indexOf([$topic], 'Foot') >= 0, '#FFD3B6',if(indexOf([$topic], 'Irregular migration') >= 0, '#E6E6FA',if(indexOf([$topic], 'Hybrid threats') >= 0, '#D0F4DE','#FFFFFF')))))))))))))"
+                    },
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "color": "=if(indexOf([$topic], 'Cybercrime') >= 0, '#D88FA3',if(indexOf([$topic], 'Drugs') >= 0, '#6DBA9D',if(indexOf([$topic], 'Organised Crime') >= 0, '#8298BC',if(indexOf([$topic], 'EcoFin') >= 0, '#E8A987',if(indexOf([$topic], 'Fuphec') >= 0, '#A3B97F',if(indexOf([$topic], 'Property Crime') >= 0, '#D27A75',if(indexOf([$topic], 'HumTraf') >= 0 || indexOf([$topic], 'HumSmug') >= 0, '#9B65C4',if(indexOf([$topic], 'Terro') >= 0, '#75A6BA',if(indexOf([$topic], 'Fire Arms') >= 0, '#B7A83F',if(indexOf([$topic], 'Road Safety') >= 0, '#6D8A95',if(indexOf([$topic], 'Foot') >= 0, '#C29374',if(indexOf([$topic], 'Irregular migration') >= 0, '#9999BD',if(indexOf([$topic], 'Hybrid threats') >= 0, '#7DB393','#000000')))))))))))))",
+                          "padding-right": "5px"
+                        },
+                        "attributes": {
+                          "iconName": "WebAppBuilderFragment"
+                        }
+                      },
+                      {
+                        "elmType": "span",
+                        "txtContent": "=if(startsWith([$topic],'_'),substring([$topic],1,length(split([$topic],''))),[$topic])"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "display": "flex",
+              "position": "absolute",
+              "z-index": "20",
+              "right": "5px",
+              "bottom": "10px",
+              "flex-direction": "column",
+              "align-items": "flex-end",
+              "justify-content": "flex-end",
+              "height": "100%"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "style": {
+                  "display": "flex",
+                  "flex-direction": "row",
+                  "padding": "5px 10px",
+                  "border-radius": "20px",
+                  "align-items": "center"
+                },
+                "attributes": {
+                  "class": "ms-bgColor-themeLight"
+                },
+                "children": [
+                  {
+                    "elmType": "span",
+                    "attributes": {
+                      "class": "sp-css-color-white",
+                      "iconName": "InternetSharing"
+                    },
+                    "style": {
+                      "padding-right": "5px"
+                    }
+                  },
+                  {
+                    "elmType": "span",
+                    "txtContent": "[$Signal]"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "position": "relative",
+              "display": "flex",
+              "flex-direction": "row",
+              "justify-content": "flex-start",
+              "align-items": "flex-start",
+              "padding": "10px 0px 10px 16px"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "attributes": {
+                  "class": "ms-borderColor-neutralLight ms-fontColor-neutralPrimary ms-bgColor-noFill ms-bgColor-white--hover"
+                },
+                "style": {
+                  "position": "relative",
+                  "display": "flex",
+                  "flex-shrink": "0",
+                  "width": "80px",
+                  "height": "80px",
+                  "border-width": "1px",
+                  "border-style": "solid",
+                  "flex-direction": "column",
+                  "align-items": "center",
+                  "text-align": "center",
+                  "justify-content": "center",
+                  "margin-right": "20px"
+                },
+                "children": [
+                  {
+                    "elmType": "button",
+                    "style": {
+                      "position": "absolute",
+                      "display": "flex",
+                      "top": "0px",
+                      "left": "0px",
+                      "flex-direction": "column",
+                      "justify-content": "center",
+                      "align-items": "center",
+                      "cursor": "pointer",
+                      "opacity": "=if([$SelectedBoolean], 0.8, 0)",
+                      "width": "100%",
+                      "height": "100%",
+                      "z-index": "10"
+                    },
+                    "customRowAction": {
+                      "action": "setValue",
+                      "actionInput": {
+                        "SelectedBoolean": "=if([$SelectedBoolean],false,true)",
+                        "ARB_x0028_System_x0029_": true,
+                        "SRB_x0028_System_x0029_": true
+                      }
+                    },
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "postion": "relative",
+                          "display": "block",
+                          "color": "black",
+                          "font-size": "40px"
+                        },
+                        "attributes": {
+                          "iconName": "=if([$SelectedBoolean], 'CheckMark','')"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "elmType": "div",
+                    "txtContent": "=if(getDate([$Modified]) > 0, if(getMonth([$Modified]) == 0, 'JAN', if(getMonth([$Modified]) == 1, 'FEB', if(getMonth([$Modified]) == 2, 'MAR', if(getMonth([$Modified]) == 3, 'APR',if(getMonth([$Modified]) == 4, 'MAY',if(getMonth([$Modified]) == 5, 'JUN',if(getMonth([$Modified]) == 6, 'JUL',if(getMonth([$Modified]) == 7, 'AUG',if(getMonth([$Modified]) == 8, 'SEP',if(getMonth([$Modified]) == 9, 'OCT',if(getMonth([$Modified]) == 10, 'NOV','DEC'))))))))))),if(getMonth([$Created]) == 0, 'JAN', if(getMonth([$Created]) == 1, 'FEB', if(getMonth([$Created]) == 2, 'MAR', if(getMonth([$Created]) == 3, 'APR',if(getMonth([$Created]) == 4, 'MAY',if(getMonth([$Created]) == 5, 'JUN',if(getMonth([$Created]) == 6, 'JUL',if(getMonth([$Created]) == 7, 'AUG',if(getMonth([$Created]) == 8, 'SEP',if(getMonth([$Created]) == 9, 'OCT',if(getMonth([$Created]) == 10, 'NOV','DEC'))))))))))))",
+                    "style": {
+                      "font-size": "15px",
+                      "font-weight": "400"
+                    }
+                  },
+                  {
+                    "elmType": "div",
+                    "txtContent": "=if(getDate([$Modified]) > 0, getDate([$Modified]),getDate([$Created]))",
+                    "style": {
+                      "font-size": "28px",
+                      "font-weight": "600"
+                    }
+                  }
+                ]
+              },
+              {
+                "elmType": "div",
+                "style": {
+                  "padding": "0 16px",
+                  "display": "flex",
+                  "flex-direction": "column",
+                  "justify-content": "flex-start",
+                  "align-items": "flex-start"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "style": {
+                      "display": "inline-block",
+                      "max-width": "700px",
+                      "max-height": "60px",
+                      "margin-bottom": "35px",
+                      "font-size": "25px",
+                      "font-weight": "600",
+                      "-webkit-line-clamp": "2",
+                      "overflow": "hidden",
+                      "text-overflow": "ellipsis",
+                      "font-family": "serif"
+                    },
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "txtContent": "=if(length(split([$Title],''))>0,[$Title],[$Title_x0028_FR_x0029_])"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+<h1 class="editor-heading-h1">
+    <b>
+        <strong class="editor-text-bold" style="font-size: 18px;">De aanvraag tot validatie van jouw signaal:</strong>
+    </b>
+</h1>
+<p class="editor-paragraph">
+    <a href="@{triggerBody()?['{Link}']}" class="editor-link">@{if(not(equals(triggerBody()?['Title'],null)),triggerBody()?['Title'],triggerBody()?['Title_x0028_FR_x0029_'])}</a>
+</p>
+<p class="editor-paragraph">Werd beantwoord door: @{first(outputs('Start_and_wait_for_an_approval')?['body/responses'])?['responder/displayName']}</p>
+<p class="editor-paragraph">@{if(equals(outputs('Start_and_wait_for_an_approval')?['body/outcome'],'Approve'),'Goedgekeurd','Afgewezen')}
+</p>
+<h1 class="editor-heading-h1">
+    <b>
+        <strong class="editor-text-bold" style="font-size: 18px;">La demande de la validation de ton signal:</strong>
+    </b>
+</h1>
+<p class="editor-paragraph">
+    <a href="@{triggerBody()?['{Link}']}" class="editor-link">@{if(not(equals(triggerBody()?['Title_x0028_FR_x0029_'],null)),triggerBody()?['Title_x0028_FR_x0029_'],triggerBody()?['Title'])}</a>
+</p>
+<p class="editor-paragraph">A reçu de réponse par: @{first(outputs('Start_and_wait_for_an_approval')?['body/responses'])?['responder/displayName']}</p>
+<p class="editor-paragraph">@{if(equals(outputs('Start_and_wait_for_an_approval')?['body/outcome'],'Approve'),'Approuvé','Rejeté')}</p>

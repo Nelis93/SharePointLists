@@ -1,0 +1,40 @@
+<div>
+    <div style="display:@{if(not(equals(triggerBody()?['Title'],null)),'flex','none')}; flex-direction: column; font-family: Arial, sans-serif; max-width: 600px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+
+
+
+        <div class="editor-heading-h1">
+            <b>
+                <strong class="editor-text-bold" style="font-size: 18px;">De validatie van: </strong>
+            </b>    
+        </div>
+        <p class="editor-paragraph">
+            <a href="@{triggerBody()?['{Link}']}" class="editor-link">@{triggerBody()?['Title']}</a>
+        </p>
+        <p class="editor-paragraph">
+            <span style="font-size: 12px;">Werd aangevraagd door: </span>@{triggerBody()?['Editor/DisplayName']}
+        </p>
+<p style="margin: 5px 0; font-size: 14px; color: #333;">
+    Op <span style="font-weight: 500;">@{formatDateTime(convertTimeZone(utcNow(), 'UTC', 'Romance Standard Time'), 'dddd, dd MMMM yyyy ''op '' HH''h''mm','nl-NL')}</span>
+  </p>
+    </div>
+
+
+    <div style="display:@{if(not(equals(triggerBody()?['Title_x0028_FR_x0029_'],null)),'flex','none')}; flex-direction: column; font-family: Arial, sans-serif; max-width: 600px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+
+        <div class="editor-heading-h1">
+            <b>
+                <strong class="editor-text-bold" style="font-size: 18px;">La validation de: </strong>
+            </b>    
+        </div>
+        <p class="editor-paragraph">
+            <a href="@{triggerBody()?['{Link}']}" class="editor-link">@{triggerBody()?['Title_x0028_FR_x0029_']}</a>
+        </p>
+        <p class="editor-paragraph">
+            <span style="font-size: 12px;">A été demandé par: </span>@{triggerBody()?['Editor/DisplayName']}
+        </p>
+<p style="margin: 5px 0; font-size: 14px; color: #333;">
+    Le <span style="font-weight: 500;">@{formatDateTime(convertTimeZone(utcNow(), 'UTC', 'Romance Standard Time'), 'dddd, dd MMMM yyyy ''à'' HH''h''mm','fr-FR')}</span>
+  </p>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div>
+    <div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <div class="editor-heading-h1">
+            <b>
+                <strong class="editor-text-bold" style="font-size: 18px;">Nieuw signaal:</strong>
+            </b>    
+        </div><br /><br />
+        <p class="editor-paragraph">
+            <a href="@{triggerBody()?['{Link}']}" class="editor-link">@{if(not(equals(triggerBody()?['Title'],null)),triggerBody()?['Title'],triggerBody()?['Title_x0028_FR_x0029_'])}</a>
+        </p><br /><br />
+        <p class="editor-paragraph">
+            <span style="font-size: 12px;">Aangemaakt door: </span>@{triggerBody()?['Author/DisplayName']}
+        </p>
+    </div><br /><br /><br />
+    <div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <div class="editor-heading-h1">
+            <b>
+                <strong class="editor-text-bold" style="font-size: 18px;">Nouveau singal: </strong>
+            </b>    
+        </div><br /><br />
+        <p class="editor-paragraph">
+            <a href="@{triggerBody()?['{Link}']}" class="editor-link">@{if(not(equals(triggerBody()?['Title_x0028_FR_x0029_'],null)),triggerBody()?['Title_x0028_FR_x0029_'],triggerBody()?['Title'])}</a>
+        </p><br /><br />
+        <p class="editor-paragraph">
+            <span style="font-size: 12px;">Réalisée par: </span>@{triggerBody()?['Author/DisplayName']}
+        </p>
+    </div>
+</div>

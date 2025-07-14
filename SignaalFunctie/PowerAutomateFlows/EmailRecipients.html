@@ -1,0 +1,36 @@
+<div>
+<div style="display:@{if(not(equals(triggerBody()?['Title'],null)),'flex','none')}; flex-direction: column; font-family: Arial, sans-serif; max-width: 600px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <div class="editor-heading-h1">
+    <a href="@{triggerBody()?['{Link}']}" style="text-decoration: none; color: #0078D4; font-size: 20px; font-weight: bold;" class="editor-link">
+      @{triggerBody()?['Title']}
+    </a>
+  </div>
+  
+
+  <p class="editor-paragraph" style="margin: 5px 0; font-size: 14px; color: #333;">
+    Werd goedgekeurd door: <span style="font-weight: 500;">@{triggerBody()?['Editor/DisplayName']}</span>
+  </p>  
+
+  <p style="margin: 5px 0; font-size: 14px; color: #333;">
+    Op <span style="font-weight: 500;">@{formatDateTime(convertTimeZone(triggerOutputs()?['body/Modified'], 'UTC', 'Romance Standard Time'), 'dddd, dd MMMM yyyy ''om'' HH''h''mm','nl-NL')}</span>
+  </p>
+</div>
+
+
+<div style="display:@{if(not(equals(triggerBody()?['Title_x0028_FR_x0029_'],null)),'flex','none')}; flex-direction: column; font-family: Arial, sans-serif; max-width: 600px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <div class="editor-heading-h1">
+    <a href="@{triggerBody()?['{Link}']}" style="text-decoration: none; color: #0078D4; font-size: 20px; font-weight: bold;" class="editor-link">
+      @{triggerBody()?['Title_x0028_FR_x0029_']}
+    </a>
+  </div>
+  
+
+  <p class="editor-paragraph" style="margin: 5px 0; font-size: 14px; color: #333;">
+    A été approuvée par: <span style="font-weight: 500;">@{triggerBody()?['Editor/DisplayName']}</span>
+  </p>  
+
+  <p style="margin: 5px 0; font-size: 14px; color: #333;">
+    Le <span style="font-weight: 500;">@{formatDateTime(convertTimeZone(triggerOutputs()?['body/Modified'], 'UTC', 'Romance Standard Time'), 'dddd, dd MMMM yyyy ''à'' HH''h''mm','fr-FR')}</span>
+  </p>
+</div>
+</div>

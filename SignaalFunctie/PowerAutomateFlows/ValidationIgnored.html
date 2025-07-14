@@ -1,0 +1,46 @@
+<div>
+    <div>
+        <div class="editor-heading-h1">
+            <b>
+                <strong class="editor-text-bold">De aanvraag tot validatie van jouw signaal: </strong>
+            </b>    
+        </div>
+
+        <div>
+            <a href="@{triggerBody()?['{Link}']}" class="editor-link">@{if(not(equals(triggerBody()?['Title'],null)),triggerBody()?['Title'],triggerBody()?['Title_x0028_FR_x0029_'])}</a>
+        </div>
+
+        <div>
+            <span>Werd niet beantwoord door: </span>
+            @{join(variables('ValidatorArray'),' of ')}
+        </div>
+
+        <div>
+            <span>Gelieve de aanvraag opnieuw in te dienen</span>
+        </div>
+    </div>
+
+
+    <div>
+        <div class="editor-heading-h1">
+            <b>
+                <strong class="editor-text-bold">La demande de la validation de ton signal: </strong>
+            </b>    
+        </div>
+
+        <div>
+            <a href="@{triggerBody()?['{Link}']}" class="editor-link">@{if(not(equals(triggerBody()?['Title_x0028_FR_x0029_'],null)),triggerBody()?['Title_x0028_FR_x0029_'],triggerBody()?['Title'])}</a>
+        </div>
+
+        <div>
+            <span>N'a pas reçu de réponse par: </span>
+            @{join(variables('ValidatorArray'),' ou ')}
+        </div>
+
+        <div>
+            <span>Veuillez déposer une autre demande</span>
+        </div>
+    </div>
+</div>
+
+<div><div><div class="editor-heading-h1"><b><strong class="editor-text-bold">De aanvraag tot validatie van jouw signaal: </strong></b></div><div><a href="@{triggerBody()?['{Link}']}" class="editor-link">@{if(not(equals(triggerBody()?['Title'],null)),triggerBody()?['Title'],triggerBody()?['Title_x0028_FR_x0029_'])}</a></div><div>Werd beantwoord door: @{first(outputs('Start_and_wait_for_an_approval_REMINDER')?['body/responses'])?['responder/displayName']}</div><div><em>@{outputs('Start_and_wait_for_an_approval_REMINDER')?['body/outcome']}</em></div></div><div><div class="editor-heading-h1"><b><strong class="editor-text-bold">La demande de la validation de ton signal: </strong></b></div><div><a href="@{triggerBody()?['{Link}']}" class="editor-link">@{if(not(equals(triggerBody()?['Title_x0028_FR_x0029_'],null)),triggerBody()?['Title_x0028_FR_x0029_'],triggerBody()?['Title'])}</a></div><div>A reçu de réponse par: @{first(outputs('Start_and_wait_for_an_approval_REMINDER')?['body/responses'])?['responder/displayName']}</div><div><em>@{outputs('Start_and_wait_for_an_approval_REMINDER')?['body/outcome']}</em></div></div></div>
