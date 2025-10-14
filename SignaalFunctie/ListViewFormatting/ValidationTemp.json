@@ -63,3 +63,414 @@ json('{ "phen": "Hybrid", "notify": ["nelis.eerdekens@police.belgium.eu","domini
   },
 
 
+{
+    "headers": {
+        "Cache-Control": "max-age=0, private",
+        "Transfer-Encoding": "chunked",
+        "Location": "https://flow-apim-europe-001-westeurope-01.azure-apim.net/apim/sharepointonline/e8323ce78afc4630adf53e69a1e2904d/datasets/https%253A%252F%252Fbpolb.sharepoint.com%252Fsites%252FSignals/tables/34a0969d-b43e-452f-a08a-4b534a4cdb0a/onupdateditems?triggerstatecl=MTszOzM0YTA5NjlkLWI0M2UtNDUyZi1hMDhhLTRiNTM0YTRjZGIwYTs2Mzg4OTMwMjY2NjY1MDAwMDA7MTUzNzQ5ODIwNw%3d%3d",
+        "Retry-After": "21600",
+        "Vary": "Origin,Accept-Encoding",
+        "X-NetworkStatistics": "0,4194720,0,0,691054,4194560,4194560,372",
+        "X-SharePointHealthScore": "1",
+        "X-MS-SPConnector": "1",
+        "X-SP-SERVERSTATE": "ReadOnly=0",
+        "DATASERVICEVERSION": "3.0",
+        "SPClientServiceRequestDuration": "410",
+        "IsOCDI": "0",
+        "X-DataBoundary": "EU",
+        "X-1DSCollectorUrl": "https://eu-mobile.events.data.microsoft.com/OneCollector/1.0/",
+        "X-AriaCollectorURL": "https://eu-mobile.events.data.microsoft.com/Collector/3.0/",
+        "SPRequestGuid": "db6802dc-a932-47b5-8f57-56c4bd05bfaa",
+        "request-id": "db6802dc-a932-47b5-8f57-56c4bd05bfaa",
+        "MS-CV": "obYzC+PAANBLZ32//qDR7Q.0",
+        "SPLogId": "0b33b6a1-c0e3-d000-4b67-7dbffea0d1ed",
+        "Alt-Svc": "h3=\":443\"",
+        "Strict-Transport-Security": "max-age=31536000",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Content-Security-Policy": "frame-ancestors 'self' teams.microsoft.com *.teams.microsoft.com *.skype.com *.teams.microsoft.us local.teams.office.com teams.cloud.microsoft *.office365.com goals.cloud.microsoft *.powerapps.com *.powerbi.com *.yammer.com engage.cloud.microsoft word.cloud.microsoft excel.cloud.microsoft powerpoint.cloud.microsoft *.officeapps.live.com *.office.com *.microsoft365.com m365.cloud.microsoft *.cloud.microsoft *.stream.azure-test.net *.dynamics.com *.microsoft.com onedrive.live.com *.onedrive.live.com securebroker.sharepointonline.com;",
+        "MicrosoftSharePointTeamServices": "16.0.0.26309",
+        "X-Content-Type-Options": "nosniff",
+        "X-MS-InvokeApp": "1; RequireReadOnly",
+        "P3P": "CP=\"ALL IND DSP COR ADM CONo CUR CUSo IVAo IVDo PSA PSD TAI TELo OUR SAMo CNT COM INT NAV ONL PHY PRE PUR UNI\"",
+        "X-AspNet-Version": "4.0.30319",
+        "X-Powered-By": "ASP.NET",
+        "x-ms-environment-id": "default-f7e06a08-57c2-479e-bfa5-e63a6dd83518",
+        "x-ms-tenant-id": "f7e06a08-57c2-479e-bfa5-e63a6dd83518",
+        "x-ms-subscription-id": "09e1b36c-b066-4c5a-b687-6c794221d1f1",
+        "x-ms-dlp-re": "getonupdateditems|False",
+        "x-ms-dlp-gu": "-|-",
+        "x-ms-dlp-ef": "-|-/-|-|-",
+        "x-ms-mip-sl": "-|-|-|-",
+        "Timing-Allow-Origin": "*",
+        "x-ms-apihub-cached-response": "false",
+        "x-ms-apihub-obo": "false",
+        "Date": "Mon, 28 Jul 2025 12:31:06 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Expires": "Sun, 13 Jul 2025 12:31:06 GMT",
+        "Last-Modified": "Mon, 28 Jul 2025 12:31:06 GMT",
+        "Content-Length": "21647"
+    },
+    "body": {
+        "@odata.etag": "\"91\"",
+        "ItemInternalId": "57",
+        "ID": 57,
+        "Title": "Gebruik van huurwagens bij de in- en uitvoer en verkoop van verdovende middelen",
+        "Modified": "2025-07-28T12:30:32Z",
+        "Body_x0028_FR_x0029_": "<div class=\"ExternalClass5AD17C4745304A62BE5DA34C2D6FD87B\"><br></div>",
+        "Body_x0028_NL_x0029_": "<div class=\"ExternalClassF96B7DDEE30E4CCCB67115A0B48DA360\"><p><u>Signaal</u>&#58;<br>Sinds begin 2025 zien we een stijging in de ontvangen info betreffende het gebruik van huurwagens bij de in- en uitvoer en verkoop van verdovende middelen. De huurvoertuigen worden binnen en buiten de provincie West-Vlaanderen gehuurd en gebruikt.</p><p>Een aantal huurwagens zijn ook voorzien van verborgen ruimtes.</p><p><u>Evidence/voorbeelden</u>&#58;</p><ul><li>14/01/2025&#58; vermoeden van gebruik van een huurwagen uit Oostende bij de verkoop van cocaïne in Kortrijk.</li><li>18/01/2025&#58; vermoeden van gebruik van een huurwagen uit Oostende bij de verkoop van verdovende middelen te Hasselt.</li><li>18/01/2025 - 20/01/2025&#58; gebruik van een huurwagen uit Brugge bij in- en uitvoer van cannabis in Oostende; waarbij de voering in het voertuig was stuk gesneden.</li><li>22/01/2025 - 25/01/2025&#58; vermoeden van gebruik van een huurwagen uit Brugge bij de in- en uitvoer van verdovende middelen in Oostende.</li><li>24/01/2025&#58; gebruik van een huurvoertuig uit Dendermonde voor de verkoop van verdovende middelen te Blankenberge.</li><li>14/02/2025&#58; vermoeden van gebruik van een huurwagen uit Kortemark voor de in- en uitvoer&#160;van verdovende middelen te Zeebrugge en Antwerpen.&#160;</li><li>18/02/2025&#58; vermoeden van gebruik van een huurwagen uit Duitsland voor de verkoop van verdovende middelen in Maasmechelen; waarbij het voertuig een verstopplaats heeft onder de versnellingspook.</li><li>19/02/2025&#58; gebruik van een huurwagen uit Kuurne bij de verkoop van verdovende middelen in Kortrijk.</li><li>25/02/2025&#58; vermoeden van gebruik van een huurwagen uit Machelen bij de verkoop van verdovende middelen in Oostende.</li><li>01/01/2025 - 18/03/2025&#58; gebruik van een huurwagen uit Machelen bij de verkoop van cocaïne in Nieuwpoort.</li><li>17/03/2025&#58; gebruik van een huurwagen uit Heusden-Zolder (leasingmaatschappij)&#160;voor de verkoop van verdovende middelen in Harelbeke.</li><li>30/03/2025&#58; gebruik van een huurwagen uit Oostende voor de verkoop van verdovende middelen te Kortrijk; waarbij veel bekleding in het voertuig gemakkelijk los te maken is zodat de fabriekseigen ruimtes in het voertuig gemakkelijk te bereiken zijn.</li><li>14/04/2025&#58; gebruik van een huurwagen uit Anzegem bij de verkoop van verdovende middelen in Middelkerke.</li><li><span style=\"color&#58;#2980b9;\">31/03/2025&#58; gebruik van een huurwagen bij de in- en uitvoer van cannabis en cocaïne&#160;in West-Vlaanderen.</span></li><li><span style=\"color&#58;#2980b9;\">21/04/2025&#58; gebruik van een huurwagen uit Lievegem bij de verkoop van verdovende middelen in Veurne.</span></li><li><span style=\"color&#58;#2980b9;\">26/02/2025&#58; vermoeden van gebruik van een huurwagen uit Schilde bij de in- en uitvoer van verdovende middelen in West-Vlaanderen.</span></li><li><span style=\"color&#58;#2980b9;\">19/03/2025&#58; gebruik van een huurvoertuig uit Damme bij de verkoop van verdovende middelen in Merelbeke.</span></li><li><span style=\"color&#58;#2980b9;\">14/04/2025&#58; gebruik van een huurvoertuig uit Anzegem bij de verkoop van verdovende middelen in Middelkerke.</span></li><li><span style=\"color&#58;#2980b9;\">29/04/2025&#58; gebruik van een huurwagen uit Duitsland voor de verkoop van cannabis in Brugge.</span></li><li><span style=\"color&#58;#2980b9;\">07/05/2025&#58; gebruik van huurwagens uit Duitsland bij druggerelateerde verdachte handelingen&#160;in West-Vlaanderen.</span></li><li><span style=\"color&#58;#2980b9;\">07/05/2025&#58; gebruik van huurwagens uit Duitsland bij druggerelateerde verdachte handelingen&#160;in West-Vlaanderen.</span></li><li><span style=\"color&#58;#2980b9;\">07/05/2025&#58; gebruik van een huurwagen uit Maasmechelen bij druggerelateerde verdachte handelingen in Maasmechelen.</span></li><li><span style=\"color&#58;#2980b9;\">08/05/2025&#58; gebruik van een huurwagen uit Kortrijk bij de verkoop van verdovende middelen in Kalmthout.</span></li><li><span style=\"color&#58;#2980b9;\">08/05/2025&#58; gebruik van een huurwagen uit Kortrijk bij de in- en uitvoer van verdovende middelen in West-Vlaanderen.</span></li><li><span style=\"color&#58;#2980b9;\">15/05/2025&#58; gebruik van een huurwagen uit Kortrijk bij de verkoop van cannabis in Knokke, Eernegem, Antwerpen.</span></li><li>21/05/2025&#58; gebruik van een huurwagen uit Elsene bij de verkoop van verdovende middelen in De Panne.</li><li><span style=\"color&#58;#2980b9;\">10/06/2025&#58; vermoeden van gebruik van een huurwagen uit Letland bij de in- en uitvoer van verdovende middelen in De Haan.</span></li><li>02/06/2025&#58; gebruik van een huurwagen uit Heusen-Zolder bij de verkoop van verdovende middelen in Kortrijk.</li><li><span style=\"color&#58;#2980b9;\">03/07/2025&#58; gebruik van een huurwagen uit Braine-L'Alleud bij de verkoop van drugs te Brugge.</span></li><li><span style=\"color&#58;#2980b9;\">05/07/2025&#58; gebruik van een huurwagen uit Hooglede bij de verkoop van verdovende middelen in Brugge.</span></li><li>27/06/2025&#58; gebruik van een huurwagen uit Antwerpen bij de in- en uitvoer van verdovende middelen in Veurne.</li><li>08/06/2025&#58; gebruik van een huurwagen uit Sint-Jans-Molenbeek bij de verkoop van verdovende middelen in Waregem.</li><li>datum onbekend&#58; gebruik van een huurwagen uit Tielt bij de verkoop van verdovende middelen in Kortrijk.</li><li>10/07/2025&#58; gebruik van een huurwagen uit Frankrijk bij de in- en uitvoer van verdovende middelen in Bredene.</li><li>11/07/2025&#58; gebruik van een huurwagen uit Brugge bij de verkoop van verdovende middelen in Middelkerke.</li><li>01/01/2025 - 04/07/2025&#58; gebruik van een huurwagen uit Oostende bij de verkoop van verdovende middelen in Kortrijk.</li></ul><p><u>Analyse/hypothese</u>&#58;<br>Drugdealers gebruiken een huurvoertuig en wisselen van huurvoertuig om zich aan het zicht en de controle van de politiediensten te onttrekken.</p><p><u>Opvolging/aanpak</u>&#58;<br>&#160;</p><p>&#160;</p></div>",
+        "Topic": [
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+                "Id": 10,
+                "Value": "Drugs - Other"
+            }
+        ],
+        "Topic@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference)",
+        "Topic#Id": [
+            10
+        ],
+        "Topic#Id@odata.type": "#Collection(Int64)",
+        "Signal": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+            "Id": 0,
+            "Value": "New MO"
+        },
+        "Signal#Id": 0,
+        "Status_x0028_Local_x0029_": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+            "Id": 2,
+            "Value": "Follow-up [ active ]"
+        },
+        "Status_x0028_Local_x0029_#Id": 2,
+        "Status_x0028_National_x0029_": [],
+        "Status_x0028_National_x0029_@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference)",
+        "Status_x0028_National_x0029_#Id": [],
+        "Status_x0028_National_x0029_#Id@odata.type": "#Collection(Int64)",
+        "Confidentialitylevel": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+            "Id": 1,
+            "Value": "Internal police"
+        },
+        "Confidentialitylevel#Id": 1,
+        "Editors": [],
+        "Editors@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser)",
+        "Editors#Claims": [],
+        "Editors#Claims@odata.type": "#Collection(String)",
+        "Domain": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+            "Id": 0,
+            "Value": "Judicial"
+        },
+        "Domain#Id": 0,
+        "Team": [
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|anja.brusseel@police.belgium.eu",
+                "DisplayName": "Brusseel Anja (CSD WVl)",
+                "Email": "Anja.Brusseel@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Anja.Brusseel@police.belgium.eu",
+                "Department": "CSD WVl",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|charlotte.claeys@police.belgium.eu",
+                "DisplayName": "Claeys Charlotte (CSD WVl)",
+                "Email": "Charlotte.Claeys@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Charlotte.Claeys@police.belgium.eu",
+                "Department": "CSD WVl",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|sophie.decuypere@police.belgium.eu",
+                "DisplayName": "Decuypere Sophie (CSD WVl)",
+                "Email": "Sophie.Decuypere@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Sophie.Decuypere@police.belgium.eu",
+                "Department": "CSD WVl",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|mariska.delafonteyne@police.belgium.eu",
+                "DisplayName": "Delafonteyne Mariska (CSD WVl)",
+                "Email": "Mariska.Delafonteyne@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Mariska.Delafonteyne@police.belgium.eu",
+                "Department": "CSD WVl",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|liselot.desticker@police.belgium.eu",
+                "DisplayName": "Desticker Liselot (CSD WVl)",
+                "Email": "Liselot.Desticker@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Liselot.Desticker@police.belgium.eu",
+                "Department": "CSD WVl",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|joke.vangelder@police.belgium.eu",
+                "DisplayName": "Van Gelder Joke (CSD WVl)",
+                "Email": "Joke.VanGelder@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Joke.VanGelder@police.belgium.eu",
+                "Department": "CSD WVl",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|machteld.warlop@police.belgium.eu",
+                "DisplayName": "Warlop Machteld (FGP WVl)",
+                "Email": "Machteld.Warlop@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Machteld.Warlop@police.belgium.eu",
+                "Department": "FGP WVl",
+                "JobTitle": null
+            }
+        ],
+        "Team@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser)",
+        "Team#Claims": [
+            "i:0#.f|membership|anja.brusseel@police.belgium.eu",
+            "i:0#.f|membership|charlotte.claeys@police.belgium.eu",
+            "i:0#.f|membership|sophie.decuypere@police.belgium.eu",
+            "i:0#.f|membership|mariska.delafonteyne@police.belgium.eu",
+            "i:0#.f|membership|liselot.desticker@police.belgium.eu",
+            "i:0#.f|membership|joke.vangelder@police.belgium.eu",
+            "i:0#.f|membership|machteld.warlop@police.belgium.eu"
+        ],
+        "Team#Claims@odata.type": "#Collection(String)",
+        "Recipients": [
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|emeline.beghin@police.belgium.eu",
+                "DisplayName": "Beghin Emeline (DJSOC)",
+                "Email": "Emeline.Beghin@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Emeline.Beghin@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|yves.cnudde@police.belgium.eu",
+                "DisplayName": "Cnudde Yves (DJSOC)",
+                "Email": "Yves.Cnudde@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Yves.Cnudde@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|stefaan.coens@police.belgium.eu",
+                "DisplayName": "Coens Stefaan (DJSOC)",
+                "Email": "Stefaan.Coens@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Stefaan.Coens@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|nico.deceuninck@police.belgium.eu",
+                "DisplayName": "Deceuninck Nico (DJSOC)",
+                "Email": "Nico.Deceuninck@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Nico.Deceuninck@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|pascale.dendeux@police.belgium.eu",
+                "DisplayName": "Dendeux Pascale (DJSOC)",
+                "Email": "Pascale.Dendeux@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Pascale.Dendeux@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|veerle.denherder@police.belgium.eu",
+                "DisplayName": "Den Herder Veerle (DJSOC)",
+                "Email": "Veerle.DenHerder@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Veerle.DenHerder@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|charlotte.maupin@police.belgium.eu",
+                "DisplayName": "Maupin Charlotte (DJSOC)",
+                "Email": "Charlotte.Maupin@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Charlotte.Maupin@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|ismael.oufkir@police.belgium.eu",
+                "DisplayName": "Oufkir Ismael (DJSOC)",
+                "Email": "Ismael.Oufkir@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Ismael.Oufkir@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|stephanie.ovaere@police.belgium.eu",
+                "DisplayName": "Ovaere Stephanie (DJSOC)",
+                "Email": "Stephanie.Ovaere@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Stephanie.Ovaere@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|marlies.owel@police.belgium.eu",
+                "DisplayName": "Owel Marlies (DJSOC)",
+                "Email": "Marlies.Owel@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Marlies.Owel@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|marc.vancoillie@police.belgium.eu",
+                "DisplayName": "Vancoillie Marc (DJSOC)",
+                "Email": "Marc.Vancoillie@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Marc.Vancoillie@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|bart.vertessen@police.belgium.eu",
+                "DisplayName": "Vertessen Bart (DJSOC)",
+                "Email": "Bart.Vertessen@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Bart.Vertessen@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            }
+        ],
+        "Recipients@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser)",
+        "Recipients#Claims": [
+            "i:0#.f|membership|emeline.beghin@police.belgium.eu",
+            "i:0#.f|membership|yves.cnudde@police.belgium.eu",
+            "i:0#.f|membership|stefaan.coens@police.belgium.eu",
+            "i:0#.f|membership|nico.deceuninck@police.belgium.eu",
+            "i:0#.f|membership|pascale.dendeux@police.belgium.eu",
+            "i:0#.f|membership|veerle.denherder@police.belgium.eu",
+            "i:0#.f|membership|charlotte.maupin@police.belgium.eu",
+            "i:0#.f|membership|ismael.oufkir@police.belgium.eu",
+            "i:0#.f|membership|stephanie.ovaere@police.belgium.eu",
+            "i:0#.f|membership|marlies.owel@police.belgium.eu",
+            "i:0#.f|membership|marc.vancoillie@police.belgium.eu",
+            "i:0#.f|membership|bart.vertessen@police.belgium.eu"
+        ],
+        "Recipients#Claims@odata.type": "#Collection(String)",
+        "InitialLocation": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+            "Id": 7,
+            "Value": "West-Vlaanderen"
+        },
+        "InitialLocation#Id": 7,
+        "Created": "2025-04-16T09:43:57Z",
+        "Author": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+            "Claims": "i:0#.f|membership|liselot.desticker@police.belgium.eu",
+            "DisplayName": "Desticker Liselot (CSD WVl)",
+            "Email": "Liselot.Desticker@police.belgium.eu",
+            "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Liselot.Desticker@police.belgium.eu",
+            "Department": "CSD WVl",
+            "JobTitle": null
+        },
+        "Author#Claims": "i:0#.f|membership|liselot.desticker@police.belgium.eu",
+        "Editor": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+            "Claims": "i:0#.f|membership|nelis.eerdekens@police.belgium.eu",
+            "DisplayName": "Eerdekens Nelis (DRI)",
+            "Email": "Nelis.Eerdekens@police.belgium.eu",
+            "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Nelis.Eerdekens@police.belgium.eu",
+            "Department": "DRI"
+        },
+        "Editor#Claims": "i:0#.f|membership|nelis.eerdekens@police.belgium.eu",
+        "SelectedBoolean": false,
+        "ARB_x0028_System_x0029_": true,
+        "ARR_x0028_System_x0029_": [
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|mariska.delafonteyne@police.belgium.eu",
+                "DisplayName": "Delafonteyne Mariska (CSD WVl)",
+                "Email": "Mariska.Delafonteyne@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Mariska.Delafonteyne@police.belgium.eu",
+                "Department": "CSD WVl"
+            }
+        ],
+        "ARR_x0028_System_x0029_@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser)",
+        "ARR_x0028_System_x0029_#Claims": [
+            "i:0#.f|membership|mariska.delafonteyne@police.belgium.eu"
+        ],
+        "ARR_x0028_System_x0029_#Claims@odata.type": "#Collection(String)",
+        "Notify": [
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|kurt.desoete@police.belgium.eu",
+                "DisplayName": "Desoete Kurt (FGP WVl)",
+                "Email": "Kurt.Desoete@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Kurt.Desoete@police.belgium.eu",
+                "Department": "FGP WVl",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|sofie.senesael@police.belgium.eu",
+                "DisplayName": "Senesael Sofie (CSD WVl)",
+                "Email": "Sofie.Senesael@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Sofie.Senesael@police.belgium.eu",
+                "Department": "CSD WVl",
+                "JobTitle": null
+            }
+        ],
+        "Notify@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser)",
+        "Notify#Claims": [
+            "i:0#.f|membership|kurt.desoete@police.belgium.eu",
+            "i:0#.f|membership|sofie.senesael@police.belgium.eu"
+        ],
+        "Notify#Claims@odata.type": "#Collection(String)",
+        "SRB_x0028_System_x0029_": true,
+        "OData__ApprovalAssignedTo": [],
+        "OData__ApprovalAssignedTo@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser)",
+        "OData__ApprovalAssignedTo#Claims": [],
+        "OData__ApprovalAssignedTo#Claims@odata.type": "#Collection(String)",
+        "OData__ApprovalRespondedBy": [],
+        "OData__ApprovalRespondedBy@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser)",
+        "OData__ApprovalRespondedBy#Claims": [],
+        "OData__ApprovalRespondedBy#Claims@odata.type": "#Collection(String)",
+        "{Identifier}": "Lists%252fSignals%252f57_.000",
+        "{IsFolder}": false,
+        "{Thumbnail}": {
+            "Large": null,
+            "Medium": null,
+            "Small": null
+        },
+        "{Link}": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/listform.aspx?PageType=4&ListId=34a0969d%2Db43e%2D452f%2Da08a%2D4b534a4cdb0a&ID=57&ContentTypeID=0x010053D2EBBD38AF824BA26BC94AACBA86E8001A976680CB2CC7409F05D8A2167C05E3",
+        "{Name}": "Gebruik van huurwagens bij de in- en uitvoer en verkoop van verdovende middelen",
+        "{FilenameWithExtension}": "Gebruik van huurwagens bij de in- en uitvoer en verkoop van verdovende middelen",
+        "{Path}": "Lists/Signals/",
+        "{FullPath}": "Lists/Signals/57_.000",
+        "{ModerationStatus}": "Approved",
+        "{ModerationComment}": "Een klein technisch probleem (bug) zorgde voor een halt in de validatie van het signaal. Het probleem werd onderzocht en opgelost.",
+        "{ContentType}": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedContentType",
+            "Id": "0x010053D2EBBD38AF824BA26BC94AACBA86E8001A976680CB2CC7409F05D8A2167C05E3",
+            "Name": "Item"
+        },
+        "{ContentType}#Id": "0x010053D2EBBD38AF824BA26BC94AACBA86E8001A976680CB2CC7409F05D8A2167C05E3",
+        "{HasAttachments}": false,
+        "{VersionNumber}": "63.0",
+        "{TriggerWindowStartToken}": "MTszOzM0YTA5NjlkLWI0M2UtNDUyZi1hMDhhLTRiNTM0YTRjZGIwYTs2Mzg4OTMwMjM5NTM5NzAwMDA7MTUzNzQ5NjM0NA==",
+        "{TriggerWindowEndToken}": "MTszOzM0YTA5NjlkLWI0M2UtNDUyZi1hMDhhLTRiNTM0YTRjZGIwYTs2Mzg4OTMwMjY2NjY1MDAwMDA7MTUzNzQ5ODIwNw==",
+        "{ApprovalStatus}": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedApprovalStatus",
+            "Value": 0,
+            "Label": "Niet verzonden"
+        },
+        "{ApprovalStatus}#Value": 0
+    }
+}

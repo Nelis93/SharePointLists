@@ -12,7 +12,67 @@
         "hide": true
       },
       {
-        "key": "exportExcel",
+        "key": "export",
+        "hide": true
+      },
+      {
+        "key": "share",
+        "hide": true
+      },
+      {
+        "key": "copyLink",
+        "hide": true
+      },
+      {
+        "key": "edit",
+        "hide": true
+      },
+      {
+        "key": "delete",
+        "hide": true
+      },
+      {
+        "key": "approveReject",
+        "hide": true
+      },
+      {
+        "key": "more",
+        "hide": true
+      },
+      {
+        "key": "alertMe",
+        "hide": true
+      },
+      {
+        "key": "manageAlert",
+        "hide": true
+      },
+      {
+        "key": "integrate",
+        "hide": true
+      },
+      {
+        "key": "powerApps",
+        "hide": true
+      },
+      {
+        "key": "powerAutomate",
+        "hide": true
+      },
+      {
+        "key": "powerBI",
+        "hide": true
+      },
+      {
+        "key": "automate",
+        "hide": true
+      },
+      {
+        "key": "manageForms",
+        "hide": true
+      },
+      {
+        "key": "managePermissionsCommand",
         "hide": true
       }
     ]
@@ -216,6 +276,41 @@
                   "margin": "0px 20px"
                 },
                 "children": [
+                  {
+                    "elmType": "div",
+                    "style": {
+                      "display": "=if(length([$Author0]) < 2 && indexOf([$Author_x0028_External_x0029_] + '^', '^') > 0, 'flex', 'none')",
+                      "flex-direction": "row",
+                      "justify-content": "center",
+                      "align-items": "center",
+                      "overflow": "hidden",
+                      "text-overflow": "ellipsis",
+                      "margin": "2px 0"
+                    },
+                    "children": [
+                      {
+                        "elmType": "div",
+                        "txtContent": "👨‍💼",
+                        "style": {
+                          "border-radius": "50px",
+                          "height": "30px",
+                          "width": "30px",
+                          "margin-right": "10px",
+                          "text-align": "center",
+                          "border": "1px solid grey",
+                          "font-size": "18px"
+                        }
+                      },
+                      {
+                        "elmType": "div",
+                        "txtContent": "=if(indexOf([$Author_x0028_External_x0029_] + '^', '^') > 70, substring([$Author_x0028_External_x0029_],0,70) + '...', [$Author_x0028_External_x0029_])",
+                        "style": {
+                          "font-size": "14px",
+                          "max-width":"250px"
+                        }
+                      }
+                    ]
+                  },
                   {
                     "elmType": "div",
                     "style": {

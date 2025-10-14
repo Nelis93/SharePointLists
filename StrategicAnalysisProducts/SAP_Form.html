@@ -1,7 +1,18 @@
-
 "<section style='display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; font-size: 16px; width: 100%; max-height: 100%; margin-right: 40px; padding: 50px'>" &
     "<article style='position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; width: 90%; height: 100px; background-color: #333399; padding: 10px 0px; margin-left: -20px; border-bottom-left-radius: 50px 50px; border-left: 4px solid #D85509'>" &
-        <!-- "<svg version='1.1' id='Calque_2' xmlns:x='&ns_extend;' xmlns:i='&ns_ai;' xmlns:graph='&ns_graphs;'
+    "<img src='https://bpolb.sharepoint.com/sites/StrategicAnalysisProducts/Gedeelde%20documenten/PowerApp_Logos/FedPol.svg' style='position: absolute; right: 0px; top: 0px; height:100px'/>" &
+            <!-- "<svg width='50px' height='50px' viewBox='0 0 1024 1024' class='icon'  version='1.1' xmlns='http://www.w3.org/2000/svg'>"&
+            "<path d='M897.9 369.2H205c-33.8 0-61.4-27.6-61.4-61.4s27.6-61.4 61.4-61.4h692.9c33.8 0 61.4 27.6 61.4 61.4s-27.6 61.4-61.4 61.4z' fill='#FFB89A' />"&
+            "<path d='M807 171H703.3c-16.6 0-30 13.4-30 30s13.4 30 30 30H807c31.6 0 57.4 24 57.4 53.4v42.3H125.2v-42.3c0-29.5 25.7-53.4 57.4-53.4H293c16.6 0 30-13.4 30-30s-13.4-30-30-30H182.5c-64.7 0-117.4 50.9-117.4 113.4v527.7c0 62.5 52.7 113.4 117.4 113.4H807c64.7 0 117.4-50.9 117.4-113.4V284.5c0-62.6-52.7-113.5-117.4-113.5z m0 694.6H182.5c-31.6 0-57.4-24-57.4-53.4V386.8h739.2v425.4c0.1 29.5-25.7 53.4-57.3 53.4z' fill='#45484C' />"&
+            "<path d='M447.6 217.1c-12.4-6.1-27-2.8-35.7 7.1-2.2-6.7-4-16.2-4-28.1 0-13 2.2-23 4.6-29.8 9.5 8.1 23.5 9.6 34.9 2.8 14.2-8.5 18.8-27 10.3-41.2-15.5-25.9-35.9-29.7-46.6-29.7-36.6 0-63.1 41.2-63.1 97.8s26.4 98 63 98c20.6 0 39-13.4 50.4-36.7 7.3-14.9 1.1-32.9-13.8-40.2zM635.9 218.5c-12.4-6.1-27-2.8-35.7 7.1-2.2-6.7-4-16.2-4-28.1 0-13 2.2-23 4.6-29.8 9.5 8.1 23.5 9.6 34.9 2.8 14.2-8.5 18.8-27 10.3-41.2-15.5-25.9-35.9-29.7-46.6-29.7-36.6 0-63.1 41.2-63.1 97.8s26.5 97.8 63.1 97.8c20.6 0 39-13.4 50.4-36.7 7.1-14.7 0.9-32.7-13.9-40z' fill='#45484C' />"&
+            "<path d='M700.2 514.5H200.5c-16.6 0-30 13.4-30 30s13.4 30 30 30h499.7c16.6 0 30-13.4 30-30s-13.5-30-30-30zM668.4 689.8h-74c-16.6 0-30 13.4-30 30s13.4 30 30 30h74c16.6 0 30-13.4 30-30s-13.4-30-30-30zM479.3 689.8H200.5c-16.6 0-30 13.4-30 30s13.4 30 30 30h278.8c16.6 0 30-13.4 30-30s-13.4-30-30-30z' fill='#33CC99' />"&
+        "</svg>" & -->        
+        "<p style='display: flex; flex-grow: 1; justify-content: center; max-width: full; font-size: 30px; padding: 0px 150px 0px 100px; text-align: center; color: white'>" & 
+            If(And(Language()="fr-FR", Len(SharePointIntegration.Selected.'Title FR') > 0),SharePointIntegration.Selected.'Title FR', SharePointIntegration.Selected.Titel) & 
+        "</p>" &
+        "<div style='position: absolute; display:" & If(Len(SharePointIntegration.Selected.'Year of the analysis'.Value) > 0, "flex", "none") & "; flex-direction: row; align-items: center; max-height: 30px; top: 150px; right: 0px; font-size: 25px; font-weight: bold'>" &
+        "<img src='https://bpolb.sharepoint.com/sites/StrategicAnalysisProducts/Gedeelde%20documenten/PowerApp_Logos/Calendar.svg' style='width: 50px; height:50px'/>" &
+                     <!-- "<svg version='1.1' id='Calque_2' xmlns:x='&ns_extend;' xmlns:i='&ns_ai;' xmlns:graph='&ns_graphs;'
         xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 595.3 425.2'
         style='position: absolute; right: 0px; top: 0px; height: 100px' xml:space='preserve'>" &
             "<switch>" &
@@ -99,38 +110,33 @@
                 "</g>" &
             "</switch>" &
         "</svg>" & -->
-        "<img src='https://bpolb.sharepoint.com/sites/StrategicAnalysisProducts/Gedeelde%20documenten/PowerApp_Logos/FedPol.svg' style='position: absolute; right: 0px; top: 0px; height:100px'/>" &
-        "<p style='display: flex; flex-grow: 1; justify-content: center; max-width: full; font-size: 30px; padding: 0px 150px 0px 100px; text-align: center; color: white'>" & 
-            If(And(Language()="fr-FR", Len(SharePointIntegration.Selected.'Title FR') > 0),SharePointIntegration.Selected.'Title FR', SharePointIntegration.Selected.Titel) & 
-        "</p>" &
-    "</article>" &
-    "<article style='position: relative; display:flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding-left: 50px; margin-top: 30px; width: 85%; padding-bottom: 20px; border-bottom: 1px dashed grey'>" &
-        "<div style='position: absolute; display:" & If(Len(SharePointIntegration.Selected.'Year of the analysis'.Value) > 0, "flex", "none") & "; flex-direction: row; align-items: center; max-height: 30px; top: 200px; right: 130px; font-size: 25px; font-weight: bold'>" &
-        "<img src='https://bpolb.sharepoint.com/sites/StrategicAnalysisProducts/Gedeelde%20documenten/PowerApp_Logos/Calendar.svg' style='width: 50px; height:50px'/>" &
-        <!-- "<svg width='50px' height='50px' viewBox='0 0 1024 1024' class='icon'  version='1.1' xmlns='http://www.w3.org/2000/svg'>"&
-            "<path d='M897.9 369.2H205c-33.8 0-61.4-27.6-61.4-61.4s27.6-61.4 61.4-61.4h692.9c33.8 0 61.4 27.6 61.4 61.4s-27.6 61.4-61.4 61.4z' fill='#FFB89A' />"&
-            "<path d='M807 171H703.3c-16.6 0-30 13.4-30 30s13.4 30 30 30H807c31.6 0 57.4 24 57.4 53.4v42.3H125.2v-42.3c0-29.5 25.7-53.4 57.4-53.4H293c16.6 0 30-13.4 30-30s-13.4-30-30-30H182.5c-64.7 0-117.4 50.9-117.4 113.4v527.7c0 62.5 52.7 113.4 117.4 113.4H807c64.7 0 117.4-50.9 117.4-113.4V284.5c0-62.6-52.7-113.5-117.4-113.5z m0 694.6H182.5c-31.6 0-57.4-24-57.4-53.4V386.8h739.2v425.4c0.1 29.5-25.7 53.4-57.3 53.4z' fill='#45484C' />"&
-            "<path d='M447.6 217.1c-12.4-6.1-27-2.8-35.7 7.1-2.2-6.7-4-16.2-4-28.1 0-13 2.2-23 4.6-29.8 9.5 8.1 23.5 9.6 34.9 2.8 14.2-8.5 18.8-27 10.3-41.2-15.5-25.9-35.9-29.7-46.6-29.7-36.6 0-63.1 41.2-63.1 97.8s26.4 98 63 98c20.6 0 39-13.4 50.4-36.7 7.3-14.9 1.1-32.9-13.8-40.2zM635.9 218.5c-12.4-6.1-27-2.8-35.7 7.1-2.2-6.7-4-16.2-4-28.1 0-13 2.2-23 4.6-29.8 9.5 8.1 23.5 9.6 34.9 2.8 14.2-8.5 18.8-27 10.3-41.2-15.5-25.9-35.9-29.7-46.6-29.7-36.6 0-63.1 41.2-63.1 97.8s26.5 97.8 63.1 97.8c20.6 0 39-13.4 50.4-36.7 7.1-14.7 0.9-32.7-13.9-40z' fill='#45484C' />"&
-            "<path d='M700.2 514.5H200.5c-16.6 0-30 13.4-30 30s13.4 30 30 30h499.7c16.6 0 30-13.4 30-30s-13.5-30-30-30zM668.4 689.8h-74c-16.6 0-30 13.4-30 30s13.4 30 30 30h74c16.6 0 30-13.4 30-30s-13.4-30-30-30zM479.3 689.8H200.5c-16.6 0-30 13.4-30 30s13.4 30 30 30h278.8c16.6 0 30-13.4 30-30s-13.4-30-30-30z' fill='#33CC99' />"&
-        "</svg>" & -->            
             "<p style='margin-left: 10px'>" & 
                 SharePointIntegration.Selected.'Year of the analysis'.Value & 
             "</p>" &
         "</div>" &
+    "</article>" &
+    "<article style='position: relative; display:flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding-left: 50px; margin-top: 30px; width: 85%; padding-bottom: 20px; border-bottom: 1px dashed grey'>" &
         "<div style='max-width: 85%; min-width: 20%; padding: 15px; margin-left: 5px'>" & 
             SharePointIntegration.Selected.Description & 
         "</div>" &
         "<div style='display:flex; flex-flow:row nowrap; justify-content: space-evenly; width: 100%;'>" &
-            "<div style='display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.'Author (Author0)', 1)).Email) > 0, "flex", "none") & "; min-width: 30%; max-width: 50%; flex-direction: row; justify-content: flex-start; align-items: flex-start; margin-bottom: 20px;'>" &
-                "<ul style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; max-width: 80%; padding: 5px; margin-left: 20px;'>" &
-                    Concat(SharePointIntegration.Selected.'Author (Author0)', "<li style='display: flex; align-items: center; border-radius: 50px; padding: 5px 20px 5px 10px; margin-bottom: 3px; height: 30px'><span style='display: flex; margin-right: 10px; max-width: 30px; max-height: 30px; border-radius:50px; overflow: hidden'><img src='" & Picture & "' style='object-fit: cover; width: 30px; height:30px' alt='👮‍♂️'/></span>" & DisplayName & "</li>") &
-                "</ul>" &
+            "<div style='display:" & If(Or(Len(Last(FirstN(SharePointIntegration.Selected.'Author (Author0)', 1)).Email) > 0, Len(SharePointIntegration.Selected.'Author (External)') > 0), "flex", "none") & "; align-items: flex-start; justify-content: flex-start; flex-direction: column; min-width: 30%; max-width: 50%;'>" &
+                "<div style='display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.'Author (Author0)', 1)).Email) > 0, "flex", "none") & "; flex-direction: row; justify-content: flex-start; align-items: flex-start; margin-bottom: 20px;'>" &
+                    "<ul style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; padding: 5px; margin-left: 20px;'>" &
+                        Concat(SharePointIntegration.Selected.'Author (Author0)', "<li style='display: flex; flex-direction: row; justify-content: flex-start; align-items: center; border-radius: 50px; padding: 5px 20px 5px 10px; margin-bottom: 3px; height: 30px'><img src='" & Picture & "' style='object-fit: cover; width: 30px; height: 30px; border-radius: 50px' alt='👮‍♂️'/><span style='display: flex; margin-left: 10px; max-height: 30px; overflow: hidden'>" & DisplayName & "</span></li>") &
+                    "</ul>" &
+                "</div>" &
+                "<div style='display:" & If(Len(SharePointIntegration.Selected.'Author (External)') > 0, "flex", "none") & "; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px;'>" &
+                    "<span style='padding: 5px; border: 1px solid grey; border-radius:50px'>🧑</span>" &
+                    "<p style='display: flex; margin-left: 10px;'>" & 
+                        SharePointIntegration.Selected.'Author (External)' & 
+                    "</p>" &
+                "</div>" &
             "</div>" &
             "<div style='display:" & If(Len(Last(FirstN(SharePointIntegration.Selected.Bijlagen, 1)).Value) > 0, "flex", "none") & "; max-width: 50%; flex-direction: column; justify-content: flex-start; align-items: flex-start;'>" &
                 "<ul style='display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; background-color: white; min-width: 20%; padding: 5px; margin-left: 20px; border-radius: 5px'>" &
                     Concat(SharePointIntegration.Selected.Bijlagen, "<li style='list-style-type: disc; padding: 5px 20px; display: flex; align-items: center'>"&
                         "<img src='https://bpolb.sharepoint.com/sites/StrategicAnalysisProducts/Gedeelde%20documenten/PowerApp_Logos/paperclip.svg' style='width: 50px; height:50px'/>" &
-                        "<svg fill='#000000' width='50px' height='50px' viewBox='0 0 32 32' version='1.1' xmlns='http://www.w3.org/2000/svg'><path d='M4.040 26.96c-1.040 0-2.080-0.4-2.88-1.2-1.6-1.56-1.6-4.16 0-5.76l11.080-11.040c0.96-0.96 2.56-0.96 3.52 0 0.48 0.48 0.72 1.080 0.72 1.76s-0.24 1.28-0.72 1.76l-8.8 8.72c-0.32 0.32-0.84 0.32-1.2 0-0.32-0.32-0.32-0.84 0-1.2l8.76-8.76c0.16-0.16 0.24-0.36 0.24-0.56s-0.080-0.4-0.24-0.56c-0.32-0.32-0.84-0.32-1.12 0l-11.040 11.080c-0.92 0.92-0.92 2.48 0 3.4s2.48 0.92 3.4 0l11.040-11.080c0.76-0.76 1.16-1.76 1.16-2.84s-0.4-2.080-1.16-2.84c-1.56-1.56-4.080-1.56-5.64 0l-8.76 8.8c-0.32 0.32-0.84 0.32-1.2 0-0.32-0.32-0.32-0.84 0-1.2l8.8-8.76c2.2-2.2 5.8-2.2 8.040 0 1.080 1.080 1.68 2.48 1.68 4s-0.6 2.96-1.68 4l-11.080 11.080c-0.8 0.8-1.8 1.2-2.92 1.2z'></path></svg>" &
                         "<a href=' " & 
                     AbsoluteUri & 
                     "'>" &
@@ -171,15 +177,15 @@
                SharePointIntegration.Selected.'Geo scope'.Value & 
             "</p>" &
         "</div>" &
-        "<div style='display:" & If(Len(SharePointIntegration.Selected.'Confidentiality level'.Value) > 0, "flex", "none") & "; width: 50%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
+        "<div style='display:" & If(Len(SharePointIntegration.Selected.'Level of protection'.Value) > 0, "flex", "none") & "; width: 50%; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 20px'>" &
             "<h2 style='color: #333399'>" &
                 If(Language()="fr-FR","confidentialité: ","Vertrouwelijkheid: ") &
             "</h2>" &
             "<p style='display: flex; align-items: center; max-width: 80%; margin-left: 20px; font-size: 18px; border-radius: 50px; background-color: #C4FAF8; padding: 5px 20px 5px 10px;'>" &
                 "<span style='margin-right: 10px'>" &
-                    If(IsMatch(SharePointIntegration.Selected.'Confidentiality level'.Value,"public", MatchOptions.Contains & MatchOptions.IgnoreCase ),"📣", IsMatch(SharePointIntegration.Selected.'Confidentiality level'.Value,"Internal Police", MatchOptions.Contains & MatchOptions.IgnoreCase ),"👮", IsMatch(SharePointIntegration.Selected.'Confidentiality level'.Value,"Confidential", MatchOptions.Contains & MatchOptions.IgnoreCase ),"🔐","⏱") &
+                    If(IsMatch(SharePointIntegration.Selected.'Level of protection'.Value,"public", MatchOptions.Contains & MatchOptions.IgnoreCase ),"📣", IsMatch(SharePointIntegration.Selected.'Level of protection'.Value,"Internal Police", MatchOptions.Contains & MatchOptions.IgnoreCase ),"👮", IsMatch(SharePointIntegration.Selected.'Level of protection'.Value,"Restricted", MatchOptions.Contains & MatchOptions.IgnoreCase ),"🔐","⏱") &
                 "</span>" &
-               SharePointIntegration.Selected.'Confidentiality level'.Value & 
+               SharePointIntegration.Selected.'Level of protection'.Value & 
             "</p>" &
         "</div>" &
         

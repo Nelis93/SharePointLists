@@ -1,0 +1,450 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+  "hideListHeader": true,
+  "hideSelection": true,
+  "rowFormatter": {
+    "elmType": "div",
+    "style": {
+      "position": "relative",
+      "max-width": "1000px",
+      "margin-top": "3px"
+    },
+    "children": [
+      {
+        "elmType": "div",
+        "attributes": {
+          "class": "ms-bgColor-white ms-bgColor-themeLighter--hover"
+        },
+        "style": {
+          "position": "relative",
+          "width": "100%",
+          "display": "flex",
+          "padding": 0,
+          "margin-left": "100px",
+          "cursor": "pointer",
+          "border-left": "=if([$Niveau] == 'Federal', '5px solid #cc6600','5px inset white')"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "style": {
+              "position": "absolute",
+              "width": "100%",
+              "height": "100%",
+              "border-radius": "20px",
+              "opacity": "0",
+              "z-index": "10"
+            },
+            "customCardProps": {
+              "formatter": {
+                "elmType": "div",
+                "style": {
+                  "background-color": "white"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "style": {
+                      "width": "250px",
+                      "height": "auto",
+                      "border": "rounded",
+                      "border-radius": "10px",
+                      "font-size": "12px",
+                      "padding": "10px",
+                      "display": "flex",
+                      "flex-direction": "column",
+                      "justify-content": "space-evenly",
+                      "align-items": "center"
+                    },
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "txtContent": "[$Reference.desc]",
+                        "style": {
+                          "padding": "3px",
+                          "width": "auto",
+                          "font-family": "serif",
+                          "font-weight": "600",
+                          "font-size": "25px",
+                          "text-align": "center"
+                        }
+                      },
+                      {
+                        "elmType": "div",
+                        "attributes": {
+                          "class": "ms-bgColor-themeLighter--hover ms-fontColor-themeDarker ms-fontColor-black--hover"
+                        },
+                        "style": {
+                          "display": "=if([$SaRA], 'flex','none')",
+                          "flex-direction": "row",
+                          "justify-content": "flex-start",
+                          "align-items": "center",
+                          "border-radius": "5px",
+                          "margin": "0 5px 5px 15px"
+                        },
+                        "children": [
+                          {
+                            "elmType": "div",
+                            "attributes": {
+                              "iconName": "FlameSolid"
+                            },
+                            "style": {
+                              "margin": "0 10px",
+                              "padding": "3px 0",
+                              "font-size": "20px",
+                              "color": "#333399"
+                            }
+                          },
+                          {
+                            "elmType": "a",
+                            "style": {
+                              "pointer-events": "=if ([$SaRA] == '', 'none', 'auto')",
+                              "text-decoration": "=if ([$SaRA] == '', 'none', 'auto')",
+                              "flex-grow": "1",
+                              "font-size": "20px",
+                              "padding": "3px 10px 3px 0"
+                            },
+                            "attributes": {
+                              "title": "SaRA",
+                              "class": "ms-fontColor-themeDark ms-fontColor-black--hover",
+                              "href": "[$SaRA]"
+                            },
+                            "txtContent": "=('SaRA (' + [$SaRA.desc] + ')')"
+                          }
+                        ]
+                      },
+                      {
+                        "elmType": "div",
+                        "attributes": {
+                          "class": "ms-bgColor-themeLighter--hover ms-fontColor-themeDarker ms-fontColor-black--hover"
+                        },
+                        "style": {
+                          "display": "=if ([$JobPol] == '', 'none', 'flex')",
+                          "flex-direction": "row",
+                          "align-items": "center",
+                          "border-radius": "5px",
+                          "margin": "0 5px 5px 15px"
+                        },
+                        "children": [
+                          {
+                            "elmType": "div",
+                            "attributes": {
+                              "iconName": "Globe"
+                            },
+                            "style": {
+                              "margin": "0 10px",
+                              "padding": "3px 0",
+                              "font-size": "20px"
+                            }
+                          },
+                          {
+                            "elmType": "a",
+                            "style": {
+                              "pointer-events": "=if ([$JobPol] == '', 'none', 'auto')",
+                              "text-decoration": "=if ([$JobPol] == '', 'none', 'auto')",
+                              "flex-grow": "1",
+                              "font-size": "20px",
+                              "padding": "3px 10px 3px 0",
+                              "display": "=if ([$JobPol] == '', 'none', 'block')"
+                            },
+                            "attributes": {
+                              "title": "JobPol",
+                              "class": "ms-fontColor-themeDark ms-fontColor-black--hover",
+                              "href": "[$JobPol]"
+                            },
+                            "txtContent": "=('JobPol (' + [$JobPol.desc] + ')')"
+                          }
+                        ]
+                      },
+                      {
+                        "elmType": "div",
+                        "attributes": {
+                          "class": "ms-bgColor-themeLighter--hover ms-fontColor-themeDarker ms-fontColor-black--hover"
+                        },
+                        "style": {
+                          "display": "=if([$Attachments] > 0, 'flex','none')",
+                          "flex-direction": "row",
+                          "align-items": "center",
+                          "border-radius": "5px",
+                          "margin": "0 5px 5px 15px"
+                        },
+                        "children": [
+                          {
+                            "elmType": "div",
+                            "attributes": {
+                              "iconName": "Attach"
+                            },
+                            "style": {
+                              "margin": "0 10px",
+                              "padding": "3px 0",
+                              "font-size": "20px"
+                            }
+                          },
+                          {
+                            "elmType": "a",
+                            "style": {
+                              "pointer-events": "auto",
+                              "text-decoration": "auto",
+                              "flex-grow": "1",
+                              "font-size": "20px",
+                              "padding": "3px 10px 3px 0",
+                              "display": "=if([$Attachments] > 0, 'flex','none')"
+                            },
+                            "attributes": {
+                              "title": "Fiche",
+                              "class": "ms-fontColor-themeDark ms-fontColor-black--hover",
+                              "href": "[$Reference]"
+                            },
+                            "txtContent": "Fiche"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "openOnEvent": "click",
+              "directionalHint": "bottomCenter",
+              "isBeakVisible": true
+            }
+          },
+          {
+            "elmType": "div",
+            "attributes": {
+              "class": "ms-borderColor-themePrimary ms-bgColor-themePrimary"
+            },
+            "style": {
+              "min-width": "250px",
+              "display": "flex",
+              "box-sizing": "border-box",
+              "align-items": "center"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "txtContent": "[$Qualification]",
+                "style": {
+                  "flex": "none",
+                  "padding": "12px 20px",
+                  "height": "42px",
+                  "font-size": "30px",
+                  "color": "white"
+                }
+              },
+              {
+                "elmType": "div",
+                "style": {
+                  "flex-grow": "1",
+                  "text-align": "left"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "attributes": {
+                      "class": "ms-fontSize-l ms-fontWeight-semibold ms-fontColor-white",
+                      "title": "=toLocaleDateString([$Deadline])"
+                    },
+                    "style": {
+                      "display": "=if([$Deadline], 'flex','none')",
+                      "margin-right": "12px",
+                      "overflow": "hidden",
+                      "white-space": "nowrap"
+                    },
+                    "txtContent": "=('Jusqu`à : ' + toLocaleDateString([$Deadline]))"
+                  },
+                  {
+                    "elmType": "div",
+                    "attributes": {
+                      "class": "ms-fontSize-l ms-fontWeight-semibold ms-fontColor-white",
+                      "title": "[$Location]"
+                    },
+                    "style": {
+                      "margin-right": "12px",
+                      "overflow": "hidden",
+                      "white-space": "nowrap"
+                    },
+                    "txtContent": "[$Location]"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "display": "flex",
+              "align-items": "center",
+              "justify-content": "center",
+              "text-align": "center",
+              "min-width": "80px",
+              "color": "=if([$Taal] == 'NL', 'black','white')",
+              "background-color": "=if([$Taal] == 'NL', 'yellow', if([$Taal] == 'FR', '#c40a00', 'green'))",
+              "font-weight": "bold",
+              "font-size": "20px",
+              "border-top": "3px solid #333399",
+              "border-bottom": "3px solid #333399"
+            },
+            "txtContent": "[$Taal]"
+          },
+          {
+            "elmType": "div",
+            "attributes": {
+              "class": "ms-fontColor-themePrimary ms-fontWeight-semibold ms-fontSize-l"
+            },
+            "style": {
+              "display": "flex",
+              "align-items": "center",
+              "border": "3px ridge #333399",
+              "border-left": "none",
+              "box-sizing": "border-box",
+              "width": "100%",
+              "padding-left": "10px",
+              "text-align": "left",
+              "overflow": "hidden"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "txtContent": "[$Title_FR]",
+                "style": {
+                  "height": "24px"
+                },
+                "attributes": {
+                  "title": "[$Title_FR]"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "elmType": "button",
+        "customRowAction": {
+          "action": "share"
+        },
+        "attributes": {
+          "class": "ms-fontColor-themeLight ms-fontColor-themeDark--hover",
+          "title": "Share Item"
+        },
+        "style": {
+          "border": "none",
+          "background-color": "transparent",
+          "cursor": "pointer",
+          "position": "absolute",
+          "top": "12px",
+          "right": "5px",
+          "z-index": "20"
+        },
+        "children": [
+          {
+            "elmType": "span",
+            "attributes": {
+              "iconName": "Share",
+              "class": "ms-font-l"
+            }
+          }
+        ]
+      },
+      {
+        "elmType": "button",
+        "customRowAction": {
+          "action": "delete"
+        },
+        "attributes": {
+          "class": "ms-fontColor-themeLight ms-fontColor-themeDark--hover",
+          "title": "Delete Item"
+        },
+        "style": {
+          "display": "=if(@me == 'Nelis.Eerdekens@police.belgium.eu' || @me == 'Marjolein.Delplace@police.belgium.eu','flex','none')",
+          "border": "none",
+          "background-color": "transparent",
+          "cursor": "pointer",
+          "position": "absolute",
+          "bottom": "12px",
+          "right": "5px",
+          "z-index": "20"
+        },
+        "children": [
+          {
+            "elmType": "span",
+            "attributes": {
+              "iconName": "Delete",
+              "class": "ms-font-l"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "groupProps": {
+    "headerFormatter": {
+      "elmType": "div",
+      "style": {
+        "flex-direction": "row",
+        "margin-left": "=if(@group.fieldData == 'Federal' || @group.fieldData == 'Local', '25px','')"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "attributes": {
+            "class": "=if(@group.fieldData == 'Extern geopend', 'sp-css-backgroundColor-BgCornflowerBlue', if(@group.fieldData == 'Mobiliteit', 'sp-css-backgroundColor-BgMintGreen',if(@group.fieldData == 'Lopende rekrutering', 'sp-css-backgroundColor-BgGold','sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-neutralSecondary')))"
+          },
+          "style": {
+            "display": "inline-flex",
+            "height": "25px",
+            "border-radius": "15px",
+            "padding": "2px 8px",
+            "flex-direction": "row",
+            "align-items": "center",
+            "background-color": "=if(@group.fieldData == 'Federal','#333399',if(@group.fieldData == 'Local','#333399','')",
+            "color": "=if(@group.fieldData == 'Federal','white',if(@group.fieldData == 'Local','white','')",
+            "border-color": "=if(@group.fieldData == 'Federal','#cc6600','')"
+          },
+          "children": [
+            {
+              "elmType": "span",
+              "attributes": {
+                "iconName": "=if(@group.fieldData == 'Extern geopend', 'Streaming', if(@group.fieldData == 'Mobiliteit', 'Switch',if(@group.fieldData == 'Lopende rekrutering', 'History', 'FlameSolid')))"
+              },
+              "style": {
+                "padding-right": "6px",
+                "padding-top": "2px",
+                "color": "=if(@group.fieldData == 'Federal','#cc6600',if(@group.fieldData == 'Local','white','')"
+              }
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "display": "inline-flex",
+                "padding-right": "9px"
+              },
+              "children": [
+                {
+                  "elmType": "div",
+                  "txtContent": "=if(@group.fieldData == 'Extern geopend', 'Places AS ouvertes en externe', if(@group.fieldData == 'Mobiliteit', 'Places AS ouvertes en mobilité',if(@group.fieldData == 'Lopende rekrutering', 'Recrutement AS en cours',if(@group.fieldData == 'Federal', 'Police Fédérale',if(@group.fieldData == 'Local','Police Locale','')))))",
+                  "attributes": {
+                    "title": "=@group.fieldData",
+                    "class": "ms-fontWeight-bold"
+                  },
+                  "style": {
+                    "padding-right": "5px"
+                  }
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "padding-left": "5px"
+                  },
+                  "attributes": {
+                    "class": "ms-fontWeight-bold"
+                  },
+                  "txtContent": "=('(' + @group.count + ')')"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
