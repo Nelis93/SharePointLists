@@ -250,7 +250,7 @@
                       "overflow": "hidden",
                       "white-space": "nowrap"
                     },
-                    "txtContent": "=('Tot : ' + toLocaleDateString([$Deadline]))"
+                    "txtContent": "=('Jusqu`à : ' + toLocaleDateString([$Deadline]))"
                   },
                   {
                     "elmType": "div",
@@ -305,12 +305,12 @@
             "children": [
               {
                 "elmType": "div",
-                "txtContent": "[$Title]",
+                "txtContent": "[$Title_FR]",
                 "style": {
                   "height": "24px"
                 },
                 "attributes": {
-                  "title": "[$Title]"
+                  "title": "[$Title_FR]"
                 }
               }
             ]
@@ -348,11 +348,14 @@
       {
         "elmType": "button",
         "customRowAction": {
-          "action": "delete"
+          "action": "setValue",
+          "actionInput": {
+            "Active": false
+          }
         },
         "attributes": {
           "class": "ms-fontColor-themeLight ms-fontColor-themeDark--hover",
-          "title": "Delete Item"
+          "title": "Deactivate"
         },
         "style": {
           "display": "=if(@me == 'Nelis.Eerdekens@police.belgium.eu' || @me == 'Marjolein.Delplace@police.belgium.eu','flex','none')",
@@ -381,7 +384,8 @@
       "elmType": "div",
       "style": {
         "flex-direction": "row",
-        "margin-left": "=if(@group.fieldData == 'Federal' || @group.fieldData == 'Local', '25px','')"
+        "margin-left": "=if(@group.fieldData == 'Federal' || @group.fieldData == 'Local', '25px','')",
+        "font-size":"=if(@group.fieldData == 'Federal' || @group.fieldData == 'Local', '16px','25px')"
       },
       "children": [
         {
@@ -393,7 +397,7 @@
             "display": "inline-flex",
             "height": "25px",
             "border-radius": "15px",
-            "padding": "2px 8px",
+            "padding": "=if(@group.fieldData == 'Federal' || @group.fieldData == 'Local', '2px 8px','5px 10px')",
             "flex-direction": "row",
             "align-items": "center",
             "background-color": "=if(@group.fieldData == 'Federal','#333399',if(@group.fieldData == 'Local','#333399','')",
@@ -408,24 +412,24 @@
               },
               "style": {
                 "padding-right": "6px",
-                "padding-top": "2px",
-                "color": "=if(@group.fieldData == 'Federal','#cc6600',if(@group.fieldData == 'Local','white','')"
+                "color": "=if(@group.fieldData == 'Federal','#cc6600',if(@group.fieldData == 'Local','white','grey')"
               }
             },
             {
               "elmType": "div",
               "style": {
                 "display": "inline-flex",
-                "padding-right": "9px"
+                "padding-right": "9px",
+                "font-family":"=if(@group.fieldData == 'Federal' || @group.fieldData == 'Local', '','serif')" ,
+                    "opacity":"=if(@group.fieldData == 'Federal' || @group.fieldData == 'Local', '','.7')"
               },
               "children": [
                 {
                   "elmType": "div",
-                  "txtContent": "=if(@group.fieldData == 'Extern geopend', 'Plaatsen SA extern geopend', if(@group.fieldData == 'Mobiliteit', 'Plaatsen SA open in mobiliteit',if(@group.fieldData == 'Lopende rekrutering', 'Lopende rekruteringen SA',if(@group.fieldData == 'Federal', 'Federale Politie',if(@group.fieldData == 'Local','Lokale Politie','')))))",
+                  "txtContent": "=if(@group.fieldData == 'Extern geopend', 'Places AS ouvertes en externe', if(@group.fieldData == 'Mobiliteit', 'Places AS ouvertes en mobilité',if(@group.fieldData == 'Lopende rekrutering', 'Recrutement AS en cours',if(@group.fieldData == 'Federal', 'Police Fédérale',if(@group.fieldData == 'Local','Police Locale','')))))",
                   "attributes": {
                     "title": "=@group.fieldData",
-                    "class": "ms-fontWeight-bold"
-                  },
+                    "class": "=if(@group.fieldData == 'Federal' || @group.fieldData == 'Local', 'ms-fontWeight-bold','')"                  },
                   "style": {
                     "padding-right": "5px"
                   }
@@ -436,7 +440,7 @@
                     "padding-left": "5px"
                   },
                   "attributes": {
-                    "class": "ms-fontWeight-bold"
+                    "class": "=if(@group.fieldData == 'Federal' || @group.fieldData == 'Local', 'ms-fontWeight-bold','')" 
                   },
                   "txtContent": "=('(' + @group.count + ')')"
                 }
