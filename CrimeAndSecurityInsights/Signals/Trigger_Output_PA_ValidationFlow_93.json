@@ -1,0 +1,347 @@
+{
+    "headers": {
+        "Cache-Control": "max-age=0, private",
+        "Transfer-Encoding": "chunked",
+        "Location": "https://flow-apim-europe-001-westeurope-01.azure-apim.net/apim/sharepointonline/e8323ce78afc4630adf53e69a1e2904d/datasets/https%253A%252F%252Fbpolb.sharepoint.com%252Fsites%252FSignals/tables/34a0969d-b43e-452f-a08a-4b534a4cdb0a/onupdateditems?triggerstatecl=MTszOzM0YTA5NjlkLWI0M2UtNDUyZi1hMDhhLTRiNTM0YTRjZGIwYTs2Mzg5OTc3NTIyMzcwMDAwMDA7MTU1NzU3NDYxMw%3d%3d",
+        "Retry-After": "21600",
+        "Vary": "Origin,Accept-Encoding",
+        "X-NetworkStatistics": "0,4194720,0,0,339916,525568,525568,2291",
+        "X-SharePointHealthScore": "1",
+        "X-MS-SPConnector": "1",
+        "X-SP-SERVERSTATE": "ReadOnly=0",
+        "DATASERVICEVERSION": "3.0",
+        "SPClientServiceRequestDuration": "100",
+        "IsOCDI": "0",
+        "X-DataBoundary": "EU",
+        "X-1DSCollectorUrl": "https://eu-mobile.events.data.microsoft.com/OneCollector/1.0/",
+        "X-AriaCollectorURL": "https://eu-mobile.events.data.microsoft.com/Collector/3.0/",
+        "SPRequestGuid": "2baf51ab-9f68-4399-bbf4-3cb30b8030c8",
+        "request-id": "2baf51ab-9f68-4399-bbf4-3cb30b8030c8",
+        "MS-CV": "od02dHwQAOCuK132p6SUXA.0",
+        "SPLogId": "7436dda1-107c-e000-ae2b-5df6a7a4945c",
+        "Alt-Svc": "h3=\":443\"",
+        "Strict-Transport-Security": "max-age=31536000",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Content-Security-Policy": "frame-ancestors 'self' teams.microsoft.com *.teams.microsoft.com *.skype.com *.teams.microsoft.us local.teams.office.com teams.cloud.microsoft *.office365.com goals.cloud.microsoft *.powerapps.com *.powerbi.com *.yammer.com engage.cloud.microsoft word.cloud.microsoft excel.cloud.microsoft powerpoint.cloud.microsoft *.officeapps.live.com *.office.com *.microsoft365.com m365.cloud.microsoft *.cloud.microsoft *.stream.azure-test.net *.dynamics.com *.microsoft.com onedrive.live.com *.onedrive.live.com securebroker.sharepointonline.com;",
+        "MicrosoftSharePointTeamServices": "16.0.0.26705",
+        "X-Content-Type-Options": "nosniff",
+        "X-MS-InvokeApp": "1; RequireReadOnly",
+        "P3P": "CP=\"ALL IND DSP COR ADM CONo CUR CUSo IVAo IVDo PSA PSD TAI TELo OUR SAMo CNT COM INT NAV ONL PHY PRE PUR UNI\"",
+        "X-AspNet-Version": "4.0.30319",
+        "X-Powered-By": "ASP.NET",
+        "x-ms-environment-id": "default-f7e06a08-57c2-479e-bfa5-e63a6dd83518",
+        "x-ms-tenant-id": "f7e06a08-57c2-479e-bfa5-e63a6dd83518",
+        "x-ms-subscription-id": "09e1b36c-b066-4c5a-b687-6c794221d1f1",
+        "x-ms-dlp-re": "-|-",
+        "x-ms-dlp-gu": "-|-",
+        "x-ms-dlp-ef": "-|-/-|-|-",
+        "x-ms-mip-sl": "-|-|-|-",
+        "x-ms-au-creator-id": "4008b5c7-0c20-441c-b428-6a9e698fc054",
+        "Timing-Allow-Origin": "*",
+        "x-ms-apihub-cached-response": "true",
+        "x-ms-apihub-obo": "false",
+        "Date": "Wed, 26 Nov 2025 17:33:43 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Expires": "Tue, 11 Nov 2025 17:33:43 GMT",
+        "Last-Modified": "Wed, 26 Nov 2025 17:33:43 GMT",
+        "Content-Length": "46471"
+    },
+    "body": {
+        "@odata.etag": "\"5\"",
+        "ItemInternalId": "93",
+        "ID": 93,
+        "Title": "Gebruik van Google Pixel-telefoons door criminelen (Frankrijk en Spanje)",
+        "Created": "2025-11-26T17:22:48Z",
+        "Modified": "2025-11-26T17:33:17Z",
+        "Title_x0028_FR_x0029_": "Utilisation des téléphones Google Pixel par les criminels (France et Espagne)",
+        "Body_x0028_FR_x0029_": "<div class=\"ExternalClassB5B079685F7E42F88251AF03EAEECD36\"><p><span style=\"font-size&#58;12pt;\"><span><span><strong><em>23-Nov-25&#160;- Sur base d’articles de presse français (Le Parisien, Europe 1)&#58; Avertissement du Ministère de l’Intérieur français et plus particulièrement des analystes en cybersécurité de l’OFAC&#160;(Office anti-cybercriminalité) à destination des autres services des forces de l'ordre, concernant GrapheneOS.</em></strong></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>«&#160;<em>Les narcotrafiquants auraient de plus en plus recours à ce système pour échapper à toute forme de surveillance et d’analyse de leurs données.</em>&#160;»</span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><strong><span lang=\"FR\" style=\"color&#58;#0070c0;\">Qu’est-ce que GrapheneOS&#160;?&#160;</span></strong></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Il s’agit d’un système d’exploitation complet (créé en 2014) basé sur&#160;AOSP&#160;(Android Open Source Project). Il s’agit d’une version alternative de l’ Android de Google, mais conçue entièrement sans Google. </span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Pour installer GrapheneOS, il faut un téléphone compatible, comme un smartphone Google Pixel (du Google Pixel 6 au Google Pixel 9a).</span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Il s’agit d'un «&#160;<em>système d’exploitation mobile alternatif fonctionnant sur l'écosystème Android et développé spécifiquement pour renforcer la sécurité des données personnelles contenues dans les téléphones mobiles »</em>. Ce système d'exploitation, une fois installé sur un téléphone, offrirait une confidentialité inédite.&#160;</span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>D'où le message donné par la police judiciaire française&#58; «<em>&#160;Initialement présenté comme étant destiné à des usages légitimes pour protéger les citoyens contre des intrusions sur leur téléphone mobile, notamment pour les journalistes, les chercheurs ou les activistes, GrapheneOS s'est progressivement diffusé auprès d'utilisateurs désirant avant tout échapper à toute forme de collecte ou d'analyse de données de leurs supports par les autorités, y compris dans un cadre judiciaire</em>&#160;» </span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><strong><span lang=\"FR\" style=\"color&#58;#0070c0;\">En quoi cela peut intéresser les criminels&#160;?</span></strong></span></span></span></p><ul><li><span style=\"font-size&#58;12pt;\"><span><span>GrapheneOS supprime toute trace de Google et de ses services et permet l'installation d'applications cryptées.</span></span></span></li><li><span style=\"font-size&#58;12pt;\"><span><span>À chaque démarrage, le système d’exploitation vérifie que l’appareil n’a pas été piraté.</span></span></span></li><li><span style=\"font-size&#58;12pt;\"><span><span>En cas de tentative d’intrusion, le téléphone dispose de solutions d’urgence pour s’auto-verrouiller/s’auto-effacer; par exemple, la suppression à distance de fichiers ou d’enregistrements ou bien encore une fonction qui efface automatiquement la mémoire si un code PIN erroné est saisi plusieurs fois.</span></span></span></li><li><span style=\"font-size&#58;12pt;\"><span><span>Il permet de réinitialiser un smartphone aux paramètres d’usine (= sans aucune information exploitable) grâce à un seul code.</span></span></span></li></ul><p><span style=\"font-size&#58;12pt;\"><span><span><strong><span lang=\"FR\" style=\"color&#58;#0070c0;\">En quoi cela peut compliquer l’action policière&#160;?</span></strong></span></span></span></p><ul><li><span style=\"font-size&#58;12pt;\"><span><span>Si un enquêteur saisi un téléphone sur lequel est installé ce système, il risque en le connectant à un ordinateur d’écraser l’ensemble des informations qui y sont contenues.</span></span></span></li><li><span style=\"font-size&#58;12pt;\"><span><span>Si, devant des policiers, un malfrat entre un code alternatif au lieu de son vrai code, cela entraîne un effacement irréversible de toutes ses données. Photos, applications, profil... le téléphone revient alors à un état proche de celui en sortie d’usine, le rendant inutilisable dans le cadre d’affaires judiciaires.</span></span></span></li><li><span style=\"font-size&#58;12pt;\"><span><span>Ces téléphones serviraient à échapper aux écoutes et aux extractions de données grâce à des capacités d’auto-réinitialisation si un policier tente de les pirater.</span></span></span></li></ul><p><span style=\"font-size&#58;12pt;\"><span><span><strong><span lang=\"FR\" style=\"color&#58;#0070c0;\">Approche policière&#160;?</span></strong></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Ce phénomène a été identifié cet été par les enquêteurs espagnols, plus particulièrement en Catalogne. Début novembre, la police judiciaire française a mis en place un nouveau protocole. En cas de découverte d’un téléphone Google Pixel, il est demandé&#160;&#58;</span></span></span></p><ul><li><span style=\"font-size&#58;12pt;\"><span><span>de le placer dans une pochette anti-ondes pour couper la connexion à distance,</span></span></span></li><li><span style=\"font-size&#58;12pt;\"><span><span>de ne surtout pas le manipuler </span></span></span></li><li><span style=\"font-size&#58;12pt;\"><span><span>de faire appel à des équipes spécialisées.</span></span></span></li></ul><p><span style=\"font-size&#58;12pt;\"><span><span><strong><span lang=\"FR\" style=\"color&#58;#0070c0;\">Risque identifié</span></strong><span lang=\"FR\" style=\"color&#58;#0070c0;\">&#160;<strong>?</strong></span></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Pour l’instant, ces téléphones semblent être utilisés en nombre limité. Le système GrapheneOS compte environ&#160;350.000 à 400.000 utilisateurs actifs. Cela pourrait néanmoins poser des problèmes logistiques au sein de la chaîne opérationnelle, si l’utilisation de ces téléphones devait s’étendre.</span></span></span></p><p><span style=\"color&#58;#2980b9;\"><strong><span style=\"font-size&#58;12pt;\">Débat d’actualité en France</span></strong></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Le Ministère de l’Intérieur et le Parquet de Paris menacent de poursuivre les développeurs pour «&#160;non-coopération&#160;» (GrapheneOS n’ accepte pas de donner les clés de chiffrement). Mais en même temps, les experts techniques de l’ANSSI&#160;(Agence nationale de sécurité des systèmes d’information) semblent avoir profité de ce code open-source pour sécuriser leurs propres infrastructures, allant même jusqu’à suggérer des améliorations de sécurité que GrapheneOS a intégrées.</span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Le projet GrapheneOS a répondu de façon virulente et a décidé de retirer ses infrastructures du territoire français par crainte de saisie de serveurs ou d’arrestations. D’après la presse, les données migrent vers le Canada, l’Allemagne et les Etats-Unis. GrapheneOS menace aussi de collaborer directement avec Google pour intégrer leurs défenses avancées dans le code source d’Android (AOSP) et ainsi rendre également inviolables les autres téléphones Android du marché (Samsung, Xiaomi, Pixel,…).</span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Références&#160;&#58;</span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//www.franceinfo.fr/societe/drogue/narcotrafic-la-traque-des-services-de-police-se-heurte-a-l-innovation-technologique_7634603.html#at_medium=5&amp;at_campaign_group=1&amp;at_campaign=video&amp;at_offre=3&amp;at_variant=V3&amp;at_send_date=20251123&amp;at_rec\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//www.franceinfo.fr/societe/drogue/narcotrafic-la-traque-des-services-de-police-se-heurte-a-l-innovation-technologique_7634603.html%23at_medium%3D5%26at_campaign_group%3D1%26at_campaign%3Dvideo%26at_offre%3D3%26at_variant%3DV3%26at_send_date%3D20251123%26at_recipient_id%3D459386-1756725907-b2c7b31a%26at_adid%3DDM1189550&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487128061%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=rpMppzqrutAqaD2TfcnBgtjxTU71Pwj2cK15RT1hiHk%3D&amp;reserved=0\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">Narcotrafic &#58; la traque des services de police se heurte à l'innovation technologique</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//www.leparisien.fr/faits-divers/telephones-proteges-utilises-par-les-narcotrafiquants-rien-nest-inviolable-19-11-2025-3PP34GIBAJGH3EZOVEJVT7OMU4.php. Click or tap if you trust this link.\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//www.leparisien.fr/faits-divers/telephones-proteges-utilises-par-les-narcotrafiquants-rien-nest-inviolable-19-11-2025-3PP34GIBAJGH3EZOVEJVT7OMU4.php&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487156261%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=FIFMz8Kt6XCL2YfOKcvPSJV/CxqV4JUJq6uD7NOtmBo%3D&amp;reserved=0\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">Téléphones protégés utilisés par les narcotrafiquants&#160;&#58; «&#160;Rien n’est inviolable&#160;!&#160;» - Le Parisien</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//www.lefigaro.fr/secteur/high-tech/qu-est-ce-que-grapheneos-ce-logiciel-detourne-par-certains-trafiquants-pour-supprimer-les-informations-de-leur-telephone-20251119. Click or tap if you trust this link.\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//www.lefigaro.fr/secteur/high-tech/qu-est-ce-que-grapheneos-ce-logiciel-detourne-par-certains-trafiquants-pour-supprimer-les-informations-de-leur-telephone-20251119&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487187379%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=gyndeyZv/ewuqROUcphMbaQQy61cnIXgQuBIAKeyqZ4%3D&amp;reserved=0\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">Qu’est-ce que GrapheneOS, ce logiciel détourné par certains trafiquants pour supprimer les informations de leur téléphone ?</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//www.europe1.fr/Police-Justice/info-europe-1-graphene-os-la-nouvelle-arme-des-narcotrafiquants-pour-effacer-les-donnees-de-leurs-telephones-871834. Click or tap if you trust this link.\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//www.europe1.fr/Police-Justice/info-europe-1-graphene-os-la-nouvelle-arme-des-narcotrafiquants-pour-effacer-les-donnees-de-leurs-telephones-871834&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487201972%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=Ugzp4phOlXoI5SZepaA9YUM6kNRf7ZqkdWEwkQLGdn4%3D&amp;reserved=0\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">INFO EUROPE 1 - «Graphene OS»&#160;&#58; la nouvelle arme des narcotrafiquants pour effacer les données de leurs téléphones</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//www.clubic.com/actualite-588202-impossibles-a-ouvrir-la-police-alerte-sur-ces-smartphones-prises-des-criminels.html. Click or tap if you trust this link.\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//www.clubic.com/actualite-588202-impossibles-a-ouvrir-la-police-alerte-sur-ces-smartphones-prises-des-criminels.html&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487217006%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=c0d9AT0rd4Zkj1v1N/RO9D99HAVBh1ujlBVTVKpAdAc%3D&amp;reserved=0\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">&quot;Impossibles à ouvrir !&quot; &#58; la police alerte sur ces smartphones prisés des criminels</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//www.presse-citron.net/les-google-pixel-ont-un-avantage-insoupconne-qui-plairait-beaucoup-aux-trafiquants-de-drogue/. Click or tap if you trust this link.\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//www.presse-citron.net/les-google-pixel-ont-un-avantage-insoupconne-qui-plairait-beaucoup-aux-trafiquants-de-drogue/&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487234878%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=896IdXbzeyVJiUIM/cN4xegkSAjOFU%2BEWTwb13EOxvE%3D&amp;reserved=0\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">Voici pourquoi les trafiquants de drogue adorent les Google Pixel</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//www.elespanol.com/elandroidelibre/noticias-y-novedades/20250703/policia-ve-movil-pensara-narcotraficante-polemica-cataluna-drogas/1003743832699_0.html. Click or tap if you trust this link.\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//www.elespanol.com/elandroidelibre/noticias-y-novedades/20250703/policia-ve-movil-pensara-narcotraficante-polemica-cataluna-drogas/1003743832699_0.html&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487264553%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=DbUWV5DdV7avyq2k7RC/hMxcTQ2IGJ0VaOMzBv8vsVs%3D&amp;reserved=0\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">Si un policier vous voit avec ce mobile, il pendira que vous êtes un trafiquant de drogue &#58; la controverse en Catalogne contre la drogue</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//en.ara.cat/society/technological-warfare-the-drug-traffickers-motive-against-the-police-s-trojan-horses_1_5398821.html. Click or tap if you trust this link.\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//en.ara.cat/society/technological-warfare-the-drug-traffickers-motive-against-the-police-s-trojan-horses_1_5398821.html&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487279033%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=pSzeqwlQmFIpcO1/pogut8Zm0KI7OYcMfpTJWH8ybYk%3D&amp;reserved=0\"><span style=\"font-size&#58;9.0pt;\">Technological warfare&#58; the drug traffickers' motive against the police's Trojan horses</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a href=\"https&#58;//www.numerama.com/cyberguerre/2124789-cest-quoi-grapheneos-la-version-dandroid-au-coeur-dune-polemique-en-france.html\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">C'est quoi GrapheneOS, la version d'Android au cœur d'une polémique en France ? - Numerama</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><span style=\"font-size&#58;9.0pt;\"><a href=\"https&#58;//www.01net.com/actualites/grapheneos-quitte-la-france-pourquoi-landroid-anti-mouchards-claque-la-porte.html\">GrapheneOS quitte la France &#58; pourquoi l'Android « anti-mouchards » claque la porte</a></span></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">https&#58;//youtu.be/O90aUalTHA8</span></span></span></span></p></div>",
+        "Body_x0028_NL_x0029_": "<div class=\"ExternalClass4835E02A2C1C4FE98BEBDDB963A5E3EF\"><p><span style=\"font-size&#58;12pt;\"><span><span><strong><em>23-nov-25 - Op basis van Franse persartikelen (Le Parisien, Europe 1)&#58; Waarschuwing van het Franse Ministerie van Binnenlandse Zaken, en meer bepaald van de cybersecurity-analisten van OFAC&#160;(Office anti-cybercriminalité), gericht aan andere politiediensten, betreffende GrapheneOS.</em></strong></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>“<em>Drugshandelaren maken steeds vaker gebruik van dit systeem om elke vorm van toezicht en analyse van hun gegevens te ontwijken</em>.”</span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><strong><span lang=\"NL\" style=\"color&#58;#0070c0;\">Wat is GrapheneOS?</span></strong></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Het is een volledig besturingssysteem (gemaakt in 2014) gebaseerd op AOSP (Android Open Source Project). Het is een alternatieve versie van Google's Android, maar volledig ontworpen zonder Google.</span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Om GrapheneOS te installeren, heeft men een compatibele telefoon nodig, zoals een Google Pixel-smartphone (van de Google Pixel 6 tot de Google Pixel 9a).</span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Het is een “alternatief mobiel besturingssysteem dat werkt op het Android-ecosysteem en specifiek is ontwikkeld om de beveiliging van persoonlijke gegevens op mobiele telefoons te versterken”. Dit besturingssysteem, eenmaal geïnstalleerd op een telefoon, zou ongekende privacy bieden.</span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Daarom het bericht van de Franse gerechtelijke politie&#58; “Aanvankelijk gepresenteerd als bedoeld voor legitiem gebruik om burgers te beschermen tegen inbreuken op hun mobiele telefoon, met name voor journalisten, onderzoekers of activisten, is GrapheneOS geleidelijk verspreid onder gebruikers die vooral elke vorm van gegevensverzameling of -analyse door de autoriteiten willen vermijden, ook in een gerechtelijke context.”</span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><strong><span lang=\"NL\" style=\"color&#58;#0070c0;\">Waarom is dit interessant voor criminelen?</span></strong></span></span></span></p><ul><li><span style=\"font-size&#58;12pt;\"><span><span><span>GrapheneOS verwijdert alle sporen van Google en diens diensten en maakt de installatie van versleutelde apps mogelijk.</span></span></span></span></li><li><span style=\"font-size&#58;12pt;\"><span><span><span>Bij elke opstart controleert het besturingssysteem of het apparaat niet is gehackt.</span></span></span></span></li><li><span style=\"font-size&#58;12pt;\"><span><span><span>Bij een inbraakpoging beschikt de telefoon over noodoplossingen om zichzelf te vergrendelen of te wissen; bijvoorbeeld het op afstand verwijderen van bestanden of opnames, of een functie die automatisch het geheugen wist als een verkeerde pincode meerdere keren wordt ingevoerd.</span></span></span></span></li><li><span style=\"font-size&#58;12pt;\"><span><span><span>Het maakt het mogelijk om een smartphone met één code terug te zetten naar de fabrieksinstellingen (= zonder bruikbare informatie).</span></span></span></span></li></ul><p><span style=\"font-size&#58;12pt;\"><span><span><strong><span lang=\"NL\" style=\"color&#58;#0070c0;\">Waarom bemoeilijkt dit het politiewerk?</span></strong></span></span></span></p><ul><li><span style=\"font-size&#58;12pt;\"><span><span><span>Als een onderzoeker een telefoon in beslag neemt waarop dit systeem is geïnstalleerd, loopt men het risico bij aansluiting op een computer alle informatie te overschrijven.</span></span></span></span></li><li><span style=\"font-size&#58;12pt;\"><span><span><span>Als een verdachte in het bijzijn van de politie een alternatieve code invoert in plaats van de echte code, leidt dit tot onherstelbare verwijdering van alle gegevens. Foto’s, apps, profiel... de telefoon keert dan terug naar een staat die dicht bij de fabrieksinstellingen ligt, waardoor hij onbruikbaar wordt in gerechtelijke zaken.</span></span></span></span></li><li><span style=\"font-size&#58;12pt;\"><span><span><span>Deze telefoons zouden worden gebruikt om afluisteren en data-extracties te ontwijken dankzij de mogelijkheid tot automatische reset als een agent probeert ze te hacken.</span></span></span></span></li></ul><p><span style=\"font-size&#58;12pt;\"><span><span><strong><span lang=\"NL\" style=\"color&#58;#0070c0;\">Politieaanpak?</span></strong></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Dit fenomeen werd deze zomer geïdentificeerd door Spaanse onderzoekers, vooral in Catalonië. Begin november heeft de Franse gerechtelijke politie een nieuw protocol ingevoerd&#58; bij het aantreffen van een Google Pixel-telefoon wordt gevraagd&#58;</span></span></span></p><ul><li><span style=\"font-size&#58;12pt;\"><span><span><span>deze in een anti-stralingshoes te plaatsen om de verbinding op afstand te verbreken,</span></span></span></span></li><li><span style=\"font-size&#58;12pt;\"><span><span><span>deze vooral niet te manipuleren,</span></span></span></span></li><li><span style=\"font-size&#58;12pt;\"><span><span><span>gespecialiseerde teams in te schakelen.</span></span></span></span></li></ul><p><span style=\"font-size&#58;12pt;\"><span><span><strong><span lang=\"NL\" style=\"color&#58;#0070c0;\">Geïdentificeerd risico?</span></strong></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Voorlopig lijken deze telefoons in beperkte aantallen te worden gebruikt. Het GrapheneOS-systeem telt ongeveer 350.000 tot 400.000 actieve gebruikers. Dit zou echter logistieke problemen kunnen veroorzaken binnen de operationele keten, mocht het gebruik van deze telefoons toenemen</span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><strong><span lang=\"NL\" style=\"color&#58;#0b76a0;\">Actueel debat in Frankrijk</span></strong><br>Het Ministerie van Binnenlandse Zaken en het Parket van Parijs dreigen ontwikkelaars te vervolgen wegens “niet-meewerken” (GrapheneOS weigert de encryptiesleutels te overhandigen). Tegelijkertijd lijken de technische experts van ANSSI (Agence nationale de sécurité des systèmes d’information) gebruik te hebben gemaakt van deze open-sourcecode om hun eigen infrastructuur te beveiligen, en hebben ze zelfs beveiligingsverbeteringen voorgesteld die door GrapheneOS zijn geïntegreerd.<br>Het project GrapheneOS reageerde fel en besloot zijn infrastructuur van het Franse grondgebied te verwijderen uit vrees voor inbeslagname van servers of arrestaties. Volgens de pers verhuizen de gegevens naar Canada, Duitsland en de Verenigde Staten. GrapheneOS dreigt ook rechtstreeks samen te werken met Google om hun geavanceerde verdedigingsmechanismen in de broncode van Android (AOSP) te integreren, waardoor ook andere Android-telefoons op de markt (Samsung, Xiaomi, Pixel, …) onschendbaar zouden worden.</span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span>Références&#160;&#58;</span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//www.franceinfo.fr/societe/drogue/narcotrafic-la-traque-des-services-de-police-se-heurte-a-l-innovation-technologique_7634603.html#at_medium=5&amp;at_campaign_group=1&amp;at_campaign=video&amp;at_offre=3&amp;at_variant=V3&amp;at_send_date=20251123&amp;at_rec\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//www.franceinfo.fr/societe/drogue/narcotrafic-la-traque-des-services-de-police-se-heurte-a-l-innovation-technologique_7634603.html%23at_medium%3D5%26at_campaign_group%3D1%26at_campaign%3Dvideo%26at_offre%3D3%26at_variant%3DV3%26at_send_date%3D20251123%26at_recipient_id%3D459386-1756725907-b2c7b31a%26at_adid%3DDM1189550&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487128061%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=rpMppzqrutAqaD2TfcnBgtjxTU71Pwj2cK15RT1hiHk%3D&amp;reserved=0\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">Narcotrafic &#58; la traque des services de police se heurte à l'innovation technologique</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//www.leparisien.fr/faits-divers/telephones-proteges-utilises-par-les-narcotrafiquants-rien-nest-inviolable-19-11-2025-3PP34GIBAJGH3EZOVEJVT7OMU4.php. Click or tap if you trust this link.\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//www.leparisien.fr/faits-divers/telephones-proteges-utilises-par-les-narcotrafiquants-rien-nest-inviolable-19-11-2025-3PP34GIBAJGH3EZOVEJVT7OMU4.php&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487156261%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=FIFMz8Kt6XCL2YfOKcvPSJV/CxqV4JUJq6uD7NOtmBo%3D&amp;reserved=0\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">Téléphones protégés utilisés par les narcotrafiquants&#160;&#58; «&#160;Rien n’est inviolable&#160;!&#160;» - Le Parisien</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//www.lefigaro.fr/secteur/high-tech/qu-est-ce-que-grapheneos-ce-logiciel-detourne-par-certains-trafiquants-pour-supprimer-les-informations-de-leur-telephone-20251119. Click or tap if you trust this link.\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//www.lefigaro.fr/secteur/high-tech/qu-est-ce-que-grapheneos-ce-logiciel-detourne-par-certains-trafiquants-pour-supprimer-les-informations-de-leur-telephone-20251119&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487187379%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=gyndeyZv/ewuqROUcphMbaQQy61cnIXgQuBIAKeyqZ4%3D&amp;reserved=0\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">Qu’est-ce que GrapheneOS, ce logiciel détourné par certains trafiquants pour supprimer les informations de leur téléphone ?</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//www.europe1.fr/Police-Justice/info-europe-1-graphene-os-la-nouvelle-arme-des-narcotrafiquants-pour-effacer-les-donnees-de-leurs-telephones-871834. Click or tap if you trust this link.\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//www.europe1.fr/Police-Justice/info-europe-1-graphene-os-la-nouvelle-arme-des-narcotrafiquants-pour-effacer-les-donnees-de-leurs-telephones-871834&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487201972%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=Ugzp4phOlXoI5SZepaA9YUM6kNRf7ZqkdWEwkQLGdn4%3D&amp;reserved=0\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">INFO EUROPE 1 - «Graphene OS»&#160;&#58; la nouvelle arme des narcotrafiquants pour effacer les données de leurs téléphones</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//www.clubic.com/actualite-588202-impossibles-a-ouvrir-la-police-alerte-sur-ces-smartphones-prises-des-criminels.html. Click or tap if you trust this link.\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//www.clubic.com/actualite-588202-impossibles-a-ouvrir-la-police-alerte-sur-ces-smartphones-prises-des-criminels.html&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487217006%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=c0d9AT0rd4Zkj1v1N/RO9D99HAVBh1ujlBVTVKpAdAc%3D&amp;reserved=0\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">&quot;Impossibles à ouvrir !&quot; &#58; la police alerte sur ces smartphones prisés des criminels</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//www.presse-citron.net/les-google-pixel-ont-un-avantage-insoupconne-qui-plairait-beaucoup-aux-trafiquants-de-drogue/. Click or tap if you trust this link.\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//www.presse-citron.net/les-google-pixel-ont-un-avantage-insoupconne-qui-plairait-beaucoup-aux-trafiquants-de-drogue/&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487234878%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=896IdXbzeyVJiUIM/cN4xegkSAjOFU%2BEWTwb13EOxvE%3D&amp;reserved=0\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">Voici pourquoi les trafiquants de drogue adorent les Google Pixel</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//www.elespanol.com/elandroidelibre/noticias-y-novedades/20250703/policia-ve-movil-pensara-narcotraficante-polemica-cataluna-drogas/1003743832699_0.html. Click or tap if you trust this link.\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//www.elespanol.com/elandroidelibre/noticias-y-novedades/20250703/policia-ve-movil-pensara-narcotraficante-polemica-cataluna-drogas/1003743832699_0.html&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487264553%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=DbUWV5DdV7avyq2k7RC/hMxcTQ2IGJ0VaOMzBv8vsVs%3D&amp;reserved=0\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">Si un policier vous voit avec ce mobile, il pendira que vous êtes un trafiquant de drogue &#58; la controverse en Catalogne contre la drogue</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a title=\"Original URL&#58; https&#58;//en.ara.cat/society/technological-warfare-the-drug-traffickers-motive-against-the-police-s-trojan-horses_1_5398821.html. Click or tap if you trust this link.\" href=\"https&#58;//eur02.safelinks.protection.outlook.com/?url=https&#58;//en.ara.cat/society/technological-warfare-the-drug-traffickers-motive-against-the-police-s-trojan-horses_1_5398821.html&amp;data=05%7c02%7claurence.bervoets%40police.belgium.eu%7c8ccccd73b6b74c0884ce08de2ab90fd0%7cf7e06a0857c2479ebfa5e63a6dd83518%7c0%7c0%7c638995171487279033%7cUnknown%7cTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7c0%7c%7c%7c&amp;sdata=pSzeqwlQmFIpcO1/pogut8Zm0KI7OYcMfpTJWH8ybYk%3D&amp;reserved=0\"><span style=\"font-size&#58;9.0pt;\">Technological warfare&#58; the drug traffickers' motive against the police's Trojan horses</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><a href=\"https&#58;//www.numerama.com/cyberguerre/2124789-cest-quoi-grapheneos-la-version-dandroid-au-coeur-dune-polemique-en-france.html\"><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">C'est quoi GrapheneOS, la version d'Android au cœur d'une polémique en France ? - Numerama</span></a></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><span style=\"font-size&#58;9.0pt;\"><a href=\"https&#58;//www.01net.com/actualites/grapheneos-quitte-la-france-pourquoi-landroid-anti-mouchards-claque-la-porte.html\">GrapheneOS quitte la France &#58; pourquoi l'Android « anti-mouchards » claque la porte</a></span></span></span></span></p><p><span style=\"font-size&#58;12pt;\"><span><span><span lang=\"FR\" style=\"font-size&#58;9.0pt;\">https&#58;//youtu.be/O90aUalTHA8</span></span></span></span></p></div>",
+        "Topic": [
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+                "Id": 2,
+                "Value": "Cybercrime - Other"
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+                "Id": 11,
+                "Value": "Organised Crime - Other"
+            }
+        ],
+        "Topic@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference)",
+        "Topic#Id": [
+            2,
+            11
+        ],
+        "Topic#Id@odata.type": "#Collection(Int64)",
+        "Signal": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+            "Id": 0,
+            "Value": "New MO"
+        },
+        "Signal#Id": 0,
+        "Status_x0028_Local_x0029_": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+            "Id": 1,
+            "Value": "Follow-up [ passive ]"
+        },
+        "Status_x0028_Local_x0029_#Id": 1,
+        "Status_x0028_National_x0029_": [],
+        "Status_x0028_National_x0029_@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference)",
+        "Status_x0028_National_x0029_#Id": [],
+        "Status_x0028_National_x0029_#Id@odata.type": "#Collection(Int64)",
+        "Confidentialitylevel": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+            "Id": 0,
+            "Value": "Public"
+        },
+        "Confidentialitylevel#Id": 0,
+        "Editors": [],
+        "Editors@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser)",
+        "Editors#Claims": [],
+        "Editors#Claims@odata.type": "#Collection(String)",
+        "Domain": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+            "Id": 0,
+            "Value": "Judicial"
+        },
+        "Domain#Id": 0,
+        "Team": [
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|laurence.bervoets@police.belgium.eu",
+                "DisplayName": "Bervoets Laurence (CG)",
+                "Email": "Laurence.Bervoets@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Laurence.Bervoets@police.belgium.eu",
+                "Department": "CG",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|lieven.dedecker@police.belgium.eu",
+                "DisplayName": "De Decker Lieven (FGP OVl)",
+                "Email": "Lieven.DeDecker@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Lieven.DeDecker@police.belgium.eu",
+                "Department": "FGP OVl",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|marjolein.delplace@police.belgium.eu",
+                "DisplayName": "Delplace Marjolein (DRI)",
+                "Email": "Marjolein.Delplace@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Marjolein.Delplace@police.belgium.eu",
+                "Department": "DRI",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|nelis.eerdekens@police.belgium.eu",
+                "DisplayName": "Eerdekens Nelis (DRI)",
+                "Email": "Nelis.Eerdekens@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Nelis.Eerdekens@police.belgium.eu",
+                "Department": "DRI",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|isabelle.vanransbeeck@police.belgium.eu",
+                "DisplayName": "Van Ransbeeck Isabelle (CG)",
+                "Email": "Isabelle.VanRansbeeck@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Isabelle.VanRansbeeck@police.belgium.eu",
+                "Department": "CG",
+                "JobTitle": null
+            }
+        ],
+        "Team@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser)",
+        "Team#Claims": [
+            "i:0#.f|membership|laurence.bervoets@police.belgium.eu",
+            "i:0#.f|membership|lieven.dedecker@police.belgium.eu",
+            "i:0#.f|membership|marjolein.delplace@police.belgium.eu",
+            "i:0#.f|membership|nelis.eerdekens@police.belgium.eu",
+            "i:0#.f|membership|isabelle.vanransbeeck@police.belgium.eu"
+        ],
+        "Team#Claims@odata.type": "#Collection(String)",
+        "Recipients": [
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|dieter.vansteenkiste@police.belgium.eu",
+                "DisplayName": "Vansteenkiste Dieter (DJSOC)",
+                "Email": "Dieter.Vansteenkiste@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Dieter.Vansteenkiste@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|sofie.gotelaere@police.belgium.eu",
+                "DisplayName": "Gotelaere Sofie (DJSOC)",
+                "Email": "Sofie.Gotelaere@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Sofie.Gotelaere@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|laurent.pintens@police.belgium.eu",
+                "DisplayName": "Pintens Laurent (DJSOC)",
+                "Email": "Laurent.Pintens@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Laurent.Pintens@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|alexander.somerling@police.belgium.eu",
+                "DisplayName": "Somerling Alexander (DJSOC)",
+                "Email": "Alexander.Somerling@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Alexander.Somerling@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            }
+        ],
+        "Recipients@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser)",
+        "Recipients#Claims": [
+            "i:0#.f|membership|dieter.vansteenkiste@police.belgium.eu",
+            "i:0#.f|membership|sofie.gotelaere@police.belgium.eu",
+            "i:0#.f|membership|laurent.pintens@police.belgium.eu",
+            "i:0#.f|membership|alexander.somerling@police.belgium.eu"
+        ],
+        "Recipients#Claims@odata.type": "#Collection(String)",
+        "InitialLocation": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+            "Id": 13,
+            "Value": "National"
+        },
+        "InitialLocation#Id": 13,
+        "Author": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+            "Claims": "i:0#.f|membership|laurence.bervoets@police.belgium.eu",
+            "DisplayName": "Bervoets Laurence (CG)",
+            "Email": "Laurence.Bervoets@police.belgium.eu",
+            "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Laurence.Bervoets@police.belgium.eu",
+            "Department": "CG"
+        },
+        "Author#Claims": "i:0#.f|membership|laurence.bervoets@police.belgium.eu",
+        "Editor": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+            "Claims": "i:0#.f|membership|laurence.bervoets@police.belgium.eu",
+            "DisplayName": "Bervoets Laurence (CG)",
+            "Email": "Laurence.Bervoets@police.belgium.eu",
+            "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Laurence.Bervoets@police.belgium.eu",
+            "Department": "CG"
+        },
+        "Editor#Claims": "i:0#.f|membership|laurence.bervoets@police.belgium.eu",
+        "SelectedBoolean": false,
+        "ARB_x0028_System_x0029_": true,
+        "ARR_x0028_System_x0029_": [
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|lieven.dedecker@police.belgium.eu",
+                "DisplayName": "De Decker Lieven (FGP OVl)",
+                "Email": "Lieven.DeDecker@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Lieven.DeDecker@police.belgium.eu",
+                "Department": "FGP OVl"
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|isabelle.vanransbeeck@police.belgium.eu",
+                "DisplayName": "Van Ransbeeck Isabelle (CG)",
+                "Email": "Isabelle.VanRansbeeck@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Isabelle.VanRansbeeck@police.belgium.eu",
+                "Department": "CG"
+            }
+        ],
+        "ARR_x0028_System_x0029_@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser)",
+        "ARR_x0028_System_x0029_#Claims": [
+            "i:0#.f|membership|lieven.dedecker@police.belgium.eu",
+            "i:0#.f|membership|isabelle.vanransbeeck@police.belgium.eu"
+        ],
+        "ARR_x0028_System_x0029_#Claims@odata.type": "#Collection(String)",
+        "ARD_x0028_System_x0029_": "Een nieuw signaal ter goedkeuring - cyber en organised crime",
+        "Notify": [
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|nelis.eerdekens@police.belgium.eu",
+                "DisplayName": "Eerdekens Nelis (DRI)",
+                "Email": "Nelis.Eerdekens@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Nelis.Eerdekens@police.belgium.eu",
+                "Department": "DRI",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|dominique.joucken@police.belgium.eu",
+                "DisplayName": "Joucken Dominique (DJSOC)",
+                "Email": "Dominique.Joucken@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Dominique.Joucken@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|michel.bruneau@police.belgium.eu",
+                "DisplayName": "Bruneau Michel (DJSOC)",
+                "Email": "Michel.Bruneau@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Michel.Bruneau@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            },
+            {
+                "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                "Claims": "i:0#.f|membership|simon.douchy@police.belgium.eu",
+                "DisplayName": "Douchy Simon (DJSOC)",
+                "Email": "Simon.Douchy@police.belgium.eu",
+                "Picture": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Simon.Douchy@police.belgium.eu",
+                "Department": "DJSOC",
+                "JobTitle": null
+            }
+        ],
+        "Notify@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser)",
+        "Notify#Claims": [
+            "i:0#.f|membership|nelis.eerdekens@police.belgium.eu",
+            "i:0#.f|membership|dominique.joucken@police.belgium.eu",
+            "i:0#.f|membership|michel.bruneau@police.belgium.eu",
+            "i:0#.f|membership|simon.douchy@police.belgium.eu"
+        ],
+        "Notify#Claims@odata.type": "#Collection(String)",
+        "SRB_x0028_System_x0029_": true,
+        "OData__ApprovalAssignedTo": [],
+        "OData__ApprovalAssignedTo@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser)",
+        "OData__ApprovalAssignedTo#Claims": [],
+        "OData__ApprovalAssignedTo#Claims@odata.type": "#Collection(String)",
+        "OData__ApprovalRespondedBy": [],
+        "OData__ApprovalRespondedBy@odata.type": "#Collection(Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser)",
+        "OData__ApprovalRespondedBy#Claims": [],
+        "OData__ApprovalRespondedBy#Claims@odata.type": "#Collection(String)",
+        "{Identifier}": "Lists%252fSignals%252f93_.000",
+        "{IsFolder}": false,
+        "{Thumbnail}": {
+            "Large": null,
+            "Medium": null,
+            "Small": null
+        },
+        "{Link}": "https://bpolb.sharepoint.com/sites/Signals/_layouts/15/listform.aspx?PageType=4&ListId=34a0969d%2Db43e%2D452f%2Da08a%2D4b534a4cdb0a&ID=93&ContentTypeID=0x010053D2EBBD38AF824BA26BC94AACBA86E8001A976680CB2CC7409F05D8A2167C05E3",
+        "{Name}": "Gebruik van Google Pixel-telefoons door criminelen (Frankrijk en Spanje)",
+        "{FilenameWithExtension}": "Gebruik van Google Pixel-telefoons door criminelen (Frankrijk en Spanje)",
+        "{Path}": "Lists/Signals/",
+        "{FullPath}": "Lists/Signals/93_.000",
+        "{ModerationStatus}": "Pending",
+        "{ContentType}": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedContentType",
+            "Id": "0x010053D2EBBD38AF824BA26BC94AACBA86E8001A976680CB2CC7409F05D8A2167C05E3",
+            "Name": "Item"
+        },
+        "{ContentType}#Id": "0x010053D2EBBD38AF824BA26BC94AACBA86E8001A976680CB2CC7409F05D8A2167C05E3",
+        "{HasAttachments}": false,
+        "{VersionNumber}": "5.0",
+        "{TriggerWindowStartToken}": "MTszOzM0YTA5NjlkLWI0M2UtNDUyZi1hMDhhLTRiNTM0YTRjZGIwYTs2Mzg5OTc3NTE0NTMwMDAwMDA7MTU1NzU3NDUyMA==",
+        "{TriggerWindowEndToken}": "MTszOzM0YTA5NjlkLWI0M2UtNDUyZi1hMDhhLTRiNTM0YTRjZGIwYTs2Mzg5OTc3NTIyMzcwMDAwMDA7MTU1NzU3NDYxMw==",
+        "{ApprovalStatus}": {
+            "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedApprovalStatus",
+            "Value": 0,
+            "Label": "Niet verzonden"
+        },
+        "{ApprovalStatus}#Value": 0
+    }
+}
