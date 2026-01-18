@@ -1,0 +1,7 @@
+Volgende formule + data validation list op column header ID
+=XLOOKUP(
+  Sheet1!$B$1,
+  query!$A$1:$A$50,
+  INDEX(query!$B$1:$Z$50,,ROWS($1:3)),
+  ""
+)
