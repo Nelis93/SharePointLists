@@ -1,0 +1,65 @@
+if(
+    and(
+        or(
+            contains(
+                item()['Title'],'Bezoekers'
+            ),
+            contains(
+                item()['Title'],'Visiteurs'
+            )
+        ),
+        not(
+            contains(
+                item()['Title'],'hub'
+            )
+        )
+    ),
+    setProperty(
+        setProperty(
+            json('{"Title": "Visitors", "ID": null, "Access": null}'),
+            'ID',
+            item()?['Id']
+        ),
+        'Access',
+        '1073741826'
+    ),
+    if(
+        or(
+            contains(
+                item()['Title'],'Leden'
+            ),
+            contains(
+                item()['Title'],'Membres'
+            )
+        ),
+        setProperty(
+            setProperty(
+                json('{"Title": "Members", "ID": null, "Access": null}'),
+                'ID',
+                item()?['Id']
+            ),
+            'Access',
+            '1073741830'
+        ),
+        if(
+            or(
+                contains(
+                    item()['Title'],'Eigenaars'
+                ),
+                contains(
+                    item()['Title'],'Propriétaires'
+                )
+            ),
+            setProperty(
+                setProperty(
+                    json('{"Title": "Owners", "ID": null, "Access": null}'),
+                    'ID',
+                    item()?['Id']
+                ),
+                'Access',
+                '1073741829'
+            ),
+            0
+        )
+    )
+)

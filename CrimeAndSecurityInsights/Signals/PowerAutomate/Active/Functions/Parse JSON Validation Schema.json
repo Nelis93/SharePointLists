@@ -1,0 +1,884 @@
+{
+  "type": ["object", "null"],
+  "properties": {
+    "user": {
+      "type": ["object", "null"],
+      "properties": {
+        "Email": {
+          "type": ["string", "null"]
+        },
+        "EntraObjectId": {
+          "type": ["string", "null"]
+        },
+        "FullName": {
+          "type": ["string", "null"]
+        },
+        "Image": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "language": {
+      "type": ["string", "null"]
+    },
+    "site": {
+      "type": ["string", "null"]
+    },
+    "list": {
+      "type": ["string", "null"]
+    },
+    "isNewItem": {
+      "type": ["boolean", "null"]
+    },
+    "signals": {
+      "type": ["object", "null"],
+      "properties": {
+        "signal": {
+          "type": ["object", "null"],
+          "properties": {
+            "body": {
+              "type": ["object", "null"],
+              "properties": {
+                "Author": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Claims": {
+                      "type": ["string", "null"]
+                    },
+                    "Department": {
+                      "type": ["string", "null"]
+                    },
+                    "DisplayName": {
+                      "type": ["string", "null"]
+                    },
+                    "Email": {
+                      "type": ["string", "null"]
+                    },
+                    "JobTitle": {
+                      "type": ["string", "null"]
+                    },
+                    "Picture": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Confidentiality": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Value": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Created": {
+                  "type": ["string", "null"]
+                },
+                "Domain": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Value": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Editor": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Claims": {
+                      "type": ["string", "null"]
+                    },
+                    "Department": {
+                      "type": ["string", "null"]
+                    },
+                    "DisplayName": {
+                      "type": ["string", "null"]
+                    },
+                    "Email": {
+                      "type": ["string", "null"]
+                    },
+                    "JobTitle": {
+                      "type": ["string", "null"]
+                    },
+                    "Picture": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Editors": {
+                  "type": ["array", "null"],
+                  "items": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "Claims": {
+                        "type": ["string", "null"]
+                      },
+                      "Department": {
+                        "type": ["string", "null"]
+                      },
+                      "DisplayName": {
+                        "type": ["string", "null"]
+                      },
+                      "Email": {
+                        "type": ["string", "null"]
+                      },
+                      "JobTitle": {
+                        "type": ["string", "null"]
+                      },
+                      "Picture": {
+                        "type": ["string", "null"]
+                      }
+                    }
+                  }
+                },
+                "ID": {
+                  "type": ["integer", "null"]
+                },
+                "Modified": {
+                  "type": ["string", "null"]
+                },
+                "Notify": {
+                  "type": ["array", "null"],
+                  "items": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "Claims": {
+                        "type": ["string", "null"]
+                      },
+                      "Department": {
+                        "type": ["string", "null"]
+                      },
+                      "DisplayName": {
+                        "type": ["string", "null"]
+                      },
+                      "Email": {
+                        "type": ["string", "null"]
+                      },
+                      "JobTitle": {
+                        "type": ["string", "null"]
+                      },
+                      "Picture": {
+                        "type": ["string", "null"]
+                      }
+                    }
+                  }
+                },
+                "Recipients": {
+                  "type": ["array", "null"],
+                  "items": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "Claims": {
+                        "type": ["string", "null"]
+                      },
+                      "Department": {
+                        "type": ["string", "null"]
+                      },
+                      "DisplayName": {
+                        "type": ["string", "null"]
+                      },
+                      "Email": {
+                        "type": ["string", "null"]
+                      },
+                      "JobTitle": {
+                        "type": ["string", "null"]
+                      },
+                      "Picture": {
+                        "type": ["string", "null"]
+                      }
+                    }
+                  }
+                },
+                "Reference": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Claims": {
+                      "type": ["string", "null"]
+                    },
+                    "Department": {
+                      "type": ["string", "null"]
+                    },
+                    "DisplayName": {
+                      "type": ["string", "null"]
+                    },
+                    "Email": {
+                      "type": ["string", "null"]
+                    },
+                    "JobTitle": {
+                      "type": ["string", "null"]
+                    },
+                    "Picture": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Signal": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Value": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "SignalLocation": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Value": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Status_x0020__x0028_1_x0029_": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Value": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Status_x0020__x0028_2_x0029_": {
+                  "type": ["array", "null"],
+                  "items": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "Value": {
+                        "type": ["string", "null"]
+                      }
+                    }
+                  }
+                },
+                "Team": {
+                  "type": ["array", "null"],
+                  "items": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "Claims": {
+                        "type": ["string", "null"]
+                      },
+                      "Department": {
+                        "type": ["string", "null"]
+                      },
+                      "DisplayName": {
+                        "type": ["string", "null"]
+                      },
+                      "Email": {
+                        "type": ["string", "null"]
+                      },
+                      "JobTitle": {
+                        "type": ["string", "null"]
+                      },
+                      "Picture": {
+                        "type": ["string", "null"]
+                      }
+                    }
+                  }
+                },
+                "Title": {
+                  "type": ["string", "null"]
+                },
+                "Title_F": {
+                  "type": ["string", "null"]
+                },
+                "Topic": {
+                  "type": ["array", "null"],
+                  "items": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "Value": {
+                        "type": ["string", "null"]
+                      }
+                    }
+                  }
+                },
+                "Validated_x0028_System_x0029_": {
+                  "type": ["boolean", "null"]
+                },
+                "{Link}": {
+                  "type": ["string", "null"]
+                }
+              }
+            },
+            "isNewSignal": {
+              "type": ["boolean", "null"]
+            },
+            "isConfidentChanged": {
+              "type": ["boolean", "null"]
+            },
+            "isTopicChanged": {
+              "type": ["boolean", "null"]
+            },
+            "isEditorsChanged": {
+              "type": ["boolean", "null"]
+            }
+          }
+        }
+      },
+      "validation": {
+        "type": ["object", "null"],
+        "properties": {
+          "isApproved": {
+            "type": ["boolean", "null"]
+          },
+          "isDirectValidation": {
+            "type": ["boolean", "null"]
+          },
+          "isValidation": {
+            "type": ["boolean", "null"]
+          },
+          "validationComment": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "validationRequest": {
+        "type": ["object", "null"],
+        "properties": {
+          "isValidationRequest": {
+            "type": ["boolean", "null"]
+          },
+          "validationRequestComment": {
+            "type": ["string", "null"]
+          },
+          "validators": {
+            "type": ["array", "null"],
+            "items": {
+              "type": ["object", "null"],
+              "properties": {
+                "Claims": {
+                  "type": ["string", "null"]
+                },
+                "DisplayName": {
+                  "type": ["string", "null"]
+                },
+                "Email": {
+                  "type": ["string", "null"]
+                },
+                "Picture": {
+                  "type": ["string", "null"]
+                }
+              }
+            }
+          }
+        }
+      },
+      "dirCom": {
+        "type": ["object", "null"],
+        "properties": {
+          "isForDirCom": {
+            "type": ["boolean", "null"]
+          }
+        }
+      },
+      "priority": {
+        "type": ["object", "null"],
+        "properties": {
+          "isConfirmed": {
+            "type": ["boolean", "null"]
+          },
+          "isPrioCall": {
+            "type": ["boolean", "null"]
+          },
+          "prioCallComment": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "print": {
+        "type": ["object", "null"],
+        "properties": {
+          "isPrint": {
+            "type": ["boolean", "null"]
+          },
+          "printLanguage": {
+            "type": ["boolean", "null"]
+          },
+          "body": {
+            "type": ["array", "null"],
+            "items": {
+              "type": ["object", "null"],
+              "properties": {
+                "ID": {
+                  "type": ["integer", "null"]
+                },
+                "Title": {
+                  "type": ["string", "null"]
+                },
+                "Title_F": {
+                  "type": ["string", "null"]
+                },
+                "Body": {
+                  "type": ["string", "null"]
+                },
+                "Body_F": {
+                  "type": ["string", "null"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "strategicAnalysisProducts": {
+      "type": ["object", "null"],
+      "properties": {
+        "product": {
+          "type": ["object", "null"],
+          "properties": {
+            "body": {
+              "type": ["object", "null"],
+              "properties": {
+                "ID": {
+                  "type": ["integer", "null"]
+                },
+                "Title": {
+                  "type": ["string", "null"]
+                },
+                "TitleFR": {
+                  "type": ["string", "null"]
+                },
+                "Confidential": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Value": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Typeofanalysis": {
+                  "type": ["array", "null"],
+                  "items": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "Value": {
+                        "type": ["string", "null"]
+                      }
+                    }
+                  }
+                },
+                "Topic": {
+                  "type": ["array", "null"],
+                  "items": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "Value": {
+                        "type": ["string", "null"]
+                      }
+                    }
+                  }
+                },
+                "Year": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Value": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Author0": {
+                  "type": ["array", "null"],
+                  "items": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "Claims": {
+                        "type": ["string", "null"]
+                      },
+                      "Department": {
+                        "type": ["string", "null"]
+                      },
+                      "DisplayName": {
+                        "type": ["string", "null"]
+                      },
+                      "Email": {
+                        "type": ["string", "null"]
+                      },
+                      "JobTitle": {
+                        "type": ["string", "null"]
+                      },
+                      "Picture": {
+                        "type": ["string", "null"]
+                      }
+                    }
+                  }
+                },
+                "Geoscope": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Value": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Description": {
+                  "type": ["string", "null"]
+                },
+                "Author_x0028_External_x0029_": {
+                  "type": ["string", "null"]
+                },
+                "Modified": {
+                  "type": ["string", "null"]
+                },
+                "Created": {
+                  "type": ["string", "null"]
+                },
+                "Author": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Claims": {
+                      "type": ["string", "null"]
+                    },
+                    "Department": {
+                      "type": ["string", "null"]
+                    },
+                    "DisplayName": {
+                      "type": ["string", "null"]
+                    },
+                    "Email": {
+                      "type": ["string", "null"]
+                    },
+                    "JobTitle": {
+                      "type": ["string", "null"]
+                    },
+                    "Picture": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Editor": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Claims": {
+                      "type": ["string", "null"]
+                    },
+                    "Department": {
+                      "type": ["string", "null"]
+                    },
+                    "DisplayName": {
+                      "type": ["string", "null"]
+                    },
+                    "Email": {
+                      "type": ["string", "null"]
+                    },
+                    "JobTitle": {
+                      "type": ["string", "null"]
+                    },
+                    "Picture": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "{Link}": {
+                  "type": ["string", "null"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "barrierModels": {
+      "type": ["object", "null"],
+      "properties": {
+        "model": {
+          "type": ["object", "null"],
+          "properties": {
+            "body": {
+              "type": ["object", "null"],
+              "properties": {
+                "ID": {
+                  "type": ["integer", "null"]
+                },
+                "Title": {
+                  "type": ["string", "null"]
+                },
+                "Title_F": {
+                  "type": ["string", "null"]
+                },
+                "Topic": {
+                  "type": ["array", "null"],
+                  "items": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "Value": {
+                        "type": ["string", "null"]
+                      }
+                    }
+                  }
+                },
+                "Levelofprotection": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Value": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Author_x0028_External_x0029_": {
+                  "type": ["string", "null"]
+                },
+                "Yearofthemodel": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Value": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Geoscope": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Value": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Author0": {
+                  "type": ["array", "null"],
+                  "items": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "Claims": {
+                        "type": ["string", "null"]
+                      },
+                      "Department": {
+                        "type": ["string", "null"]
+                      },
+                      "DisplayName": {
+                        "type": ["string", "null"]
+                      },
+                      "Email": {
+                        "type": ["string", "null"]
+                      },
+                      "JobTitle": {
+                        "type": ["string", "null"]
+                      },
+                      "Picture": {
+                        "type": ["string", "null"]
+                      }
+                    }
+                  }
+                },
+                "Typeofmodel": {
+                  "type": ["array", "null"],
+                  "items": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "Value": {
+                        "type": ["string", "null"]
+                      }
+                    }
+                  }
+                },
+                "Description": {
+                  "type": ["string", "null"]
+                },
+                "Modified": {
+                  "type": ["string", "null"]
+                },
+                "Created": {
+                  "type": ["string", "null"]
+                },
+                "Author": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Claims": {
+                      "type": ["string", "null"]
+                    },
+                    "Department": {
+                      "type": ["string", "null"]
+                    },
+                    "DisplayName": {
+                      "type": ["string", "null"]
+                    },
+                    "Email": {
+                      "type": ["string", "null"]
+                    },
+                    "JobTitle": {
+                      "type": ["string", "null"]
+                    },
+                    "Picture": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Editor": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Claims": {
+                      "type": ["string", "null"]
+                    },
+                    "Department": {
+                      "type": ["string", "null"]
+                    },
+                    "DisplayName": {
+                      "type": ["string", "null"]
+                    },
+                    "Email": {
+                      "type": ["string", "null"]
+                    },
+                    "JobTitle": {
+                      "type": ["string", "null"]
+                    },
+                    "Picture": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "{Link}": {
+                  "type": ["string", "null"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "partners": {
+      "type": ["object", "null"],
+      "properties": {
+        "partner": {
+          "type": ["object", "null"],
+          "properties": {
+            "body": {
+              "type": ["object", "null"],
+              "properties": {
+                "ID": {
+                  "type": ["integer", "null"]
+                },
+                "Title": {
+                  "type": ["string", "null"]
+                },
+                "Titre_FR": {
+                  "type": ["string", "null"]
+                },
+                "Phenomenon": {
+                  "type": ["array", "null"],
+                  "items": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "Value": {
+                        "type": ["string", "null"]
+                      }
+                    }
+                  }
+                },
+                "Editors": {
+                  "type": ["array", "null"],
+                  "items": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "Claims": {
+                        "type": ["string", "null"]
+                      },
+                      "Department": {
+                        "type": ["string", "null"]
+                      },
+                      "DisplayName": {
+                        "type": ["string", "null"]
+                      },
+                      "Email": {
+                        "type": ["string", "null"]
+                      },
+                      "JobTitle": {
+                        "type": ["string", "null"]
+                      },
+                      "Picture": {
+                        "type": ["string", "null"]
+                      }
+                    }
+                  }
+                },
+                "LocatieNL": {
+                  "type": ["string", "null"]
+                },
+                "LocatieFR": {
+                  "type": ["string", "null"]
+                },
+                "Website_NL": {
+                  "type": ["string", "null"]
+                },
+                "Website_FR": {
+                  "type": ["string", "null"]
+                },
+                "Tel": {
+                  "type": ["string", "null"]
+                },
+                "Email_NL": {
+                  "type": ["string", "null"]
+                },
+                "Email_FR": {
+                  "type": ["string", "null"]
+                },
+                "Betrokkenheid_NL": {
+                  "type": ["string", "null"]
+                },
+                "Uitleg_Lang_NL": {
+                  "type": ["string", "null"]
+                },
+                "Implication_FR": {
+                  "type": ["string", "null"]
+                },
+                "Explication_Longue_FR": {
+                  "type": ["string", "null"]
+                },
+                "Modified": {
+                  "type": ["string", "null"]
+                },
+                "Created": {
+                  "type": ["string", "null"]
+                },
+                "Author": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Claims": {
+                      "type": ["string", "null"]
+                    },
+                    "Department": {
+                      "type": ["string", "null"]
+                    },
+                    "DisplayName": {
+                      "type": ["string", "null"]
+                    },
+                    "Email": {
+                      "type": ["string", "null"]
+                    },
+                    "JobTitle": {
+                      "type": ["string", "null"]
+                    },
+                    "Picture": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "Editor": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "Claims": {
+                      "type": ["string", "null"]
+                    },
+                    "Department": {
+                      "type": ["string", "null"]
+                    },
+                    "DisplayName": {
+                      "type": ["string", "null"]
+                    },
+                    "Email": {
+                      "type": ["string", "null"]
+                    },
+                    "JobTitle": {
+                      "type": ["string", "null"]
+                    },
+                    "Picture": {
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "{Link}": {
+                  "type": ["string", "null"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

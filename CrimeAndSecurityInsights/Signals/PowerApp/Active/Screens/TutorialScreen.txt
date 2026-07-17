@@ -1,0 +1,286 @@
+Screens:
+  TutorialScreen:
+    Properties:
+      BackgroundImage: ='177590775'
+      Fill: =RGBA(255, 255, 255, 1)
+      Height: =Max(App.Height, 2200)
+      ImagePosition: =ImagePosition.Fill
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+      OnVisible: |+
+        =If(
+            SharePointForm.Mode = FormMode.View,
+                ClearCollect(
+                    CGDTOIntel,
+                    'Office365Groups'.ListGroupMembers(
+                        LookUp(
+                            'Office365Groups'.ListOwnedGroups().value,
+                            displayName = "Signals_CGDTOIntel (Grp)"
+                        ).id
+                    ).value
+                );
+                Set(isDirComMember,
+                    !IsBlank(
+                        LookUp(
+                            'Office365Groups'.ListGroupMembers(
+                                LookUp(
+                                    'Office365Groups'.ListOwnedGroups().value,
+                                    displayName = "Signals_DirCom (Grp)"
+                                ).id
+                            ).value,
+                            mail = User().Email
+                        )
+                    )
+                )
+        );
+
+        Set(isTutorialRendered,true);
+      Width: =Max(App.Width, 1500)
+    Children:
+      - Tutorial_Navigator:
+          Control: Gallery@2.15.0
+          Variant: TutorialGalleryHorizontal
+          Properties:
+            AccessibleLabel: ="Layouts_Tutorial_Gallery_Accessible_Text"
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Items: |-
+              =Table(           
+               {Step: 0, Text:"Even geduld a.u.b. terwijl we uw persoonlijke data laden 🙏", Image: '1047719428'},           
+               {Step: 1, Text:"Signalen worden opgesteld door medewerkers van GPI van over heel België!", Image: '496381929'},           
+               {Step: 2, Text:"We bouwen samen aan een platform dat tegemoed komt aan uw noden", Image: '496381929'},           
+               {Step: 3, Text:"Door uw feedback en medewerking kunnen we het platform optimaliseren", Image: '643708308_super'}
+              )
+            Y: =Tutorial_Image.Y + Tutorial_Image.Height
+          Children:
+            - Circle1:
+                Control: Circle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderThickness: =2
+                  DisabledFill: =RGBA(0, 120, 212, 1)
+                  Fill: =If(Or(ThisItem.Step = 0 && IsBlank(_guideStep), ThisItem.Step = _guideStep), Tutorial_PreviousButton.Color, RGBA(0,0,0,0))
+                  FocusedBorderThickness: =4
+                  Height: =Circle1.Width
+                  HoverFill: =RGBA(0, 120, 212, 1)
+                  OnSelect: =Set(_guideStep, ThisItem.Step)
+                  PressedFill: =RGBA(0, 120, 212, 1)
+                  TabIndex: =0
+                  Width: =Parent.TemplateWidth - 5
+                  X: =Parent.TemplateWidth/2 - Self.Width/2
+                  Y: =Parent.TemplateHeight/2 - Self.Height/2
+      - Tutorial_Image:
+          Control: Image@2.2.3
+          Properties:
+            AccessibleLabel: ="Layouts_Tutorial_Image_Accessible_Text"
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =1
+            Height: =450
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =If(IsBlank(_guideStep), First(Tutorial_Navigator.AllItems).Image, LookUp(Tutorial_Navigator.AllItems, Step = _guideStep).Image)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =Parent.Width
+            Y: =Parent.Height / 6
+      - Tutorial_Text:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(102, 152, 191, 0.62)
+            Font: =Font.'Segoe UI'
+            Height: =150
+            LineHeight: =1.3
+            PaddingLeft: =20
+            PaddingRight: =20
+            Size: =24
+            Text: =If(IsBlank(_guideStep), First(Tutorial_Navigator.AllItems).Text, LookUp(Tutorial_Navigator.AllItems, Step = _guideStep).Text)
+            Width: =500
+            X: =Parent.Width / 2 -  Self.Width / 2
+            Y: =Tutorial_Image.Y + Tutorial_Image.Height / 2
+      - Tutorial_PreviousButton:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =1
+            Color: =RGBA(0, 120, 212, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =1
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Set(_guideStep, Max(_guideStep-1, First(Tutorial_Navigator.AllItems).Step))
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            TabIndex: =0
+            Tooltip: ="Previous step"
+            Visible: =_guideStep > 0
+            X: =Tutorial_Text.X - Tutorial_PreviousButton.Width - 100
+            Y: =Tutorial_Image.Y + Tutorial_Image.Height / 2 - Self.Height / 2
+      - Tutorial_NextButton:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =1
+            Color: =RGBA(0, 120, 212, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =1
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.ChevronRight
+            OnSelect: =Set(_guideStep, Min(_guideStep+1, Last(Tutorial_Navigator.AllItems).Step))
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            TabIndex: =0
+            Tooltip: ="Next step"
+            Visible: =Last(Tutorial_Navigator.AllItems).Step > _guideStep
+            X: =Tutorial_Text.X + Tutorial_Text.Width + 100
+            Y: =Tutorial_PreviousButton.Y
+      - Tutorial_SkipButton:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            Color: =RGBA(0, 42, 74, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =If(isFormDataRendered,RGBA(209, 232, 178, 1), ColorFade(RGBA(0, 120, 212, 1), Tutorial_SkipButton_ColorTimer.Value/5000))
+            FocusedBorderThickness: =1
+            Font: =Font.'Segoe UI'
+            Height: =100
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+            OnSelect: |-
+              =If(
+                  !isFormDataRendered,
+                      Notify(waitOnDataMsg,NotificationType.Warning,3000),
+                  Set(isRendered,true);
+                  Set(isTutorialSeen,true);
+                  If(
+                      SharePointForm.Mode = FormMode.View,
+                          Navigate(OverViewScreen,ScreenTransition.Cover),
+                      Navigate(FormScreen,ScreenTransition.Cover)
+                  )
+              )
+            PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
+            PressedColor: =RGBA(209, 232, 178, 1)
+            PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            Text: =If(isFormDataRendered,"Skip ➡️","Loading...")
+            Width: =200
+            X: =Parent.Width - Self.Width - 50
+            Y: =50
+      - Tutorial_NavigateTimer:
+          Control: Timer@2.1.0
+          Properties:
+            BorderColor: =RGBA(0, 120, 212, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            Color: =RGBA(255, 255, 255, 1)
+            Duration: =100
+            Fill: =RGBA(0, 120, 212, 1)
+            FocusedBorderThickness: =1
+            Font: =Font.'Segoe UI'
+            HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+            OnTimerEnd: |-
+              =If(
+                  SharePointForm.Mode <> FormMode.View,
+                      Navigate(RenderingScreen,ScreenTransition.None);
+                      Set(isTutorialRendered,false),
+                  ClearCollect(colPrintItems,SharePointIntegration.Selected); 
+                  ClearCollect(Topics, SharePointIntegration.Selected.Topic);
+                  ClearCollect(otherTopics,[]);
+                  ClearCollect(Status2, SharePointIntegration.Selected.'Status (2)');
+
+                  Set(isEditor, CountRows(Filter(SharePointIntegration.Selected.Editors,Email = User().Email))>0);
+                  Set(isRecipient, CountRows(Filter(SharePointIntegration.Selected.Recipients,Email = User().Email))>0);
+                  Set(isAuthor, SharePointIntegration.Selected.'Gemaakt door'.Email = User().Email);
+                  Set(isTeamMember, CountRows(Filter(SharePointIntegration.Selected.Team,Email = User().Email))>0);
+                  Set(isMember,Or(isEditor,isAuthor,isRecipient,isTeamMember));
+                  Set(isForDirCom,CountRows(Filter(Status2, Value = "For DirCom"))>0);
+                  Set(isPrioCalled,Or(CountRows(Filter(Status2, Value = "Confirmed by DirCom"))>0,CountRows(Filter(Status2, Value = "Noticed by DirCom"))>0)); 
+                  If(
+                      And(isTeamMember,!isRecipient),
+                          ClearCollect(
+                              Validators,
+                                  Filter(
+                                      SharePointIntegration.Selected.Team,
+                                      Lower(Email) in
+                                          ForAll('Office365Groups'.ListGroupMembers(
+                                              LookUp(
+                                                  'Office365Groups'.ListOwnedGroups().value,
+                                                  displayName = "Signals_TeamLeaders (Grp)"
+                                              ).id
+                                          ).value, 
+                                      Lower(mail)
+                                  )
+                              )
+                          )
+                  );
+                  If(
+                      isRecipient,
+                          ClearCollect(
+                              Validators,
+                                  Filter(
+                                      SharePointIntegration.Selected.Team,
+                                      Lower(Email) in
+                                          ForAll('Office365Groups'.ListGroupMembers(
+                                              LookUp(
+                                                  'Office365Groups'.ListOwnedGroups().value,
+                                                  displayName = "Signals_CentrexLeaders (Grp)"
+                                              ).id
+                                          ).value, 
+                                      Lower(mail)
+                                  )
+                              )
+                          )
+                  );
+                  Set(isValidator,!IsBlank(LookUp(Validators, Email = User().Email)));
+                  Set(isFormDataRendered,true)
+              )
+            OnTimerStart: =
+            PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            Size: =10.5
+            Start: =isTutorialRendered
+            Visible: =false
+            X: =60
+            Y: =60
+      - Tutorial_SkipButton_ColorTimer:
+          Control: Timer@2.1.0
+          Properties:
+            AutoStart: =true
+            BorderColor: =RGBA(0, 120, 212, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            Color: =RGBA(255, 255, 255, 1)
+            Duration: =1500
+            Fill: =RGBA(0, 120, 212, 1)
+            FocusedBorderThickness: =1
+            Font: =Font.'Segoe UI'
+            HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+            PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            Repeat: =true
+            Size: =10.5
+            Visible: =false
+            X: =40
+            Y: =40
