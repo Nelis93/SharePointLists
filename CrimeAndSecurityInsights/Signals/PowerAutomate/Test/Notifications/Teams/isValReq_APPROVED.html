@@ -1,0 +1,51 @@
+<!-- Notify author that signal was APPROVED via Power App APREQ -->
+<p class="editor-paragraph">
+    <b><strong class="editor-text-bold">De aanvraag tot validatie van uw signaal:</strong></b>
+    <br>
+    <br>
+    <a href="@{body('Parse_JSON_UserInput')?['signal']?['body']?['{Link}']}" class="editor-link">
+        @{coalesce(body('Parse_JSON_UserInput')?['signal']?['body']?['Title'],body('Parse_JSON_UserInput')?['signal']?['body']?['Title_F'])}
+    </a>
+    <br>
+    <br>
+    Werd beantwoord door:
+    @{first(outputs('Start_and_wait_for_an_approval')?['body/responses'])?['responder/displayName']}
+    <br>
+    <br>
+    @{if(equals(outputs('Start_and_wait_for_an_approval')?['body/outcome'],'Approve'),'Goedgekeurd','Afgewezen')}
+    <br>
+    <br>
+    @{first(outputs('Start_and_wait_for_an_approval')?['body/responses'])?['comments']}
+    <br>
+    <br>
+    @{if(
+        body('Parse_JSON_UserInput')?['dirCom']?['isForDirCom'],
+            'Het signaal werd aangeboden aan DirCom',
+        ''
+    ) }
+    <br>
+    <br>
+    <b><strong class="editor-text-bold">La demande de la validation de votre signal:</strong></b>
+    <br>
+    <br>
+    <a href="@{body('Parse_JSON_UserInput')?['signal']?['body']?['{Link}']}" class="editor-link">
+        @{coalesce(body('Parse_JSON_UserInput')?['signal']?['body']?['Title_F'],body('Parse_JSON_UserInput')?['signal']?['body']?['Title'])}
+    </a>
+    <br>
+    <br>
+    A reçu de réponse par:
+    @{first(outputs('Start_and_wait_for_an_approval')?['body/responses'])?['responder/displayName']}
+    <br>
+    <br>
+    @{if(equals(outputs('Start_and_wait_for_an_approval')?['body/outcome'],'Approve'),'Approuvé','Rejeté')}
+    <br>
+    <br>
+    @{first(outputs('Start_and_wait_for_an_approval')?['body/responses'])?['comments']}
+    <br>
+    <br>
+    @{if(
+        body('Parse_JSON_UserInput')?['dirCom']?['isForDirCom'],
+            'Le signal a été transmis à DirCom',
+        ''
+    )}
+</p>

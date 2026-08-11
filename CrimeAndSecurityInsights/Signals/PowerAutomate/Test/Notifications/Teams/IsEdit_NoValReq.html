@@ -1,0 +1,26 @@
+<!-- Notify author that signal was MODIFIED via Power App -->
+<!-- if(
+        equals(
+            coalesce(
+            body('Parse_JSON_UserInput')?['signal']?['body']?['Author']?['Email'],
+            body('Parse_JSON_UserInput')?['user']?['Email']
+            ),
+            'T449322588@police.belgium.eu'
+        ),
+        'Nelis.Eerdekens@police.belgium.eu',
+        coalesce(
+            body('Parse_JSON_UserInput')?['signal']?['body']?['Author']?['Email'],
+            body('Parse_JSON_UserInput')?['user']?['Email']
+        )
+) -->
+<p class="editor-paragraph"><b><strong class="editor-text-bold">Uw signaal:</strong></b><br><br><a
+        href="@{body('Parse_JSON_UserInput')?['signal']?['body']?['{Link}']}"
+        class="editor-link">@{coalesce(body('Parse_JSON_UserInput')?['signal']?['body']?['Title'],body('Parse_JSON_UserInput')?['signal']?['body']?['Title_F'])}</a><br><br>Werd
+    aangepast door:</p><br>
+<p class="editor-paragraph">
+    @{body('Parse_JSON_UserInput')?['signal']?['body']?['Editor']?['DisplayName']}<br><br><br><b><strong
+            class="editor-text-bold">Votre signal:</strong></b><br><br><a
+        href="@{body('Parse_JSON_UserInput')?['signal']?['body']?['{Link}']}"
+        class="editor-link">@{coalesce(body('Parse_JSON_UserInput')?['signal']?['body']?['Title_F'],body('Parse_JSON_UserInput')?['signal']?['body']?['Title'])}</a><br><br>a
+    été modifié par:</p><br>
+<p class="editor-paragraph">@{body('Parse_JSON_UserInput')?['signal']?['body']?['Editor']?['DisplayName']}</p><br>
