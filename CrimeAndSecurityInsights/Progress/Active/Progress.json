@@ -1,0 +1,439 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+  "hideColumnHeader": true,
+  "hideSelection": "true",
+  "rowFormatter": {
+    "elmType": "div",
+    "attributes": {
+      "class": "=if([$Cluster] == 'Road Safety','ms-bgColor-purpleLight ms-bgColor-purple--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Offender groups', 'ms-bgColor-communicationTint20 ms-bgColor-communicationTint10--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Drugs', 'ms-bgColor-error ms-bgColor-orange--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Human Trafficking and Migrant Smuggling', 'ms-bgColor-sharedCyan10 ms-bgColor-sharedCyan20--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Foot', 'ms-bgColor-orangeLighter ms-bgColor-orangeLight--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Fire Arms', 'ms-bgColor-sharedCyan10 ms-bgColor-sharedCyan20--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster] == 'Property Crime', 'ms-bgColor-blueLight ms-bgColor-blue--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster]=='EcoFin','ms-bgColor-tealLight ms-bgColor-teal--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster]=='FUPHEC','ms-bgColor-success ms-bgColor-sharedCyan10--hover ms-fontColor-black',if([$Cluster]=='Migration','ms-bgColor-severeWarning ms-bgColor-sharedOrangeYellow10--hover ms-fontColor-black',if([$Cluster]=='Terrorism, extremism & radicalism','ms-bgColor-warning ms-bgColor-yellow--hover ms-fontColor-black',if([$Cluster]=='Cyber Crime','ms-bgColor-neutralQuaternary ms-bgColor-neutralSecondary--hover ms-fontColor-black ms-fontColor-white--hover',if([$Cluster]=='Forgery','ms-bgColor-sharedCyanBlue20 ms-bgColor-sharedCyanBlue10--hover ms-fontColor-white','ms-bgColor-white--hover ms-fontColor-black ms-fontColor-white--hover'))))))))))))"
+    },
+    "customRowAction": {
+      "action": "defaultClick"
+    },
+    "style": {
+      "position": "relative",
+      "margin-left": "10px",
+      "width": "1000px",
+      "margin-top": "5px",
+      "box-shadow": "0px 1.6px 3.6px 0 #00000024, 0px 0.3px 0.9px 0 #00000024",
+      "border-radius": "5px",
+      "cursor": "pointer"
+    },
+    "children": [
+      {
+        "elmType": "button",
+        "attributes": {
+          "class": "ms-bgColor-gray100--hover"
+        },
+        "customRowAction": {
+          "action": "setValue",
+          "actionInput": {
+            "Status": "=if([$Status] == 'Empty Site','In Draft 📑',if([$Status] == 'In Draft 📑','Draft Delivered 📑✔',if([$Status] == 'Draft Delivered 📑✔','In Review 🔍',if([$Status] == 'In Review 🔍','Review Delivered 🔍✔',if([$Status] == 'Review Delivered 🔍✔', 'Processing Feedback 🔄',if([$Status] == 'Processing Feedback 🔄','In Translation 🔠',if([$Status] == 'In Translation 🔠','Translated 🔠✔', if([$Status] == 'Translated 🔠✔','Published (ltd) 🔒',if([$Status] == 'Published (ltd) 🔒','Published (All) 🔓',if([$Status] == 'Published (All) 🔓','In Update ⏳',if([$Status] == 'In Update ⏳','Update Published 📣',if([$Status] == 'Update Published 📣','In Update ⏳',''))))))))))))",
+            "Startedon": "=getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now)",
+            "Previousphaseendedby": "=substring(@me, 0, indexOf(@me, '.')) + ' ' + substring(@me, indexOf(@me, '.')+1, indexOf(@me, '@'))",
+            "Draftstart": "=if([$Status] == 'Empty Site', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Draftstart])",
+            "Draftdelivered": "=if([$Status] == 'In Draft 📑', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Draftdelivered])",
+            "Reviewstart": "=if([$Status] == 'Draft Delivered 📑✔', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Reviewstart])",
+            "Reviewdelivered": "=if([$Status] == 'In Review 🔍', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Reviewdelivered])",
+            "Translated": "=if([$Status] == 'In Translation 🔠', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Translated])",
+            "Publishedltd": "=if([$Status] == 'Translated 🔠✔', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Publishedltd])",
+            "PublishedAll": "=if([$Status] == 'Published (ltd) 🔒', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$PublishedAll])",
+            "Updatestart": "=if([$Status] == 'Published (All) 🔓', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Updatestart])",
+            "Updatepublished": "=if([$Status] == 'In Update ⏳', getDate(@now) + '/' + (getMonth(@now) + 1) + '/' + getYear(@now),[$Updatepublished])"
+          }
+        },
+        "style": {
+          "display": "=if(@me == 'Nelis.Eerdekens@police.belgium.eu', 'block', 'none')",
+          "position": "absolute",
+          "z-index": "10",
+          "right": "2px",
+          "top": "2px",
+          "border": "rounded",
+          "color": "#00368a",
+          "padding": "5px 7px",
+          "border-radius": "100%",
+          "border-color": "#00368a",
+          "background-color": "none",
+          "cursor": "pointer"
+        },
+        "children": [
+          {
+            "elmType": "span",
+            "attributes": {
+              "iconName": "Refresh"
+            },
+            "style": {
+              "font-size": "15px"
+            }
+          }
+        ]
+      },
+      {
+        "elmType": "div",
+        "style": {
+          "display": "flex",
+          "flex-direction": "row",
+          "align-items": "center",
+          "text-align": "left"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "style": {
+              "height": "100px",
+              "width": "100px",
+              "padding-top": "5px",
+              "display": "flex",
+              "justify-content": "center",
+              "align-items": "center"
+            },
+            "children": [
+              {
+                "elmType": "img",
+                "style": {
+                  "display": "flex",
+                  "max-width": "75%",
+                  "max-height": "75%"
+                },
+                "attributes": {
+                  "src": "=getThumbnailImage([$Logo],100,100)"
+                }
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "attributes": {
+              "class": "sp-row-title"
+            },
+            "style": {
+              "margin-left": "25px",
+              "width": "400px"
+            },
+            "txtContent": "=if([$Subfenomeen], [$Fenomeen] + ': ' + [$Subfenomeen],[$Fenomeen]) "
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "display": "flex",
+              "justify-content": "center",
+              "margin": "10px auto",
+              "width": "170px"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "style": {
+                  "display": "flex",
+                  "padding": "7px",
+                  "border": "2px solid #00368a",
+                  "border-radius": "5px",
+                  "overflow": "hidden",
+                  "text-overflow": "ellipsis"
+                },
+                "attributes": {
+                  "class": {
+                    "operator": ":",
+                    "operands": [
+                      {
+                        "operator": "==",
+                        "operands": [
+                          "[$Status]",
+                          "Empty Site"
+                        ]
+                      },
+                      "sp-css-backgroundColor-white sp-field-fontSizeMedium sp-css-color-themeDark",
+                      {
+                        "operator": ":",
+                        "operands": [
+                          {
+                            "operator": "==",
+                            "operands": [
+                              "[$Status]",
+                              "In Draft 📑"
+                            ]
+                          },
+                          "sp-css-backgroundColor-themeLighter sp-field-fontSizeMedium sp-css-color-themeDark",
+                          {
+                            "operator": ":",
+                            "operands": [
+                              {
+                                "operator": "==",
+                                "operands": [
+                                  "[$Status]",
+                                  "Draft Delivered 📑✔"
+                                ]
+                              },
+                              "sp-css-backgroundColor-themeLighter ms-fontColor-greenLight sp-field-fontSizeMedium",
+                              {
+                                "operator": ":",
+                                "operands": [
+                                  {
+                                    "operator": "==",
+                                    "operands": [
+                                      "[$Status]",
+                                      "In Review 🔍"
+                                    ]
+                                  },
+                                  "sp-css-backgroundColor-themeLight sp-field-fontSizeMedium sp-css-color-themeDark",
+                                  {
+                                    "operator": ":",
+                                    "operands": [
+                                      {
+                                        "operator": "==",
+                                        "operands": [
+                                          "[$Status]",
+                                          "Review Delivered 🔍✔"
+                                        ]
+                                      },
+                                      "sp-css-backgroundColor-themeLight ms-fontColor-greenLight sp-field-fontSizeMedium",
+                                      {
+                                        "operator": ":",
+                                        "operands": [
+                                          {
+                                            "operator": "==",
+                                            "operands": [
+                                              "[$Status]",
+                                              "Processing Feedback 🔄"
+                                            ]
+                                          },
+                                          "sp-css-backgroundColor-themePrimary sp-field-fontSizeMedium sp-css-color-white",
+                                          {
+                                            "operator": ":",
+                                            "operands": [
+                                              {
+                                                "operator": "==",
+                                                "operands": [
+                                                  "[$Status]",
+                                                  "In Translation 🔠"
+                                                ]
+                                              },
+                                              "sp-css-backgroundColor-themeSecondary sp-field-fontSizeMedium sp-css-color-white",
+                                              {
+                                                "operator": ":",
+                                                "operands": [
+                                                  {
+                                                    "operator": "==",
+                                                    "operands": [
+                                                      "[$Status]",
+                                                      "Translated 🔠✔"
+                                                    ]
+                                                  },
+                                                  "sp-css-backgroundColor-themeSecondary sp-field-fontSizeMedium ms-fontColor-greenLight",
+                                                  {
+                                                    "operator": ":",
+                                                    "operands": [
+                                                      {
+                                                        "operator": "==",
+                                                        "operands": [
+                                                          "[$Status]",
+                                                          "Published (ltd) 🔒"
+                                                        ]
+                                                      },
+                                                      "sp-css-backgroundColor-themeDark sp-field-fontSizeMedium sp-css-color-white",
+                                                      {
+                                                        "operator": ":",
+                                                        "operands": [
+                                                          {
+                                                            "operator": "==",
+                                                            "operands": [
+                                                              "[$Status]",
+                                                              "Published (All) 🔓"
+                                                            ]
+                                                          },
+                                                          "sp-css-backgroundColor-themeDarker sp-field-fontSizeMedium sp-css-color-white",
+                                                          {
+                                                            "operator": ":",
+                                                            "operands": [
+                                                              {
+                                                                "operator": "==",
+                                                                "operands": [
+                                                                  "[$Status]",
+                                                                  "In Update ⏳"
+                                                                ]
+                                                              },
+                                                              "sp-css-backgroundColor-themeDark sp-field-fontSizeMedium sp-css-color-white",
+                                                              {
+                                                                "operator": ":",
+                                                                "operands": [
+                                                                  {
+                                                                    "operator": "==",
+                                                                    "operands": [
+                                                                      "[$Status]",
+                                                                      "Update Published 📣"
+                                                                    ]
+                                                                  },
+                                                                  "sp-css-backgroundColor-themeDarker sp-field-fontSizeMedium sp-css-color-white",
+                                                                  ""
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "txtContent": "[$Status]"
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "width": "120px",
+              "margin-left": "30px",
+              "font-size": "20px",
+              "display": "flex",
+              "justify-content": "space-between",
+              "align-items": "center",
+              "text-align": "center",
+              "padding": "5px",
+              "border-right": "2px ridge",
+              "border-bottom": "2px ridge"
+            },
+            "txtContent": "[$Startedon]",
+            "attributes": {
+              "iconName": "calendar",
+              "class": "ms-borderColor-black ms-borderColor-white--hover"
+            }
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "position": "relative",
+              "display": "flex",
+              "align-items": "center",
+              "width": "80px",
+              "margin-left": "50px",
+              "margin-right": "20px",
+              "margin-bottom": "5px",
+              "background-color": "lightgrey",
+              "border-radius": "5px"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "style": {
+                  "position": "absolute",
+                  "width": "100%",
+                  "outline": "2px solid lightgrey",
+                  "border-radius": "5px",
+                  "min-height": "inherit",
+                  "padding": "15px 0"
+                }
+              },
+              {
+                "elmType": "div",
+                "style": {
+                  "width": "=if([$Status] == 'Empty Site', '0', if([$Status] == 'In Draft 📑', '10%', if([$Status] == 'Draft Delivered 📑✔', '20%', if([$Status] == 'In Review 🔍', '30%', if([$Status] == 'Review Delivered 🔍✔', '40%', if([$Status] == 'Processing Feedback 🔄', '50%', if([$Status] == 'In Translation 🔠', '60%', if([$Status] == 'Translated 🔠✔', '70%', if([$Status] == 'Published (ltd) 🔒', '80%', if([$Status] == 'Published (All) 🔓', '100%',if([$Status] == 'In Update ⏳', '83.33%',if([$Status] == 'Update Published 📣', '100%',''))))))))))))",
+                  "min-height": "inherit",
+                  "margin-top": "1px",
+                  "padding": "16px 0",
+                  "box-sizing": "border-box",
+                  "border-radius": "5px",
+                  "background-color": "=if([$Status] == 'Empty Site', '', if([$Status] == 'In Draft 📑', '#7F0000', if([$Status] == 'Draft Delivered 📑✔', '#9B1A00', if([$Status] == 'In Review 🔍', '#B73500', if([$Status] == 'Review Delivered 🔍✔', '#D34F00', if([$Status] == 'Processing Feedback 🔄', '#EF6A00', if([$Status] == 'In Translation 🔠', '#FFA64D', if([$Status] == 'Translated 🔠✔', '#FFDD99', if([$Status] == 'Published (ltd) 🔒', '#D4E59D', if([$Status] == 'Published (All) 🔓', '#A8D48E',if([$Status] == 'In Update ⏳', '#D4E59D',if([$Status] == 'Update Published 📣', '#A8D48E',''))))))))))))"
+                }
+              },
+              {
+                "elmType": "div",
+                "style": {
+                  "position": "absolute",
+                  "margin-left": "80px",
+                  "width": "5px",
+                  "height": "7px",
+                  "border-radius": "0 2px 2px 0",
+                  "background-color": "lightgrey"
+                }
+              },
+              {
+                "elmType": "div",
+                "style": {
+                  "position": "absolute",
+                  "margin-left": "33px",
+                  "font-size": "20px"
+                },
+                "attributes": {
+                  "iconName": "LightningBolt"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "groupProps": {
+    "hideSelection": "true",
+    "hideFooter": true,
+    "headerFormatter": {
+      "elmType": "div",
+      "style": {
+        "position": "relative",
+        "display": "flex",
+        "justify-content": "flex-start",
+        "flex-grow": "0",
+        "text-wrap": "nowrap",
+        "height": "25px",
+        "padding-left": "8px",
+        "padding-top": "5px",
+        "padding-bottom": "5px",
+        "border-radius": "10px",
+        "width": "fit",
+        "max-width": "500px"
+      },
+      "attributes": {
+        "class": "=if(@group.fieldData == 'Road Safety','ms-bgColor-purpleLight',if(@group.fieldData == 'Offender groups', 'ms-bgColor-communicationTint20',if(@group.fieldData == 'Drugs', 'ms-bgColor-error',if(@group.fieldData == 'Human Trafficking and Migrant Smuggling', 'ms-bgColor-sharedCyan10',if(@group.fieldData == 'Foot', 'ms-bgColor-orangeLighter',if(@group.fieldData == 'Fire Arms', 'ms-bgColor-sharedCyan10',if(@group.fieldData == 'Property Crime', 'ms-bgColor-blueLight',if(@group.fieldData=='EcoFin','ms-bgColor-tealLight',if(@group.fieldData=='FUPHEC','ms-bgColor-success',if(@group.fieldData=='Migration','ms-bgColor-severeWarning',if(@group.fieldData=='Terrorism, extremism & radicalism','ms-bgColor-warning',if(@group.fieldData=='Cyber Crime','ms-bgColor-neutralQuaternary',if(@group.fieldData=='Forgery','ms-bgColor-sharedCyanBlue20 ms-fontColor-white','ms-bgColor-info'))))))))))))"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "txtContent": "@group.fieldData",
+          "style": {
+            "display": "flex",
+            "padding-right": "9px",
+            "padding-bottom": "3px"
+          },
+          "attributes": {
+            "class": "ms-fontWeight-bold"
+          }
+        },
+        {
+          "elmType": "div",
+          "style": {
+            "padding-right": "9px",
+            "padding-bottom": "3px"
+          },
+          "children": [
+            {
+              "elmType": "span",
+              "style": {
+                "padding-left": "5px"
+              },
+              "attributes": {
+                "class": "ms-fontWeight-bold"
+              },
+              "txtContent": "='(' + @group.count +')'"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
